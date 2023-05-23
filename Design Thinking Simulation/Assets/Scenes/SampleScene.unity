@@ -864,6 +864,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2833146936231135894, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: textField
+      value: 
+      objectReference: {fileID: 1704046865}
+    - target: {fileID: 2833146936231135894, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: peopleName
+      value: Tom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833146936231135894, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: cakePreference.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833146936231135894, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: cakePreference.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 99c82b2debf1ea341b34e41d0e9ade76,
+        type: 2}
+    - target: {fileID: 2833146936231135894, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: cakePreference.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f4b1ebb1a1b5a645a9b0bb64427e0d5,
+        type: 2}
+    - target: {fileID: 2833146936231135894, guid: 4ac7df741a9c0a2418ec19477729ee3d,
+        type: 3}
+      propertyPath: cakePreference.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3f4b1ebb1a1b5a645a9b0bb64427e0d5,
+        type: 2}
     - target: {fileID: 3719865057063539129, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_IsActive
@@ -2626,12 +2659,12 @@ PrefabInstance:
     - target: {fileID: 4088779762850046649, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.3575886
+      value: -4.34
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046649, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -6724.8086
+      value: -7.692
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046649, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
