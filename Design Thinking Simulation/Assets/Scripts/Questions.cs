@@ -14,6 +14,8 @@ public class Questions : MonoBehaviour
         person.questionIndex = questionIndex;
         person.CalculateLikeness();
         // disable commentb line dibwh kalau mau bs nnya nonstop
-        canvas.gameObject.SetActive(false);
+        //canvas.gameObject.SetActive(false);
+        person.AnswerSelected();
+
     }
 }

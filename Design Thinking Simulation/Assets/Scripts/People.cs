@@ -10,7 +10,17 @@ public class People : MonoBehaviour
     [SerializeField] private CakeSO[] cakePreference;
     public int questionIndex = 0;
     [SerializeField] private Text textField;
+    [HideInInspector] public PlayerScript player;
+    [SerializeField] private GameObject QuestionCanvas;
+    [SerializeField] float DelayActiveUI = 3;
+    bool isPlayerInRange = false;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        QuestionCanvas.SetActive(false);
+    }
+
     public void CalculateLikeness()
     {
         int likeness = 0;
@@ -39,4 +49,52 @@ public class People : MonoBehaviour
         if (likeness < 0)
             textField.text = "Dislike";
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<PlayerScript>())
+        {
+            player = other.GetComponent<PlayerScript>();
+            if(player.CanAskCheck())
+            {
+                QuestionCanvas.SetActive(true);
+            }
+            else if(!player.CanAskCheck())
+            {
+                textField.text = "Aku ingin makan dulu, Jangan ganggu";
+            }
+            isPlayerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<PlayerScript>())
+        {
+            player = other.GetComponent<PlayerScript>();
+            QuestionCanvas.SetActive(false);
+            isPlayerInRange = false;
+            textField.text = "";
+        }
+    }
+
+    public void AnswerSelected()
+    {
+        QuestionCanvas.SetActive(false);
+        player.PlayerAsk();
+        StartCoroutine(DelaySetActiveUI(DelayActiveUI));
+    }
+
+    IEnumerator DelaySetActiveUI(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if(player!= null)
+        {
+            if(player.CanAskCheck() && isPlayerInRange)
+            {
+                QuestionCanvas.SetActive(true);
+            }
+        }
+    }
+
 }
