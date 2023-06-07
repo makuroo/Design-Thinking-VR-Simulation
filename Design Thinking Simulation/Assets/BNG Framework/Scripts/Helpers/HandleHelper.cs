@@ -36,7 +36,7 @@ namespace BNG {
         Vector3 lastAngularVelocity;
 
         void FixedUpdate() {
-
+            Debug.Log(thisGrab.BeingHeld);
             if(!thisGrab.BeingHeld) {
                 if(!didRelease) {
 
