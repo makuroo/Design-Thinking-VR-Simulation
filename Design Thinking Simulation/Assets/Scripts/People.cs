@@ -12,13 +12,23 @@ public class People : MonoBehaviour
     [SerializeField] private Text textField;
     [HideInInspector] public PlayerScript player;
     [SerializeField] private GameObject QuestionCanvas;
+    [SerializeField] private GameObject NameCanvas;
     [SerializeField] float DelayActiveUI = 3;
     bool isPlayerInRange = false;
+    public Text nameTextObj;
+    private Text nameText;
     // Start is called before the first frame update
 
     private void Awake()
     {
         QuestionCanvas.SetActive(false);
+        NameCanvas.SetActive(false);
+        nameText = nameTextObj.GetComponent<Text>();
+    }
+
+    private void Start()
+    {
+        nameText.text = peopleName;
     }
 
     public void CalculateLikeness()
@@ -58,6 +68,7 @@ public class People : MonoBehaviour
             if(player.CanAskCheck())
             {
                 QuestionCanvas.SetActive(true);
+                NameCanvas.SetActive(true);
             }
             else if(!player.CanAskCheck())
             {
@@ -71,6 +82,7 @@ public class People : MonoBehaviour
     {
         if (other.GetComponent<PlayerScript>())
         {
+            NameCanvas.SetActive(false);
             player = other.GetComponent<PlayerScript>();
             QuestionCanvas.SetActive(false);
             isPlayerInRange = false;
@@ -81,6 +93,7 @@ public class People : MonoBehaviour
     public void AnswerSelected()
     {
         QuestionCanvas.SetActive(false);
+        NameCanvas.SetActive(false);
         player.PlayerAsk();
         StartCoroutine(DelaySetActiveUI(DelayActiveUI));
     }
@@ -93,8 +106,11 @@ public class People : MonoBehaviour
             if(player.CanAskCheck() && isPlayerInRange)
             {
                 QuestionCanvas.SetActive(true);
+                NameCanvas.SetActive(true);
             }
         }
     }
 
+
+    
 }
