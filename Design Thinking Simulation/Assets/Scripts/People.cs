@@ -111,6 +111,10 @@ public class People : MonoBehaviour
         }
     }
 
-
+    IEnumerator DisableAnswerUI(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        textField.text = "";
+    }
     
 }
