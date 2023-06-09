@@ -21,6 +21,7 @@ public class PlayerScript : MonoBehaviour
     public void PlayerAsk()
     {
         questionRemaining = Mathf.Clamp(questionRemaining-1, 0, questionRemaining);
+        Debug.Log(questionRemaining);
     }
 
     public bool CanAskCheck()

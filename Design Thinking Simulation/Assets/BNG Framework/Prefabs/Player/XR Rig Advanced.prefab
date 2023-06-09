@@ -18813,7 +18813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd2fd7429a30714ca570a60a988ab32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultLocomotion: 0
+  DefaultLocomotion: 1
   LoadLocomotionFromPrefs: 0
   locomotionToggleInput: 0e000000
   LocomotionToggleAction: {fileID: 3512515067727415170, guid: e39f4b35a6db18348b41eb0262520e69,
@@ -25334,6 +25334,9 @@ MonoBehaviour:
   cakePreference: []
   questionIndex: 0
   textField: {fileID: 0}
+  player: {fileID: 0}
+  QuestionCanvas: {fileID: 0}
+  delayActiveUI: 3
 --- !u!1 &2683195717451339092
 GameObject:
   m_ObjectHideFlags: 0
