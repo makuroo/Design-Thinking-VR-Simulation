@@ -15,7 +15,7 @@ public class People : MonoBehaviour
     [SerializeField] GameObject QuestionCanvas;
     public GameObject UIPertanyaan;
     [SerializeField] private GameObject NameCanvas;
-    [SerializeField] float DelayActiveUI = 3;
+    [SerializeField] float AnsweringTimesInSecond = 3;
     bool isPlayerInRange = false;
     public Text nameTextObj;
     private Text nameText;
@@ -30,7 +30,7 @@ public class People : MonoBehaviour
 
     private void Start()
     {
-        //QuestionCanvas.SetActive(false);
+        QuestionCanvas.SetActive(false);
         NameCanvas.SetActive(false);
         nameText.text = peopleName;
     }
@@ -105,7 +105,7 @@ public class People : MonoBehaviour
         QuestionCanvas.SetActive(false);
         NameCanvas.SetActive(false);
         player.PlayerAsk();
-        StartCoroutine(DelaySetActiveUI(delayActiveUI));
+        StartCoroutine(DelaySetActiveUI(AnsweringTimesInSecond));
     }
 
     IEnumerator DelaySetActiveUI(float seconds)
@@ -115,13 +115,8 @@ public class People : MonoBehaviour
         {
             QuestionCanvas.SetActive(true);
             NameCanvas.SetActive(true);
+            textField.text = "";
         }
-    }
-
-    IEnumerator DisableAnswerUI(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        textField.text = "";
     }
     
 }

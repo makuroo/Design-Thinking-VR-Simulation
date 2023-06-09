@@ -44,6 +44,25 @@ public class CustomerSpawner : MonoBehaviour
                 instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.56f, -0.647f), -8.752809f, Random.Range(14.563f, 11.2f));
                 instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
+
+                Debug.Log(instantiatedPrefab);
+                Debug.Log(instantiatedCustomer[0]);
+                //dapetin canvasUIPertanyaan yang mau di assign
+                Temp = instantiatedPrefab.transform.Find("Customer").GetComponent<People>();
+                peopleScript.Add(Temp);
+                Debug.Log(instantiatedPrefab.transform.Find("Customer"));
+                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
+                Debug.Log(canvasUIPertanyaan);
+
+                Debug.Log(canvasUIPertanyaan);
+
+                //reference si cameracaster
+                Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
+                Debug.Log(cameraCaster);
+                canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
+                canvasUIPertanyaan.worldCamera = cameraCaster;//
+                //masih ngebug di worldcamera harusnya itu eventCamera
+                canvasUIPertanyaan.worldCamera = cameraCaster;
             }
         }
         else if(isCafeSpawner)
@@ -85,6 +104,25 @@ public class CustomerSpawner : MonoBehaviour
                 instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
                 instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
+
+                Debug.Log(instantiatedPrefab);
+                Debug.Log(instantiatedCustomer[0]);
+                //dapetin canvasUIPertanyaan yang mau di assign
+                Temp = instantiatedPrefab.transform.Find("Customer").GetComponent<People>();
+                peopleScript.Add(Temp);
+                Debug.Log(instantiatedPrefab.transform.Find("Customer"));
+                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
+                Debug.Log(canvasUIPertanyaan);
+
+                Debug.Log(canvasUIPertanyaan);
+
+                //reference si cameracaster
+                Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
+                Debug.Log(cameraCaster);
+                canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
+                canvasUIPertanyaan.worldCamera = cameraCaster;//
+                //masih ngebug di worldcamera harusnya itu eventCamera
+                canvasUIPertanyaan.worldCamera = cameraCaster;
             }
         }
         else if(isCanteenSpawner)
@@ -96,6 +134,25 @@ public class CustomerSpawner : MonoBehaviour
                 instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
                 instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
+
+                Debug.Log(instantiatedPrefab);
+                Debug.Log(instantiatedCustomer[0]);
+                //dapetin canvasUIPertanyaan yang mau di assign
+                Temp = instantiatedPrefab.transform.Find("Customer").GetComponent<People>();
+                peopleScript.Add(Temp);
+                Debug.Log(instantiatedPrefab.transform.Find("Customer"));
+                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
+                Debug.Log(canvasUIPertanyaan);
+
+                Debug.Log(canvasUIPertanyaan);
+
+                //reference si cameracaster
+                Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
+                Debug.Log(cameraCaster);
+                canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
+                canvasUIPertanyaan.worldCamera = cameraCaster;//
+                //masih ngebug di worldcamera harusnya itu eventCamera
+                canvasUIPertanyaan.worldCamera = cameraCaster;
             }
         }
     }
