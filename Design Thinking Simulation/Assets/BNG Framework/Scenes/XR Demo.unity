@@ -1762,6 +1762,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0.18
       objectReference: {fileID: 0}
+    - target: {fileID: 9214684175537064418, guid: 62f4987b7e086ff43ab61a31ee443048,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62f4987b7e086ff43ab61a31ee443048, type: 3}
 --- !u!4 &26073363 stripped
@@ -126084,6 +126089,7 @@ MonoBehaviour:
   CanDropItem: 1
   CanSwapItem: 1
   CanRemoveItem: 1
+  Scaler: 1
   ScaleItem: 0.5
   DisableColliders: 1
   DuplicateItemOnGrab: 1
@@ -131289,7 +131295,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2833146936231135894, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ac7df741a9c0a2418ec19477729ee3d, type: 3}
 --- !u!1001 &2814278547323780639
 PrefabInstance:
