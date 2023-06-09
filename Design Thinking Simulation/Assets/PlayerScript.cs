@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
 
     public void PlayerAsk()
     {
-        questionRemaining = Mathf.Clamp(questionRemaining-1, 0, questionRemaining);
+        questionRemaining = Mathf.Clamp(questionRemaining-1, 0, maxQuestionPerDay);
     }
 
     public bool CanAskCheck()

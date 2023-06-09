@@ -1835,7 +1835,7 @@ MonoBehaviour:
   isCafeSpawner: 0
   isRestaurantSpawner: 0
   isCanteenSpawner: 0
-  WorldCustomerCount: 0
+  WorldCustomerCount: 2
   CafeCustomerCount: 0
   RestaurantCustomerCount: 0
   CanteenCustomerCount: 0

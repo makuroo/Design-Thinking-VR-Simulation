@@ -347,7 +347,7 @@ PrefabInstance:
     - target: {fileID: 8638772089269558325, guid: d438cc23d9b8af241b1612661f3938b5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8638772089269558325, guid: d438cc23d9b8af241b1612661f3938b5,
         type: 3}
@@ -450,7 +450,7 @@ PrefabInstance:
     - target: {fileID: 2683195716791022646, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2683195716791022646, guid: 4ac7df741a9c0a2418ec19477729ee3d,
         type: 3}
@@ -1127,7 +1127,7 @@ RectTransform:
   m_Children:
   - {fileID: 1022930151}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1229,7 +1229,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1527518047
 GameObject:
@@ -1458,12 +1458,14 @@ MonoBehaviour:
   isCafeSpawner: 1
   isRestaurantSpawner: 0
   isCanteenSpawner: 0
-  WorldCustomerCount: 0
-  CafeCustomerCount: 0
-  RestaurantCustomerCount: 0
-  CanteenCustomerCount: 0
+  MaxWorldCustomerCount: 0
+  MaxCafeCustomerCount: 4
+  MaxRestaurantCustomerCount: 0
+  MaxCanteenCustomerCount: 0
   prefabCustomer: {fileID: 4856454088341201431, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d,
     type: 3}
+  instantiatedCustomer: []
+  Temp: {fileID: 0}
 --- !u!4 &1832960227
 Transform:
   m_ObjectHideFlags: 0

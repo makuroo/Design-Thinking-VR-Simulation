@@ -11,7 +11,8 @@ public class People : MonoBehaviour
     public int questionIndex = 0;
     [SerializeField] private Text textField;
     [HideInInspector] public PlayerScript player;
-    [SerializeField] private GameObject QuestionCanvas;
+    [SerializeField] GameObject QuestionCanvas;
+    public GameObject UIPertanyaan;
     [SerializeField] private GameObject NameCanvas;
     [SerializeField] float DelayActiveUI = 3;
     bool isPlayerInRange = false;
@@ -21,13 +22,13 @@ public class People : MonoBehaviour
 
     private void Awake()
     {
-        QuestionCanvas.SetActive(false);
-        NameCanvas.SetActive(false);
         nameText = nameTextObj.GetComponent<Text>();
     }
 
     private void Start()
     {
+        //QuestionCanvas.SetActive(false);
+        NameCanvas.SetActive(false);
         nameText.text = peopleName;
     }
 
@@ -77,6 +78,7 @@ public class People : MonoBehaviour
             isPlayerInRange = true;
         }
     }
+    
 
     private void OnTriggerExit(Collider other)
     {
@@ -89,6 +91,7 @@ public class People : MonoBehaviour
             textField.text = "";
         }
     }
+
 
     public void AnswerSelected()
     {

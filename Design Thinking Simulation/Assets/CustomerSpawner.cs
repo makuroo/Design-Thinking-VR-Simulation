@@ -9,21 +9,27 @@ public class CustomerSpawner : MonoBehaviour
     public bool isRestaurantSpawner;
     public bool isCanteenSpawner;
 
+    int WorldCustomerCount;
+    int CafeCustomerCount;
+    int RestaurantCustomerCount;
+    int CanteenCustomerCount;
 
-    [SerializeField] int WorldCustomerCount;
-    [SerializeField] int CafeCustomerCount;
-    [SerializeField] int RestaurantCustomerCount;
-    [SerializeField] int CanteenCustomerCount;
+   [SerializeField] int MaxWorldCustomerCount;
+    [SerializeField] int MaxCafeCustomerCount;
+    [SerializeField] int MaxRestaurantCustomerCount;
+    [SerializeField] int MaxCanteenCustomerCount;
 
     public GameObject prefabCustomer;
-    List<GameObject> instantiatedCustomer = new List<GameObject>();
+    public List<GameObject> instantiatedCustomer = new List<GameObject>();
+    List<People> peopleScript = new List<People>();
+    public People Temp;
 
     private void Awake()
     {
-        WorldCustomerCount = Random.Range(1, 4);
-        CafeCustomerCount = Random.Range(1, 4);
-        RestaurantCustomerCount = Random.Range(1, 4);
-        CanteenCustomerCount = Random.Range(1, 4);
+        WorldCustomerCount = Random.Range(1, MaxWorldCustomerCount);
+        CafeCustomerCount = Random.Range(1, MaxCafeCustomerCount);
+        RestaurantCustomerCount = Random.Range(1, MaxRestaurantCustomerCount);
+        CanteenCustomerCount = Random.Range(1, MaxCanteenCustomerCount);
     }
 
     // Start is called before the first frame update
@@ -31,6 +37,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         if (isWorldSpawner)
         {
+            Debug.Log(WorldCustomerCount);
             for (int i = 0; i < WorldCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);
@@ -41,16 +48,37 @@ public class CustomerSpawner : MonoBehaviour
         }
         else if(isCafeSpawner)
         {
+            Debug.Log(CafeCustomerCount);
             for (int i = 0; i < CafeCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);
                 instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
                 instantiatedPrefab.transform.rotation = new Quaternion(0,Random.Range(0,360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
+
+                Debug.Log(instantiatedPrefab);
+                Debug.Log(instantiatedCustomer[0]);
+                //dapetin canvasUIPertanyaan yang mau di assign
+                Temp = instantiatedPrefab.transform.Find("Customer").GetComponent<People>();
+                peopleScript.Add(Temp);
+                Debug.Log(instantiatedPrefab.transform.Find("Customer"));
+                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
+                Debug.Log(canvasUIPertanyaan);
+
+                Debug.Log(canvasUIPertanyaan);
+
+                //reference si cameracaster
+                Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
+                Debug.Log(cameraCaster);
+                canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
+                canvasUIPertanyaan.worldCamera = cameraCaster;//
+                //masih ngebug di worldcamera harusnya itu eventCamera
+                canvasUIPertanyaan.worldCamera = cameraCaster;
             }
         }
         else if(isRestaurantSpawner)
         {
+            Debug.Log(RestaurantCustomerCount);
             for (int i = 0; i < RestaurantCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);
@@ -61,6 +89,7 @@ public class CustomerSpawner : MonoBehaviour
         }
         else if(isCanteenSpawner)
         {
+            Debug.Log(CanteenCustomerCount);
             for (int i = 0; i < CanteenCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);

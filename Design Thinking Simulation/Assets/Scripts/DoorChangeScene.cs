@@ -30,7 +30,6 @@ public class DoorChangeScene : MonoBehaviour
         {
             yAngle = 180 - yAngle;
         }
-        Debug.Log(yAngle);
         CheckDoorOpen();
 
 

@@ -1713,6 +1713,7 @@ MonoBehaviour:
   textField: {fileID: 4146131166335678776}
   player: {fileID: 0}
   QuestionCanvas: {fileID: 4856454088696165983}
+  UIPertanyaan: {fileID: 8924961027786341994}
   NameCanvas: {fileID: 3970353931837956465}
   DelayActiveUI: 5
   nameTextObj: {fileID: 3970353930297877726}
@@ -2743,6 +2744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088779762850046595, guid: 1f75a4a1ec4271442a6c51de842cadf0,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046595, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
