@@ -12,15 +12,27 @@ public class People : MonoBehaviour
     public int questionIndex = 0;
     [SerializeField] private Text textField;
     [HideInInspector] public PlayerScript player;
-    [SerializeField] private GameObject QuestionCanvas;
-    [SerializeField] float delayActiveUI = 3;
+    [SerializeField] GameObject QuestionCanvas;
+    public GameObject UIPertanyaan;
+    [SerializeField] private GameObject NameCanvas;
+    [SerializeField] float DelayActiveUI = 3;
     bool isPlayerInRange = false;
+    public Text nameTextObj;
+    private Text nameText;
     private List<string> reason = new List<string>();
+
     // Start is called before the first frame update
 
     private void Awake()
     {
-        QuestionCanvas.SetActive(false);
+        nameText = nameTextObj.GetComponent<Text>();
+    }
+
+    private void Start()
+    {
+        //QuestionCanvas.SetActive(false);
+        NameCanvas.SetActive(false);
+        nameText.text = peopleName;
     }
 
     public void CalculateLikeness()
@@ -63,6 +75,7 @@ public class People : MonoBehaviour
             if(player.CanAskCheck())
             {
                 QuestionCanvas.SetActive(true);
+                NameCanvas.SetActive(true);
             }
             else if(!player.CanAskCheck())
             {
@@ -72,11 +85,13 @@ public class People : MonoBehaviour
             isPlayerInRange = true;
         }
     }
+    
 
     private void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<PlayerScript>())
         {
+            NameCanvas.SetActive(false);
             player = other.GetComponent<PlayerScript>();
             QuestionCanvas.SetActive(false);
             isPlayerInRange = false;
@@ -84,9 +99,11 @@ public class People : MonoBehaviour
         }
     }
 
+
     public void AnswerSelected()
     {
         QuestionCanvas.SetActive(false);
+        NameCanvas.SetActive(false);
         player.PlayerAsk();
         StartCoroutine(DelaySetActiveUI(delayActiveUI));
     }
@@ -97,7 +114,14 @@ public class People : MonoBehaviour
         if(player!= null && player.CanAskCheck() && isPlayerInRange)
         {
             QuestionCanvas.SetActive(true);
+            NameCanvas.SetActive(true);
         }
     }
 
+    IEnumerator DisableAnswerUI(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        textField.text = "";
+    }
+    
 }
