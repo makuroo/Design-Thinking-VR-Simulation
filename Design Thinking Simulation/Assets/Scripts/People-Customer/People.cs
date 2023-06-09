@@ -80,7 +80,7 @@ public class People : MonoBehaviour
             else if(!player.CanAskCheck())
             {
                 int randomIndex = Random.Range(0, reason.Count);
-                textField.text = reason[randomIndex];
+                //textField.text = reason[randomIndex];
             }
             isPlayerInRange = true;
         }

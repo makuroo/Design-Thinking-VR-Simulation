@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba2384d15f8d9642b3cdecdec8b235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxQuestionPerDay: 0
+  maxQuestionPerDay: 3
   questionRemaining: 0
 --- !u!1001 &158901660
 PrefabInstance:
@@ -7120,7 +7120,7 @@ PrefabInstance:
     - target: {fileID: 1618366311889366372, guid: 428a28c6183c75346b36f9d637c27f6f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3372021917881197284, guid: 428a28c6183c75346b36f9d637c27f6f,
         type: 3}
@@ -7147,6 +7147,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1688763760}
+    - target: {fileID: 3372021919286317016, guid: 428a28c6183c75346b36f9d637c27f6f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3372021919300741743, guid: 428a28c6183c75346b36f9d637c27f6f,
         type: 3}
       propertyPath: gameManager
