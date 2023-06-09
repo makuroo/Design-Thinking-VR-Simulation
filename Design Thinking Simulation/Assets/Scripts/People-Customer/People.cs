@@ -20,7 +20,13 @@ public class People : MonoBehaviour
 
     private void Awake()
     {
+        
+    }
+
+    private void Start()
+    {
         QuestionCanvas.SetActive(false);
+
     }
 
     public void CalculateLikeness()
@@ -67,7 +73,7 @@ public class People : MonoBehaviour
             else if(!player.CanAskCheck())
             {
                 int randomIndex = Random.Range(0, reason.Count);
-                textField.text = reason[randomIndex];
+                //textField.text = reason[randomIndex];
             }
             isPlayerInRange = true;
         }
