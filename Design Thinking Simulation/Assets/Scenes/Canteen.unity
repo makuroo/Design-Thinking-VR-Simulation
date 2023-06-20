@@ -1199,6 +1199,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CustomerSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 2403611060681749083, guid: ead43ba176ea1814f97c73e95aa3b548,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ead43ba176ea1814f97c73e95aa3b548, type: 3}
 --- !u!1 &1301554142
