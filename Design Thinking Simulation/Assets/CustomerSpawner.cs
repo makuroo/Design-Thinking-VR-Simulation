@@ -45,20 +45,16 @@ public class CustomerSpawner : MonoBehaviour
                 instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
 
-                Debug.Log(instantiatedPrefab);
-                Debug.Log(instantiatedCustomer[0]);
                 //dapetin canvasUIPertanyaan yang mau di assign
                 Temp = instantiatedPrefab.transform.Find("Customer").GetComponent<People>();
                 peopleScript.Add(Temp);
-                Debug.Log(instantiatedPrefab.transform.Find("Customer"));
-                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
-                Debug.Log(canvasUIPertanyaan);
 
-                Debug.Log(canvasUIPertanyaan);
+                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
+
 
                 //reference si cameracaster
                 Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
-                Debug.Log(cameraCaster);
+
                 canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
                 canvasUIPertanyaan.worldCamera = cameraCaster;//
                 //masih ngebug di worldcamera harusnya itu eventCamera
@@ -67,7 +63,7 @@ public class CustomerSpawner : MonoBehaviour
         }
         else if(isCafeSpawner)
         {
-            Debug.Log(CafeCustomerCount);
+
             for (int i = 0; i < CafeCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);
@@ -75,20 +71,17 @@ public class CustomerSpawner : MonoBehaviour
                 instantiatedPrefab.transform.rotation = new Quaternion(0,Random.Range(0,360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
 
-                Debug.Log(instantiatedPrefab);
-                Debug.Log(instantiatedCustomer[0]);
+
                 //dapetin canvasUIPertanyaan yang mau di assign
                 Temp = instantiatedPrefab.transform.Find("Customer").GetComponent<People>();
                 peopleScript.Add(Temp);
-                Debug.Log(instantiatedPrefab.transform.Find("Customer"));
-                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
-                Debug.Log(canvasUIPertanyaan);
 
-                Debug.Log(canvasUIPertanyaan);
+                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
+
 
                 //reference si cameracaster
                 Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
-                Debug.Log(cameraCaster);
+
                 canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
                 canvasUIPertanyaan.worldCamera = cameraCaster;//
                 //masih ngebug di worldcamera harusnya itu eventCamera
@@ -97,7 +90,7 @@ public class CustomerSpawner : MonoBehaviour
         }
         else if(isRestaurantSpawner)
         {
-            Debug.Log(RestaurantCustomerCount);
+
             for (int i = 0; i < RestaurantCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);
@@ -105,20 +98,16 @@ public class CustomerSpawner : MonoBehaviour
                 instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
 
-                Debug.Log(instantiatedPrefab);
-                Debug.Log(instantiatedCustomer[0]);
+
                 //dapetin canvasUIPertanyaan yang mau di assign
                 Temp = instantiatedPrefab.transform.Find("Customer").GetComponent<People>();
                 peopleScript.Add(Temp);
-                Debug.Log(instantiatedPrefab.transform.Find("Customer"));
-                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
-                Debug.Log(canvasUIPertanyaan);
 
-                Debug.Log(canvasUIPertanyaan);
+                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
+
 
                 //reference si cameracaster
                 Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
-                Debug.Log(cameraCaster);
                 canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
                 canvasUIPertanyaan.worldCamera = cameraCaster;//
                 //masih ngebug di worldcamera harusnya itu eventCamera
@@ -127,7 +116,7 @@ public class CustomerSpawner : MonoBehaviour
         }
         else if(isCanteenSpawner)
         {
-            Debug.Log(CanteenCustomerCount);
+
             for (int i = 0; i < CanteenCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);
@@ -135,20 +124,15 @@ public class CustomerSpawner : MonoBehaviour
                 instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
 
-                Debug.Log(instantiatedPrefab);
-                Debug.Log(instantiatedCustomer[0]);
                 //dapetin canvasUIPertanyaan yang mau di assign
                 Temp = instantiatedPrefab.transform.Find("Customer").GetComponent<People>();
                 peopleScript.Add(Temp);
-                Debug.Log(instantiatedPrefab.transform.Find("Customer"));
-                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
-                Debug.Log(canvasUIPertanyaan);
 
-                Debug.Log(canvasUIPertanyaan);
+                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
+
 
                 //reference si cameracaster
                 Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
-                Debug.Log(cameraCaster);
                 canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
                 canvasUIPertanyaan.worldCamera = cameraCaster;//
                 //masih ngebug di worldcamera harusnya itu eventCamera

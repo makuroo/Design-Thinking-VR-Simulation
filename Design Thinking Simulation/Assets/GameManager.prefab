@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4528664007278843340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4528664007278843346}
+  - component: {fileID: 4528664007278843347}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4528664007278843346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528664007278843340}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.373, y: -8.732, z: 13.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4528664007278843347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528664007278843340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6209614997ddfc5498b9b7b158303ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peopleMet: []
+  randomOptions:
+  - dhfhsfkshd
+  - dsfsd
+  - sadf
+  - cx cx
+  - fsdf
+  - saf
+  - ads
+  - dsafs
+  - dsa
+  - httyjytjuy
+  tempList: []
+  tempListRandom: []
+  choicesGameObjectText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  personCustomerEmpathy: {fileID: 0}
+  currentText: {fileID: 0}
+  canDoActivity: 1
+  randomQuestionIndex: 0
+  randomQuestionTypeIndex: 0
+  RandomizedQuestion:
+  - 
+  - 
+  - 
+  RandomizedType: 000000000000000000000000
+  manisQuestion:
+  - Manis 1
+  - Manis 2
+  - Manis 3
+  - Manis 4
+  - Manis 5
+  asinQuestion:
+  - Asin 1
+  - Asin 2
+  - Asin 3
+  - Asin 4
+  - Asin 5
+  asemQuestion:
+  - Asem 1
+  - Asem 2
+  - Asem 3
+  - Asem 4
+  - Asem 5
+  pahitQuestion:
+  - Pahit 1
+  - Pahit 2
+  - Pahit 3
+  - Pahit 4
+  - Pahit 5
+  susuQuestion:
+  - Susu 1
+  - Susu 2
+  - Susu 3
+  - Susu 4
+  - Susu 5
+  coklatQuestion:
+  - Coklat 1
+  - Coklat 2
+  - Coklat 3
+  - Coklat 4
+  - Coklat 5
+  vanilaQuestion:
+  - Vanila 1
+  - Vanila 2
+  - Vanila 3
+  - Vanila 4
+  - Vanila 5

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EmpathyMapButtons : MonoBehaviour
 {
@@ -13,6 +14,16 @@ public class EmpathyMapButtons : MonoBehaviour
         Feels,
         Does,
         Says
+    }
+
+    private void Update()
+    {
+        if(GameManager.Instance.peopleMet.Count != 0 && transform.GetComponentInChildren<Text>()!=null)
+        {
+            Text uiText = transform.GetComponentInChildren<Text>();
+            People people = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
+            uiText.text = people.peopleName;
+        }
     }
 
     public void Prev()

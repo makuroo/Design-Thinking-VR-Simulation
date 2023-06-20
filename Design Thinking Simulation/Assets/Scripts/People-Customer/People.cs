@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class People : MonoBehaviour
 {
-    [SerializeField] private string peopleName;
+    public string peopleName;
     [SerializeField] private CakePreferencesSO cakePreferences;
     public  EmpathyMapSO customerEmpathy;
     public int questionIndex = 0;
@@ -19,8 +19,9 @@ public class People : MonoBehaviour
     bool isPlayerInRange = false;
     public Text nameTextObj;
     private Text nameText;
-    private List<string> reason = new List<string>();
+    public List<string> reason = new List<string>();
 
+    private GameObject[] button = new GameObject[3];
     // Start is called before the first frame update
 
     private void Awake()
@@ -37,19 +38,19 @@ public class People : MonoBehaviour
 
     public void CalculateLikeness()
     {
-        
+        Debug.Log(questionIndex);
         int likeCake = 0;
         int dislikeCake = 0;
         for (int i = 0; i < cakePreferences.LikeCake.Count; i++) 
         { 
 
-            likeCake += cakePreferences.LikeCake[i].taste[questionIndex - 1];
+            likeCake += cakePreferences.LikeCake[i].taste[questionIndex];
         }
         
         for (int i = 0; i < cakePreferences.DislikeCake.Count; i++) 
         { 
 
-            dislikeCake += cakePreferences.DislikeCake[i].taste[questionIndex - 1];
+            dislikeCake += cakePreferences.DislikeCake[i].taste[questionIndex];
         }
 
         int totalLikeness = likeCake - dislikeCake;
@@ -71,8 +72,10 @@ public class People : MonoBehaviour
     {
         if(other.GetComponent<PlayerScript>())
         {
+            
             player = other.GetComponent<PlayerScript>();
-            if(player.CanAskCheck())
+
+            if (player.CanAskCheck())
             {
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
@@ -80,7 +83,13 @@ public class People : MonoBehaviour
             else if(!player.CanAskCheck())
             {
                 int randomIndex = Random.Range(0, reason.Count);
-                //textField.text = reason[randomIndex];
+                textField.text = reason[randomIndex];
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject;
+                button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
+                button[i].GetComponentInChildren<Text>().text = GameManager.Instance.RandomizedQuestion[i];
             }
             isPlayerInRange = true;
         }
