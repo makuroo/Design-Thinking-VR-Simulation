@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] int maxQuestionPerDay;
-    [SerializeField] int questionRemaining;
+    GameManager gameManager;
+
+    private void Awake()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     void Start()
     {
-        ResetQuestionRemaining();
+        
     }
 
     // Update is called once per frame
@@ -20,16 +24,11 @@ public class PlayerScript : MonoBehaviour
 
     public void PlayerAsk()
     {
-        questionRemaining = Mathf.Clamp(questionRemaining-1, 0, maxQuestionPerDay);
+        gameManager.questionRemaining = Mathf.Clamp(gameManager.questionRemaining-1, 0, gameManager.maxQuestionPerDay);
     }
 
     public bool CanAskCheck()
     {
-        return questionRemaining > 0;
-    }
-
-    void ResetQuestionRemaining()
-    {
-        questionRemaining = maxQuestionPerDay;
+        return gameManager.questionRemaining > 0;
     }
 }
