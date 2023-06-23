@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6c71cb01513d940840fab18ff5b9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionIndex: 1
+  index: 0
   type: 0
   person: {fileID: 0}
   canvas: {fileID: 1618366311889366372}
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6c71cb01513d940840fab18ff5b9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionIndex: 1
+  index: 0
   type: 4
   person: {fileID: 0}
   canvas: {fileID: 1618366311889366372}
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a6c71cb01513d940840fab18ff5b9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionIndex: 3
+  index: 0
   type: 0
   person: {fileID: 0}
   canvas: {fileID: 1618366311889366372}
@@ -746,6 +746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   peopleName: 
+  index: 0
   cakePreferences: {fileID: 0}
   customerEmpathy: {fileID: 11400000, guid: 1791d33a9c2fb2c4590098f167aaf6c4, type: 2}
   questionIndex: 0
@@ -756,6 +757,9 @@ MonoBehaviour:
   NameCanvas: {fileID: 0}
   AnsweringTimesInSecond: 3
   nameTextObj: {fileID: 0}
+  reason: []
+  nameQuestionCanvas: {fileID: 0}
+  met: 0
 --- !u!1 &3372021919377089873
 GameObject:
   m_ObjectHideFlags: 0

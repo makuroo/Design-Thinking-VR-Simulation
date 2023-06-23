@@ -114,14 +114,6 @@ public class CustomerSpawner : MonoBehaviour
                 peopleScript.Add(Temp);
 
                 Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
-
-
-                //reference si cameracaster
-                Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
-                canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
-                canvasUIPertanyaan.worldCamera = cameraCaster;//
-                //masih ngebug di worldcamera harusnya itu eventCamera
-                canvasUIPertanyaan.worldCamera = cameraCaster;
             }
         }
     }

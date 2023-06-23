@@ -311,7 +311,28 @@ public class GameManager : MonoBehaviour
             worldCustomerList.Add(customerListCopy[randomCustomerIndex]);
             customerListCopy.RemoveAt(randomCustomerIndex);
         }
+        for (int i = 0; i < RestaurantCustomerCount; i++)
+        {
+            int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
+            restaurantCustomerList.Add(customerListCopy[randomCustomerIndex]);
+            customerListCopy.RemoveAt(randomCustomerIndex);
+        }
+
+        for (int i = 0; i < CafeCustomerCount; i++)
+        {
+            int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
+            cafeCustomerList.Add(customerListCopy[randomCustomerIndex]);
+            customerListCopy.RemoveAt(randomCustomerIndex);
+        }
+
+        for (int i = 0; i < CanteenCustomerCount; i++)
+        {
+            int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
+            canteenCustomerList.Add(customerListCopy[randomCustomerIndex]);
+            customerListCopy.RemoveAt(randomCustomerIndex);
+        }
     }
+    #endregion
 
     public void PlayerSleep()
     {
@@ -413,27 +434,4 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Directional Light object not found!");
         }
     }
-
-        for (int i=0; i<RestaurantCustomerCount; i++)
-        {
-            int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
-            restaurantCustomerList.Add(customerListCopy[randomCustomerIndex]);
-            customerListCopy.RemoveAt(randomCustomerIndex);
-        }
-
-        for (int i = 0; i < CafeCustomerCount; i++)
-        {
-            int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
-            cafeCustomerList.Add(customerListCopy[randomCustomerIndex]);
-            customerListCopy.RemoveAt(randomCustomerIndex);
-        }
-
-        for (int i = 0; i < CanteenCustomerCount; i++)
-        {
-            int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
-            canteenCustomerList.Add(customerListCopy[randomCustomerIndex]);
-            customerListCopy.RemoveAt(randomCustomerIndex);
-        }
-    }
-    #endregion
 }
