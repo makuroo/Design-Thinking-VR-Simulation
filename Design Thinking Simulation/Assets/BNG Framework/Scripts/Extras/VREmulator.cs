@@ -89,6 +89,17 @@ namespace BNG {
         public Vector3 LeftControllerPosition = new Vector3(-0.2f, -0.2f, 0.5f);
         public Vector3 RightControllerPosition = new Vector3(0.2f, -0.2f, 0.5f);
 
+        private void Awake()
+        {
+            leftHandAnchor = GameObject.Find("LeftHandAnchor").transform;
+            rightHandAnchor = GameObject.Find("RightHandAnchor").transform;
+
+            leftControllerTranform = GameObject.Find("LeftControllerAnchor").transform;
+            rightControllerTranform = GameObject.Find("RightControllerAnchor").transform;
+
+            player = FindObjectOfType<BNGPlayerController>();
+        }
+
         void Start() {
 
             if(GameObject.Find("CameraRig")) {
@@ -99,13 +110,13 @@ namespace BNG {
                 mainCameraTransform = GameObject.Find("OVRCameraRig").transform;
             }
             
-            leftHandAnchor = GameObject.Find("LeftHandAnchor").transform;
+            /*leftHandAnchor = GameObject.Find("LeftHandAnchor").transform;
             rightHandAnchor = GameObject.Find("RightHandAnchor").transform;
 
             leftControllerTranform = GameObject.Find("LeftControllerAnchor").transform;
             rightControllerTranform = GameObject.Find("RightControllerAnchor").transform;
 
-            player = FindObjectOfType<BNGPlayerController>();
+            player = FindObjectOfType<BNGPlayerController>();*/
 
             if(player) {
                 // Use this to keep our head up high

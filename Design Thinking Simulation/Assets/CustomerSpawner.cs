@@ -8,8 +8,6 @@ public class CustomerSpawner : MonoBehaviour
     public bool isCafeSpawner;
     public bool isRestaurantSpawner;
     public bool isCanteenSpawner;
-
-
     public GameObject prefabCustomer;
     public List<GameObject> instantiatedCustomer = new List<GameObject>();
     List<People> peopleScript = new List<People>();
