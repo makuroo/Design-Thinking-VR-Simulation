@@ -37,13 +37,13 @@ public class CustomerSpawner : MonoBehaviour
                 Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
 
 
-                //reference si cameracaster
+                /*//reference si cameracaster
                 Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
 
                 canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
                 canvasUIPertanyaan.worldCamera = cameraCaster;//
                 //masih ngebug di worldcamera harusnya itu eventCamera
-                canvasUIPertanyaan.worldCamera = cameraCaster;
+                canvasUIPertanyaan.worldCamera = cameraCaster;*/
             }
         }
         else if(isCafeSpawner)

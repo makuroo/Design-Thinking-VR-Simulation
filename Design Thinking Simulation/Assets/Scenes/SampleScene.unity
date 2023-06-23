@@ -276,8 +276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba2384d15f8d9642b3cdecdec8b235d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxQuestionPerDay: 3
-  questionRemaining: 0
 --- !u!1001 &158901660
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -22,6 +22,7 @@ public class People : MonoBehaviour
     private Text nameText;
     public List<string> reason = new List<string>();
     public GameObject nameQuestionCanvas;
+    GameManager gameManager;
     private GameObject[] button = new GameObject[3];
     public bool met = false;
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class People : MonoBehaviour
     private void Awake()
     {
         nameText = nameTextObj.GetComponent<Text>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Start()
@@ -79,39 +81,24 @@ public class People : MonoBehaviour
             
             player = other.GetComponent<PlayerScript>();
 
-            //if(GameManager.Instance.peopleMet.Count == 0)
-            //{
-            //    nameQuestionCanvas.gameObject.SetActive(true);
-            //}
-            //else
-            //{
-            //    for(int i=0; i<GameManager.Instance.peopleMet.Count; i++)
-            //    {
-            //        if(gameObject.name == GameManager.Instance.peopleMet[i].name)
-            //        {
-            //            nameText.text = peopleName;
-            //            break;
-            //        }else if(i == GameManager.Instance.peopleMet.Count-1 && gameObject.name != GameManager.Instance.peopleMet[i].name)
-            //        {
-            //            nameQuestionCanvas.gameObject.SetActive(true);
-            //            break;
-            //        }
-            //    }
-            //}
-
-            if (player.CanAskCheck() && met)
+            if (player.CanAskCheck() && gameManager.isOnActivityTime() && met)
             {
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
 
-            }else if (player.CanAskCheck() && met == false)
+            }
+            else if (player.CanAskCheck() && met == false)
             {
-                Debug.Log("aaa");
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
                 UIPertanyaan.SetActive(false);
             }
-            else if (!player.CanAskCheck())
+            
+            else if(!gameManager.isOnActivityTime())
+            {
+                textField.text = "You Need To Sleep";
+            }
+            else if(!player.CanAskCheck())
             {
                 int randomIndex = Random.Range(0, reason.Count);
                 textField.text = reason[randomIndex];

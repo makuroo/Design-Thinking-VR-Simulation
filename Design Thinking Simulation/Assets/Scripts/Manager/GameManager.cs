@@ -57,6 +57,43 @@ public class GameManager : MonoBehaviour
     public List<GameObject> canteenCustomerList = new List<GameObject>();
     public List<GameObject> cafeCustomerList = new List<GameObject>();
 
+    bool gameTimeBool;
+    public int currentMinute;
+    public int currentHour;
+    public int currentDay;
+    [SerializeField] float playerAwakeOnHour = 4;
+    [SerializeField] float playerNeedRestTime = 18;
+    [SerializeField] float secondOnRealLifeToChangeMinuteGameTime;
+    [SerializeField] float realLifeMinuteGamePlayPerCycle;
+    //rumus buat nge set ini, intinya berapa second buat +1 minute di game.. cara ngitungnya, tinggal total hours on day - playerTime mulai beraktifitas - PlayerTime tidak bisa beraktifitas
+    //nah itu kan dapet total game time di dalem gamenya yg bisa beraktifitas.. lalu tinggal tentuin satu hari aktivitas di game ingin berapa menit di real life, tinggal di bikin skala perbandingan waktunya
+    // jadi rumusnya = ((24-playerRestTime)*60 Minute) / (realLifeMinuteGameplayPercycle * 60seconds) 
+    // jadi rumusnya = ((realLifeMinuteGameplayPercycle*60) / (24-(24-playerNeedRestTime)+(playerAwakeOnHour))*60 minute)) // rumus yang dipake di start
+    // jadi rumusnya = ((15*60) / (24-((24-18)+(4))*60 minute)
+    // jadi rumusnya = ( 900 / (24-10)*60)
+    // jadi rumusnya = 900/840
+    //jadi rumusnya = 1.07142
+
+    //variable untuk directional light auto rotate
+    [SerializeField] GameObject directionalLight;
+    [HideInInspector] public float minMinute = 0;
+    [HideInInspector] public float maxMinute = 1440f;
+    [HideInInspector] public float sunriseHour;
+    [HideInInspector] public float totalCurrentMinute;
+    [HideInInspector] public float sunStartAngle;
+    [HideInInspector] public float normalizedValue;
+    [HideInInspector] public float angle;
+    bool isSleeping = false;
+
+    [SerializeField] float AnswerTimeBed;
+    BedScript bedScript;
+
+
+
+    //question player
+    public int maxQuestionPerDay;
+    [HideInInspector] public int questionRemaining;
+
     private void Awake()
     {
         if (instance == null)
@@ -73,6 +110,37 @@ public class GameManager : MonoBehaviour
         CafeCustomerCount = UnityEngine.Random.Range(1, MaxCafeCustomerCount);
         RestaurantCustomerCount = UnityEngine.Random.Range(1, MaxRestaurantCustomerCount);
         CanteenCustomerCount = UnityEngine.Random.Range(1, MaxCanteenCustomerCount);
+        
+        bedScript = GameObject.Find("Bed").GetComponent<BedScript>();
+
+        directionalLight = GameObject.Find("Directional Light");
+        secondOnRealLifeToChangeMinuteGameTime = ((realLifeMinuteGamePlayPerCycle * 60)/ ((24 - (24 - playerNeedRestTime + playerAwakeOnHour))*60));
+        sunriseHour = playerAwakeOnHour;
+
+
+        //jika tidak punya savean..
+        questionRemaining = maxQuestionPerDay;
+    }
+
+
+    private void Update()
+    {
+        SetGameTime();
+        SetDirectionalLightRotation();
+    }
+
+    public void LoadGame()
+    {
+        currentMinute = PlayerPrefs.GetInt("SaveCurrentMinute");
+        currentHour = PlayerPrefs.GetInt("CurrentHour");
+        currentDay = PlayerPrefs.GetInt("CurrentDay");
+    }
+
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("SaveCurrentMinute", currentMinute);
+        PlayerPrefs.SetInt("CurrentHour", currentHour);
+        PlayerPrefs.SetInt("CurrentDay", currentDay);
     }
 
     public static GameManager Instance
@@ -243,6 +311,108 @@ public class GameManager : MonoBehaviour
             worldCustomerList.Add(customerListCopy[randomCustomerIndex]);
             customerListCopy.RemoveAt(randomCustomerIndex);
         }
+    }
+
+    public void PlayerSleep()
+    {
+        if (currentHour >= playerNeedRestTime || currentHour < playerAwakeOnHour) //jika masuk waktu tidur
+        {
+            if (currentHour < 24 && currentHour >= playerNeedRestTime) //jika tidur sebelum jam 12 maka day +1 ... kalau dia begadang otomatis udah change day dari function SetGameTime();
+            {
+                currentDay += 1;
+            }
+            ResetQuestionRemaining();
+            currentHour = Mathf.FloorToInt(playerAwakeOnHour);
+            //isSleeping = true;
+        }
+        else if(currentHour<playerNeedRestTime && currentHour >= playerAwakeOnHour)
+        {
+            bedScript.ActivateBedAnswer(AnswerTimeBed);
+        }
+    }
+
+    public void SetGameTime()
+    {
+
+        //Debug.Log(currentGameTime);
+        if(!isSleeping)
+        {
+            if (currentMinute >= 60)
+            {
+                currentMinute = 0;
+                currentHour += 1;
+                if(currentHour >= 24)
+                {
+                    currentHour = 0;
+                    currentDay += 1;
+                    //masukin function buat ngerandom customer lagi karena ganti hari
+                }
+            }
+            if (gameTimeBool == false)
+            {
+                gameTimeBool = true;
+                StartCoroutine(PlusMinute());
+            }
+        }
+    }
+
+    IEnumerator PlusMinute()
+    {
+        yield return new WaitForSeconds(secondOnRealLifeToChangeMinuteGameTime);
+        if (gameTimeBool == true)
+        {
+            currentMinute += 1;
+            SetGameTime();
+            gameTimeBool = false;
+        }
+    }
+
+    public void SetDirectionalLightRotation()
+    {
+        totalCurrentMinute = currentMinute + (currentHour * 60);
+        sunStartAngle = -((sunriseHour * 60) / 4); //dibagi 4 karena per 4 minute turn 1 angle
+        normalizedValue = (totalCurrentMinute - minMinute) / (maxMinute - minMinute);
+        angle = Mathf.Lerp(sunStartAngle, 360+sunStartAngle, normalizedValue); //kecepatan sunset ditentuin oleh value(y) makin kecil makin lambat
+        if(directionalLight != null)
+        {
+            directionalLight.transform.rotation = Quaternion.Euler(angle, 0f, 0f);
+        }
+    }
+
+    public bool isOnActivityTime()
+    {
+        if(currentHour >= playerAwakeOnHour && currentHour< playerNeedRestTime)
+        {
+            return true;
+        }
+        return false;
+    }
+
+
+
+
+    void ResetQuestionRemaining()
+    {
+        questionRemaining = maxQuestionPerDay;
+    }
+
+    public void GetDirectionalLight()
+    {
+        Debug.Log("GetDirectionalLight");
+        Debug.Log(GameObject.Find("Directional Light"));
+        directionalLight = GameObject.Find("Directional Light");
+        if (directionalLight != null)
+        {
+            // Object found, do something with it
+            // ...
+            Debug.Log("DirectionalLight Found");
+        }
+        else
+        {
+            // Object not found
+            Debug.LogError("Directional Light object not found!");
+        }
+    }
 
         for (int i=0; i<RestaurantCustomerCount; i++)
         {
