@@ -7,6 +7,7 @@ using UnityEngine;
 public class People : MonoBehaviour
 {
     public string peopleName;
+    public int index;
     [SerializeField] private CakePreferencesSO cakePreferences;
     public  EmpathyMapSO customerEmpathy;
     public int questionIndex = 0;
@@ -20,8 +21,9 @@ public class People : MonoBehaviour
     public Text nameTextObj;
     private Text nameText;
     public List<string> reason = new List<string>();
-
+    public GameObject nameQuestionCanvas;
     private GameObject[] button = new GameObject[3];
+    public bool met = false;
     // Start is called before the first frame update
 
     private void Awake()
@@ -33,12 +35,14 @@ public class People : MonoBehaviour
     {
         QuestionCanvas.SetActive(false);
         NameCanvas.SetActive(false);
-        nameText.text = peopleName;
+        if (met == false)
+            nameText.text = "?????";
+        else
+            nameText.text = peopleName;
     }
 
     public void CalculateLikeness()
     {
-        Debug.Log(questionIndex);
         int likeCake = 0;
         int dislikeCake = 0;
         for (int i = 0; i < cakePreferences.LikeCake.Count; i++) 
@@ -75,22 +79,51 @@ public class People : MonoBehaviour
             
             player = other.GetComponent<PlayerScript>();
 
-            if (player.CanAskCheck())
+            //if(GameManager.Instance.peopleMet.Count == 0)
+            //{
+            //    nameQuestionCanvas.gameObject.SetActive(true);
+            //}
+            //else
+            //{
+            //    for(int i=0; i<GameManager.Instance.peopleMet.Count; i++)
+            //    {
+            //        if(gameObject.name == GameManager.Instance.peopleMet[i].name)
+            //        {
+            //            nameText.text = peopleName;
+            //            break;
+            //        }else if(i == GameManager.Instance.peopleMet.Count-1 && gameObject.name != GameManager.Instance.peopleMet[i].name)
+            //        {
+            //            nameQuestionCanvas.gameObject.SetActive(true);
+            //            break;
+            //        }
+            //    }
+            //}
+
+            if (player.CanAskCheck() && met)
             {
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
+
+            }else if (player.CanAskCheck() && met == false)
+            {
+                Debug.Log("aaa");
+                QuestionCanvas.SetActive(true);
+                NameCanvas.SetActive(true);
+                UIPertanyaan.SetActive(false);
             }
-            else if(!player.CanAskCheck())
+            else if (!player.CanAskCheck())
             {
                 int randomIndex = Random.Range(0, reason.Count);
                 textField.text = reason[randomIndex];
             }
+
             for (int i = 0; i < 3; i++)
             {
                 button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject;
                 button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
                 button[i].GetComponentInChildren<Text>().text = GameManager.Instance.RandomizedQuestion[i];
             }
+
             isPlayerInRange = true;
         }
     }

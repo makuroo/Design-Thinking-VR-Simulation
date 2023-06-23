@@ -21,14 +21,14 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         if (empathyMapButtons.empathyChecker == EmpathyMapButtons.EmpathyType.Think)
             ThinkAnswerChecker(currentText);
         else if (empathyMapButtons.empathyChecker == EmpathyMapButtons.EmpathyType.Does)
-            DoesAnswerChecker();
+            DoesAnswerChecker(currentText);
         else if (empathyMapButtons.empathyChecker == EmpathyMapButtons.EmpathyType.Feels)
-            FeelsAnswerChecker();
+            FeelsAnswerChecker(currentText);
         else
-           SaysAnswerChecker();
+           SaysAnswerChecker(currentText);
     }
 
-    private void SaysAnswerChecker()
+    private void SaysAnswerChecker(TMP_Text currentText)
     {
         personCustomerEmpathy = GameManager.Instance.personCustomerEmpathy;
         for (int i = 0; i < personCustomerEmpathy.Says.Count; i++)
@@ -45,7 +45,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         }
     }
 
-    private void FeelsAnswerChecker()
+    private void FeelsAnswerChecker(TMP_Text currentText)
     {
         personCustomerEmpathy = GameManager.Instance.personCustomerEmpathy;
         for (int i = 0; i < personCustomerEmpathy.Feels.Count; i++)
@@ -62,7 +62,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         }
     }
 
-    private void DoesAnswerChecker()
+    private void DoesAnswerChecker(TMP_Text currentText)
     {
         personCustomerEmpathy = GameManager.Instance.personCustomerEmpathy;
         for (int i = 0; i < personCustomerEmpathy.Does.Count; i++)
@@ -84,7 +84,6 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         personCustomerEmpathy = GameManager.Instance.personCustomerEmpathy;
         for (int i = 0; i < personCustomerEmpathy.Thinks.Count; i++)
         {
-            Debug.Log("Fix this");
 
             if (currentText.text == personCustomerEmpathy.Thinks[i])
             {

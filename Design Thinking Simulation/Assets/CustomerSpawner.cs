@@ -9,15 +9,6 @@ public class CustomerSpawner : MonoBehaviour
     public bool isRestaurantSpawner;
     public bool isCanteenSpawner;
 
-    int WorldCustomerCount;
-    int CafeCustomerCount;
-    int RestaurantCustomerCount;
-    int CanteenCustomerCount;
-
-   [SerializeField] int MaxWorldCustomerCount;
-    [SerializeField] int MaxCafeCustomerCount;
-    [SerializeField] int MaxRestaurantCustomerCount;
-    [SerializeField] int MaxCanteenCustomerCount;
 
     public GameObject prefabCustomer;
     public List<GameObject> instantiatedCustomer = new List<GameObject>();
@@ -26,10 +17,7 @@ public class CustomerSpawner : MonoBehaviour
 
     private void Awake()
     {
-        WorldCustomerCount = Random.Range(1, MaxWorldCustomerCount);
-        CafeCustomerCount = Random.Range(1, MaxCafeCustomerCount);
-        RestaurantCustomerCount = Random.Range(1, MaxRestaurantCustomerCount);
-        CanteenCustomerCount = Random.Range(1, MaxCanteenCustomerCount);
+
     }
 
     // Start is called before the first frame update
@@ -37,10 +25,9 @@ public class CustomerSpawner : MonoBehaviour
     {
         if (isWorldSpawner)
         {
-            Debug.Log(WorldCustomerCount);
-            for (int i = 0; i < WorldCustomerCount; i++)
+            for (int i = 0; i < GameManager.Instance.WorldCustomerCount; i++)
             {
-                GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);
+                GameObject instantiatedPrefab = Instantiate(GameManager.Instance.worldCustomerList[i], transform.position, transform.rotation);
                 instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.56f, -0.647f), -8.752809f, Random.Range(14.563f, 11.2f));
                 instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
@@ -64,9 +51,9 @@ public class CustomerSpawner : MonoBehaviour
         else if(isCafeSpawner)
         {
 
-            for (int i = 0; i < CafeCustomerCount; i++)
+            for (int i = 0; i < GameManager.Instance.CafeCustomerCount; i++)
             {
-                GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);
+                GameObject instantiatedPrefab = Instantiate(GameManager.Instance.cafeCustomerList[i], transform.position, transform.rotation);
                 instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
                 instantiatedPrefab.transform.rotation = new Quaternion(0,Random.Range(0,360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
@@ -91,9 +78,9 @@ public class CustomerSpawner : MonoBehaviour
         else if(isRestaurantSpawner)
         {
 
-            for (int i = 0; i < RestaurantCustomerCount; i++)
+            for (int i = 0; i < GameManager.Instance.RestaurantCustomerCount; i++)
             {
-                GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);
+                GameObject instantiatedPrefab = Instantiate(GameManager.Instance.restaurantCustomerList[i], transform.position, transform.rotation);
                 instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
                 instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
@@ -117,9 +104,9 @@ public class CustomerSpawner : MonoBehaviour
         else if(isCanteenSpawner)
         {
 
-            for (int i = 0; i < CanteenCustomerCount; i++)
+            for (int i = 0; i < GameManager.Instance.CanteenCustomerCount; i++)
             {
-                GameObject instantiatedPrefab = Instantiate(prefabCustomer, transform.position, transform.rotation);
+                GameObject instantiatedPrefab = Instantiate(GameManager.Instance.canteenCustomerList[i], transform.position, transform.rotation);
                 instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
                 instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
                 instantiatedCustomer.Add(instantiatedPrefab);
