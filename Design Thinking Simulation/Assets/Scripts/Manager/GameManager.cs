@@ -40,9 +40,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<string> vanilaQuestion = new List<string>();
 
     bool gameTimeBool;
-    [SerializeField] int currentMinute;
-    [SerializeField] int currentHour;
-    [SerializeField] int currentDay;
+    public int currentMinute;
+    public int currentHour;
+    public int currentDay;
     [SerializeField] float playerAwakeOnHour = 4;
     [SerializeField] float playerNeedRestTime = 18;
     [SerializeField] float secondOnRealLifeToChangeMinuteGameTime;
@@ -57,14 +57,14 @@ public class GameManager : MonoBehaviour
     //jadi rumusnya = 1.07142
 
     //variable untuk directional light auto rotate
-    GameObject directionalLight;
-    float minMinute = 0;
-    float maxMinute = 1440f;
-    float sunriseHour;
-    float totalCurrentMinute;
-    float sunStartAngle;
-    float normalizedValue;
-    float angle;
+    [SerializeField] GameObject directionalLight;
+    [HideInInspector] public float minMinute = 0;
+    [HideInInspector] public float maxMinute = 1440f;
+    [HideInInspector] public float sunriseHour;
+    [HideInInspector] public float totalCurrentMinute;
+    [HideInInspector] public float sunStartAngle;
+    [HideInInspector] public float normalizedValue;
+    [HideInInspector] public float angle;
     bool isSleeping = false;
 
     [SerializeField] float AnswerTimeBed;
@@ -356,7 +356,23 @@ public class GameManager : MonoBehaviour
         questionRemaining = maxQuestionPerDay;
     }
 
-
+    public void GetDirectionalLight()
+    {
+        Debug.Log("GetDirectionalLight");
+        Debug.Log(GameObject.Find("Directional Light"));
+        directionalLight = GameObject.Find("Directional Light");
+        if (directionalLight != null)
+        {
+            // Object found, do something with it
+            // ...
+            Debug.Log("DirectionalLight Found");
+        }
+        else
+        {
+            // Object not found
+            Debug.LogError("Directional Light object not found!");
+        }
+    }
 
 
 
