@@ -14,7 +14,7 @@ public class CustomerSpawner : MonoBehaviour
     int RestaurantCustomerCount;
     int CanteenCustomerCount;
 
-   [SerializeField] int MaxWorldCustomerCount;
+    [SerializeField] int MaxWorldCustomerCount;
     [SerializeField] int MaxCafeCustomerCount;
     [SerializeField] int MaxRestaurantCustomerCount;
     [SerializeField] int MaxCanteenCustomerCount;
