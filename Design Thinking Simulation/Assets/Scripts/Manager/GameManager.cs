@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -89,6 +90,12 @@ public class GameManager : MonoBehaviour
     BedScript bedScript;
 
 
+    //clock ui rotator
+    public GameObject minuteArrow;
+    public GameObject hourArrow;
+    public Image clockImage;
+
+
 
     //question player
     public int maxQuestionPerDay;
@@ -110,8 +117,6 @@ public class GameManager : MonoBehaviour
         CafeCustomerCount = UnityEngine.Random.Range(1, MaxCafeCustomerCount);
         RestaurantCustomerCount = UnityEngine.Random.Range(1, MaxRestaurantCustomerCount);
         CanteenCustomerCount = UnityEngine.Random.Range(1, MaxCanteenCustomerCount);
-        
-        bedScript = GameObject.Find("Bed").GetComponent<BedScript>();
 
         directionalLight = GameObject.Find("Directional Light");
         secondOnRealLifeToChangeMinuteGameTime = ((realLifeMinuteGamePlayPerCycle * 60)/ ((24 - (24 - playerNeedRestTime + playerAwakeOnHour))*60));
@@ -372,7 +377,17 @@ public class GameManager : MonoBehaviour
             if (gameTimeBool == false)
             {
                 gameTimeBool = true;
+
                 StartCoroutine(PlusMinute());
+            }
+            SetClock(currentMinute, currentHour);
+            if (currentHour >= playerNeedRestTime || currentHour < playerAwakeOnHour) //jika masuk waktu tidur
+            {
+                SetImageColorRGBA(clockImage, 1f, 0f, 0f, 1f);
+            }
+            else if(currentHour>=playerAwakeOnHour && currentHour<playerNeedRestTime)
+            {
+                SetImageColorRGBA(clockImage, 0f, 1f, 0f, 1f);
             }
         }
     }
@@ -434,4 +449,31 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Directional Light object not found!");
         }
     }
+
+    public void GetClockReference()
+    {
+        Debug.Log("terpanggil get clock reference function");
+        minuteArrow = GameObject.Find("MinuteArrow");
+        hourArrow = GameObject.Find("HourArrow");
+        clockImage = GameObject.Find("ClockImage").GetComponent<Image>();
+    }
+
+    public void SetClock(int minute, int hour)
+    {
+        minuteArrow.transform.localRotation = Quaternion.Euler(0f, 180f, minute * 6);
+        hourArrow.transform.localRotation = Quaternion.Euler(0f, 180f, hour * 30);
+    }
+
+    void SetImageColorRGBA(Image imageComponent, float r, float g, float b, float a)
+    {
+        Color color = new Color(r, g, b, a);
+        imageComponent.color = color;
+    }
+
+    public void GetBedScript()
+    {
+        bedScript = GameObject.Find("Bed").GetComponent<BedScript>();
+    }
+    
+
 }

@@ -6,13 +6,15 @@ public class MapManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    GameManager gameManager;
-
-    private void Awake()
+    private void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        gameManager.GetDirectionalLight();
+        GameManager.Instance.GetClockReference();
+        GameManager.Instance.GetDirectionalLight();
     }
 
+    public void PlayerSleep()
+    {
+        GameManager.Instance.PlayerSleep();
+    }
 
 }

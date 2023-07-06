@@ -8,6 +8,7 @@ public class UiFaceToPlayer : MonoBehaviour
     private Transform cameraTransform;
     Canvas thisCanvas;
     Camera cameraCaster;
+    public bool disableFaceToPlayer;
     private void Awake()
     {
         thisCanvas = GetComponent<Canvas>();
@@ -26,10 +27,12 @@ public class UiFaceToPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 directionToCamera = transform.position - cameraTransform.position;
-        directionToCamera.y = 0f;
-        transform.rotation = Quaternion.LookRotation(directionToCamera);
+        if(!disableFaceToPlayer)
+        {
+            Vector3 directionToCamera = transform.position - cameraTransform.position;
+            directionToCamera.y = 0f;
+            transform.rotation = Quaternion.LookRotation(directionToCamera);
+        }
 
     }
 }
