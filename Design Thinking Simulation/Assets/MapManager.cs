@@ -15,6 +15,9 @@ public class MapManager : MonoBehaviour
     public void PlayerSleep()
     {
         GameManager.Instance.PlayerSleep();
+        GameManager.Instance.ClearCustomer();
+        GameManager.Instance.RandomizeCustomer();
+        GameManager.Instance.RandomizeQuestion();
     }
 
 }

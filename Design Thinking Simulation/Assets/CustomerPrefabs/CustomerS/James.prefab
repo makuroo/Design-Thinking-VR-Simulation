@@ -891,6 +891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b2e3ae19fa9884a9021d1b4232baae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableFaceToPlayer: 0
 --- !u!1 &54751181507178402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,6 +1457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b2e3ae19fa9884a9021d1b4232baae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableFaceToPlayer: 0
 --- !u!1 &4070339747390509032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,6 +1563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b2e3ae19fa9884a9021d1b4232baae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableFaceToPlayer: 0
 --- !u!1 &4070339747787664306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,6 +1838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b2e3ae19fa9884a9021d1b4232baae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableFaceToPlayer: 0
 --- !u!1001 &7244603333180732205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1871,6 +1875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI Pertanyaan (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088779762850046648, guid: 1f75a4a1ec4271442a6c51de842cadf0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046649, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}

@@ -21,32 +21,32 @@ public class CustomerSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (isWorldSpawner)
-        {
-            for (int i = 0; i < GameManager.Instance.WorldCustomerCount; i++)
-            {
-                GameObject instantiatedPrefab = Instantiate(GameManager.Instance.worldCustomerList[i], transform.position, transform.rotation);
-                instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.56f, -0.647f), -8.752809f, Random.Range(14.563f, 11.2f));
-                instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
-                instantiatedCustomer.Add(instantiatedPrefab);
+        //if (isWorldSpawner)
+        //{
+        //    for (int i = 0; i < GameManager.Instance.WorldCustomerCount; i++)
+        //    {
+        //        GameObject instantiatedPrefab = Instantiate(GameManager.Instance.worldCustomerList[i], transform.position, transform.rotation);
+        //        instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.56f, -0.647f), -8.752809f, Random.Range(14.563f, 11.2f));
+        //        instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
+        //        instantiatedCustomer.Add(instantiatedPrefab);
 
-                //dapetin canvasUIPertanyaan yang mau di assign
-                Temp = instantiatedPrefab.transform.Find("Customer").GetComponent<People>();
-                peopleScript.Add(Temp);
+        //        //dapetin canvasUIPertanyaan yang mau di assign
+        //        Temp = instantiatedPrefab.transform.Find("Customer").GetComponent<People>();
+        //        peopleScript.Add(Temp);
 
-                Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
+        //        Canvas canvasUIPertanyaan = peopleScript[i].UIPertanyaan.GetComponent<Canvas>();
 
 
-                /*//reference si cameracaster
-                Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
+        //        /*//reference si cameracaster
+        //        Camera cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
 
-                canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
-                canvasUIPertanyaan.worldCamera = cameraCaster;//
-                //masih ngebug di worldcamera harusnya itu eventCamera
-                canvasUIPertanyaan.worldCamera = cameraCaster;*/
-            }
-        }
-        else if(isCafeSpawner)
+        //        canvasUIPertanyaan.renderMode = RenderMode.WorldSpace;
+        //        canvasUIPertanyaan.worldCamera = cameraCaster;//
+        //        //masih ngebug di worldcamera harusnya itu eventCamera
+        //        canvasUIPertanyaan.worldCamera = cameraCaster;*/
+        //    }
+        //}
+        if(isCafeSpawner)
         {
 
             for (int i = 0; i < GameManager.Instance.CafeCustomerCount; i++)

@@ -114,10 +114,7 @@ MonoBehaviour:
   CafeCustomerCount: 0
   RestaurantCustomerCount: 0
   CanteenCustomerCount: 0
-  MaxWorldCustomerCount: 1
-  MaxCafeCustomerCount: 2
-  MaxRestaurantCustomerCount: 2
-  MaxCanteenCustomerCount: 1
+  maxCustomerSpawn: 5
   customerList:
   - {fileID: 4856454088341201431, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d, type: 3}
   - {fileID: 54751181507178402, guid: 99cf3829d0b34f04baf60e66631a13a7, type: 3}
@@ -129,3 +126,24 @@ MonoBehaviour:
   restaurantCustomerList: []
   canteenCustomerList: []
   cafeCustomerList: []
+  currentMinute: 0
+  currentHour: 0
+  currentDay: 0
+  playerAwakeOnHour: 4
+  playerNeedRestTime: 18
+  secondOnRealLifeToChangeMinuteGameTime: 0
+  realLifeMinuteGamePlayPerCycle: 0
+  directionalLight: {fileID: 0}
+  minMinute: 0
+  maxMinute: 1440
+  sunriseHour: 0
+  totalCurrentMinute: 0
+  sunStartAngle: 0
+  normalizedValue: 0
+  angle: 0
+  AnswerTimeBed: 0
+  minuteArrow: {fileID: 0}
+  hourArrow: {fileID: 0}
+  clockImage: {fileID: 0}
+  maxQuestionPerDay: 0
+  questionRemaining: 0

@@ -46,10 +46,7 @@ public class GameManager : MonoBehaviour
     public int RestaurantCustomerCount;
     public int CanteenCustomerCount;
 
-    [SerializeField] int MaxWorldCustomerCount;
-    [SerializeField] int MaxCafeCustomerCount;
-    [SerializeField] int MaxRestaurantCustomerCount;
-    [SerializeField] int MaxCanteenCustomerCount;
+    [SerializeField] int maxCustomerSpawn = 5;
 
     public List<GameObject> customerList = new List<GameObject>();
 
@@ -113,10 +110,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); // Destroys any duplicate instances of the game manager
         }
 
-        WorldCustomerCount = UnityEngine.Random.Range(1, MaxWorldCustomerCount);
-        CafeCustomerCount = UnityEngine.Random.Range(1, MaxCafeCustomerCount);
-        RestaurantCustomerCount = UnityEngine.Random.Range(1, MaxRestaurantCustomerCount);
-        CanteenCustomerCount = UnityEngine.Random.Range(1, MaxCanteenCustomerCount);
+        //WorldCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn);
+        CafeCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn-1);
+        RestaurantCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn - CafeCustomerCount-1);
+        CanteenCustomerCount = maxCustomerSpawn-CafeCustomerCount-CanteenCustomerCount-1;
 
         directionalLight = GameObject.Find("Directional Light");
         secondOnRealLifeToChangeMinuteGameTime = ((realLifeMinuteGamePlayPerCycle * 60)/ ((24 - (24 - playerNeedRestTime + playerAwakeOnHour))*60));
@@ -262,7 +259,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Random Question
-    private void RandomizeQuestion(){
+    public void RandomizeQuestion(){
         for(int i=0; i<3;i++){
             randomQuestionTypeIndex = UnityEngine.Random.Range(0, Enum.GetNames(typeof(QuestionType)).Length);
             RandomizedType[i] =randomQuestionTypeIndex;
@@ -307,15 +304,15 @@ public class GameManager : MonoBehaviour
     }
     #endregion
     #region Random Customer
-    private void RandomizeCustomer()
+    public void RandomizeCustomer()
     {
         List<GameObject> customerListCopy = new List<GameObject>(customerList);
-        for (int i = 0; i < WorldCustomerCount; i++)
-        {
-            int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
-            worldCustomerList.Add(customerListCopy[randomCustomerIndex]);
-            customerListCopy.RemoveAt(randomCustomerIndex);
-        }
+        //for (int i = 0; i < WorldCustomerCount; i++)
+        //{
+        //    int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
+        //    worldCustomerList.Add(customerListCopy[randomCustomerIndex]);
+        //    customerListCopy.RemoveAt(randomCustomerIndex);
+        //}
         for (int i = 0; i < RestaurantCustomerCount; i++)
         {
             int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
@@ -475,5 +472,15 @@ public class GameManager : MonoBehaviour
         bedScript = GameObject.Find("Bed").GetComponent<BedScript>();
     }
     
+    public void ClearCustomer()
+    {
+        
+        cafeCustomerList.Clear();
+        canteenCustomerList.Clear();
+        restaurantCustomerList.Clear();
+        Debug.Log(cafeCustomerList.Count);
+        Debug.Log(canteenCustomerList.Count);
+        Debug.Log(restaurantCustomerList.Count);
+    }
 
 }

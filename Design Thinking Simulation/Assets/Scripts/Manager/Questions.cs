@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using UnityEditor;
 
     public enum QuestionType
     {
@@ -39,7 +40,6 @@ public class Questions : MonoBehaviour
         {
             indexList.Add(person.index);
             GameManager.Instance.peopleMet.Add(GameManager.Instance.customerList[person.index]);
-            person.met = true;
         }
         else if (indexList.Count >= 1)
         {
@@ -59,8 +59,7 @@ public class Questions : MonoBehaviour
                 {
                     indexList.Add(person.index);
                     GameManager.Instance.peopleMet.Add(GameManager.Instance.customerList[person.index]);
-                    GameManager.Instance.customerList[i].GetComponentInChildren<People>().met = true;
-                    person.met = true;
+                    //GameManager.Instance.customerList[person.index].GetComponentInChildren<People>().met = true;
                 }
             }
         }

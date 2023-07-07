@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEditor;
 
 public class People : MonoBehaviour
 {
@@ -37,6 +38,20 @@ public class People : MonoBehaviour
     {
         QuestionCanvas.SetActive(false);
         NameCanvas.SetActive(false);
+
+        if(GameManager.Instance.peopleMet.Count != 0)
+        {
+            foreach (GameObject obj in GameManager.Instance.peopleMet)
+            {
+                if (obj.name == peopleName)
+                {
+                    met = true;
+                    break;
+                }
+            }
+        }
+
+
         if (met == false)
             nameText.text = "?????";
         else
@@ -85,6 +100,7 @@ public class People : MonoBehaviour
             {
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
+                nameQuestionCanvas.SetActive(false);
 
             }
             else if (player.CanAskCheck() && met == false)
