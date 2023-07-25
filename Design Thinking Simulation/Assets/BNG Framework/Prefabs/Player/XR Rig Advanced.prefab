@@ -25351,7 +25351,6 @@ GameObject:
   - component: {fileID: 8320362179581940914}
   - component: {fileID: 8320362179581940927}
   - component: {fileID: 111141501}
-  - component: {fileID: 2833146936231135894}
   m_Layer: 0
   m_Name: XR Rig Advanced
   m_TagString: Untagged
@@ -25499,33 +25498,6 @@ MonoBehaviour:
   HMDIsActive: 0
   LeftControllerPosition: {x: -0.2, y: -0.2, z: 0.5}
   RightControllerPosition: {x: 0.2, y: -0.2, z: 0.5}
---- !u!114 &2833146936231135894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2683195716791022644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d928c31c86bf17945a53d09c52c83054, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  peopleName: 
-  index: 0
-  cakePreferences: {fileID: 0}
-  customerEmpathy: {fileID: 0}
-  questionIndex: 0
-  textField: {fileID: 0}
-  player: {fileID: 0}
-  QuestionCanvas: {fileID: 0}
-  UIPertanyaan: {fileID: 0}
-  NameCanvas: {fileID: 0}
-  AnsweringTimesInSecond: 3
-  nameTextObj: {fileID: 0}
-  reason: []
-  nameQuestionCanvas: {fileID: 0}
-  met: 0
 --- !u!1 &2683195717451339092
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class Questions : MonoBehaviour
     {
         person = transform.parent.parent.parent.GetComponent<People>();
         person.questionIndex = index;
-        person.CalculateLikeness();
+        person.Reply();
         person.AnswerSelected();
     }
 
@@ -65,7 +65,7 @@ public class Questions : MonoBehaviour
         }
 
         person.UIPertanyaan.SetActive(true);
-        person.nameTextObj.text = person.peopleName;
+        person.nameTextObj.text = person.customerData.peopleName;
         person.nameQuestionCanvas.SetActive(false);
     }
 }

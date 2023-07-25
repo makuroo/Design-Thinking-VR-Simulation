@@ -12,11 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93ab046880170040ba6bde9ea7b005f, type: 3}
   m_Name: Ashly
   m_EditorClassIdentifier: 
-  Says:
-  - Saya mau tidur
-  - Sayyya
-  Thinks:
-  - Ashlyyyy
-  - Ashli
-  Does: []
-  Feels: []
+  picture: {fileID: 0}
+  peopleName: Ashly
+  met: 0
+  personality: Nice
+  job: Teacher

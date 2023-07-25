@@ -12,10 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93ab046880170040ba6bde9ea7b005f, type: 3}
   m_Name: Blake
   m_EditorClassIdentifier: 
-  Says:
-  - Blue
-  Thinks:
-  - Dark
-  - Green
-  Does: []
-  Feels: []
+  picture: {fileID: 0}
+  peopleName: Blake
+  met: 0
+  personality: Tough
+  job: Bartender

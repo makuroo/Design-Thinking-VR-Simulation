@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b2e3ae19fa9884a9021d1b4232baae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableFaceToPlayer: 0
 --- !u!1 &724885392703489669
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,10 +385,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d928c31c86bf17945a53d09c52c83054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peopleName: Blake
   index: 3
   cakePreferences: {fileID: 11400000, guid: 124d1ef3f29256b48bb8e77607ad0c1f, type: 2}
-  customerEmpathy: {fileID: 11400000, guid: 4a16115b0dbd4df4a96578d10530b49a, type: 2}
+  customerData: {fileID: 11400000, guid: 4a16115b0dbd4df4a96578d10530b49a, type: 2}
   questionIndex: 0
   textField: {fileID: 8667849322641240880}
   player: {fileID: 0}
@@ -403,7 +403,6 @@ MonoBehaviour:
   - Saya punya urusan
   - Saya lelah
   nameQuestionCanvas: {fileID: 5522502412781020086}
-  met: 0
 --- !u!135 &9096484323712031604
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -959,6 +958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b2e3ae19fa9884a9021d1b4232baae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableFaceToPlayer: 0
 --- !u!1 &5116161010935748528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,6 +1304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b2e3ae19fa9884a9021d1b4232baae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableFaceToPlayer: 0
 --- !u!1 &6245404545709040222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1755,6 +1756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b2e3ae19fa9884a9021d1b4232baae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableFaceToPlayer: 0
 --- !u!1 &8949505221856510510
 GameObject:
   m_ObjectHideFlags: 0

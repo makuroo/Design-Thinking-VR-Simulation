@@ -7,10 +7,10 @@ using UnityEditor;
 
 public class People : MonoBehaviour
 {
-    public string peopleName;
+
     public int index;
     [SerializeField] private CakePreferencesSO cakePreferences;
-    public  EmpathyMapSO customerEmpathy;
+    public  CustomerDataSO customerData;
     public int questionIndex = 0;
     [SerializeField] private Text textField;
     [HideInInspector] public PlayerScript player;
@@ -25,7 +25,7 @@ public class People : MonoBehaviour
     public GameObject nameQuestionCanvas;
     GameManager gameManager;
     private GameObject[] button = new GameObject[3];
-    public bool met = false;
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -43,50 +43,38 @@ public class People : MonoBehaviour
         {
             foreach (GameObject obj in GameManager.Instance.peopleMet)
             {
-                if (obj.name == peopleName)
+                if (obj.name == customerData.peopleName)
                 {
-                    met = true;
+                    customerData.met = true;
                     break;
                 }
             }
         }
 
 
-        if (met == false)
+        if (customerData.met == false)
             nameText.text = "?????";
         else
-            nameText.text = peopleName;
+            nameText.text = customerData.peopleName;
     }
 
-    public void CalculateLikeness()
+    public int CalculateLikeness(int index)
     {
         int likeCake = 0;
         int dislikeCake = 0;
         for (int i = 0; i < cakePreferences.LikeCake.Count; i++) 
         { 
 
-            likeCake += cakePreferences.LikeCake[i].taste[questionIndex];
+            likeCake += cakePreferences.LikeCake[i].taste[index];
         }
         
         for (int i = 0; i < cakePreferences.DislikeCake.Count; i++) 
         { 
 
-            dislikeCake += cakePreferences.DislikeCake[i].taste[questionIndex];
+            dislikeCake += cakePreferences.DislikeCake[i].taste[index];
         }
 
-        int totalLikeness = likeCake - dislikeCake;
-
-        if (totalLikeness == 0)
-            textField.text = "Neutral";
-
-        if (totalLikeness == 1)
-            textField.text = "Like";
-
-        if (totalLikeness > 1)
-            textField.text = "Really Like";
-
-        if (totalLikeness < 0)
-            textField.text = "Dislike";
+        return  likeCake - dislikeCake;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -96,14 +84,14 @@ public class People : MonoBehaviour
             
             player = other.GetComponent<PlayerScript>();
 
-            if (player.CanAskCheck() && gameManager.isOnActivityTime() && met)
+            if (player.CanAskCheck() && gameManager.isOnActivityTime() && customerData.met)
             {
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
                 nameQuestionCanvas.SetActive(false);
 
             }
-            else if (player.CanAskCheck() && met == false)
+            else if (player.CanAskCheck() && customerData.met == false)
             {
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
@@ -131,6 +119,20 @@ public class People : MonoBehaviour
         }
     }
     
+    public void Reply()
+    {
+        if (CalculateLikeness(questionIndex) == 0)
+            textField.text = "Neutral";
+
+        if (CalculateLikeness(questionIndex) == 1)
+            textField.text = "Like";
+
+        if (CalculateLikeness(questionIndex) > 1)
+            textField.text = "Really Like";
+
+        if (CalculateLikeness(questionIndex) < 0)
+            textField.text = "Dislike";
+    }
 
     private void OnTriggerExit(Collider other)
     {

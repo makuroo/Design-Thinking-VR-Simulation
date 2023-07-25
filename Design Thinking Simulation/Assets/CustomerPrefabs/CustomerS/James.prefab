@@ -812,10 +812,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d928c31c86bf17945a53d09c52c83054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peopleName: James
   index: 1
   cakePreferences: {fileID: 11400000, guid: 0c111af7d541350449ce12b599a79282, type: 2}
-  customerEmpathy: {fileID: 11400000, guid: e8dbb7601de44ec429bb4f19ba394804, type: 2}
+  customerData: {fileID: 11400000, guid: e8dbb7601de44ec429bb4f19ba394804, type: 2}
   questionIndex: 0
   textField: {fileID: 8803711537048695949}
   player: {fileID: 0}
@@ -831,7 +830,6 @@ MonoBehaviour:
   - Saya punya urusan
   - Saya lelah
   nameQuestionCanvas: {fileID: 6644009974892761493}
-  met: 0
 --- !u!135 &54751181377204240
 SphereCollider:
   m_ObjectHideFlags: 0
