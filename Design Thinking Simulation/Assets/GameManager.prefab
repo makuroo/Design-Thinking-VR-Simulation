@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4528664007278843340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4528664007278843346}
+  - component: {fileID: 4528664007278843347}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4528664007278843346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528664007278843340}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.373, y: -8.732, z: 13.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4528664007278843347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528664007278843340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6209614997ddfc5498b9b7b158303ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peopleMet: []
+  randomOptions:
+  - dhfhsfkshd
+  - dsfsd
+  - sadf
+  - cx cx
+  - fsdf
+  - saf
+  - ads
+  - dsafs
+  - dsa
+  - httyjytjuy
+  tempList: []
+  tempListRandom: []
+  personCustomerEmpathy: {fileID: 0}
+  currentText: {fileID: 0}
+  canDoActivity: 1
+  randomQuestionIndex: 0
+  randomQuestionTypeIndex: 0
+  RandomizedQuestion:
+  - 
+  - 
+  - 
+  RandomizedType: 000000000000000000000000
+  manisQuestion:
+  - Manis 1
+  - Manis 2
+  - Manis 3
+  - Manis 4
+  - Manis 5
+  asinQuestion:
+  - Asin 1
+  - Asin 2
+  - Asin 3
+  - Asin 4
+  - Asin 5
+  asemQuestion:
+  - Asem 1
+  - Asem 2
+  - Asem 3
+  - Asem 4
+  - Asem 5
+  pahitQuestion:
+  - Pahit 1
+  - Pahit 2
+  - Pahit 3
+  - Pahit 4
+  - Pahit 5
+  susuQuestion:
+  - Susu 1
+  - Susu 2
+  - Susu 3
+  - Susu 4
+  - Susu 5
+  coklatQuestion:
+  - Coklat 1
+  - Coklat 2
+  - Coklat 3
+  - Coklat 4
+  - Coklat 5
+  vanilaQuestion:
+  - Vanila 1
+  - Vanila 2
+  - Vanila 3
+  - Vanila 4
+  - Vanila 5
+  WorldCustomerCount: 0
+  CafeCustomerCount: 0
+  RestaurantCustomerCount: 0
+  CanteenCustomerCount: 0
+  maxCustomerSpawn: 5
+  customerList:
+  - {fileID: 4856454088341201431, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d, type: 3}
+  - {fileID: 54751181507178402, guid: 99cf3829d0b34f04baf60e66631a13a7, type: 3}
+  - {fileID: 6461201479786531689, guid: c032c8fd74d674c4280c03cbb37c619f, type: 3}
+  - {fileID: 3732413339613480449, guid: e5a5470ad6cb78f43bac24cd6809c727, type: 3}
+  - {fileID: 4651266476868810314, guid: c88cefd2ea2968741adbdf2cf8e1f3de, type: 3}
+  - {fileID: 7997903722112226506, guid: 859ebc9556c734a488821312f0f44321, type: 3}
+  worldCustomerList: []
+  restaurantCustomerList: []
+  canteenCustomerList: []
+  cafeCustomerList: []
+  currentMinute: 0
+  currentHour: 0
+  currentDay: 0
+  playerAwakeOnHour: 4
+  playerNeedRestTime: 18
+  secondOnRealLifeToChangeMinuteGameTime: 0
+  realLifeMinuteGamePlayPerCycle: 0
+  directionalLight: {fileID: 0}
+  minMinute: 0
+  maxMinute: 1440
+  sunriseHour: 0
+  totalCurrentMinute: 0
+  sunStartAngle: 0
+  normalizedValue: 0
+  angle: 0
+  AnswerTimeBed: 0
+  minuteArrow: {fileID: 0}
+  hourArrow: {fileID: 0}
+  clockImage: {fileID: 0}
+  maxQuestionPerDay: 0
+  questionRemaining: 0
