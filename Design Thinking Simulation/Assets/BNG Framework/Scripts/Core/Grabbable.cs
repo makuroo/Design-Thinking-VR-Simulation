@@ -294,7 +294,8 @@ namespace BNG {
         // Total distance between the Grabber and Grabbable.
         float journeyLength;
 
-        public float OriginalScale { get; private set; }
+        //public float OriginalScale { get; private set; } -> original
+        public Vector3 OriginalScale { get; private set; }
 
         // Keep track of objects that are colliding with us
         [Header("Shown for Debug : ")]
@@ -509,10 +510,12 @@ namespace BNG {
 
             // Set Original Scale based in World coordinates if available
             if (transform.parent != null) {
-                OriginalScale = transform.parent.TransformVector(transform.localScale).x;
+                //OriginalScale = transform.parent.TransformVector(transform.localScale).x;
+                OriginalScale = transform.parent.TransformVector(transform.localScale);
             }
             else {
-                OriginalScale = transform.localScale.x;
+                //OriginalScale = transform.localScale.x; -> original
+                OriginalScale = transform.localScale;
             }
 
             initialHandPoseId = CustomHandPose;
@@ -1935,7 +1938,8 @@ namespace BNG {
         }
 
         public void ResetScale() {
-            transform.localScale = new Vector3(OriginalScale, OriginalScale, OriginalScale);
+            //transform.localScale = new Vector3(OriginalScale, OriginalScale, OriginalScale); -> original
+            transform.localScale = OriginalScale;
         }
 
         public void ResetParent() {

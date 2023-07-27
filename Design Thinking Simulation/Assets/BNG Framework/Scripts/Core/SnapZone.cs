@@ -32,6 +32,12 @@ namespace BNG {
         public bool CanRemoveItem = true;
 
         /// <summary>
+        /// If false, Item will Move back to inventory space if player drops it.
+        /// </summary>
+        [Tooltip("If false, Item will not scale when in snap zone.")]
+        public bool Scaler = true;
+
+        /// <summary>
         /// Multiply Item Scale times this when in snap zone.
         /// </summary>
         [Tooltip("Multiply Item Scale times this when in snap zone.")]
@@ -106,6 +112,7 @@ namespace BNG {
             if (HeldItem != null) {
                 GrabGrabbable(HeldItem);
             }
+            
         }
 
         // Update is called once per frame
@@ -129,9 +136,12 @@ namespace BNG {
                     ReleaseAll();
                 }
                 else {
-                    // Scale Item while inside zone.                                            
-                    float localScale = HeldItem.OriginalScale * _scaleTo;
-                    HeldItem.transform.localScale = Vector3.Lerp(HeldItem.transform.localScale, new Vector3(localScale, localScale, localScale), Time.deltaTime * 30f);
+
+                    // Scale Item while inside zone.
+                    // float localScale = HeldItem.OriginalScale * _scaleTo; -> original
+                    Vector3 localScale = HeldItem.OriginalScale * _scaleTo;
+                    if(Scaler == true)
+                        HeldItem.transform.localScale = Vector3.Lerp(HeldItem.transform.localScale, localScale, Time.deltaTime * 30f);
                     
                     // Make sure this can't be grabbed from the snap zone
                     if(HeldItem.enabled || (disabledColliders != null && disabledColliders.Count > 0 && disabledColliders[0] != null && disabledColliders[0].enabled)) {

@@ -83,6 +83,7 @@ namespace BNG {
             data = uiSystem.EventData;
 
             // Can bail early if not looking at anything
+            
             if (data == null || data.pointerCurrentRaycast.gameObject == null) {
                 
                 HidePointer();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BNG {
 
@@ -21,32 +22,47 @@ namespace BNG {
         bool didRelease = false;
         Collider col;
 
+        Quaternion initialRotation;
+        [SerializeField] float handleAngleToOpen;
+        [SerializeField] DoorChangeScene doorChangeScene;
+        Quaternion lastDoorAngleRotation;
+        public AudioClip DoorOpenSound;
+        public AudioClip DoorCloseSound;
+        AudioSource doorAudioSource;
+
         void Start() {
             thisGrab = GetComponent<Grabbable>();
             thisGrab.CanBeSnappedToSnapZone = false;
             rb = GetComponent<Rigidbody>();
             col = GetComponent<Collider>();
+            doorAudioSource = GetComponent<AudioSource>();
 
             // Handle and parent shouldn't collide with each other
             if(col != null && ParentRigid != null && ParentRigid.GetComponent<Collider>() != null) {
                 Physics.IgnoreCollision(ParentRigid.GetComponent<Collider>(), col, true);
+            }
+
+            initialRotation = transform.localRotation;
+
+            if(SceneManager.GetActiveScene().name != "Home")
+            {
+                doorAudioSource.clip = DoorCloseSound;
+                doorAudioSource.Play();
             }
         }
 
         Vector3 lastAngularVelocity;
 
         void FixedUpdate() {
-            Debug.Log(thisGrab.BeingHeld);
-            if(!thisGrab.BeingHeld) {
+            //Debug.Log(thisGrab.BeingHeld);
+            if (!thisGrab.BeingHeld) {
                 if(!didRelease) {
-
                     //col.enabled = false;
                     transform.localPosition = Vector3.zero;
                     transform.localRotation = Quaternion.identity;
                     transform.localScale = Vector3.one;
                     rb.velocity = Vector3.zero;
                     rb.angularVelocity = Vector3.zero;
-
                     if (ParentRigid) {
                         // ParentRigid.velocity = Vector3.zero;
                         // ParentRigid.angularVelocity = Vector3.zero;
@@ -54,6 +70,19 @@ namespace BNG {
                     }
                     col.enabled = true;
                     StartCoroutine(doRelease());
+
+                    lastAngularVelocity = rb.angularVelocity;
+
+                    // Calculate the rotation angle difference
+
+                    if(Quaternion.Angle(lastDoorAngleRotation, initialRotation) > handleAngleToOpen && Quaternion.Angle(lastDoorAngleRotation, initialRotation) != 180f)
+                    {
+                        doorChangeScene.SetActiveCanvasChangeScene(true);
+                        doorAudioSource.clip = DoorOpenSound;
+                        doorAudioSource.Play();
+                    }
+
+                    Debug.Log(Quaternion.Angle(lastDoorAngleRotation, initialRotation));
 
                     didRelease = true;
                 }
@@ -69,6 +98,7 @@ namespace BNG {
                 }
 
                 lastAngularVelocity = rb.angularVelocity;
+                lastDoorAngleRotation = transform.localRotation;
             }
         }
 
