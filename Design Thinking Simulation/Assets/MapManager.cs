@@ -10,6 +10,7 @@ public class MapManager : MonoBehaviour
     {
         GameManager.Instance.GetClockReference();
         GameManager.Instance.GetDirectionalLight();
+        GameManager.Instance.CanAskCheck();
     }
 
     public void PlayerSleep()

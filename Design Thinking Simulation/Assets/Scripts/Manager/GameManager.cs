@@ -56,10 +56,11 @@ public class GameManager : MonoBehaviour
     public List<GameObject> canteenCustomerList = new List<GameObject>();
     public List<GameObject> cafeCustomerList = new List<GameObject>();
 
-    bool gameTimeBool;
+    /*bool gameTimeBool;
     public int currentMinute;
-    public int currentHour;
-    public int currentDay;
+    public int currentHour;*/
+    public int currentDay = 1;
+    public int maxDay = 60;
     [SerializeField] float playerAwakeOnHour = 4;
     [SerializeField] float playerNeedRestTime = 18;
     [SerializeField] float secondOnRealLifeToChangeMinuteGameTime;
@@ -75,14 +76,14 @@ public class GameManager : MonoBehaviour
 
     //variable untuk directional light auto rotate
     [SerializeField] GameObject directionalLight;
-    [HideInInspector] public float minMinute = 0;
+    /*[HideInInspector] public float minMinute = 0;
     [HideInInspector] public float maxMinute = 1440f;
     [HideInInspector] public float sunriseHour;
     [HideInInspector] public float totalCurrentMinute;
     [HideInInspector] public float sunStartAngle;
     [HideInInspector] public float normalizedValue;
     [HideInInspector] public float angle;
-    bool isSleeping = false;
+    //bool isSleeping = false;*/
 
     [SerializeField] float AnswerTimeBed;
     BedScript bedScript;
@@ -97,9 +98,10 @@ public class GameManager : MonoBehaviour
 
     //question player
     public int maxQuestionPerDay;
-   
-    
+
+
     public int questionRemaining;
+    private PlayerScript player;
 
     private void Awake()
     {
@@ -119,44 +121,47 @@ public class GameManager : MonoBehaviour
         CanteenCustomerCount = maxCustomerSpawn-CafeCustomerCount-CanteenCustomerCount-1;
 
         directionalLight = GameObject.Find("Directional Light");
-        secondOnRealLifeToChangeMinuteGameTime = ((realLifeMinuteGamePlayPerCycle * 60)/ ((24 - (24 - playerNeedRestTime + playerAwakeOnHour))*60));
-        sunriseHour = playerAwakeOnHour;
-
+        /*secondOnRealLifeToChangeMinuteGameTime = ((realLifeMinuteGamePlayPerCycle * 60)/ ((24 - (24 - playerNeedRestTime + playerAwakeOnHour))*60));
+        sunriseHour = playerAwakeOnHour;*/
 
         //jika tidak punya savean..
         questionRemaining = maxQuestionPerDay;
-    }
-
-
-    private void Update()
-    {
-        SetGameTime();
-        SetDirectionalLightRotation();
-    }
-
-    public void LoadGame()
-    {
-        currentMinute = PlayerPrefs.GetInt("SaveCurrentMinute");
-        currentHour = PlayerPrefs.GetInt("CurrentHour");
-        currentDay = PlayerPrefs.GetInt("CurrentDay");
-    }
-
-    public void SaveGame()
-    {
-        PlayerPrefs.SetInt("SaveCurrentMinute", currentMinute);
-        PlayerPrefs.SetInt("CurrentHour", currentHour);
-        PlayerPrefs.SetInt("CurrentDay", currentDay);
-    }
-
-    public static GameManager Instance
-    {
-        get { return instance; }
     }
 
     private void Start()
     {
         RandomizeQuestion();
         RandomizeCustomer();
+    }
+
+    private void Update()
+    {
+        /*
+        SetGameTime();
+        SetDirectionalLightRotation();
+        */
+    }
+
+    public void LoadGame()
+    {
+        /*
+        currentMinute = PlayerPrefs.GetInt("SaveCurrentMinute");
+        currentHour = PlayerPrefs.GetInt("CurrentHour");*/
+        currentDay = PlayerPrefs.GetInt("CurrentDay");
+    }
+
+    public void SaveGame()
+    {
+        /*
+        PlayerPrefs.SetInt("SaveCurrentMinute", currentMinute);
+        PlayerPrefs.SetInt("CurrentHour", currentHour);
+        */
+        PlayerPrefs.SetInt("CurrentDay", currentDay);
+    }
+
+    public static GameManager Instance
+    {
+        get { return instance; }
     }
 
     #region Choices
@@ -348,7 +353,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerSleep()
     {
-        if (currentHour >= playerNeedRestTime || currentHour < playerAwakeOnHour) //jika masuk waktu tidur
+        /*if (currentHour >= playerNeedRestTime || currentHour < playerAwakeOnHour) //jika masuk waktu tidur
         {
             if (currentHour < 24 && currentHour >= playerNeedRestTime) //jika tidur sebelum jam 12 maka day +1 ... kalau dia begadang otomatis udah change day dari function SetGameTime();
             {
@@ -361,12 +366,29 @@ public class GameManager : MonoBehaviour
         else if(currentHour<playerNeedRestTime && currentHour >= playerAwakeOnHour)
         {
             bedScript.ActivateBedAnswer(AnswerTimeBed);
+        } 
+        */
+        if(CanAskCheck())
+        {
+            bedScript.ActivateBedAnswer(AnswerTimeBed);
+        }
+        else
+        {
+            NextDay();
+            player.SetDayText();
+            SetDirectionalLight(true);
         }
     }
 
-    public void SetGameTime()
+    public void GetPlayerRef()
     {
+        player = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
+        player.SetChanceText();
+        player.SetDayText();
+    }
 
+    /*public void SetGameTime()
+    {
         //Debug.Log(currentGameTime);
         if(!isSleeping)
         {
@@ -412,6 +434,7 @@ public class GameManager : MonoBehaviour
 
     public void SetDirectionalLightRotation()
     {
+
         totalCurrentMinute = currentMinute + (currentHour * 60);
         sunStartAngle = -((sunriseHour * 60) / 4); //dibagi 4 karena per 4 minute turn 1 angle
         normalizedValue = (totalCurrentMinute - minMinute) / (maxMinute - minMinute);
@@ -420,16 +443,31 @@ public class GameManager : MonoBehaviour
         {
             directionalLight.transform.rotation = Quaternion.Euler(angle, 0f, 0f);
         }
+    }*/
+
+    public void SetDirectionalLight(bool isMorning)
+    {
+        if(isMorning)
+        {
+            directionalLight.transform.rotation = Quaternion.Euler(37f, 0f, 0f);
+            Debug.Log("directional pagi");
+        }
+        else
+        {
+            Debug.Log("directional malam");
+            directionalLight.transform.rotation = Quaternion.Euler(210f, 0f, 0f);
+        }
     }
 
-    public bool isOnActivityTime()
+
+    /*public bool isOnActivityTime()
     {
         if(currentHour >= playerAwakeOnHour && currentHour< playerNeedRestTime)
         {
             return true;
         }
         return false;
-    }
+    }*/
 
 
 
@@ -441,14 +479,11 @@ public class GameManager : MonoBehaviour
 
     public void GetDirectionalLight()
     {
-        Debug.Log("GetDirectionalLight");
-        Debug.Log(GameObject.Find("Directional Light"));
         directionalLight = GameObject.Find("Directional Light");
         if (directionalLight != null)
         {
             // Object found, do something with it
             // ...
-            Debug.Log("DirectionalLight Found");
         }
         else
         {
@@ -459,7 +494,6 @@ public class GameManager : MonoBehaviour
 
     public void GetClockReference()
     {
-        Debug.Log("terpanggil get clock reference function");
         minuteArrow = GameObject.Find("MinuteArrow");
         hourArrow = GameObject.Find("HourArrow");
         clockImage = GameObject.Find("ClockImage").GetComponent<Image>();
@@ -493,4 +527,31 @@ public class GameManager : MonoBehaviour
         Debug.Log(restaurantCustomerList.Count);
     }
 
+    public bool CanAskCheck()
+    {
+        if (questionRemaining <= 0)
+        {
+            SetDirectionalLight(false);
+        }
+        else
+        {
+            SetDirectionalLight(true);
+        }
+        return questionRemaining > 0;
+    }
+
+
+    public void UseAskChance()
+    {
+        questionRemaining = Mathf.Clamp(questionRemaining - 1, 0, maxQuestionPerDay);
+        CanAskCheck();
+        player.SetChanceText();
+    }
+
+    public void NextDay()
+    {
+        currentDay += 1;
+        ResetQuestionRemaining();
+        player.SetChanceText();
+    }
 }
