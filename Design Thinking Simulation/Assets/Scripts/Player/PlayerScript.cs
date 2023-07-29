@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    GameManager gameManager;
+    public TextMeshProUGUI dayText;
+    public TextMeshProUGUI chanceText;
 
     private void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        GameManager.Instance.GetPlayerRef();
     }
     void Start()
     {
@@ -19,16 +21,21 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void PlayerAsk()
     {
-        gameManager.questionRemaining = Mathf.Clamp(gameManager.questionRemaining-1, 0, gameManager.maxQuestionPerDay);
+        GameManager.Instance.UseAskChance();
     }
 
-    public bool CanAskCheck()
+    public void SetDayText()
     {
-        return gameManager.questionRemaining > 0;
+        dayText.text = GameManager.Instance.currentDay.ToString();
+    }
+
+    public void SetChanceText()
+    {
+        chanceText.text = GameManager.Instance.questionRemaining.ToString();
     }
 }
