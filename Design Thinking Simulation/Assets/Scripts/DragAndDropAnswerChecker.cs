@@ -10,7 +10,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     public UserPersonaUI userPersonaUI;
     private CustomerDataSO customerData;
     private Grabbable currentGrabbable;
-    private TMP_Text currentText;
+    public TMP_Text currentText;
     public int index;
     public People customer;
 
@@ -69,30 +69,24 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         {
             Debug.Log("n");
         }
-
         else if (customer.CalculateLikeness(index) == 1 && currentText.text == "Like")
         {
             Debug.Log("l");
         }
-
         else if (customer.CalculateLikeness(index) < 0 && currentText.text == "Dislike")
         {
             Debug.Log("d");
         }
-
         else if (customer.CalculateLikeness(index) > 1 && currentText.text == "Really Like")
         {
             Debug.Log("rl");
         }
-
         else if (customer.CalculateLikeness(index) < -1 && currentText.text == "Really Dislike")
         {
             Debug.Log("rd");
         }
         else
             Debug.Log("wrong");
-
-
     }
 
     private void FrustrationAnswerChecker(TMP_Text currentText)
@@ -116,7 +110,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     private void GoalsAnswerChecker(TMP_Text currentText)
     {
         customerData = GameManager.Instance.personCustomerData;
-        for(int i =0; i<customer.customerData.goals.Count; i++)
+        for (int i = 0; i < customerData.goals.Count; i++)
         {
             if (currentText.text == customerData.goals[i])
             {
@@ -128,6 +122,5 @@ public class DragAndDropAnswerChecker : MonoBehaviour
                 Debug.Log("False");
             }
         }
-
     }
 }

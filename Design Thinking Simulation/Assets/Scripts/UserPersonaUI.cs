@@ -125,9 +125,9 @@ public class UserPersonaUI : MonoBehaviour
 
     public void ChooseFavouriteCake()
     {
-        userPersonaChecker = UserPersonaCategory.Taste;
+        userPersonaChecker = UserPersonaCategory.FavouriteCake;
         checker.userPersonaUI = this;
         checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
-        GameManager.Instance.AddTasteChoices(customerIndex, this);
+        GameManager.Instance.AddFavouriteCakeChoices(customerIndex, this);
     }
 }

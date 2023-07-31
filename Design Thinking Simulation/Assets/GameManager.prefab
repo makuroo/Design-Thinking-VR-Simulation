@@ -64,9 +64,36 @@ MonoBehaviour:
   randomQuestionIndex: 0
   randomQuestionTypeIndex: 0
   RandomizedQuestion:
-  - 
-  - 
-  - 
+  - ffdsf
+  - sdfssdsa
+  - sdfsdfdsfdsds
+  - dsfvcbcb
+  - safsd
+  - ssdgfd
+  - dfgfdfdggfd
+  - xvbdfg
+  - gfdgdfdfgfd
+  - dfgfdfd
+  - dfgdfgdf
+  - dfsasadf
+  - fdgdfdsf
+  - sdfds
+  - sdfsdf
+  - fdghjh,nb
+  - dfgdf
+  - m,nb,
+  - hgjgfh
+  - m.,mnm,nb
+  - ghjullk
+  - k;ljlhjkhk
+  - juyjhhmnb
+  - vcbcvbn
+  - vbmnhjgk
+  - bmn,jknb
+  - n,jkjmnb
+  - n,jlhmvhnv
+  - vbnhjgmn
+  - vmmhgkhj
   RandomizedType: 000000000000000000000000
   manisQuestion:
   - Manis 1
@@ -144,5 +171,5 @@ MonoBehaviour:
   minuteArrow: {fileID: 0}
   hourArrow: {fileID: 0}
   clockImage: {fileID: 0}
-  maxQuestionPerDay: 0
+  maxQuestionPerDay: 3
   questionRemaining: 0

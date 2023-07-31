@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
         {
             int randomOrNot = UnityEngine.Random.Range(0, 2);
             int answerIndex = UnityEngine.Random.Range(0, tempAnswer.Count);
-            if (randomOrNot == 0 )
+            if (randomOrNot == 0 && tempAnswer.Count!=0)
             {
                 userPersonaUI.choicesGameObjectText[i].text = tempAnswer[answerIndex];
                 tempAnswer.RemoveAt(answerIndex);
@@ -219,7 +219,6 @@ public class GameManager : MonoBehaviour
     public void AddTasteChoices(int index, UserPersonaUI userPersonaUI)
     {
         personCustomerData = peopleMet[index].GetComponentInChildren<People>().customerData;
-        userPersonaUI = transform.parent.GetComponent<UserPersonaUI>();
 
         userPersonaUI.choicesGameObjectText[0].text = "Like";
         userPersonaUI.choicesGameObjectText[1].text = "Really Like";
@@ -229,9 +228,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void AddFavouriteCakeChoice(int index, UserPersonaUI userPersonaUI)
+    public void AddFavouriteCakeChoices(int index, UserPersonaUI userPersonaUI)
     {
         personCustomerData = peopleMet[index].GetComponentInChildren<People>().customerData;
+        tempListRandom = new List<string>(randomOptions);
         int answerIndex = UnityEngine.Random.Range(0, 5);
         for(int i=0; i<5; i++)
         {

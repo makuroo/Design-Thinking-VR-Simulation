@@ -58,8 +58,7 @@ public class Questions : MonoBehaviour
                 if (i == indexList.Count - 1 && found == false)
                 {
                     indexList.Add(person.index);
-                    GameManager.Instance.peopleMet.Add(GameManager.Instance.customerList[person.index]);
-                    //GameManager.Instance.customerList[person.index].GetComponentInChildren<People>().met = true;
+                    GameManager.Instance.peopleMet.Add(GameManager.Instance.customerList[person.index]);                 
                 }
             }
         }
