@@ -93,20 +93,13 @@ public class People : MonoBehaviour
 
             if(GameManager.Instance.CanAskCheck())
             {
-<<<<<<< Updated upstream
                 if (customerData.met)
                 {
                     QuestionCanvas.SetActive(true);
+                    Debug.Log(customerData.met);
+                    Debug.Log(QuestionCanvas.transform.GetChild(0).gameObject.name);
                     NameCanvas.SetActive(true);
                     nameQuestionCanvas.SetActive(false);
-=======
-                QuestionCanvas.SetActive(true);
-                Debug.Log(customerData.met);
-                Debug.Log(QuestionCanvas.transform.GetChild(0).gameObject.name);
-                NameCanvas.SetActive(true);
-                nameQuestionCanvas.SetActive(false);
->>>>>>> Stashed changes
-
                 }
                 else if (customerData.met == false)
                 {
@@ -115,23 +108,7 @@ public class People : MonoBehaviour
                     UIPertanyaan.SetActive(false);
                 }
             }
-<<<<<<< Updated upstream
-            else if(!GameManager.Instance.CanAskCheck())
-=======
-            else if (player.CanAskCheck() && customerData.met == false)
-            {
-                Debug.Log(customerData.met);
-                QuestionCanvas.SetActive(true);
-                NameCanvas.SetActive(true);
-                UIPertanyaan.SetActive(false);
-            }
-            
-            else if(!gameManager.isOnActivityTime())
-            {
-                textField.text = "You Need To Sleep";
-            }
-            else if(!player.CanAskCheck())
->>>>>>> Stashed changes
+            else if (!GameManager.Instance.CanAskCheck())
             {
                 int randomIndex = Random.Range(0, reason.Count);
                 textField.text = reason[randomIndex];
