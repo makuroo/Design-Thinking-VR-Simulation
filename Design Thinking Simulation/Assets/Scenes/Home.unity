@@ -2539,6 +2539,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cafe_Layout_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d9ff5384cc6bfb74b8c7c850984cf40f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ff5384cc6bfb74b8c7c850984cf40f, type: 3}
 --- !u!114 &1929870883 stripped
@@ -3301,7 +3306,7 @@ PrefabInstance:
     - target: {fileID: 5208719549396194278, guid: 2a0c9adeb1b50e344acb742002b9022a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.052
+      value: -0.074
       objectReference: {fileID: 0}
     - target: {fileID: 6010685890485719795, guid: 2a0c9adeb1b50e344acb742002b9022a,
         type: 3}
