@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93ab046880170040ba6bde9ea7b005f, type: 3}
   m_Name: Lucas
   m_EditorClassIdentifier: 
-  peopleName: Ashly
-  kueFavorit: Cream Puff Pastry
+  peopleName: Lucas
+  kueFavorit: 
   goals:
-  - Memakan kue yang milky
-  - Memakan kue kombinasi rasa manis dan asin
+  - 
+  - 
   frustration:
-  - tidak suka kue yang pahit
+  - 
   met: 0

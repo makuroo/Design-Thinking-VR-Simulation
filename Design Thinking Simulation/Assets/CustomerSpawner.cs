@@ -58,10 +58,9 @@ public class CustomerSpawner : MonoBehaviour
                 if(spawnerRefScript != null && instantiatedPrefab != null)
                 {
                     spawnerRefScript.SetPosition(instantiatedPrefab);
-                    Debug.Log("spawned on ref");
                     Debug.Log(instantiatedPrefab.transform.position);
                 }
-                else
+                else if(spawnerRefScript == null && instantiatedPrefab != null)
                 {
                     instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
                     instantiatedPrefab.transform.rotation = new Quaternion(0,Random.Range(0,360), 0, 0);

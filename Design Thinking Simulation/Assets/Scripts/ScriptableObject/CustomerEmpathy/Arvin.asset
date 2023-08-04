@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93ab046880170040ba6bde9ea7b005f, type: 3}
   m_Name: Arvin
   m_EditorClassIdentifier: 
-  peopleName: Ashly
+  peopleName: Arvin
   kueFavorit: Cream Puff Pastry
   goals:
   - Memakan kue yang milky

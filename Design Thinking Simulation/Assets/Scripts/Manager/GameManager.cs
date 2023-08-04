@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     public int RestaurantCustomerCount;
     public int CanteenCustomerCount;
 
-    [SerializeField] int maxCustomerSpawn = 5;
+    [SerializeField] int maxCustomerSpawn = 4;
 
     public List<GameObject> customerList = new List<GameObject>();
 
@@ -90,8 +90,8 @@ public class GameManager : MonoBehaviour
 
 
     //clock ui rotator
-    public GameObject minuteArrow;
-    public GameObject hourArrow;
+    //public GameObject minuteArrow;
+    //public GameObject hourArrow;
     public Image clockImage;
 
 
@@ -116,9 +116,9 @@ public class GameManager : MonoBehaviour
         }
 
         //WorldCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn);
-        CafeCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn-1);
-        RestaurantCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn - CafeCustomerCount-1);
-        CanteenCustomerCount = maxCustomerSpawn-CafeCustomerCount-CanteenCustomerCount-1;
+        CafeCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn);
+        RestaurantCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn - CafeCustomerCount);
+        CanteenCustomerCount = maxCustomerSpawn-CafeCustomerCount-CanteenCustomerCount;
 
         directionalLight = GameObject.Find("Directional Light");
         /*secondOnRealLifeToChangeMinuteGameTime = ((realLifeMinuteGamePlayPerCycle * 60)/ ((24 - (24 - playerNeedRestTime + playerAwakeOnHour))*60));
@@ -492,16 +492,16 @@ public class GameManager : MonoBehaviour
 
     public void GetClockReference()
     {
-        minuteArrow = GameObject.Find("MinuteArrow");
-        hourArrow = GameObject.Find("HourArrow");
+        //minuteArrow = GameObject.Find("MinuteArrow");
+        //hourArrow = GameObject.Find("HourArrow");
         clockImage = GameObject.Find("ClockImage").GetComponent<Image>();
     }
 
-    public void SetClock(int minute, int hour)
+    /*public void SetClock(int minute, int hour)
     {
         minuteArrow.transform.localRotation = Quaternion.Euler(0f, 180f, minute * 6);
         hourArrow.transform.localRotation = Quaternion.Euler(0f, 180f, hour * 30);
-    }
+    }*/
 
     void SetImageColorRGBA(Image imageComponent, float r, float g, float b, float a)
     {
