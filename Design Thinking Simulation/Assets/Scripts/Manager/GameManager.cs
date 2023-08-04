@@ -450,11 +450,9 @@ public class GameManager : MonoBehaviour
         if(isMorning)
         {
             directionalLight.transform.rotation = Quaternion.Euler(37f, 0f, 0f);
-            Debug.Log("directional pagi");
         }
         else
         {
-            Debug.Log("directional malam");
             directionalLight.transform.rotation = Quaternion.Euler(210f, 0f, 0f);
         }
     }

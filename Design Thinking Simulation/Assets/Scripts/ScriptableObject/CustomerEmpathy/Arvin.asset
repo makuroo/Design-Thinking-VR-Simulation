@@ -9,8 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
-  m_Name: Brownies
+  m_Script: {fileID: 11500000, guid: c93ab046880170040ba6bde9ea7b005f, type: 3}
+  m_Name: Arvin
   m_EditorClassIdentifier: 
-  cakeName: Brownies
-  taste: 01000000000000000000000000000000000000000100000001000000
+  peopleName: Ashly
+  kueFavorit: Cream Puff Pastry
+  goals:
+  - Memakan kue yang milky
+  - Memakan kue kombinasi rasa manis dan asin
+  frustration:
+  - tidak suka kue yang pahit
+  met: 0
