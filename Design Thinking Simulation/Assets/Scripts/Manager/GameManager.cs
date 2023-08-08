@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     public int RestaurantCustomerCount;
     public int CanteenCustomerCount;
 
-    [SerializeField] int maxCustomerSpawn = 9;
+    [SerializeField] int maxCustomerSpawn;
 
     public List<GameObject> customerList = new List<GameObject>();
 
@@ -128,11 +128,15 @@ public class GameManager : MonoBehaviour
 
     public void DistributeCustomerCount()
     {
-        CafeCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn / 2);
+        Debug.Log("MaxCustomerSpawn = " + maxCustomerSpawn);
+        Debug.Log("Cafe = RandomRange(1, "+ maxCustomerSpawn / 2 + ")");
+        CafeCustomerCount = UnityEngine.Random.Range(1, Mathf.FloorToInt(maxCustomerSpawn/2)+1);
+        Debug.Log("Restaurant = RandomRange (" + ((maxCustomerSpawn / 2 + 1) - CafeCustomerCount) + "," + maxCustomerSpawn / 2 + ")");
         RestaurantCustomerCount = UnityEngine.Random.Range((maxCustomerSpawn / 2 + 1) - CafeCustomerCount, maxCustomerSpawn / 2);
-        CanteenCustomerCount = maxCustomerSpawn - CafeCustomerCount - CanteenCustomerCount;
+        CanteenCustomerCount = maxCustomerSpawn - CafeCustomerCount - RestaurantCustomerCount;
         Debug.Log("Cafe = " + CafeCustomerCount);
         Debug.Log("Restaurant = " + RestaurantCustomerCount);
+        //Debug.Log("Canteen = " + maxCustomerSpawn + "" + CafeCustomerCount + "" + CanteenCustomerCount);
         Debug.Log("Canteen = " + CanteenCustomerCount);
     }
 
