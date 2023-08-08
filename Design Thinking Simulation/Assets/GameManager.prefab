@@ -143,33 +143,30 @@ MonoBehaviour:
   CanteenCustomerCount: 0
   maxCustomerSpawn: 5
   customerList:
-  - {fileID: 4856454088341201431, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d, type: 3}
-  - {fileID: 54751181507178402, guid: 99cf3829d0b34f04baf60e66631a13a7, type: 3}
-  - {fileID: 6461201479786531689, guid: c032c8fd74d674c4280c03cbb37c619f, type: 3}
-  - {fileID: 3732413339613480449, guid: e5a5470ad6cb78f43bac24cd6809c727, type: 3}
-  - {fileID: 4651266476868810314, guid: c88cefd2ea2968741adbdf2cf8e1f3de, type: 3}
+  - {fileID: 4856454088341201431, guid: 0147e9c1f667b6447a05fe542c3b29a9, type: 3}
   - {fileID: 7997903722112226506, guid: 859ebc9556c734a488821312f0f44321, type: 3}
+  - {fileID: 4651266476868810314, guid: c88cefd2ea2968741adbdf2cf8e1f3de, type: 3}
+  - {fileID: 3732413339613480449, guid: e5a5470ad6cb78f43bac24cd6809c727, type: 3}
+  - {fileID: 6461201479786531689, guid: c032c8fd74d674c4280c03cbb37c619f, type: 3}
+  - {fileID: 4856454088341201431, guid: 7f9aba126c77f4f4588b31e4c7c028e4, type: 3}
+  - {fileID: 4856454088341201431, guid: 091bfe59bc7f94c4994933be147041a0, type: 3}
+  - {fileID: 54751181507178402, guid: 99cf3829d0b34f04baf60e66631a13a7, type: 3}
+  - {fileID: 4856454088341201431, guid: dd46eb06ce0022b4fbf3c8a9fc826c0b, type: 3}
+  - {fileID: 4856454088341201431, guid: f1d12a4a1bf5d5c47a53ef974fb1ceb5, type: 3}
+  - {fileID: 4856454088341201431, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d, type: 3}
+  - {fileID: 4856454088341201431, guid: 4f58599f3f4251248be828e66880c02d, type: 3}
   worldCustomerList: []
   restaurantCustomerList: []
   canteenCustomerList: []
   cafeCustomerList: []
   currentDay: 1
   maxDay: 60
-  playerAwakeOnHour: 4
+  playerAwakeOnHour: 5
   playerNeedRestTime: 18
   secondOnRealLifeToChangeMinuteGameTime: 0
-  realLifeMinuteGamePlayPerCycle: 0
+  realLifeMinuteGamePlayPerCycle: 1
   directionalLight: {fileID: 0}
-  minMinute: 0
-  maxMinute: 1440
-  sunriseHour: 0
-  totalCurrentMinute: 0
-  sunStartAngle: 0
-  normalizedValue: 0
-  angle: 0
-  AnswerTimeBed: 2
-  minuteArrow: {fileID: 0}
-  hourArrow: {fileID: 0}
+  AnswerTimeBed: 3
   clockImage: {fileID: 0}
   maxQuestionPerDay: 3
   questionRemaining: 0

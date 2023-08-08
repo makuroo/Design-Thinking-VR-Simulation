@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     public int RestaurantCustomerCount;
     public int CanteenCustomerCount;
 
-    [SerializeField] int maxCustomerSpawn = 5;
+    [SerializeField] int maxCustomerSpawn;
 
     public List<GameObject> customerList = new List<GameObject>();
 
@@ -90,8 +90,8 @@ public class GameManager : MonoBehaviour
 
 
     //clock ui rotator
-    public GameObject minuteArrow;
-    public GameObject hourArrow;
+    //public GameObject minuteArrow;
+    //public GameObject hourArrow;
     public Image clockImage;
 
 
@@ -116,9 +116,7 @@ public class GameManager : MonoBehaviour
         }
 
         //WorldCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn);
-        CafeCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn-1);
-        RestaurantCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn - CafeCustomerCount-1);
-        CanteenCustomerCount = maxCustomerSpawn-CafeCustomerCount-CanteenCustomerCount-1;
+        DistributeCustomerCount();
 
         directionalLight = GameObject.Find("Directional Light");
         /*secondOnRealLifeToChangeMinuteGameTime = ((realLifeMinuteGamePlayPerCycle * 60)/ ((24 - (24 - playerNeedRestTime + playerAwakeOnHour))*60));
@@ -126,6 +124,20 @@ public class GameManager : MonoBehaviour
 
         //jika tidak punya savean..
         questionRemaining = maxQuestionPerDay;
+    }
+
+    public void DistributeCustomerCount()
+    {
+        Debug.Log("MaxCustomerSpawn = " + maxCustomerSpawn);
+        Debug.Log("Cafe = RandomRange(1, "+ maxCustomerSpawn / 2 + ")");
+        CafeCustomerCount = UnityEngine.Random.Range(1, Mathf.FloorToInt(maxCustomerSpawn/2)+1);
+        Debug.Log("Restaurant = RandomRange (" + ((maxCustomerSpawn / 2 + 1) - CafeCustomerCount) + "," + maxCustomerSpawn / 2 + ")");
+        RestaurantCustomerCount = UnityEngine.Random.Range((maxCustomerSpawn / 2 + 1) - CafeCustomerCount, maxCustomerSpawn / 2);
+        CanteenCustomerCount = maxCustomerSpawn - CafeCustomerCount - RestaurantCustomerCount;
+        Debug.Log("Cafe = " + CafeCustomerCount);
+        Debug.Log("Restaurant = " + RestaurantCustomerCount);
+        //Debug.Log("Canteen = " + maxCustomerSpawn + "" + CafeCustomerCount + "" + CanteenCustomerCount);
+        Debug.Log("Canteen = " + CanteenCustomerCount);
     }
 
     private void Start()
@@ -450,11 +462,9 @@ public class GameManager : MonoBehaviour
         if(isMorning)
         {
             directionalLight.transform.rotation = Quaternion.Euler(37f, 0f, 0f);
-            Debug.Log("directional pagi");
         }
         else
         {
-            Debug.Log("directional malam");
             directionalLight.transform.rotation = Quaternion.Euler(210f, 0f, 0f);
         }
     }
@@ -494,16 +504,16 @@ public class GameManager : MonoBehaviour
 
     public void GetClockReference()
     {
-        minuteArrow = GameObject.Find("MinuteArrow");
-        hourArrow = GameObject.Find("HourArrow");
+        //minuteArrow = GameObject.Find("MinuteArrow");
+        //hourArrow = GameObject.Find("HourArrow");
         clockImage = GameObject.Find("ClockImage").GetComponent<Image>();
     }
 
-    public void SetClock(int minute, int hour)
+    /*public void SetClock(int minute, int hour)
     {
         minuteArrow.transform.localRotation = Quaternion.Euler(0f, 180f, minute * 6);
         hourArrow.transform.localRotation = Quaternion.Euler(0f, 180f, hour * 30);
-    }
+    }*/
 
     void SetImageColorRGBA(Image imageComponent, float r, float g, float b, float a)
     {

@@ -89,37 +89,47 @@ public class People : MonoBehaviour
                 }
             }
 
-            if(GameManager.Instance.CanAskCheck())
-            {
-                if (customerData.met)
-                {
-                    QuestionCanvas.SetActive(true);
-                    Debug.Log(customerData.met);
-                    Debug.Log(QuestionCanvas.transform.GetChild(0).gameObject.name);
-                    NameCanvas.SetActive(true);
-                    nameQuestionCanvas.SetActive(false);
-                }
-                else if (customerData.met == false)
-                {
-                    QuestionCanvas.SetActive(true);
-                    NameCanvas.SetActive(true);
-                    UIPertanyaan.SetActive(false);
-                }
-            }
-            else if (!GameManager.Instance.CanAskCheck())
-            {
-                int randomIndex = Random.Range(0, reason.Count);
-                textField.text = reason[randomIndex];
-            }
-
-            for (int i = 0; i < 3; i++)
-            {
-                button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject;
-                button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
-                button[i].GetComponentInChildren<Text>().text = GameManager.Instance.RandomizedQuestion[i];
-            }
+            AskUIQuestion();
 
             isPlayerInRange = true;
+        }
+    }
+
+    public void AskUIQuestion()
+    {
+        if (GameManager.Instance.CanAskCheck())
+        {
+            if (customerData.met)
+            {
+
+                Debug.Log("Udah Nanya Nama");
+                //Debug.Log(customerData.met);
+                //Debug.Log(QuestionCanvas.transform.GetChild(0).gameObject.name);
+                QuestionCanvas.SetActive(true);
+                NameCanvas.SetActive(true);
+                nameQuestionCanvas.SetActive(false);
+                UIPertanyaan.SetActive(true);
+            }
+            else if (customerData.met == false)
+            {
+                Debug.Log("belum nanya nama");
+                QuestionCanvas.SetActive(true);
+                NameCanvas.SetActive(true);
+                nameQuestionCanvas.SetActive(true);
+                UIPertanyaan.SetActive(false);
+            }
+        }
+        else if (!GameManager.Instance.CanAskCheck())
+        {
+            int randomIndex = Random.Range(0, reason.Count);
+            textField.text = reason[randomIndex];
+        }
+
+        for (int i = 0; i < 3; i++)
+        {
+            button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject;
+            button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
+            button[i].GetComponentInChildren<Text>().text = GameManager.Instance.RandomizedQuestion[i];
         }
     }
     
@@ -166,6 +176,25 @@ public class People : MonoBehaviour
         NameCanvas.SetActive(false);
         player.PlayerAsk();
         StartCoroutine(DelaySetActiveUI(AnsweringTimesInSecond));
+    }
+
+    public void AnswerNameSelected()
+    {
+        NameCanvas.SetActive(true);
+        nameQuestionCanvas.SetActive(false);
+        QuestionCanvas.SetActive(false);
+        StartCoroutine(DelayAnswerNameTimeInSecond(AnsweringTimesInSecond));
+    }
+
+    IEnumerator DelayAnswerNameTimeInSecond(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if(player != null && GameManager.Instance.CanAskCheck() && isPlayerInRange)
+        {
+            Debug.Log("masuk DelayAnswerNameTimeInSecond()");
+            QuestionCanvas.SetActive(true);
+            UIPertanyaan.SetActive(true);
+        }
     }
 
     IEnumerator DelaySetActiveUI(float seconds)

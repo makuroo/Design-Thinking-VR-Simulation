@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
-  m_Name: Banana Cake
+  m_Name: Creamy Choco-Vanilla Swirl Delight
   m_EditorClassIdentifier: 
-  cakeName: Banana Cake
-  taste: 01000000000000000000000000000000000000000100000001000000
+  cakeName: Creamy Choco-Vanilla Swirl Delight
+  taste: 00000000000000000000000000000000010000000100000001000000
