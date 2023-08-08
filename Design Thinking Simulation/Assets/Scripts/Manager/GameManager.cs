@@ -532,9 +532,10 @@ public class GameManager : MonoBehaviour
         cafeCustomerList.Clear();
         canteenCustomerList.Clear();
         restaurantCustomerList.Clear();
-        Debug.Log(cafeCustomerList.Count);
+        /*Debug.Log(cafeCustomerList.Count);
         Debug.Log(canteenCustomerList.Count);
-        Debug.Log(restaurantCustomerList.Count);
+        Debug.Log(restaurantCustomerList.Count);*/
+        Debug.Log("ClearCustomer Jalan");
     }
 
     public bool CanAskCheck()
