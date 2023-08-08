@@ -361,11 +361,26 @@ public class GameManager : MonoBehaviour
         else if(currentHour<playerNeedRestTime && currentHour >= playerAwakeOnHour)
         {
             bedScript.ActivateBedAnswer(AnswerTimeBed);
+        } 
+        */
+        if(CanAskCheck())
+        {
+            bedScript.ActivateBedAnswer(AnswerTimeBed);
+        }
+        else
+        {
+            NextDay();
+            //player.SetDayText();
+            SetDirectionalLight(true);
         }
     }
 
     public void SetGameTime()
     {
+        player = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
+        //player.SetChanceText();
+        //player.SetDayText();
+    
 
         //Debug.Log(currentGameTime);
         if(!isSleeping)

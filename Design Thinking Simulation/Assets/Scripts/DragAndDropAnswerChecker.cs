@@ -13,6 +13,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     private TMP_Text currentText;
     public int index;
     public People customer;
+    [SerializeField] UserPersonaHistory history;
 
     public void ChooseChecker()
     {
@@ -44,6 +45,9 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         {
             Debug.Log("false");
         }
+
+        history.FindCustomer(customer.customerData);
+        history.FavoritCakeAnswer(currentText);
     }
 
     //private void SaysAnswerChecker(TMP_Text currentText)
@@ -65,29 +69,35 @@ public class DragAndDropAnswerChecker : MonoBehaviour
 
     private void TasteAnswerChecker(TMP_Text currentText, int index, People customer)
     {
+        history.FindCustomer(customer.customerData);
         if (customer.CalculateLikeness(index) == 0 && currentText.text == "Neutral")
         {
             Debug.Log("n");
+            history.tasteToggleList[index].isOn = false;
         }
 
         else if (customer.CalculateLikeness(index) == 1 && currentText.text == "Like")
         {
             Debug.Log("l");
+            history.tasteToggleList[index].isOn = true;
         }
 
         else if (customer.CalculateLikeness(index) < 0 && currentText.text == "Dislike")
         {
             Debug.Log("d");
+            history.tasteToggleList[index].isOn = false;
         }
 
         else if (customer.CalculateLikeness(index) > 1 && currentText.text == "Really Like")
         {
             Debug.Log("rl");
+            history.tasteToggleList[index].isOn = true;
         }
 
         else if (customer.CalculateLikeness(index) < -1 && currentText.text == "Really Dislike")
         {
             Debug.Log("rd");
+            history.tasteToggleList[index].isOn = false;
         }
         else
             Debug.Log("wrong");
@@ -97,8 +107,10 @@ public class DragAndDropAnswerChecker : MonoBehaviour
 
     private void FrustrationAnswerChecker(TMP_Text currentText)
     {
+        
         customerData = GameManager.Instance.personCustomerData;
-        for(int i =0; i < customerData.frustration.Count; i++)
+        history.FindCustomer(customerData);
+        for (int i =0; i < customerData.frustration.Count; i++)
         {
             if (currentText.text == customerData.frustration[i])
             {
@@ -111,12 +123,15 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             }
         }
 
+        history.FrustrationAnswer(currentText);
+
     }
 
     private void GoalsAnswerChecker(TMP_Text currentText)
     {
         customerData = GameManager.Instance.personCustomerData;
-        for(int i =0; i<customer.customerData.goals.Count; i++)
+        history.FindCustomer(customerData);
+        for (int i = 0; i < customerData.goals.Count; i++)
         {
             if (currentText.text == customerData.goals[i])
             {
@@ -129,5 +144,6 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             }
         }
 
+        history.FrustrationAnswer(currentText);
     }
 }
