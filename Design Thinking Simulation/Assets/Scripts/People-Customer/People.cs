@@ -23,7 +23,6 @@ public class People : MonoBehaviour
     private Text nameText;
     public List<string> reason = new List<string>();
     public GameObject nameQuestionCanvas;
-    GameManager gameManager;
     private GameObject[] button = new GameObject[3];
 
     // Start is called before the first frame update
@@ -31,7 +30,6 @@ public class People : MonoBehaviour
     private void Awake()
     {
         nameText = nameTextObj.GetComponent<Text>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void Start()
