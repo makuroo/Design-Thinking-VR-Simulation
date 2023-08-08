@@ -19,6 +19,7 @@ public class MapManager : MonoBehaviour
         GameManager.Instance.ClearCustomer();
         GameManager.Instance.RandomizeCustomer();
         GameManager.Instance.RandomizeQuestion();
+        GameManager.Instance.DistributeCustomerCount(); // reset distribusi customer setiap ganti hari
     }
 
 }

@@ -11,7 +11,7 @@ public class CustomerSpawner : MonoBehaviour
     public GameObject prefabCustomer;
     public List<GameObject> instantiatedCustomer = new List<GameObject>();
     List<People> peopleScript = new List<People>();
-    public People Temp;
+    People Temp;
     SpawnerRef spawnerRefScript;
 
     private void Awake()

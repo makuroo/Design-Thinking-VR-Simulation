@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     public int RestaurantCustomerCount;
     public int CanteenCustomerCount;
 
-    [SerializeField] int maxCustomerSpawn = 4;
+    [SerializeField] int maxCustomerSpawn = 9;
 
     public List<GameObject> customerList = new List<GameObject>();
 
@@ -116,9 +116,7 @@ public class GameManager : MonoBehaviour
         }
 
         //WorldCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn);
-        CafeCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn);
-        RestaurantCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn - CafeCustomerCount);
-        CanteenCustomerCount = maxCustomerSpawn-CafeCustomerCount-CanteenCustomerCount;
+        DistributeCustomerCount();
 
         directionalLight = GameObject.Find("Directional Light");
         /*secondOnRealLifeToChangeMinuteGameTime = ((realLifeMinuteGamePlayPerCycle * 60)/ ((24 - (24 - playerNeedRestTime + playerAwakeOnHour))*60));
@@ -126,6 +124,16 @@ public class GameManager : MonoBehaviour
 
         //jika tidak punya savean..
         questionRemaining = maxQuestionPerDay;
+    }
+
+    public void DistributeCustomerCount()
+    {
+        CafeCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn / 2);
+        RestaurantCustomerCount = UnityEngine.Random.Range((maxCustomerSpawn / 2 + 1) - CafeCustomerCount, maxCustomerSpawn / 2);
+        CanteenCustomerCount = maxCustomerSpawn - CafeCustomerCount - CanteenCustomerCount;
+        Debug.Log("Cafe = " + CafeCustomerCount);
+        Debug.Log("Restaurant = " + RestaurantCustomerCount);
+        Debug.Log("Canteen = " + CanteenCustomerCount);
     }
 
     private void Start()
