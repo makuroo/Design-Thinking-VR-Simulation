@@ -81,7 +81,7 @@ public class DoorChangeScene : MonoBehaviour
         if (other.GetComponent<PlayerScript>())
         {
             canvasChangeScene.SetActive(false);
-            Debug.Log(other.gameObject);
+            //Debug.Log(other.gameObject);
         }    
     }
 

@@ -13,6 +13,11 @@ public class MapManager : MonoBehaviour
         GameManager.Instance.CanAskCheck();
     }
 
+    private void Update()
+    {
+        
+    }
+
     public void PlayerSleep()
     {
         GameManager.Instance.PlayerSleep();

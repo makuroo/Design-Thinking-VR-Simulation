@@ -51,20 +51,20 @@ public class CustomerSpawner : MonoBehaviour
         if (isCafeSpawner)
         {
 
-            for (int i = 0; i < GameManager.Instance.CafeCustomerCount; i++)
+            for (int i = 0; i < GameManager.Instance.cafeCustomerCount; i++)
             {
-                Debug.Log(GameManager.Instance.cafeCustomerList.Count);
+                //Debug.Log(GameManager.Instance.cafeCustomerList.Count);
                 GameObject instantiatedPrefab = Instantiate(GameManager.Instance.cafeCustomerList[i], transform.position, transform.rotation);
                 if(spawnerRefScript != null && instantiatedPrefab != null)
                 {
                     spawnerRefScript.SetPosition(instantiatedPrefab);
-                    Debug.Log(instantiatedPrefab.transform.position);
+                    //Debug.Log(instantiatedPrefab.transform.position);
                 }
                 else if(spawnerRefScript == null && instantiatedPrefab != null)
                 {
                     instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
                     instantiatedPrefab.transform.rotation = new Quaternion(0,Random.Range(0,360), 0, 0);
-                    Debug.Log("spawned NOT on ref");
+                    //Debug.Log("spawned NOT on ref");
                 }
 
                 instantiatedCustomer.Add(instantiatedPrefab);
@@ -89,7 +89,7 @@ public class CustomerSpawner : MonoBehaviour
         else if(isRestaurantSpawner)
         {
 
-            for (int i = 0; i < GameManager.Instance.RestaurantCustomerCount; i++)
+            for (int i = 0; i < GameManager.Instance.restaurantCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(GameManager.Instance.restaurantCustomerList[i], transform.position, transform.rotation);
                 instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
@@ -115,7 +115,7 @@ public class CustomerSpawner : MonoBehaviour
         else if(isCanteenSpawner)
         {
 
-            for (int i = 0; i < GameManager.Instance.CanteenCustomerCount; i++)
+            for (int i = 0; i < GameManager.Instance.canteenCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(GameManager.Instance.canteenCustomerList[i], transform.position, transform.rotation);
                 instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));

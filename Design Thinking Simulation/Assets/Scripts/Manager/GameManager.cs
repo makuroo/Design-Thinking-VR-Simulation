@@ -43,9 +43,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Customer Spawn")]
     public int WorldCustomerCount;
-    public int CafeCustomerCount;
-    public int RestaurantCustomerCount;
-    public int CanteenCustomerCount;
+    public int cafeCustomerCount;
+    public int restaurantCustomerCount;
+    public int canteenCustomerCount;
 
     [SerializeField] int maxCustomerSpawn;
 
@@ -116,34 +116,43 @@ public class GameManager : MonoBehaviour
         }
 
         //WorldCustomerCount = UnityEngine.Random.Range(1, maxCustomerSpawn);
-        DistributeCustomerCount();
 
         directionalLight = GameObject.Find("Directional Light");
         /*secondOnRealLifeToChangeMinuteGameTime = ((realLifeMinuteGamePlayPerCycle * 60)/ ((24 - (24 - playerNeedRestTime + playerAwakeOnHour))*60));
         sunriseHour = playerAwakeOnHour;*/
 
-        //jika tidak punya savean..
-        questionRemaining = maxQuestionPerDay;
+        /*
+        if (PlayerPrefs.GetInt("isSaveExist") == 1)
+        {
+            currentDay = PlayerPrefs.GetInt("CurrentDay");
+            questionRemaining = PlayerPrefs.GetInt("QuestionRemaining");
+            cafeCustomerCount = PlayerPrefs.GetInt("CafeCustomerCount");
+            restaurantCustomerCount = PlayerPrefs.GetInt("RestaurantCustomerCount");
+            canteenCustomerCount = PlayerPrefs.GetInt("CanteenCustomerCount");
+        }
+        else //jika tidak ada savean (new game)
+        {
+            NewGame();
+            SaveGame();
+        }*/
     }
 
     public void DistributeCustomerCount()
     {
-        Debug.Log("MaxCustomerSpawn = " + maxCustomerSpawn);
-        Debug.Log("Cafe = RandomRange(1, "+ maxCustomerSpawn / 2 + ")");
-        CafeCustomerCount = UnityEngine.Random.Range(1, Mathf.FloorToInt(maxCustomerSpawn/2)+1);
-        Debug.Log("Restaurant = RandomRange (" + ((maxCustomerSpawn / 2 + 1) - CafeCustomerCount) + "," + maxCustomerSpawn / 2 + ")");
-        RestaurantCustomerCount = UnityEngine.Random.Range((maxCustomerSpawn / 2 + 1) - CafeCustomerCount, maxCustomerSpawn / 2);
-        CanteenCustomerCount = maxCustomerSpawn - CafeCustomerCount - RestaurantCustomerCount;
-        Debug.Log("Cafe = " + CafeCustomerCount);
-        Debug.Log("Restaurant = " + RestaurantCustomerCount);
+        cafeCustomerCount = UnityEngine.Random.Range(1, Mathf.FloorToInt(maxCustomerSpawn/2)+1);
+        restaurantCustomerCount = UnityEngine.Random.Range((maxCustomerSpawn / 2 + 1) - cafeCustomerCount, maxCustomerSpawn / 2);
+        canteenCustomerCount = maxCustomerSpawn - cafeCustomerCount - restaurantCustomerCount;
+        Debug.Log("Cafe = " + cafeCustomerCount);
+        Debug.Log("Restaurant = " + restaurantCustomerCount);
         //Debug.Log("Canteen = " + maxCustomerSpawn + "" + CafeCustomerCount + "" + CanteenCustomerCount);
-        Debug.Log("Canteen = " + CanteenCustomerCount);
+        Debug.Log("Canteen = " + canteenCustomerCount);
     }
 
     private void Start()
     {
-        RandomizeQuestion();
-        RandomizeCustomer();
+        // dipindahin ke new game and load game
+        //RandomizeQuestion();
+        //RandomizeCustomer();
     }
 
     private void Update()
@@ -154,12 +163,37 @@ public class GameManager : MonoBehaviour
         */
     }
 
+    public void NewGame()
+    {
+        currentDay = 1;
+        questionRemaining = maxQuestionPerDay;
+        DistributeCustomerCount();
+        RandomizeQuestion();
+        RandomizeCustomer();
+        SaveGame();
+    }
+    
     public void LoadGame()
     {
         /*
         currentMinute = PlayerPrefs.GetInt("SaveCurrentMinute");
         currentHour = PlayerPrefs.GetInt("CurrentHour");*/
-        currentDay = PlayerPrefs.GetInt("CurrentDay");
+
+        //jika ada saveannya
+        if(PlayerPrefs.GetInt("isSaveExist") == 1)
+        {
+            currentDay = PlayerPrefs.GetInt("CurrentDay");
+            questionRemaining = PlayerPrefs.GetInt("QuestionRemaining");
+            cafeCustomerCount = PlayerPrefs.GetInt("CafeCustomerCount");
+            restaurantCustomerCount = PlayerPrefs.GetInt("RestaurantCustomerCount");
+            canteenCustomerCount = PlayerPrefs.GetInt("CanteenCustomerCount");
+            RandomizeQuestion();
+            RandomizeCustomer();
+        }
+        else //jika tidak ada savean (new game)
+        {
+            NewGame();
+        }
     }
 
     public void SaveGame()
@@ -169,6 +203,11 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("CurrentHour", currentHour);
         */
         PlayerPrefs.SetInt("CurrentDay", currentDay);
+        PlayerPrefs.SetInt("QuestionRemaining", questionRemaining);
+        PlayerPrefs.SetInt("CafeCustomerCount", cafeCustomerCount);
+        PlayerPrefs.SetInt("RestaurantCustomerCount", restaurantCustomerCount);
+        PlayerPrefs.SetInt("CanteenCustomerCount", canteenCustomerCount);
+        PlayerPrefs.SetInt("isSaveExist", 1);
     }
 
     public static GameManager Instance
@@ -287,13 +326,14 @@ public class GameManager : MonoBehaviour
 
     #region Random Question
     public void RandomizeQuestion(){
+        Debug.Log("Randomize Question");
         for(int i=0; i<3;i++){
             randomQuestionTypeIndex = UnityEngine.Random.Range(0, Enum.GetNames(typeof(QuestionType)).Length);
             RandomizedType[i] =randomQuestionTypeIndex;
             if(randomQuestionTypeIndex == 0)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, manisQuestion.Count);
-                Debug.Log(randomQuestionIndex);
+                //Debug.Log(randomQuestionIndex);
                 RandomizedQuestion[i] = manisQuestion[randomQuestionIndex];
                 manisQuestion.RemoveAt(randomQuestionIndex);
             }else if(randomQuestionTypeIndex == 1)
@@ -333,6 +373,7 @@ public class GameManager : MonoBehaviour
     #region Random Customer
     public void RandomizeCustomer()
     {
+        Debug.Log("Randomize Customer jalan");
         List<GameObject> customerListCopy = new List<GameObject>(customerList);
         //for (int i = 0; i < WorldCustomerCount; i++)
         //{
@@ -340,21 +381,21 @@ public class GameManager : MonoBehaviour
         //    worldCustomerList.Add(customerListCopy[randomCustomerIndex]);
         //    customerListCopy.RemoveAt(randomCustomerIndex);
         //}
-        for (int i = 0; i < RestaurantCustomerCount; i++)
+        for (int i = 0; i < restaurantCustomerCount; i++)
         {
             int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
             restaurantCustomerList.Add(customerListCopy[randomCustomerIndex]);
             customerListCopy.RemoveAt(randomCustomerIndex);
         }
 
-        for (int i = 0; i < CafeCustomerCount; i++)
+        for (int i = 0; i < cafeCustomerCount; i++)
         {
             int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
             cafeCustomerList.Add(customerListCopy[randomCustomerIndex]);
             customerListCopy.RemoveAt(randomCustomerIndex);
         }
 
-        for (int i = 0; i < CanteenCustomerCount; i++)
+        for (int i = 0; i < canteenCustomerCount; i++)
         {
             int randomCustomerIndex = UnityEngine.Random.Range(0, customerListCopy.Count);
             canteenCustomerList.Add(customerListCopy[randomCustomerIndex]);
@@ -506,6 +547,7 @@ public class GameManager : MonoBehaviour
     {
         //minuteArrow = GameObject.Find("MinuteArrow");
         //hourArrow = GameObject.Find("HourArrow");
+        if(GameObject.Find("ClockImage"))
         clockImage = GameObject.Find("ClockImage").GetComponent<Image>();
     }
 
@@ -557,6 +599,7 @@ public class GameManager : MonoBehaviour
         questionRemaining = Mathf.Clamp(questionRemaining - 1, 0, maxQuestionPerDay);
         CanAskCheck();
         player.SetChanceText();
+        SaveGame();
     }
 
     public void NextDay()
@@ -564,5 +607,6 @@ public class GameManager : MonoBehaviour
         currentDay += 1;
         ResetQuestionRemaining();
         player.SetChanceText();
+        SaveGame();
     }
 }
