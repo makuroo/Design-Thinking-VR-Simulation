@@ -57,7 +57,6 @@ namespace BNG {
 
 
         void Update() {
-
             buttonDownPosition = GetButtonDownPosition();
             buttonUpPosition = GetButtonUpPosition();
             bool grabberInButton = false;
@@ -105,13 +104,13 @@ namespace BNG {
             }
 
             // Click Down?
-            float buttonDownDistance = transform.localPosition.y - buttonDownPosition.y;
+            float buttonDownDistance = Mathf.Abs(transform.localPosition.y - buttonDownPosition.y);
             if (buttonDownDistance <= ClickTolerance && !clickingDown) {
                 clickingDown = true;
                 OnButtonDown();
             }
             // Click Up?
-            float buttonUpDistance = buttonUpPosition.y - transform.localPosition.y;
+            float buttonUpDistance = Mathf.Abs(buttonUpPosition.y - transform.localPosition.y);
             if (buttonUpDistance <= ClickTolerance && clickingDown) {
                 clickingDown = false;
                 OnButtonUp();
