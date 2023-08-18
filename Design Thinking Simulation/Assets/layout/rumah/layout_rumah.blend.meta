@@ -3,7 +3,22 @@ guid: 6cbd708313f0e0b43aae384460d79698
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kalender
+    second: {fileID: 2100000, guid: 2d813f4e54fc3744184e46e8638af9ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PolygonShops_Mat_01_A
+    second: {fileID: 2100000, guid: 76a2247bfa489ff4884dd147eae5b9b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: floor bed
+    second: {fileID: 2100000, guid: a3e59bd01d46ed94a85ca1ed70d19fc3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
