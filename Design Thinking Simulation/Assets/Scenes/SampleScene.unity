@@ -293,7 +293,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 31679077}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 258400240}
+        m_TargetAssemblyTypeName: UserPersonHistoryUI, Assembly-CSharp
+        m_MethodName: ViewHistory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &31679077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,8 +1533,9 @@ GameObject:
   - component: {fileID: 258400236}
   - component: {fileID: 258400235}
   - component: {fileID: 258400239}
+  - component: {fileID: 258400240}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: User History Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1639,6 +1652,20 @@ MonoBehaviour:
   - {fileID: 2120000073}
   - {fileID: 1834992231}
   - {fileID: 578675255}
+--- !u!114 &258400240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258400234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca7f3f0369f53184eaf93ca7cf65bc05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewHistoryCanvas: {fileID: 0}
+  historyCanvas: {fileID: 0}
 --- !u!1 &310171907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +1749,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 310171910}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 258400239}
+        m_TargetAssemblyTypeName: UserPersonaHistory, Assembly-CSharp
+        m_MethodName: Prev
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &310171910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13345,6 +13384,7 @@ GameObject:
   - component: {fileID: 639704635}
   - component: {fileID: 639704634}
   - component: {fileID: 639704633}
+  - component: {fileID: 639704636}
   m_Layer: 0
   m_Name: Quad (4)
   m_TagString: Untagged
@@ -13432,6 +13472,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639704631}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &639704636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639704631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8386d6ed38dc7348b479862e88e58fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPos: {x: 0, y: 0, z: 0}
+  originalParent: {fileID: 0}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  originalScale: {x: 0, y: 0, z: 0}
 --- !u!4 &642824365 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2683195716758988412, guid: 4ac7df741a9c0a2418ec19477729ee3d,
@@ -15156,7 +15212,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 820476758}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 258400239}
+        m_TargetAssemblyTypeName: UserPersonaHistory, Assembly-CSharp
+        m_MethodName: Next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &820476758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16452,7 +16520,7 @@ PrefabInstance:
     - target: {fileID: 4088779762850046648, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046649, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
@@ -17240,6 +17308,7 @@ GameObject:
   - component: {fileID: 1184865986}
   - component: {fileID: 1184865985}
   - component: {fileID: 1184865984}
+  - component: {fileID: 1184865987}
   m_Layer: 0
   m_Name: Quad (2)
   m_TagString: Untagged
@@ -17327,6 +17396,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184865982}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1184865987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184865982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8386d6ed38dc7348b479862e88e58fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPos: {x: 0, y: 0, z: 0}
+  originalParent: {fileID: 0}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  originalScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1186794407
 GameObject:
   m_ObjectHideFlags: 0
@@ -18317,7 +18402,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1302163595}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 258400240}
+        m_TargetAssemblyTypeName: UserPersonHistoryUI, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1302163595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18396,7 +18493,7 @@ PrefabInstance:
     - target: {fileID: 4088779762850046648, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4088779762850046649, guid: 1f75a4a1ec4271442a6c51de842cadf0,
         type: 3}
@@ -19149,7 +19246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.061506882, y: -0.11254883}
+  m_AnchoredPosition: {x: 0.13914967, y: -0.11254883}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1417128169
@@ -19302,6 +19399,7 @@ GameObject:
   - component: {fileID: 1446070479}
   - component: {fileID: 1446070478}
   - component: {fileID: 1446070483}
+  - component: {fileID: 1446070484}
   m_Layer: 0
   m_Name: Quad (5)
   m_TagString: Untagged
@@ -19493,6 +19591,22 @@ MonoBehaviour:
   index: 0
   customer: {fileID: 0}
   history: {fileID: 0}
+--- !u!114 &1446070484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446070476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8386d6ed38dc7348b479862e88e58fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPos: {x: 0, y: 0, z: 0}
+  originalParent: {fileID: 1900936201}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  originalScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1459573983
 GameObject:
   m_ObjectHideFlags: 0
@@ -22281,6 +22395,7 @@ GameObject:
   - component: {fileID: 1732979937}
   - component: {fileID: 1732979936}
   - component: {fileID: 1732979935}
+  - component: {fileID: 1732979938}
   m_Layer: 0
   m_Name: Quad (3)
   m_TagString: Untagged
@@ -22368,6 +22483,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732979933}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1732979938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732979933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8386d6ed38dc7348b479862e88e58fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPos: {x: 0, y: 0, z: 0}
+  originalParent: {fileID: 0}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  originalScale: {x: 0, y: 0, z: 0}
 --- !u!1 &1742357636
 GameObject:
   m_ObjectHideFlags: 0
@@ -22943,7 +23074,7 @@ PrefabInstance:
     - target: {fileID: 2982239402460242209, guid: 859ebc9556c734a488821312f0f44321,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.5
+      value: 10.08
       objectReference: {fileID: 0}
     - target: {fileID: 2982239402460242209, guid: 859ebc9556c734a488821312f0f44321,
         type: 3}
@@ -24245,6 +24376,7 @@ GameObject:
   - component: {fileID: 2038923740}
   - component: {fileID: 2038923739}
   - component: {fileID: 2038923742}
+  - component: {fileID: 2038923743}
   m_Layer: 0
   m_Name: Quad (1)
   m_TagString: Untagged
@@ -24436,6 +24568,22 @@ MonoBehaviour:
   index: 0
   customer: {fileID: 0}
   history: {fileID: 0}
+--- !u!114 &2038923743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038923734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8386d6ed38dc7348b479862e88e58fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialPos: {x: 0, y: 0, z: 0}
+  originalParent: {fileID: 0}
+  originalRotation: {x: 0, y: 0, z: 0, w: 0}
+  originalScale: {x: 0, y: 0, z: 0}
 --- !u!1 &2052379556
 GameObject:
   m_ObjectHideFlags: 0

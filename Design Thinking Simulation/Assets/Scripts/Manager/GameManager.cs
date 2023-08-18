@@ -59,9 +59,10 @@ public class GameManager : MonoBehaviour
     bool gameTimeBool;
     public int currentMinute;
     public int currentHour;
-    public int currentDay;
-    [SerializeField] float playerAwakeOnHour = 4;
-    [SerializeField] float playerNeedRestTime = 18;
+    public int currentDay = 1;
+    public int maxDay = 60;
+    //[SerializeField] float playerAwakeOnHour = 4;
+    //[SerializeField] float playerNeedRestTime = 18;
     [SerializeField] float secondOnRealLifeToChangeMinuteGameTime;
     [SerializeField] float realLifeMinuteGamePlayPerCycle;
     //rumus buat nge set ini, intinya berapa second buat +1 minute di game.. cara ngitungnya, tinggal total hours on day - playerTime mulai beraktifitas - PlayerTime tidak bisa beraktifitas
