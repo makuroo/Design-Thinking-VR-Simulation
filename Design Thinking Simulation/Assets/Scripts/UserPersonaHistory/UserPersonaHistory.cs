@@ -62,7 +62,7 @@ public class UserPersonaHistory : MonoBehaviour
 
     public void Next()
     {
-        if (index != userPersonaList.Count - 1 && userPersonaList.Count!=0)
+        if (index != userPersonaList.Count - 1 && userPersonaList.Count>0)
         {
             index++;
         }

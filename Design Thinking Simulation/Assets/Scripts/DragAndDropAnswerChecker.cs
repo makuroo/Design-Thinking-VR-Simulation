@@ -30,10 +30,6 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             TasteAnswerChecker(currentText, index, customer);
         else
             FavouriteCakeAnswerChecker(currentText);
-        //else if (userPersonaUI.userPersonaChecker == UserPersonaUI.UserPersonaCategory.Image)
-        //    FeelsAnswerChecker(currentText);
-        //else
-        //    SaysAnswerChecker(currentText);
     }
 
     private void FavouriteCakeAnswerChecker(TMP_Text currentText)
@@ -48,24 +44,9 @@ public class DragAndDropAnswerChecker : MonoBehaviour
 
         history.FindCustomer(customer.customerData);
         history.FavoritCakeAnswer(currentText);
+        if(gameObject.GetComponent<SnapZone>() != null)
+            currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
     }
-
-    //private void SaysAnswerChecker(TMP_Text currentText)
-    //{
-    //    customerData = GameManager.Instance.personCustomerData;
-    //    for (int i = 0; i < personCustomerEmpathy.Says.Count; i++)
-    //    {
-    //        if (currentText.text == personCustomerEmpathy.Says[i])
-    //        {
-    //            Debug.Log("True");
-    //            break;
-    //        }
-    //        else
-    //        {
-    //            Debug.Log("False");
-    //        }
-    //    }
-    //}
 
     private void TasteAnswerChecker(TMP_Text currentText, int index, People customer)
     {
