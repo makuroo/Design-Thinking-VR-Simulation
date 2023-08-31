@@ -3,7 +3,12 @@ guid: eb13226449701c74392ca48118e3487c
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PolygonShops_Mat_01_A
+    second: {fileID: 2100000, guid: acb46521c46f4ec4f81a26d09a3a2ace, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
