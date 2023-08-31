@@ -235,6 +235,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: layout_rumah_finish
       objectReference: {fileID: 0}
+    - target: {fileID: -717572165435091766, guid: 2e7759690300a2d4c847a1de7b1e2260,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e7759690300a2d4c847a1de7b1e2260, type: 3}
 --- !u!114 &265065556 stripped
@@ -1496,6 +1501,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083554697436378087, guid: bac704bafc6489b4eaf413f828c8bcb4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bac704bafc6489b4eaf413f828c8bcb4, type: 3}
