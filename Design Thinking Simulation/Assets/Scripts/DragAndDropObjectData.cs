@@ -9,6 +9,7 @@ public class DragAndDropObjectData : MonoBehaviour
     [SerializeField] private Transform originalParent;
     [SerializeField] private Quaternion originalRotation;
     [SerializeField] private Vector3 originalScale;
+    [SerializeField] private GameObject board;
 
     private void Start()
     {
@@ -18,18 +19,37 @@ public class DragAndDropObjectData : MonoBehaviour
         originalRotation = transform.localRotation;
     }
 
+    private void Update()
+    {
+        if (!gameObject.GetComponent<Grabbable>().BeingHeld && (transform.localPosition != initialPos || transform.localRotation != originalRotation || transform.localScale != originalScale) && gameObject.GetComponentInParent<SnapZone>() == null)
+        {
+            Return();
+        }
+    }
+
     public void Return(SnapZone snapZone)
     {
         StartCoroutine(ReturnPosition(snapZone));
     }
 
+    public void Return()
+    {
+        transform.SetParent(originalParent);
+        transform.localPosition = initialPos;
+        transform.localRotation = originalRotation;
+        transform.localScale = originalScale;
+    }
+
     private IEnumerator ReturnPosition(SnapZone snapZone)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         snapZone.ReleaseAll();
         transform.SetParent(originalParent);
         transform.localPosition = initialPos;
         transform.localRotation = originalRotation;
         transform.localScale = originalScale;
+
+        yield return new WaitForSeconds(.5f);
+        board.SetActive(true);
     }
 }

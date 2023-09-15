@@ -11,11 +11,11 @@ public class PlayerScript : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.Instance.GetPlayerRef();
+        
     }
     void Start()
     {
-        
+        GameManager.Instance.GetPlayerRef();
     }
 
     // Update is called once per frame

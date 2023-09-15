@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c93ab046880170040ba6bde9ea7b005f, type: 3}
-  m_Name: Claire
+  m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
+  m_Name: Milky Chocosweet Cake
   m_EditorClassIdentifier: 
-  peopleName: Claire
-  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 34026aa3163b33b47946c07d2bc67064,
-    type: 2}
-  kueFavorit: 
-  goals: []
-  frustration: []
-  met: 0
+  cakeName: Milky Bittersweet Cake
+  taste: 01000000000000000000000001000000010000000000000000000000
