@@ -49,7 +49,7 @@ public class ButtonMonitor : MonoBehaviour
     {
         yield return new WaitForSeconds(durationTutorial[currentTutorialScreen-1]);
         playerScript.screenDetector.SetTargetAsWatch();
-        playerScript.ControllerVibrateRepeat();
+        //playerScript.ControllerVibrateRepeat();
         StartTutorial2();
     }
 

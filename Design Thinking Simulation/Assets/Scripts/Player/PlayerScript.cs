@@ -30,8 +30,7 @@ namespace BNG
 
         // Update is called once per frame
         void Update()
-        {
-            Debug.Log(isControllerVibrateRepeat);
+        { 
             if (InputBridge.Instance.GetControllerBindingValue(ControllerBinding.AButtonDown))
             {
                 GameManager.Instance.NewGame();
@@ -73,7 +72,7 @@ namespace BNG
 
         }
 
-        public void StopRepeatingVibrate()
+        /*public void StopRepeatingVibrate()
         {
             isStoppedVibrateCommand = true;
             CancelInvoke();

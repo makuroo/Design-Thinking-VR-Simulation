@@ -1185,6 +1185,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ae0be99e46b86674184a4d2cac834552, type: 2}
     - target: {fileID: 1672505167288233843, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672505167288233843, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
       propertyPath: watchTarget
       value: 
       objectReference: {fileID: 2046322161}
@@ -3247,7 +3252,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 434680498}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b307cf8a781afa5418b943c482dae95c, type: 3}
   m_Name: 

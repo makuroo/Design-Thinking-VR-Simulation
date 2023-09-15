@@ -39,7 +39,7 @@ namespace BNG
                 {
                     if (target == watchTarget) //jika targetnya itu watch
                     {
-                        playerScript.StopRepeatingVibrate();
+                        //playerScript.StopRepeatingVibrate();
                         SetTargetNone();
                         Debug.Log("Watch masuk screen");
                     }
