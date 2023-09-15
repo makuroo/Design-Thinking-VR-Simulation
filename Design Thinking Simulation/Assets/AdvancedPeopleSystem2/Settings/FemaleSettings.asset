@@ -1490,6 +1490,18 @@ MonoBehaviour:
     yOffset: 0
     mats:
     - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Shirt Type 11
+    mesh:
+    - {fileID: 8479473036499155419, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    - {fileID: -2173889997670864052, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    - {fileID: 8549129253564471734, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    - {fileID: -7294995245832803800, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    hideParts:
+    - Chest
+    - Stomach
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   pantsPresets:
   - name: Pants Type 1
     mesh:
@@ -1673,6 +1685,19 @@ MonoBehaviour:
     yOffset: 0
     mats:
     - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Pants Type 10
+    mesh:
+    - {fileID: 3416169566861362092, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    - {fileID: 3438115860011081173, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    - {fileID: -1227979888329684864, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    - {fileID: -3338467062368752898, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    hideParts:
+    - Hip
+    - Legs
+    - ShinUpper
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   shoesPresets:
   - name: Shoes Type 1
     mesh:
@@ -1840,6 +1865,16 @@ MonoBehaviour:
     - {fileID: -7735432526677381997, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
     hideParts:
     - Foot
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Shoes Type 11
+    mesh:
+    - {fileID: -8949108125610692366, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    - {fileID: -6101965401388858913, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    - {fileID: -5193074453861155066, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    - {fileID: -7681510978802192007, guid: 22d2784d1a20fff4d9129fbfaadf6f5e, type: 3}
+    hideParts: []
     yOffset: 0
     mats:
     - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
