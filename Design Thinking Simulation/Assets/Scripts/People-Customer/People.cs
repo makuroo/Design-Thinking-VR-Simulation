@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEditor;
+using BNG;
 
 public class People : MonoBehaviour
 {
@@ -63,25 +64,21 @@ public class People : MonoBehaviour
             
             player = other.GetComponent<PlayerScript>();
 
-            if (player.CanAskCheck() && gameManager.isOnActivityTime() && customerData.met)
+            if (GameManager.Instance.CanAskCheck()  && customerData.met)
             {
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
                 nameQuestionCanvas.SetActive(false);
 
             }
-            else if (player.CanAskCheck() && customerData.met == false)
+            else if (GameManager.Instance.CanAskCheck() && customerData.met == false)
             {
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
                 UIPertanyaan.SetActive(false);
             }
             
-            else if(!gameManager.isOnActivityTime())
-            {
-                textField.text = "You Need To Sleep";
-            }
-            else if(!player.CanAskCheck())
+            else if(!GameManager.Instance.CanAskCheck())
             {
                 int randomIndex = Random.Range(0, reason.Count);
                 textField.text = reason[randomIndex];
@@ -137,7 +134,7 @@ public class People : MonoBehaviour
     IEnumerator DelaySetActiveUI(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        if(player!= null && player.CanAskCheck() && isPlayerInRange)
+        if(player!= null && GameManager.Instance.CanAskCheck() && isPlayerInRange)
         {
             QuestionCanvas.SetActive(true);
             NameCanvas.SetActive(true);

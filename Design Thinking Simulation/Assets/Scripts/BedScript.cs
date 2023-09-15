@@ -32,7 +32,7 @@ public class BedScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerScript>())
+        if (other.GetComponent<BNG.PlayerScript>())
         {
             canvasBed.SetActive(true);
         }
@@ -40,7 +40,7 @@ public class BedScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.GetComponent<PlayerScript>())
+        if(other.GetComponent<BNG.PlayerScript>())
         {
             canvasBed.SetActive(false);
             canvasBedAnswer.SetActive(false);
