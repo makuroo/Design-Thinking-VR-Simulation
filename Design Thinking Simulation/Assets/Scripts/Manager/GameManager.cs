@@ -55,11 +55,13 @@ public class GameManager : MonoBehaviour
     public int currentMinute;
     public int currentHour;*/
     public int currentDay = 1;
-    public int maxDay = 60;
+    public int maxDay = 31;
+    /*
     [SerializeField] float playerAwakeOnHour = 4;
     [SerializeField] float playerNeedRestTime = 18;
     [SerializeField] float secondOnRealLifeToChangeMinuteGameTime;
     [SerializeField] float realLifeMinuteGamePlayPerCycle;
+    */
     //rumus buat nge set ini, intinya berapa second buat +1 minute di game.. cara ngitungnya, tinggal total hours on day - playerTime mulai beraktifitas - PlayerTime tidak bisa beraktifitas
     //nah itu kan dapet total game time di dalem gamenya yg bisa beraktifitas.. lalu tinggal tentuin satu hari aktivitas di game ingin berapa menit di real life, tinggal di bikin skala perbandingan waktunya
     // jadi rumusnya = ((24-playerRestTime)*60 Minute) / (realLifeMinuteGameplayPercycle * 60seconds) 
@@ -98,9 +100,12 @@ public class GameManager : MonoBehaviour
 
     public int interviewCount = 0;
     public int userPersonaCount = 0;
+    private BNG.PlayerScript player;
+
 
     private void Awake()
     {
+        LoadGame();
         if (instance == null)
         {
             instance = this;
@@ -168,7 +173,9 @@ public class GameManager : MonoBehaviour
         DistributeCustomerCount();
         RandomizeQuestion();
         RandomizeCustomer();
+        PlayerPrefs.SetInt("isSaveExist", 0);
         SaveGame();
+        Debug.Log("Nih New Game");
     }
     
     public void LoadGame()
@@ -187,6 +194,7 @@ public class GameManager : MonoBehaviour
             canteenCustomerCount = PlayerPrefs.GetInt("CanteenCustomerCount");
             RandomizeQuestion();
             RandomizeCustomer();
+            Debug.Log("Nih Load Game");
         }
         else //jika tidak ada savean (new game)
         {
@@ -206,6 +214,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("RestaurantCustomerCount", restaurantCustomerCount);
         PlayerPrefs.SetInt("CanteenCustomerCount", canteenCustomerCount);
         PlayerPrefs.SetInt("isSaveExist", 1);
+        Debug.Log("Nih Save Game");
     }
 
     public static GameManager Instance
@@ -319,12 +328,13 @@ public class GameManager : MonoBehaviour
             NextDay();
             player.SetDayText();
             SetDirectionalLight(true);
+            SaveGame();
         }
     }
 
     public void GetPlayerRef()
     {
-        player = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
+        player = GameObject.Find("PlayerController").GetComponent<BNG.PlayerScript>();
         player.SetChanceText();
         player.SetDayText();
     }
