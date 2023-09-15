@@ -96,7 +96,6 @@ public class GameManager : MonoBehaviour
 
 
     public int questionRemaining;
-    [SerializeField]private PlayerScript player;
 
     public int interviewCount = 0;
     public int userPersonaCount = 0;
