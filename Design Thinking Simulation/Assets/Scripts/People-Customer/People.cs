@@ -9,7 +9,7 @@ public class People : MonoBehaviour
 {
 
     public int index;
-    [SerializeField] private CakePreferencesSO cakePreferences;
+
     public  CustomerDataSO customerData;
     public int questionIndex = 0;
     [SerializeField] private Text textField;
@@ -56,25 +56,6 @@ public class People : MonoBehaviour
             nameText.text = customerData.peopleName;
     }
 
-    public int CalculateLikeness(int index)
-    {
-        int likeCake = 0;
-        int dislikeCake = 0;
-        for (int i = 0; i < cakePreferences.LikeCake.Count; i++) 
-        { 
-
-            likeCake += cakePreferences.LikeCake[i].taste[index];
-        }
-        
-        for (int i = 0; i < cakePreferences.DislikeCake.Count; i++) 
-        { 
-
-            dislikeCake += cakePreferences.DislikeCake[i].taste[index];
-        }
-
-        return  likeCake - dislikeCake;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<PlayerScript>())
@@ -119,16 +100,16 @@ public class People : MonoBehaviour
     
     public void Reply()
     {
-        if (CalculateLikeness(questionIndex) == 0)
+        if (customerData.CalculateLikeness(questionIndex) == 0)
             textField.text = "Neutral";
 
-        if (CalculateLikeness(questionIndex) == 1)
+        if (customerData.CalculateLikeness(questionIndex) == 1)
             textField.text = "Like";
 
-        if (CalculateLikeness(questionIndex) > 1)
+        if (customerData.CalculateLikeness(questionIndex) > 1)
             textField.text = "Really Like";
 
-        if (CalculateLikeness(questionIndex) < 0)
+        if (customerData.CalculateLikeness(questionIndex) < 0)
             textField.text = "Dislike";
     }
 

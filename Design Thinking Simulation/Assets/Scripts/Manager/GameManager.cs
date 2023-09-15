@@ -9,20 +9,14 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
+    public bool canDoActivity = true;
+
     public List<GameObject> peopleMet = new List<GameObject>();
 
-
-    [Header("Drag and Drop")]
-    public List<string> tempAnswer = new List<string>();
-    public List<string> randomOptions = new List<string>();
-    //temp list is used to be a pool for strings where choosen strings will be deleted from temp list to avoid duplicates
-    public List<string> tempListRandom = new List<string>();
 
     public CustomerDataSO personCustomerData;
 
     public TMP_Text currentText;
-
-    public bool canDoActivity = true;
 
     [Header("Random Question")]
     public int randomQuestionIndex;
@@ -43,12 +37,13 @@ public class GameManager : MonoBehaviour
 
     [Header("Customer Spawn")]
     public int WorldCustomerCount;
-    public int CafeCustomerCount;
-    public int RestaurantCustomerCount;
-    public int CanteenCustomerCount;
-
-    [SerializeField] int maxCustomerSpawn = 5;
-
+    public int cafeCustomerCount;
+    public int restaurantCustomerCount;
+    public int canteenCustomerCount;
+    [SerializeField] List<GameObject> maleNpcList = new();
+    [SerializeField] List<GameObject> femaleNpcList = new();
+    [SerializeField] int maxCustomerSpawn;
+    [SerializeField] int maxCustomer;
     public List<GameObject> customerList = new List<GameObject>();
 
     public List<GameObject> worldCustomerList = new List<GameObject>();
@@ -94,13 +89,15 @@ public class GameManager : MonoBehaviour
     public GameObject hourArrow;
     public Image clockImage;
 
-
-
     //question player
     public int maxQuestionPerDay;
    
     
     public int questionRemaining;
+    [SerializeField]private PlayerScript player;
+
+    public int interviewCount = 0;
+    public int userPersonaCount = 0;
 
     private void Awake()
     {
@@ -123,9 +120,22 @@ public class GameManager : MonoBehaviour
         secondOnRealLifeToChangeMinuteGameTime = ((realLifeMinuteGamePlayPerCycle * 60)/ ((24 - (24 - playerNeedRestTime + playerAwakeOnHour))*60));
         sunriseHour = playerAwakeOnHour;
 
+        /*
+        if (PlayerPrefs.GetInt("isSaveExist") == 1)
+        {
+            currentDay = PlayerPrefs.GetInt("CurrentDay");
+            questionRemaining = PlayerPrefs.GetInt("QuestionRemaining");
+            cafeCustomerCount = PlayerPrefs.GetInt("CafeCustomerCount");
+            restaurantCustomerCount = PlayerPrefs.GetInt("RestaurantCustomerCount");
+            canteenCustomerCount = PlayerPrefs.GetInt("CanteenCustomerCount");
+        }
+        else //jika tidak ada savean (new game)
+        {
+            NewGame();
+            SaveGame();
+        }*/
 
-        //jika tidak punya savean..
-        questionRemaining = maxQuestionPerDay;
+        //NPCRandomizer(maxCustomer);
     }
 
 
@@ -153,121 +163,6 @@ public class GameManager : MonoBehaviour
     {
         get { return instance; }
     }
-
-    private void Start()
-    {
-        RandomizeQuestion();
-        RandomizeCustomer();
-    }
-
-    #region Choices
-    public void AddGoalsChoices(int index, UserPersonaUI userPersonaUI)
-    {
-        Debug.Log(index);
-        personCustomerData = peopleMet[index].GetComponentInChildren<People>().customerData;
-        tempAnswer = new List<string>(personCustomerData.goals);
-        tempListRandom = new List<string>(randomOptions);
-        for (int i = 0; i < 5; i++)
-        {
-            int randomOrNot = UnityEngine.Random.Range(0, 2);
-            int answerIndex = UnityEngine.Random.Range(0, tempAnswer.Count);
-            if (randomOrNot == 0 )
-            {
-                userPersonaUI.choicesGameObjectText[i].text = tempAnswer[answerIndex];
-                tempAnswer.RemoveAt(answerIndex);
-            }
-            else
-            {
-                int randomIndex =UnityEngine.Random.Range(0, tempListRandom.Count);
-                userPersonaUI.choicesGameObjectText[i].text = tempListRandom[randomIndex];
-                tempListRandom.RemoveAt(randomIndex);
-            }
-        }
-
-    }
-
-    public void AddFrustrationChoices(int index, UserPersonaUI userPersonaUI)
-    {
-        Debug.Log(index);
-        personCustomerData = peopleMet[index].GetComponentInChildren<People>().customerData;
-        tempAnswer = new List<string>(personCustomerData.goals);
-        tempListRandom = new List<string>(randomOptions);
-        tempListRandom = randomOptions;
-        for (int i = 0; i < 5; i++)
-        {
-            int randomOrNot = UnityEngine.Random.Range(0, 2);
-            int answerIndex = UnityEngine.Random.Range(0, tempAnswer.Count);
-            if (randomOrNot == 0)
-            {
-                userPersonaUI.choicesGameObjectText[i].text = personCustomerData.frustration[answerIndex];
-                tempAnswer.RemoveAt(answerIndex);
-            }
-            else
-            {
-                int randomIndex = UnityEngine.Random.Range(0, tempListRandom.Count);
-                userPersonaUI.choicesGameObjectText[i].text = tempListRandom[randomIndex];
-                tempListRandom.RemoveAt(randomIndex);
-            }
-        }
-
-    }
-
-    public void AddTasteChoices(int index, UserPersonaUI userPersonaUI)
-    {
-        personCustomerData = peopleMet[index].GetComponentInChildren<People>().customerData;
-        userPersonaUI = transform.parent.GetComponent<UserPersonaUI>();
-
-        userPersonaUI.choicesGameObjectText[0].text = "Like";
-        userPersonaUI.choicesGameObjectText[1].text = "Really Like";
-        userPersonaUI.choicesGameObjectText[2].text = "Neutral";
-        userPersonaUI.choicesGameObjectText[3].text = "Dislike";
-        userPersonaUI.choicesGameObjectText[4].text = "Really Dislike";
-    }
-
-
-    public void AddFavouriteCakeChoice(int index, UserPersonaUI userPersonaUI)
-    {
-        personCustomerData = peopleMet[index].GetComponentInChildren<People>().customerData;
-        int answerIndex = UnityEngine.Random.Range(0, 5);
-        for(int i=0; i<5; i++)
-        {
-            if(i == answerIndex)
-            {
-                userPersonaUI.choicesGameObjectText[i].text = personCustomerData.kueFavorit;
-            }
-            else
-            {
-                int randomIndex = UnityEngine.Random.Range(0, tempListRandom.Count);
-                userPersonaUI.choicesGameObjectText[i].text = tempListRandom[randomIndex];
-                tempListRandom.RemoveAt(randomIndex);
-            }
-        }
-    }
-    //public void AddSaysChoices(int index)
-    //{
-    //    personCustomerEmpathy = peopleMet[index].GetComponent<People>().customerEmpathy;
-    //    EmpathyMapButtons empathyMap = transform.parent.GetComponent<EmpathyMapButtons>();
-    //    tempList = new List<string>(personCustomerEmpathy.Says);
-    //    tempListRandom = randomOptions;
-    //    for (int i = 0; i < 5; i++)
-    //    {
-    //        int playerOrRandom =UnityEngine.Random.Range(0, 2);
-    //        if (playerOrRandom != 0 && tempList.Count != 0)
-    //        {
-    //            int saysIndex =UnityEngine.Random.Range(0, tempList.Count);
-    //            empathyMap.choicesGameObjectText[i].text = tempList[saysIndex];
-    //            tempList.RemoveAt(saysIndex);
-    //            Debug.Log(personCustomerEmpathy.Says.Count);
-    //        }
-    //        else
-    //        {
-    //            int randomIndex =UnityEngine.Random.Range(0, tempListRandom.Count);
-    //            empathyMap.choicesGameObjectText[i].text = tempListRandom[randomIndex];
-    //            tempListRandom.RemoveAt(randomIndex);
-    //        }
-    //    }
-    //}
-    #endregion
 
     #region Random Question
     public void RandomizeQuestion(){
@@ -509,4 +404,55 @@ public class GameManager : MonoBehaviour
         Debug.Log(restaurantCustomerList.Count);
     }
 
+    public bool CanAskCheck()
+    {
+        if (questionRemaining <= 0)
+        {
+            SetDirectionalLight(false);
+        }
+        else
+        {
+            SetDirectionalLight(true);
+        }
+        return questionRemaining > 0;
+    }
+
+
+    public void UseAskChance()
+    {
+        questionRemaining = Mathf.Clamp(questionRemaining - 1, 0, maxQuestionPerDay);
+        CanAskCheck();
+        player.SetChanceText();
+        SaveGame();
+    }
+
+    public void NextDay()
+    {
+        currentDay += 1;
+        ResetQuestionRemaining();
+        player.SetChanceText();
+        SaveGame();
+    }
+
+    private void NPCRandomizer(int maxNPC)
+    {
+        List<GameObject> MaleNPCListCopy = new List<GameObject>(maleNpcList);
+        List<GameObject> FemaleNPCListCopy = new List<GameObject>(femaleNpcList);
+        for(int i=0; i<maxNPC; i++)
+        {
+            int randomGender = UnityEngine.Random.Range(0, 2);
+            if(randomGender == 0)
+            {
+                int randomNPCIndex = UnityEngine.Random.Range(0, MaleNPCListCopy.Count);
+                customerList[i] = MaleNPCListCopy[randomNPCIndex];
+                MaleNPCListCopy.RemoveAt(randomNPCIndex);
+            }
+            else
+            {
+                int randomNPCIndex = UnityEngine.Random.Range(0, FemaleNPCListCopy.Count);
+                customerList[i] = FemaleNPCListCopy[randomNPCIndex];
+                FemaleNPCListCopy.RemoveAt(randomNPCIndex);
+            }
+        }
+    }
 }

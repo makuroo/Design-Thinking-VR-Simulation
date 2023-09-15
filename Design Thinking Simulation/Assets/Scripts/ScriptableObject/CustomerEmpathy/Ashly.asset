@@ -14,6 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   picture: {fileID: 0}
   peopleName: Ashly
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 7e117c00ab3a6274599101a21fb15b0c,
+    type: 2}
+  kueFavorit: 
+  goals:
+  - Memakan kue yang milky
+  - Memakan kue kombinasi rasa manis dan asin
+  frustration:
+  - tidak suka kue yang pahit
   met: 0
   personality: Nice
   job: Teacher

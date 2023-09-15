@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   picture: {fileID: 0}
   peopleName: Tom
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 41000f72a1f4ffd48aa2a03a98147e66,
+    type: 2}
+  kueFavorit: 
+  goals: []
+  frustration: []
   met: 0
   personality: Cheerful
   job: Chef

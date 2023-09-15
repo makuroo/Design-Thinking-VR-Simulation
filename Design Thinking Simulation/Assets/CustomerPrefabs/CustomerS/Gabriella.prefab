@@ -436,7 +436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4856454088341201428}
   m_Layer: 0
-  m_Name: Tom
+  m_Name: Gabriella
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,7 +734,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1a96f2c436c09b745985d5faf060545d, type: 2}
+  - {fileID: 2100000, guid: ad051d3b772984b47a4b27afcec8cd89, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -765,7 +765,7 @@ BoxCollider:
   m_GameObject: {fileID: 4856454088723004844}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -780,7 +780,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -866,10 +866,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d928c31c86bf17945a53d09c52c83054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 10
-  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 41000f72a1f4ffd48aa2a03a98147e66,
+  index: 6
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 787e10895372e714286b0dad29144d9d,
     type: 2}
-  customerData: {fileID: 11400000, guid: 1791d33a9c2fb2c4590098f167aaf6c4, type: 2}
+  customerData: {fileID: 11400000, guid: 7849bbba9b66f0e4f899884e985c4a01, type: 2}
   questionIndex: 0
   textField: {fileID: 4146131166335678776}
   player: {fileID: 0}
