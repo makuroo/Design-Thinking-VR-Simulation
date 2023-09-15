@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afc78948c8f955a4d903853c4fec99a8, type: 3}
+  m_Name: Lucas
+  m_EditorClassIdentifier: 
+  LikeCake:
+  - {fileID: 11400000, guid: 734e23dbe1d097c419012a4d5218d92b, type: 2}
+  - {fileID: 11400000, guid: fdf72db093d49be4abf63b6dc3b62bfd, type: 2}
+  DislikeCake:
+  - {fileID: 11400000, guid: 9db5d7bdb5ecaac4d9212b2a033d1299, type: 2}

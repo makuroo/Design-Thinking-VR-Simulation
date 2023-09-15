@@ -142,7 +142,7 @@ public class GameManager : MonoBehaviour
 
     public void DistributeCustomerCount()
     {
-        cafeCustomerCount = UnityEngine.Random.Range(1, Mathf.FloorToInt(maxCustomerSpawn / 2) + 1);
+        cafeCustomerCount = UnityEngine.Random.Range(1, Mathf.FloorToInt(maxCustomerSpawn/2)+1);
         restaurantCustomerCount = UnityEngine.Random.Range((maxCustomerSpawn / 2 + 1) - cafeCustomerCount, maxCustomerSpawn / 2);
         canteenCustomerCount = maxCustomerSpawn - cafeCustomerCount - restaurantCustomerCount;
         Debug.Log("Cafe = " + cafeCustomerCount);
@@ -177,7 +177,7 @@ public class GameManager : MonoBehaviour
         SaveGame();
         Debug.Log("Nih New Game");
     }
-
+    
     public void LoadGame()
     {
         /*
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
         currentHour = PlayerPrefs.GetInt("CurrentHour");*/
 
         //jika ada saveannya
-        if (PlayerPrefs.GetInt("isSaveExist") == 1)
+        if(PlayerPrefs.GetInt("isSaveExist") == 1)
         {
             currentDay = PlayerPrefs.GetInt("CurrentDay");
             questionRemaining = PlayerPrefs.GetInt("QuestionRemaining");
@@ -227,11 +227,9 @@ public class GameManager : MonoBehaviour
     public int CanteenCustomerCount { get; private set; }
 
     #region Random Question
-    public void RandomizeQuestion()
-    {
+    public void RandomizeQuestion(){
         Debug.Log("Randomize Question");
-        for (int i = 0; i < 3; i++)
-        {
+        for(int i=0; i<3;i++){
             randomQuestionTypeIndex = UnityEngine.Random.Range(0, Enum.GetNames(typeof(QuestionType)).Length);
             RandomizedType[i] = randomQuestionTypeIndex;
             if (randomQuestionTypeIndex == 0)
@@ -411,7 +409,7 @@ public class GameManager : MonoBehaviour
 
     public void SetDirectionalLight(bool isMorning)
     {
-        if (isMorning)
+        if(isMorning)
         {
             directionalLight.transform.rotation = Quaternion.Euler(37f, 0f, 0f);
         }
@@ -430,6 +428,9 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }*/
+
+
+
 
     void ResetQuestionRemaining()
     {
@@ -455,8 +456,8 @@ public class GameManager : MonoBehaviour
     {
         //minuteArrow = GameObject.Find("MinuteArrow");
         //hourArrow = GameObject.Find("HourArrow");
-        if (GameObject.Find("ClockImage"))
-            clockImage = GameObject.Find("ClockImage").GetComponent<Image>();
+        if(GameObject.Find("ClockImage"))
+        clockImage = GameObject.Find("ClockImage").GetComponent<Image>();
     }
 
     /*public void SetClock(int minute, int hour)

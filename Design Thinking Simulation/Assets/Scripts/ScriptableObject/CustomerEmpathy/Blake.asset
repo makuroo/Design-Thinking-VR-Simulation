@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93ab046880170040ba6bde9ea7b005f, type: 3}
   m_Name: Blake
   m_EditorClassIdentifier: 
-  picture: {fileID: 0}
   peopleName: Blake
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 124d1ef3f29256b48bb8e77607ad0c1f,
     type: 2}
@@ -20,5 +19,3 @@ MonoBehaviour:
   goals: []
   frustration: []
   met: 0
-  personality: Tough
-  job: Bartender

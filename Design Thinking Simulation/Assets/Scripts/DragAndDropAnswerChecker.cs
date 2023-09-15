@@ -17,7 +17,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     public ProblemStatement problemStatementUI;
     private CustomerDataSO customerData;
     private Grabbable currentGrabbable;
-    private TMP_Text currentText;
+    public TMP_Text currentText;
     public int index;
     public People customer;
     [SerializeField] UserPersonaHistory history;
@@ -75,16 +75,16 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         history.FindCustomer(customer.customerData);
         history.AddToDict(customer.customerData.peopleName, customer.customerData);
         //return;
-        //if (customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) == 1 || customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag))> 1 && random == 0)
-        //{
-        //    history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = true;
-        //    Debug.Log("true");
-        //}
-        //else if(customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) == -1 || customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) < -1 && random == 1)
-        //{
-        //    history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = false;
-        //    Debug.Log("true");
-        //}
+        if (customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) == 1 || customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag))> 1 && random == 0)
+        {
+           history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = true;
+           Debug.Log("true");
+        }
+        else if(customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) == -1 || customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) < -1 && random == 1)
+        {
+           history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = false;
+           Debug.Log("true");
+        }
         userPersonaUI.gameObject.SetActive(false);
         if (gameObject.GetComponent<SnapZone>() != null)
             currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());

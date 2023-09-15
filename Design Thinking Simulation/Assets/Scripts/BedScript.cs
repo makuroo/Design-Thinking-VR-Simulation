@@ -35,6 +35,7 @@ public class BedScript : MonoBehaviour
         if (other.GetComponent<BNG.PlayerScript>())
         {
             canvasBed.SetActive(true);
+            canvasBedAnswer.SetActive(false);
         }
     }
 

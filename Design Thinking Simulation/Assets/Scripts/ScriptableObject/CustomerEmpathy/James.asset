@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93ab046880170040ba6bde9ea7b005f, type: 3}
   m_Name: James
   m_EditorClassIdentifier: 
-  picture: {fileID: 0}
   peopleName: James
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 0c111af7d541350449ce12b599a79282,
     type: 2}
@@ -20,5 +19,3 @@ MonoBehaviour:
   goals: []
   frustration: []
   met: 0
-  personality: Calm
-  job: Mechanic

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93ab046880170040ba6bde9ea7b005f, type: 3}
   m_Name: Ashly
   m_EditorClassIdentifier: 
-  picture: {fileID: 0}
   peopleName: Ashly
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 7e117c00ab3a6274599101a21fb15b0c,
     type: 2}
@@ -23,5 +22,3 @@ MonoBehaviour:
   frustration:
   - tidak suka kue yang pahit
   met: 0
-  personality: Nice
-  job: Teacher

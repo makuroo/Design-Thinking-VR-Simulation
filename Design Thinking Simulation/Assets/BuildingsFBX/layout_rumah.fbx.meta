@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Design Thinking Simulation/Assets/BuildingsFBX/layout_rumah.fbx.meta
 guid: 8e4e2d47854b63644af63fd3454be84c
+========
+guid: eb13226449701c74392ca48118e3487c
+>>>>>>>> NichoBranch:Design Thinking Simulation/Assets/layout/rumah/layout_rumah_finish.fbx.meta
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []

@@ -14,7 +14,7 @@ public class People : MonoBehaviour
     public  CustomerDataSO customerData;
     public int questionIndex = 0;
     [SerializeField] private Text textField;
-    [HideInInspector] public PlayerScript player;
+    [HideInInspector] public BNG.PlayerScript player;
     [SerializeField] GameObject QuestionCanvas;
     public GameObject UIPertanyaan;
     [SerializeField] private GameObject NameCanvas;
@@ -59,39 +59,59 @@ public class People : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<PlayerScript>())
+        if(other.GetComponent<BNG.PlayerScript>())
         {
             
-            player = other.GetComponent<PlayerScript>();
-
-            if (GameManager.Instance.CanAskCheck()  && customerData.met)
+            player = other.GetComponent<BNG.PlayerScript>();
+            if(GameManager.Instance.peopleMet.Count >0)
             {
+                foreach (GameObject go in GameManager.Instance.peopleMet)
+                {
+                    go.transform.GetChild(0).GetComponent<People>().customerData.met = true;
+                }
+            }
+
+            AskUIQuestion();
+
+            isPlayerInRange = true;
+        }
+    }
+
+    public void AskUIQuestion()
+    {
+        if (GameManager.Instance.CanAskCheck())
+        {
+            if (customerData.met)
+            {
+
+                Debug.Log("Udah Nanya Nama");
+                //Debug.Log(customerData.met);
+                //Debug.Log(QuestionCanvas.transform.GetChild(0).gameObject.name);
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
                 nameQuestionCanvas.SetActive(false);
-
+                UIPertanyaan.SetActive(true);
             }
-            else if (GameManager.Instance.CanAskCheck() && customerData.met == false)
+            else if (customerData.met == false)
             {
+                Debug.Log("belum nanya nama");
                 QuestionCanvas.SetActive(true);
                 NameCanvas.SetActive(true);
+                nameQuestionCanvas.SetActive(true);
                 UIPertanyaan.SetActive(false);
             }
-            
-            else if(!GameManager.Instance.CanAskCheck())
-            {
-                int randomIndex = Random.Range(0, reason.Count);
-                textField.text = reason[randomIndex];
-            }
+        }
+        else if (!GameManager.Instance.CanAskCheck())
+        {
+            int randomIndex = Random.Range(0, reason.Count);
+            textField.text = reason[randomIndex];
+        }
 
-            for (int i = 0; i < 3; i++)
-            {
-                button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject;
-                button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
-                button[i].GetComponentInChildren<Text>().text = GameManager.Instance.RandomizedQuestion[i];
-            }
-
-            isPlayerInRange = true;
+        for (int i = 0; i < 3; i++)
+        {
+            button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject;
+            button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
+            button[i].GetComponentInChildren<Text>().text = GameManager.Instance.RandomizedQuestion[i];
         }
     }
     
@@ -108,27 +128,55 @@ public class People : MonoBehaviour
 
         if (customerData.CalculateLikeness(questionIndex) < 0)
             textField.text = "Dislike";
+
+        GameManager.Instance.CanAskCheck();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<PlayerScript>())
+        if (other.GetComponent<BNG.PlayerScript>())
         {
             NameCanvas.SetActive(false);
-            player = other.GetComponent<PlayerScript>();
+            player = other.GetComponent<BNG.PlayerScript>();
             QuestionCanvas.SetActive(false);
             isPlayerInRange = false;
             textField.text = "";
         }
+        if (GameManager.Instance.peopleMet.Count > 0)
+        {
+            foreach (GameObject go in GameManager.Instance.peopleMet)
+            {
+                go.transform.GetChild(0).GetComponent<People>().customerData.met = false;
+            }
+        }
     }
 
-
+    
     public void AnswerSelected()
     {
         QuestionCanvas.SetActive(false);
         NameCanvas.SetActive(false);
         player.PlayerAsk();
         StartCoroutine(DelaySetActiveUI(AnsweringTimesInSecond));
+    }
+
+    public void AnswerNameSelected()
+    {
+        NameCanvas.SetActive(true);
+        nameQuestionCanvas.SetActive(false);
+        QuestionCanvas.SetActive(false);
+        StartCoroutine(DelayAnswerNameTimeInSecond(AnsweringTimesInSecond));
+    }
+
+    IEnumerator DelayAnswerNameTimeInSecond(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        if(player != null && GameManager.Instance.CanAskCheck() && isPlayerInRange)
+        {
+            Debug.Log("masuk DelayAnswerNameTimeInSecond()");
+            QuestionCanvas.SetActive(true);
+            UIPertanyaan.SetActive(true);
+        }
     }
 
     IEnumerator DelaySetActiveUI(float seconds)

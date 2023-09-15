@@ -13,7 +13,7 @@ namespace BNG
         public TextMeshProUGUI dayText;
         public TextMeshProUGUI chanceText;
 
-        //public ScreenDetector screenDetector;
+        public ScreenDetector screenDetector;
 
         bool isControllerVibrateRepeat;
         bool isStoppedVibrateCommand;
@@ -30,11 +30,11 @@ namespace BNG
 
         // Update is called once per frame
         void Update()
-        {
+        { 
             if (InputBridge.Instance.GetControllerBindingValue(ControllerBinding.AButtonDown))
             {
                 GameManager.Instance.NewGame();
-            }
+            }    
         }
 
         public void PlayerAsk()
@@ -61,7 +61,7 @@ namespace BNG
             {
                 if (isControllerVibrateRepeat)
                 {
-
+                    
                     //StartCoroutine(ControllerVibrateRepeat());
                 }
             }

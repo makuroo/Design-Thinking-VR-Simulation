@@ -36,6 +36,7 @@ public class Questions : MonoBehaviour
     public void NameQuestion()
     {
         person = transform.parent.parent.parent.GetComponent<People>();
+        person.player.PlayerAsk();
         if (indexList.Count == 0)
         {
             indexList.Add(person.index);
@@ -58,14 +59,17 @@ public class Questions : MonoBehaviour
                 if (i == indexList.Count - 1 && found == false)
                 {
                     indexList.Add(person.index);
-                    GameManager.Instance.peopleMet.Add(GameManager.Instance.customerList[person.index]);
-                    //GameManager.Instance.customerList[person.index].GetComponentInChildren<People>().met = true;
+                    GameManager.Instance.peopleMet.Add(GameManager.Instance.customerList[person.index]);                 
                 }
             }
         }
 
-        person.UIPertanyaan.SetActive(true);
-        person.nameTextObj.text = person.customerData.peopleName;
-        person.nameQuestionCanvas.SetActive(false);
+        if(GameManager.Instance.CanAskCheck())
+        {
+            person.AnswerNameSelected();
+            person.nameTextObj.text = person.customerData.peopleName;
+        }
+        //person.UIPertanyaan.SetActive(true);
+        //person.nameQuestionCanvas.SetActive(false);
     }
 }

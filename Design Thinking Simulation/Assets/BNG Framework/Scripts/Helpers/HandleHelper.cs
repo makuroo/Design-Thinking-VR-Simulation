@@ -82,8 +82,6 @@ namespace BNG {
                         doorAudioSource.Play();
                     }
 
-                    Debug.Log(Quaternion.Angle(lastDoorAngleRotation, initialRotation));
-
                     didRelease = true;
                 }
             }
