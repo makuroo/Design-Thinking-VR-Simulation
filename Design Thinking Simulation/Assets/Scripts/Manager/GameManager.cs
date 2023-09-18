@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using BNG;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class GameManager : MonoBehaviour
     [Header("Random Question")]
     public int randomQuestionIndex;
     public int randomQuestionTypeIndex;
-    
+
     public string[] RandomizedQuestion;
     public int[] RandomizedType;
 
@@ -221,44 +222,54 @@ public class GameManager : MonoBehaviour
         get { return instance; }
     }
 
+    public int RestaurantCustomerCount { get; private set; }
+    public int CafeCustomerCount { get; private set; }
+    public int CanteenCustomerCount { get; private set; }
+
     #region Random Question
     public void RandomizeQuestion(){
         Debug.Log("Randomize Question");
         for(int i=0; i<3;i++){
             randomQuestionTypeIndex = UnityEngine.Random.Range(0, Enum.GetNames(typeof(QuestionType)).Length);
-            RandomizedType[i] =randomQuestionTypeIndex;
-            if(randomQuestionTypeIndex == 0)
+            RandomizedType[i] = randomQuestionTypeIndex;
+            if (randomQuestionTypeIndex == 0)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, manisQuestion.Count);
                 //Debug.Log(randomQuestionIndex);
                 RandomizedQuestion[i] = manisQuestion[randomQuestionIndex];
                 manisQuestion.RemoveAt(randomQuestionIndex);
-            }else if(randomQuestionTypeIndex == 1)
+            }
+            else if (randomQuestionTypeIndex == 1)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, asinQuestion.Count);
                 RandomizedQuestion[i] = asinQuestion[randomQuestionIndex];
                 asinQuestion.RemoveAt(randomQuestionIndex);
-            }else if (randomQuestionTypeIndex == 2)
+            }
+            else if (randomQuestionTypeIndex == 2)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, asemQuestion.Count);
                 RandomizedQuestion[i] = asemQuestion[randomQuestionIndex];
                 asemQuestion.RemoveAt(randomQuestionIndex);
-            }else if(randomQuestionTypeIndex == 3)
+            }
+            else if (randomQuestionTypeIndex == 3)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, pahitQuestion.Count);
                 RandomizedQuestion[i] = pahitQuestion[randomQuestionIndex];
                 pahitQuestion.RemoveAt(randomQuestionIndex);
-            }else if(randomQuestionTypeIndex == 4)
+            }
+            else if (randomQuestionTypeIndex == 4)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, susuQuestion.Count);
                 RandomizedQuestion[i] = susuQuestion[randomQuestionIndex];
                 susuQuestion.RemoveAt(randomQuestionIndex);
-            }else if(randomQuestionTypeIndex == 5)
+            }
+            else if (randomQuestionTypeIndex == 5)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, coklatQuestion.Count);
                 RandomizedQuestion[i] = coklatQuestion[randomQuestionIndex];
                 coklatQuestion.RemoveAt(randomQuestionIndex);
-            }else if(randomQuestionTypeIndex == 6)
+            }
+            else if (randomQuestionTypeIndex == 6)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, vanilaQuestion.Count);
                 RandomizedQuestion[i] = vanilaQuestion[randomQuestionIndex];
@@ -318,7 +329,7 @@ public class GameManager : MonoBehaviour
             bedScript.ActivateBedAnswer(AnswerTimeBed);
         } 
         */
-        if(CanAskCheck())
+        if (CanAskCheck())
         {
             bedScript.ActivateBedAnswer(AnswerTimeBed);
         }
@@ -465,10 +476,10 @@ public class GameManager : MonoBehaviour
     {
         bedScript = GameObject.Find("Bed").GetComponent<BedScript>();
     }
-    
+
     public void ClearCustomer()
     {
-        
+
         cafeCustomerList.Clear();
         canteenCustomerList.Clear();
         restaurantCustomerList.Clear();
@@ -512,10 +523,10 @@ public class GameManager : MonoBehaviour
     {
         List<GameObject> MaleNPCListCopy = new List<GameObject>(maleNpcList);
         List<GameObject> FemaleNPCListCopy = new List<GameObject>(femaleNpcList);
-        for(int i=0; i<maxNPC; i++)
+        for (int i = 0; i < maxNPC; i++)
         {
             int randomGender = UnityEngine.Random.Range(0, 2);
-            if(randomGender == 0)
+            if (randomGender == 0)
             {
                 int randomNPCIndex = UnityEngine.Random.Range(0, MaleNPCListCopy.Count);
                 customerList[i] = MaleNPCListCopy[randomNPCIndex];

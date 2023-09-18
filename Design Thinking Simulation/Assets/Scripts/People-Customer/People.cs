@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEditor;
+using BNG;
 
 public class People : MonoBehaviour
 {
