@@ -32,7 +32,7 @@ public class UserPersonaHistory : MonoBehaviour
         for(int i=0; i < userPersonaList.Count; i++)
         {
             userPersonaList[i].peopleName = "???";
-            userPersonaList[i].kueFavorit = "???";
+            userPersonaList[i].kueFavorit = null;
             userPersonaList[i].goals[0] = "???";
             userPersonaList[i].frustration[0] = "???";
         }
@@ -43,7 +43,8 @@ public class UserPersonaHistory : MonoBehaviour
     void Update()
     {
         nameText.text = userPersonaList[index].peopleName;
-        kueFavoritText.text = userPersonaList[index].kueFavorit;
+        if(userPersonaList[index].kueFavorit!=null)
+            kueFavoritText.text = userPersonaList[index].kueFavorit.cakeName;
         goalsText.text = userPersonaList[index].goals[0];
         frustrationText.text = userPersonaList[index].frustration[0];
     }
@@ -59,6 +60,7 @@ public class UserPersonaHistory : MonoBehaviour
                 if (userPersonaList[i].peopleName == customer.peopleName)
                 {
                     index = i;
+
                     break;
                 }
                 else if (userPersonaList[i].peopleName == "???")
@@ -92,9 +94,9 @@ public class UserPersonaHistory : MonoBehaviour
         }
     }
 
-    public void FavoritCakeAnswer(TMP_Text answer)
+    public void FavoritCakeAnswer(CustomerDataSO customer)
     {
-        userPersonaList[index].kueFavorit = answer.text;
+        userPersonaList[index].kueFavorit =customer.kueFavorit;
     }
 
     public void GoalsAnswer(TMP_Text answer)

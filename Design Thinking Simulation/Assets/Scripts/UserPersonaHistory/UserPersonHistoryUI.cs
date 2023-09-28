@@ -8,17 +8,6 @@ public class UserPersonHistoryUI : MonoBehaviour
     [SerializeField] Canvas viewHistoryCanvas;
     [SerializeField] Canvas historyCanvas;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ViewHistory()
     {
         viewHistoryCanvas.gameObject.SetActive(false);

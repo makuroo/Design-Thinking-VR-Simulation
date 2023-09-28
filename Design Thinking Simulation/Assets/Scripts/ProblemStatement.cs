@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System.Linq;
 
 public class ProblemStatement : MonoBehaviour
 {
     [SerializeField] private UserPersonaHistory history;
     [SerializeField] GameObject tasteAnswer;
     [SerializeField] TMP_Text statement;
-    [SerializeField] List<float> answersStatement1 = new();
+    public List<float> answersStatement1 = new();
     public List<float> likenessRank = new();
     public List<float> likenessRankSorted = new();
     public static int currentIndex = 0;
-    int x = 0;
+
+    public BoardActivityUI board;
+
+    public List<int> ukuranList = new(3);
     private void Start()
     {
         if (history!= null)
@@ -27,10 +31,8 @@ public class ProblemStatement : MonoBehaviour
 
     public void Statement1(GameObject answer)
     {
-        if(currentIndex>1)
-            currentIndex = 0;
-        string inputString = "Favourite flavour is _ Most dislike flavour is _";
-        statement.text = inputString;
+
+            
         if(history.dictValues[0].value.CalculateLikeness(int.Parse(answer.tag)) == answersStatement1[currentIndex])
         {
             Debug.Log("true");
@@ -41,6 +43,12 @@ public class ProblemStatement : MonoBehaviour
             Debug.Log("wrong");
         }
         currentIndex++;
+        if (currentIndex > 1)
+        {
+            currentIndex = 0;
+            board.tasteAnswer.SetActive(false);
+            board.choicesJenisKue.SetActive(true);
+        }
     }
 
     
@@ -63,5 +71,31 @@ public class ProblemStatement : MonoBehaviour
         }
         likenessRankSorted = new List<float>(likenessRank);
         likenessRankSorted.Sort((x, y) => y.CompareTo(x));
+    }
+
+    public int UkuranAvg()
+    {
+        ukuranList[0] = ukuranList[1] = ukuranList[2] = 0;
+        for(int i=0; i < GameManager.Instance.peopleMet.Count; i++)
+        {
+            if (GameManager.Instance.peopleMet[i].GetComponentInChildren<People>().customerData.kueFavorit.ukuranKue.ToString() == "Kecil")
+            {
+                ukuranList[0]++;
+            }else if(GameManager.Instance.peopleMet[i].GetComponentInChildren<People>().customerData.kueFavorit.ukuranKue.ToString() == "Sedang")
+            {
+                ukuranList[1]++;
+            }
+            else if(GameManager.Instance.peopleMet[i].GetComponentInChildren<People>().customerData.kueFavorit.ukuranKue.ToString() == "Besar")
+            {
+                ukuranList[2]++;
+            }
+        }
+
+        if (ukuranList[0] == ukuranList.Max())
+            return 0;
+        else if (ukuranList[1] == ukuranList.Max())
+            return 1;
+        else 
+            return 2;
     }
 }

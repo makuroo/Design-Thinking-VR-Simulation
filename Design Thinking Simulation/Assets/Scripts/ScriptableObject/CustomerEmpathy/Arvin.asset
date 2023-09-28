@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Arvin
   m_EditorClassIdentifier: 
   peopleName: Arvin
-  kueFavorit: Cream Puff Pastry
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: da3da009b0ea5384eb53f672aa441324,
+    type: 2}
+  kueFavorit: {fileID: 11400000, guid: 3f4b1ebb1a1b5a645a9b0bb64427e0d5, type: 2}
   goals:
   - Memakan kue yang milky
   - Memakan kue kombinasi rasa manis dan asin

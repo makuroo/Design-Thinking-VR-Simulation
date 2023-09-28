@@ -9,7 +9,6 @@ public class DragAndDropObjectData : MonoBehaviour
     [SerializeField] private Transform originalParent;
     [SerializeField] private Quaternion originalRotation;
     [SerializeField] private Vector3 originalScale;
-    [SerializeField] private GameObject board;
 
     private void Start()
     {
@@ -48,8 +47,5 @@ public class DragAndDropObjectData : MonoBehaviour
         transform.localPosition = initialPos;
         transform.localRotation = originalRotation;
         transform.localScale = originalScale;
-
-        yield return new WaitForSeconds(.5f);
-        board.SetActive(true);
     }
 }

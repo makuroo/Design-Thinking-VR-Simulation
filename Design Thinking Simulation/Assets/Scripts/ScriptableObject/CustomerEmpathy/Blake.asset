@@ -15,7 +15,7 @@ MonoBehaviour:
   peopleName: Blake
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 124d1ef3f29256b48bb8e77607ad0c1f,
     type: 2}
-  kueFavorit: 
+  kueFavorit: {fileID: 11400000, guid: b4860a63fe1fda14abae2778c02c5b99, type: 2}
   goals: []
   frustration: []
   met: 0
