@@ -12,13 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
   m_Name: Tangy Bitterchoco Cake
   m_EditorClassIdentifier: 
-  peopleName: Gabriella
-  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 787e10895372e714286b0dad29144d9d,
-    type: 2}
-  kueFavorit: 
-  goals:
-  - 
-  - 
-  frustration:
-  - 
-  met: 0
+  cakeName: Tangy Bitterchoco
+  taste: 00000000010000000000000001000000000000000100000000000000
+  ukuranKue: 0

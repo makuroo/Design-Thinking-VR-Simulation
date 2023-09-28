@@ -14,7 +14,7 @@ public class UserPersonaUI : MonoBehaviour
     public List<TMP_Text> choicesGameObjectText = new List<TMP_Text>();
     public UserPersonaCategory userPersonaChecker;
     [SerializeField] private GameObject prevNextButtons;
-    [SerializeField] private GameObject topics;
+    
     
     public enum UserPersonaCategory
     {
@@ -53,7 +53,7 @@ public class UserPersonaUI : MonoBehaviour
     public void Confirm()
     {
         prevNextButtons.SetActive(false);
-        topics.SetActive(true);
+        board.topics.SetActive(true);
     }
 
     public void ChooseGoals()
@@ -63,8 +63,9 @@ public class UserPersonaUI : MonoBehaviour
         userPersonaQuestion.SetActive(true);
         userPersonaQuestion.GetComponentInChildren<Text>().text = "Apa goal " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
         userPersonaChecker = UserPersonaCategory.Goals;
+        board.choices.SetActive(true);
         board.AddGoalsChoices(customerIndex, this);
-        topics.SetActive(false);
+        board.topics.SetActive(false);
     }
 
     public void ChooseFrustration()
@@ -74,8 +75,9 @@ public class UserPersonaUI : MonoBehaviour
         userPersonaQuestion.SetActive(true);
         userPersonaChecker = UserPersonaCategory.Frustration;
         userPersonaQuestion.GetComponentInChildren<Text>().text = "Apa frustration " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
+        board.choices.SetActive(true);
         board.AddFrustrationChoices(customerIndex, this);
-        topics.SetActive(false);
+        board.topics.SetActive(false);
     }
 
     public void ChooseTaste()
@@ -92,7 +94,7 @@ public class UserPersonaUI : MonoBehaviour
             userPersonaQuestion.GetComponentInChildren<Text>().text = "Apa rasa yang paling tidak dusukai oleh " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
         if (board.choices.activeInHierarchy)
             board.choices.SetActive(false);
-        topics.SetActive(false);
+        board.topics.SetActive(false);
         tasteAnswers.gameObject.SetActive(true);
     }
 
@@ -153,6 +155,7 @@ public class UserPersonaUI : MonoBehaviour
         userPersonaQuestion.GetComponentInChildren<Text>().text = "Apa kue favorit dari " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
         checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
         board.AddFavouriteCakeChoices(customerIndex, this);
-        topics.SetActive(false);
+        board.choices.SetActive(true);
+        board.topics.SetActive(false);
     }
 }

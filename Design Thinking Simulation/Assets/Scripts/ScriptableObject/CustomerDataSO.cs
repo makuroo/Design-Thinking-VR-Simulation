@@ -9,7 +9,7 @@ public class CustomerDataSO : ScriptableObject
     public string peopleName;
     [field: SerializeField]
     public CakePreferencesSO cakePreferences { get;  set; }
-    public string kueFavorit;
+    public CakeSO kueFavorit;
     public List<string> goals;
     public List<string> frustration;
     public bool met = false;

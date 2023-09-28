@@ -12,13 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
   m_Name: Tangy Minilla Cake
   m_EditorClassIdentifier: 
-  peopleName: Sam
-  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 4e394e4202c78214caa3b9f63e63e49b,
-    type: 2}
-  kueFavorit: 
-  goals:
-  - 
-  - 
-  frustration:
-  - 
-  met: 0
+  cakeName: 'Tangy Minilla '
+  taste: 00000000010000000000000000000000010000000000000001000000
+  ukuranKue: 0
