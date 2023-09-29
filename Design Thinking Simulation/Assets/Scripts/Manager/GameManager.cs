@@ -326,7 +326,7 @@ public class GameManager : MonoBehaviour
         {
             NextDay();
             player.SetDayText();
-            SetDirectionalLight(true);
+            //SetDirectionalLight(true);
             SaveGame();
         }
     }
@@ -396,6 +396,7 @@ public class GameManager : MonoBehaviour
         }
     }*/
 
+    /*
     public void SetDirectionalLight(bool isMorning)
     {
         if(isMorning)
@@ -406,7 +407,7 @@ public class GameManager : MonoBehaviour
         {
             directionalLight.transform.rotation = Quaternion.Euler(210f, 0f, 0f);
         }
-    }
+    }*/
 
 
     /*public bool isOnActivityTime()
@@ -482,11 +483,11 @@ public class GameManager : MonoBehaviour
     {
         if (questionRemaining <= 0)
         {
-            SetDirectionalLight(false);
+            //SetDirectionalLight(false);
         }
         else
         {
-            SetDirectionalLight(true);
+            //SetDirectionalLight(true);
         }
         return questionRemaining > 0;
     }

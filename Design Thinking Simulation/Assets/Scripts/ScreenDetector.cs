@@ -34,7 +34,7 @@ namespace BNG
 
         private void Update()
         {
-
+        
                 if (isVisible(cam, target))
                 {
                     if (target == watchTarget) //jika targetnya itu watch
