@@ -1561,10 +1561,10 @@ MonoBehaviour:
     - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   - name: Batik Karyawan Binus
     mesh:
-    - {fileID: 519514643212492885, guid: 19afc2ebc8713554f9cd7ca820701a52, type: 3}
-    - {fileID: 519514643212492885, guid: 19afc2ebc8713554f9cd7ca820701a52, type: 3}
-    - {fileID: 519514643212492885, guid: 19afc2ebc8713554f9cd7ca820701a52, type: 3}
-    - {fileID: 519514643212492885, guid: 19afc2ebc8713554f9cd7ca820701a52, type: 3}
+    - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
+    - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
+    - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
+    - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
     hideParts:
     - Stomach
     - Chest
