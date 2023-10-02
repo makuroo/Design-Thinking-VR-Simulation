@@ -24,12 +24,14 @@ public class People : MonoBehaviour
     public List<string> reason = new List<string>();
     public GameObject nameQuestionCanvas;
     private GameObject[] button = new GameObject[3];
+    private GameObject tandaSeru;
 
     // Start is called before the first frame update
 
     private void Awake()
     {
         nameText = nameTextObj.GetComponent<Text>();
+        tandaSeru = GameObject.Find("TandaSeru");
     }
 
     private void Start()
@@ -54,6 +56,9 @@ public class People : MonoBehaviour
             nameText.text = "?????";
         else
             nameText.text = customerData.peopleName;
+
+
+        EnableTandaSeru(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -73,6 +78,26 @@ public class People : MonoBehaviour
             AskUIQuestion();
 
             isPlayerInRange = true;
+            EnableTandaSeru(false);
+        }
+    }
+
+    public void EnableTandaSeru(bool tempBoolean)
+    {
+        if(tempBoolean == false)
+        {
+            tandaSeru.SetActive(false);
+        }
+        else
+        {
+            if (GameManager.Instance.CanAskCheck())
+            {
+                tandaSeru.SetActive(tempBoolean);
+            }
+            else
+            {
+                tandaSeru.SetActive(false);
+            }
         }
     }
 
@@ -148,6 +173,8 @@ public class People : MonoBehaviour
                 go.transform.GetChild(0).GetComponent<People>().customerData.met = false;
             }
         }
+
+        EnableTandaSeru(true);
     }
 
     
