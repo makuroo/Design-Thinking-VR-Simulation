@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3863570e7e6387a40ae4f323d83291e5, type: 3}
-  m_Name: OculusRuntimeSettings
+  m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
+  m_Name: Cake
   m_EditorClassIdentifier: 
-  colorSpace: 7
-  hasSetTelemetryEnabled: 1
-  telemetryEnabled: 1
+  cakeName: 
+  taste: 
