@@ -257,18 +257,18 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         else
             Debug.Log("VPC false");
 
-        //for (int i = 0; i < board.answerList.Count; i++)
-        //{
-        //    board.answerList[i].Return();
-        //}
+        for (int i = 0; i < board.answerList.Count; i++)
+        {
+            board.answerList[i].Return();
+        }
 
-        //if (board.answerList.Count == 6)
-        //{
-        //    board.vpcCanvas.SetActive(false);
-        //    board.vpcChoices.SetActive(false);
-        //    board.boardActivityUI.SetActive(true);
-        //}
-        //board.answerList.Clear();
+        if (board.answerList.Count == 6)
+        {
+            board.vpcCanvas.SetActive(false);
+            board.vpcChoices.SetActive(false);
+            board.boardActivityUI.SetActive(true);
+        }
+        board.answerList.Clear();
     }
     #endregion
 }
