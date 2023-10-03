@@ -1205,6 +1205,16 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 2888193656762181241, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888193656762181241, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_VolumeLayerMask.m_Bits
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 3640357078690760184, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
       propertyPath: m_Enabled
@@ -1225,6 +1235,11 @@ PrefabInstance:
       propertyPath: screenDetector
       value: 
       objectReference: {fileID: 1366508536}
+    - target: {fileID: 4771719747634298766, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6623285496203499296, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
       propertyPath: m_IsActive
@@ -1299,6 +1314,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423108242103864953, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423108242103864955, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423108242103864959, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8189532433811266427, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}

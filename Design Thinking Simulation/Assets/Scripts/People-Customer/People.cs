@@ -25,14 +25,14 @@ public class People : MonoBehaviour
     public List<string> reason = new List<string>();
     public GameObject nameQuestionCanvas;
     private GameObject[] button = new GameObject[3];
-    private GameObject tandaSeru;
+    [SerializeField] private GameObject tandaSeru;
 
     // Start is called before the first frame update
 
     private void Awake()
     {
         nameText = nameTextObj.GetComponent<Text>();
-        tandaSeru = GameObject.Find("TandaSeru");
+        Debug.Log("Object -> " + this.gameObject + "tandaseru ->" + tandaSeru);
     }
 
     private void Start()
@@ -68,16 +68,15 @@ public class People : MonoBehaviour
         {
             
             player = other.GetComponent<BNG.PlayerScript>();
-            if(GameManager.Instance.peopleMet.Count >0)
+            if(GameManager.Instance.peopleMet.Count > 0)
             {
                 foreach (GameObject go in GameManager.Instance.peopleMet)
                 {
                     go.transform.GetChild(0).GetComponent<People>().customerData.met = true;
                 }
             }
-
             AskUIQuestion();
-
+            Debug.Log("Ontrigger enter jalan");
             isPlayerInRange = true;
             EnableTandaSeru(false);
         }
@@ -134,7 +133,8 @@ public class People : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject;
+            //button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject; //codingan ricat
+            button[i] = transform.Find("QuestionCanvasParent/UI Pertanyaan").GetChild(i + 1).gameObject;
             button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
             button[i].GetComponentInChildren<Text>().text = GameManager.Instance.RandomizedQuestion[i];
         }
