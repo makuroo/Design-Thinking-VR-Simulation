@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Ashly
   m_EditorClassIdentifier: 
   peopleName: Ashly
-  kueFavorit: Cream Puff Pastry
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 7e117c00ab3a6274599101a21fb15b0c,
+    type: 2}
+  kueFavorit: {fileID: 11400000, guid: 3993c5116e0677d4ca5250b1db17863d, type: 2}
   goals:
   - Memakan kue yang milky
   - Memakan kue kombinasi rasa manis dan asin

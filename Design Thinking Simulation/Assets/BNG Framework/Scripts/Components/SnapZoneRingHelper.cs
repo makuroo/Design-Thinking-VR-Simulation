@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace BNG {
     public class SnapZoneRingHelper : MonoBehaviour {
@@ -27,6 +28,7 @@ namespace BNG {
 
         CanvasScaler ringCanvas;
         Text ringText;
+        TMP_Text ringText1;
         GrabbablesInTrigger nearbyGrabbables;
 
         bool validSnap = false;
@@ -36,6 +38,7 @@ namespace BNG {
         void Start() {
             ringCanvas = GetComponent<CanvasScaler>();
             ringText = GetComponent<Text>();
+            ringText1 = GetComponent<TMP_Text>();
             nearbyGrabbables = Snap.GetComponent<GrabbablesInTrigger>();
         }
 
@@ -49,7 +52,10 @@ namespace BNG {
             ringCanvas.dynamicPixelsPerUnit = Mathf.Lerp(ringCanvas.dynamicPixelsPerUnit, lerpTo, Time.deltaTime * ScaleSpeed);
 
             // Color
-            ringText.color = validSnap ? ValidSnapColor : RestingColor;
+            if(ringText!=null)
+                ringText.color = validSnap ? ValidSnapColor : RestingColor;
+            if(ringText1!=null)
+                ringText1.color = validSnap ? ValidSnapColor : RestingColor;
         }
 
         bool checkIsValidSnap() {

@@ -11,10 +11,10 @@ namespace AdvancedPeopleSystem
         GUIStyle label2Style;
         GUIStyle linkStyle;
         GUIStyle defaultText;
-        [MenuItem("Window/Advanced People Pack 2/Help")]
+        [MenuItem("APPack 2.8.1/Help")]
         public static void ShowWindow()
         {
-            var window = GetWindow<EditorHelpMenu>(true, "Advanced People Pack 2", true);
+            var window = GetWindow<EditorHelpMenu>(true, "Advanced People Pack 2.8.12", true);
             window.minSize = new Vector2(450, 245);
             window.maxSize = new Vector2(450, 245);
             window.position = new Rect(new Vector2(Screen.width / 2 - 225, Screen.height / 2 - 112), window.maxSize);
@@ -65,7 +65,7 @@ namespace AdvancedPeopleSystem
             EditorGUILayout.Space();
             EditorGUILayout.BeginHorizontal();
             GUILayout.Space(20);
-            EditorGUILayout.LabelField("Version: <b>2.8.15</b>", label2Style);
+            EditorGUILayout.LabelField("Version: <b>2.8.12</b>", label2Style);
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.EndVertical();
 

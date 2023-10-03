@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
   m_Name: Tangy Bitterchoco Cake
   m_EditorClassIdentifier: 
-  cakeName: Tangy Bitterchoco Cake
+  cakeName: Tangy Bitterchoco
   taste: 00000000010000000000000001000000000000000100000000000000
+  ukuranKue: 0

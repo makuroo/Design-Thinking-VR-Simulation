@@ -60503,6 +60503,7 @@ GameObject:
   - component: {fileID: 4771719748117732185}
   - component: {fileID: 8915527090745443271}
   - component: {fileID: 4771719747119901411}
+  - component: {fileID: 1672505167288233843}
   m_Layer: 9
   m_Name: PlayerController
   m_TagString: Player
@@ -60703,7 +60704,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6860140201963346258}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 494e659c238ebc5428bdb4e8d43de9ca, type: 3}
   m_Name: 
@@ -60894,6 +60895,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dayText: {fileID: 2727319506643652370}
   chanceText: {fileID: 7955712823658898937}
+  screenDetectorScript: {fileID: 1672505167288233843}
+--- !u!114 &1672505167288233843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6860140201963346258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b307cf8a781afa5418b943c482dae95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  cam: {fileID: 7423108242105911493}
 --- !u!1 &6864843960302524653
 GameObject:
   m_ObjectHideFlags: 0

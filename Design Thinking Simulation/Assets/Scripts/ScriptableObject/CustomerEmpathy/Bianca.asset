@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Bianca
   m_EditorClassIdentifier: 
   peopleName: Bianca
-  kueFavorit: Salt Choco Delight
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 7517d002b6d52c5439bb341085f8a494,
+    type: 2}
+  kueFavorit: {fileID: 11400000, guid: a541f6f5576cce5409313a77e447509f, type: 2}
   goals: []
   frustration: []
   met: 0

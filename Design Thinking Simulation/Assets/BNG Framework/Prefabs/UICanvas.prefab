@@ -150,7 +150,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: -100
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!222 &4088779762850046599
 CanvasRenderer:
@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7b2e3ae19fa9884a9021d1b4232baae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableFaceToPlayer: 0
 --- !u!114 &2770453064208029991
 MonoBehaviour:
   m_ObjectHideFlags: 0
