@@ -1545,6 +1545,32 @@ MonoBehaviour:
     yOffset: 0
     mats:
     - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Almet Binus
+    mesh:
+    - {fileID: -2850074755327657584, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
+    - {fileID: -2850074755327657584, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
+    - {fileID: -2850074755327657584, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
+    - {fileID: -2850074755327657584, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
+    hideParts:
+    - Stomach
+    - Chest
+    - Shoulders
+    - Arms
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Batik Karyawan Binus
+    mesh:
+    - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
+    - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
+    - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
+    - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
+    hideParts:
+    - Stomach
+    - Chest
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   pantsPresets:
   - name: Pants Type 1
     mesh:
