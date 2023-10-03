@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Canteen.unity
     guid: 55f2598f8377d214681fc210c7354cef
   - enabled: 1
-    path: Assets/Scenes/Cafe.unity
+    path: Assets/Scenes/Cafe (Jobe).unity
     guid: d4fc8c2d7143ae940bacedd1c0664e78
   - enabled: 1
     path: Assets/Scenes/Restaurant.unity
