@@ -13,32 +13,34 @@ public class People : MonoBehaviour
 
     public  CustomerDataSO customerData;
     public int questionIndex = 0;
-    [SerializeField] private Text textField;
+    [SerializeField] private TextMeshProUGUI jawabanText;
     [HideInInspector] public BNG.PlayerScript player;
     [SerializeField] GameObject QuestionCanvas;
     public GameObject UIPertanyaan;
     [SerializeField] private GameObject NameCanvas;
     [SerializeField] float AnsweringTimesInSecond = 3;
     bool isPlayerInRange = false;
-    public Text nameTextObj;
-    private Text nameText;
+    public TextMeshProUGUI nameTextObj;
+    private TextMeshProUGUI nameText;
     public List<string> reason = new List<string>();
     public GameObject nameQuestionCanvas;
     private GameObject[] button = new GameObject[3];
-    [SerializeField] private GameObject tandaSeru;
+    private GameObject tandaSeru;
 
     // Start is called before the first frame update
 
     private void Awake()
     {
-        nameText = nameTextObj.GetComponent<Text>();
-        Debug.Log("Object -> " + this.gameObject + "tandaseru ->" + tandaSeru);
+        nameText = nameTextObj.GetComponent<TextMeshProUGUI>();
     }
 
     private void Start()
     {
+        Debug.Log("nih tandaserunya ->" + tandaSeru);
         QuestionCanvas.SetActive(false);
         NameCanvas.SetActive(false);
+        tandaSeru = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head/TandaSeruParent").gameObject;
+        EnableTandaSeru(true);
 
         if(GameManager.Instance.peopleMet.Count != 0)
         {
@@ -57,9 +59,6 @@ public class People : MonoBehaviour
             nameText.text = "?????";
         else
             nameText.text = customerData.peopleName;
-
-
-        EnableTandaSeru(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -128,7 +127,7 @@ public class People : MonoBehaviour
         else if (!GameManager.Instance.CanAskCheck())
         {
             int randomIndex = Random.Range(0, reason.Count);
-            textField.text = reason[randomIndex];
+            jawabanText.text = reason[randomIndex];
         }
 
         for (int i = 0; i < 3; i++)
@@ -136,23 +135,23 @@ public class People : MonoBehaviour
             //button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject; //codingan ricat
             button[i] = transform.Find("QuestionCanvasParent/UI Pertanyaan").GetChild(i + 1).gameObject;
             button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
-            button[i].GetComponentInChildren<Text>().text = GameManager.Instance.RandomizedQuestion[i];
+            button[i].GetComponentInChildren<TextMeshProUGUI>().text = GameManager.Instance.RandomizedQuestion[i];
         }
     }
     
     public void Reply()
     {
         if (customerData.CalculateLikeness(questionIndex) == 0)
-            textField.text = "Neutral";
+            jawabanText.text = "Neutral";
 
         if (customerData.CalculateLikeness(questionIndex) == 1)
-            textField.text = "Like";
+            jawabanText.text = "Like";
 
         if (customerData.CalculateLikeness(questionIndex) > 1)
-            textField.text = "Really Like";
+            jawabanText.text = "Really Like";
 
         if (customerData.CalculateLikeness(questionIndex) < 0)
-            textField.text = "Dislike";
+            jawabanText.text = "Dislike";
 
         GameManager.Instance.CanAskCheck();
     }
@@ -165,7 +164,8 @@ public class People : MonoBehaviour
             player = other.GetComponent<BNG.PlayerScript>();
             QuestionCanvas.SetActive(false);
             isPlayerInRange = false;
-            textField.text = "";
+            jawabanText.text = "";
+            EnableTandaSeru(true);
         }
         if (GameManager.Instance.peopleMet.Count > 0)
         {
@@ -174,8 +174,6 @@ public class People : MonoBehaviour
                 go.transform.GetChild(0).GetComponent<People>().customerData.met = false;
             }
         }
-
-        EnableTandaSeru(true);
     }
 
     
@@ -213,7 +211,7 @@ public class People : MonoBehaviour
         {
             QuestionCanvas.SetActive(true);
             NameCanvas.SetActive(true);
-            textField.text = "";
+            jawabanText.text = "";
         }
     }
     

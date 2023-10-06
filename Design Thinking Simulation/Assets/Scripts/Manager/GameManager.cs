@@ -194,7 +194,6 @@ public class GameManager : MonoBehaviour
             canteenCustomerCount = PlayerPrefs.GetInt("CanteenCustomerCount");
             RandomizeQuestion();
             RandomizeCustomer();
-            Debug.Log("Nih Load Game");
         }
         else //jika tidak ada savean (new game)
         {
@@ -475,7 +474,7 @@ public class GameManager : MonoBehaviour
 
     public void GetBedScript()
     {
-        bedScript = GameObject.Find("Bed").GetComponent<BedScript>();
+        bedScript = GameObject.Find("BedScripted").GetComponent<BedScript>();
     }
 
     public void ClearCustomer()
