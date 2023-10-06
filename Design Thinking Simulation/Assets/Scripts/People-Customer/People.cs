@@ -26,21 +26,23 @@ public class People : MonoBehaviour
     public GameObject nameQuestionCanvas;
     private GameObject[] button = new GameObject[3];
     private GameObject tandaSeru;
-
+    private GameObject customerHead;
+    private GameObject playerObj;
     // Start is called before the first frame update
 
     private void Awake()
     {
         nameText = nameTextObj.GetComponent<TextMeshProUGUI>();
+        customerHead = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head").gameObject;
+        playerObj = GameObject.Find("Player");
     }
 
     private void Start()
     {
+        tandaSeru = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head/TandaSeruParent").gameObject;
         Debug.Log("nih tandaserunya ->" + tandaSeru);
         QuestionCanvas.SetActive(false);
         NameCanvas.SetActive(false);
-        tandaSeru = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head/TandaSeruParent").gameObject;
-        EnableTandaSeru(true);
 
         if(GameManager.Instance.peopleMet.Count != 0)
         {
@@ -59,6 +61,17 @@ public class People : MonoBehaviour
             nameText.text = "?????";
         else
             nameText.text = customerData.peopleName;
+        EnableTandaSeru(true);
+    }
+
+    private void Update()
+    {
+        if (playerObj != null)
+        {
+            Vector3 lookDirection = playerObj.transform.position - customerHead.transform.position;
+            lookDirection.y = 0; // Optionally, can set the Y component to zero to ensure the character looks horizontally.
+            customerHead.transform.forward = lookDirection.normalized;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -83,6 +96,7 @@ public class People : MonoBehaviour
 
     public void EnableTandaSeru(bool tempBoolean)
     {
+        Debug.Log("EnableTandaSeru Jalan ->" + tempBoolean);
         if(tempBoolean == false)
         {
             tandaSeru.SetActive(false);
@@ -91,7 +105,7 @@ public class People : MonoBehaviour
         {
             if (GameManager.Instance.CanAskCheck())
             {
-                tandaSeru.SetActive(tempBoolean);
+                tandaSeru.SetActive(true);
             }
             else
             {
@@ -133,7 +147,7 @@ public class People : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             //button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject; //codingan ricat
-            button[i] = transform.Find("QuestionCanvasParent/UI Pertanyaan").GetChild(i + 1).gameObject;
+            button[i] = transform.Find("QuestionCanvasParent/UI Pertanyaan").GetChild(i).gameObject;
             button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
             button[i].GetComponentInChildren<TextMeshProUGUI>().text = GameManager.Instance.RandomizedQuestion[i];
         }
