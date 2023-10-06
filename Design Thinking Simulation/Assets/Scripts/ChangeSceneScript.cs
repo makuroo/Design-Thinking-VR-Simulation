@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class ChangeSceneScript : MonoBehaviour
 {
-    public float AngleToChangeScene = 10;
     [SerializeField] bool isHomeDoor;
     [SerializeField] bool isCafeDoor;
     [SerializeField] bool isRestaurantDoor;
