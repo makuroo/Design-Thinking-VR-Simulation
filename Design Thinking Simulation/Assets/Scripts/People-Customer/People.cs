@@ -26,15 +26,17 @@ public class People : MonoBehaviour
     public GameObject nameQuestionCanvas;
     private GameObject[] button = new GameObject[3];
     private GameObject tandaSeru;
-    private GameObject customerHead;
+    private Transform customerHead;
     private GameObject playerObj;
+    private Transform initialHeadTransform;
     // Start is called before the first frame update
 
     private void Awake()
     {
         nameText = nameTextObj.GetComponent<TextMeshProUGUI>();
-        customerHead = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head").gameObject;
-        playerObj = GameObject.Find("Player");
+        customerHead = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head");
+        playerObj = GameObject.Find("PlayerController");
+        initialHeadTransform = customerHead.transform;
     }
 
     private void Start()
@@ -66,11 +68,25 @@ public class People : MonoBehaviour
 
     private void Update()
     {
-        if (playerObj != null)
+        RotateHeadToPlayer();
+    }
+
+    public void RotateHeadToPlayer()
+    {
+        if (isPlayerInRange)
         {
-            Vector3 lookDirection = playerObj.transform.position - customerHead.transform.position;
-            lookDirection.y = 0; // Optionally, can set the Y component to zero to ensure the character looks horizontally.
-            customerHead.transform.forward = lookDirection.normalized;
+            if (playerObj != null)
+            {
+                Vector3 lookDirection = playerObj.transform.position - customerHead.position;
+                //lookDirection.y = 0; // Optionally, can set the Y component to zero to ensure the character looks horizontally.
+                customerHead.transform.forward = lookDirection.normalized;
+                Debug.Log("ngadep player jalan" + customerHead);
+            }
+        }
+        else
+        {
+            
+            customerHead.transform.rotation = initialHeadTransform.rotation;
         }
     }
 
