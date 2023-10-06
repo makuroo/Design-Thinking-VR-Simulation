@@ -1760,7 +1760,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 2
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!65 &6965996962854106383
 BoxCollider:
@@ -1805,7 +1805,6 @@ MonoBehaviour:
   - Saya lelah
   nameQuestionCanvas: {fileID: 6644009974892761493}
   tandaSeru: {fileID: 1749403709729753658}
-  uiPertanyaan: {fileID: 4070339747153605599}
 --- !u!4 &5875040768856940377 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 824230405650843519, guid: 8319e469292820b428c743f12d721c59,
