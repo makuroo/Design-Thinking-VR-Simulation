@@ -136,7 +136,6 @@ namespace BNG {
                     ReleaseAll();
                 }
                 else {
-
                     // Scale Item while inside zone.
                     // float localScale = HeldItem.OriginalScale * _scaleTo; -> original
                     Vector3 localScale = HeldItem.OriginalScale * _scaleTo;
@@ -242,6 +241,7 @@ namespace BNG {
 
             // Grab is already in Snap Zone
             if(grab.transform.parent != null && grab.transform.parent.GetComponent<SnapZone>() != null) {
+                Debug.Log("here");
                 return;
             }
 

@@ -9,6 +9,7 @@ public class DragAndDropObjectData : MonoBehaviour
     [SerializeField] private Transform originalParent;
     [SerializeField] private Quaternion originalRotation;
     [SerializeField] private Vector3 originalScale;
+    [SerializeField] private Vector3 scaleInSnapzone;
 
     private void Start()
     {
@@ -24,6 +25,11 @@ public class DragAndDropObjectData : MonoBehaviour
         {
             Return();
         }
+
+        if (gameObject.GetComponentInParent<SnapZone>())
+        {
+            transform.localScale = scaleInSnapzone;
+        }
     }
 
     public void Return(SnapZone snapZone)
@@ -37,6 +43,8 @@ public class DragAndDropObjectData : MonoBehaviour
         transform.localPosition = initialPos;
         transform.localRotation = originalRotation;
         transform.localScale = originalScale;
+        if (GetComponent<SnapZoneOffset>() != null)
+            Destroy(GetComponent<SnapZoneOffset>());
     }
 
     private IEnumerator ReturnPosition(SnapZone snapZone)

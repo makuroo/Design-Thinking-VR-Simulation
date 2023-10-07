@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcc0721c2ffba94785b1819c87b70b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableFaceToPlayer: 0
+  disableFaceToPlayer: 1
 --- !u!4 &2241459584663618725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4038fef3758e4a046a70cd93095f94f2,

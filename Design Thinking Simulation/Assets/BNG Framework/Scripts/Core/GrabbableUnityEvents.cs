@@ -102,9 +102,10 @@ namespace BNG {
         /// <param name="gripValue">0 - 1 Open / Closed</param>
         public override void OnGrip(float gripValue) {
             base.OnGrip(gripValue);
-
-            if(onGrip != null) {
+            Debug.Log("grip");
+            if (onGrip != null) {
                 onGrip.Invoke(gripValue);
+                
             }
         }
 
@@ -223,6 +224,7 @@ namespace BNG {
 
             if (onSnapZoneEnter != null) {
                 onSnapZoneEnter.Invoke();
+                Debug.Log("here");
             }
         }
 
