@@ -24,7 +24,7 @@ namespace BNG {
 
         Quaternion initialRotation;
         [SerializeField] float handleAngleToOpen;
-        [SerializeField] DoorChangeScene doorChangeScene;
+        [SerializeField] ChangeSceneScript doorChangeScene;
         Quaternion lastDoorAngleRotation;
         public AudioClip DoorOpenSound;
         public AudioClip DoorCloseSound;

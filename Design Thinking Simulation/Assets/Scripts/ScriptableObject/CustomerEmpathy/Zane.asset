@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Zane
   m_EditorClassIdentifier: 
   peopleName: Zane
-  kueFavorit: 
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 8f95d45edce664e4890cde20778883e4,
+    type: 2}
+  kueFavorit: {fileID: 0}
   goals:
   - 
   - 
