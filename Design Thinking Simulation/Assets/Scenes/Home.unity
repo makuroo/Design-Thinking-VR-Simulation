@@ -221,7 +221,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 100996261}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2130381285}
+        m_TargetAssemblyTypeName: EnterPrototyping, Assembly-CSharp
+        m_MethodName: PrototypeYesClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &100996261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4791,10 +4803,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prototyping
       objectReference: {fileID: 0}
+    - target: {fileID: 3705386105358712220, guid: 745474d57ad4f6641b08c258fdbfcc63,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3708529807666510726, guid: 745474d57ad4f6641b08c258fdbfcc63,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639238889629754903, guid: 745474d57ad4f6641b08c258fdbfcc63,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5458680114991777425, guid: 745474d57ad4f6641b08c258fdbfcc63,
         type: 3}
@@ -4804,7 +4826,7 @@ PrefabInstance:
     - target: {fileID: 6696074164684916525, guid: 745474d57ad4f6641b08c258fdbfcc63,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 745474d57ad4f6641b08c258fdbfcc63, type: 3}
@@ -4852,7 +4874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d396bebae98674b9d8ef761c5c45b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prototypeUI: {fileID: 0}
+  prototypeUI: {fileID: 1118096451}
 --- !u!4 &2130381289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2304609608794562053, guid: 745474d57ad4f6641b08c258fdbfcc63,
