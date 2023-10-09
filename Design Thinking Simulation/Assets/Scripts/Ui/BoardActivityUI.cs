@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using System;
-using BNG;
+
 
 public class BoardActivityUI : MonoBehaviour
 {
@@ -29,8 +29,6 @@ public class BoardActivityUI : MonoBehaviour
     public List<DragAndDropObjectData> answerList;
 
     public GameObject topics;
-
-    public Grabber[] handGrabber;
 
     // Start is called before the first frame update
     void Start()
@@ -204,13 +202,4 @@ public class BoardActivityUI : MonoBehaviour
         }
     }
     #endregion
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            handGrabber[0] = other.transform.Find("CameraRig/TrackingSpace/LeftHandAnchor/LeftControllerAnchor/LeftController/Grabber").GetComponent<Grabber>();
-            handGrabber[1] = other.transform.Find("CameraRig/TrackingSpace/RightHandAnchor/RightControllerAnchor/RightController/Grabber").GetComponent<Grabber>();
-        }
-    }
 }

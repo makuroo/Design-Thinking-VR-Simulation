@@ -136,7 +136,7 @@ namespace BNG {
         }
 
         protected virtual bool isValidGrabbale(Collider col, Grabbable grab) {
-            
+
             // Object has been deactivated. Remove it
             if (col == null || grab == null || !grab.isActiveAndEnabled || !col.enabled) {
                 return false;
@@ -181,6 +181,7 @@ namespace BNG {
                     _filtered.Add(g.Key, g.Value);
                 }
             }
+
             return _filtered;
         }
 
@@ -243,6 +244,7 @@ namespace BNG {
         }
 
         void OnTriggerEnter(Collider other) {
+
             // Check for standard Grabbables first
             Grabbable g = other.GetComponent<Grabbable>();
             if (g != null) {

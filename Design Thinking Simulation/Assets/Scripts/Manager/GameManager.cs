@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
     public int userPersonaCount = 0;
     private BNG.PlayerScript player;
 
+
     private void Awake()
     {
         LoadGame();

@@ -158,6 +158,3 @@ MonoBehaviour:
   questionRemaining: 3
   interviewCount: 0
   userPersonaCount: 0
-  handGrabber:
-  - {fileID: 0}
-  - {fileID: 0}

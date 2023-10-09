@@ -98,6 +98,56 @@ public class UserPersonaUI : MonoBehaviour
         tasteAnswers.gameObject.SetActive(true);
     }
 
+    //public void ChooseManis()
+    //{
+    //    userPersonaChecker = UserPersonaCategory.Taste;
+    //    checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
+    //    checker.index = 0;
+    //    board.AddTasteChoices(customerIndex, this);
+    //}    
+    //public void ChooseAsin()
+    //{
+    //    userPersonaChecker = UserPersonaCategory.Taste;
+    //    checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
+    //    checker.index = 1;
+    //    board.AddTasteChoices(customerIndex, this);
+    //}    
+    //public void ChooseAsem()
+    //{
+    //    userPersonaChecker = UserPersonaCategory.Taste;
+    //    checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
+    //    checker.index = 2;
+    //    board.AddTasteChoices(customerIndex, this);
+    //}    
+    //public void ChoosePahit()
+    //{
+    //    userPersonaChecker = UserPersonaCategory.Taste;
+    //    checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
+    //    checker.index = 3;
+    //    board.AddTasteChoices(customerIndex, this);
+    //}    
+    //public void ChooseSusu()
+    //{
+    //    userPersonaChecker = UserPersonaCategory.Taste;
+    //    checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
+    //    checker.index = 4;
+    //    board.AddTasteChoices(customerIndex, this);
+    //}    
+    //public void ChooseCoklat()
+    //{
+    //    userPersonaChecker = UserPersonaCategory.Taste;
+    //    checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
+    //    checker.index = 5;
+    //    board.AddTasteChoices(customerIndex, this);
+    //}    
+    //public void ChooseVanila()
+    //{
+    //    userPersonaChecker = UserPersonaCategory.Taste;
+    //    checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
+    //    checker.index = 6;
+    //    board.AddTasteChoices(customerIndex, this);
+    //}
+
     public void ChooseFavouriteCake()
     {
         checker.userPersonaUI = this;

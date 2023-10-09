@@ -25,37 +25,16 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     [SerializeField] BoardActivityUI board;
     public CheckType checkerType;
     public GameObject currSnapZone;
-
-
-    private void Update()
-    {
-        if (board.handGrabber[0]!=null && board.handGrabber[1]!=null )
-        {
-            foreach (Grabber g in board.handGrabber)
-            {
-                if (g.HeldGrabbable == null)
-                    g.ForceRelease = false;
-            }
-        }
-
-    }
+    
 
     public void ChooseChecker()
     {
-        
         if (gameObject.GetComponent<SnapZone>() != null){
             currSnapZone = gameObject;
-            foreach (Grabber g in board.handGrabber)
-            {
-                g.ForceRelease = true;
-            }
         }
-
         if (gameObject.GetComponent<SnapZone>().HeldItem != null)
         {
-
             currentGrabbable = gameObject.GetComponent<SnapZone>().HeldItem;
-            currentGrabbable.transform.parent = gameObject.GetComponent<SnapZone>().transform;
             currentText = currentGrabbable.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
             if (board.answerList.Find(x => x.name == currentGrabbable.gameObject.name))
             {
@@ -98,11 +77,12 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             }
             else if(currentGrabbable.gameObject.layer== 14)
             {
+                Debug.Log("this");
                 problemStatementUI.Statement1(currentGrabbable.gameObject);
             }
         }else if(checkerType == CheckType.VPC)
         {
-            VpcCheck();
+            VPCCheck();
         }
 
     }
@@ -246,8 +226,6 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         }
         board.choicesUkuran.SetActive(false);
         board.tasteAnswer.SetActive(true);
-
-        
     }
 
     public void CakeAnswerChecker(TMP_Text ansewer)
@@ -271,7 +249,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     }
     #endregion
     #region VPC Checks
-    private void VpcCheck()
+    private void VPCCheck()
     {
 
         if (currentGrabbable.gameObject.tag == currSnapZone.tag)
@@ -279,20 +257,18 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         else
             Debug.Log("VPC false");
 
+        for (int i = 0; i < board.answerList.Count; i++)
+        {
+            board.answerList[i].Return();
+        }
+
         if (board.answerList.Count == 6)
         {
-            for (int i = 0; i < board.answerList.Count; i++)
-            {
-                board.answerList[i].Return();
-            }
-
-            board.answerList.Clear();
-
             board.vpcCanvas.SetActive(false);
             board.vpcChoices.SetActive(false);
             board.boardActivityUI.SetActive(true);
         }
-
+        board.answerList.Clear();
     }
     #endregion
 }
