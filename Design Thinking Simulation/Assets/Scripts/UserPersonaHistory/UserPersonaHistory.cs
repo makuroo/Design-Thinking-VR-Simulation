@@ -115,7 +115,6 @@ public class UserPersonaHistory : MonoBehaviour
 
     public void AddToDict(string key, CustomerDataSO value)
     {
-        Debug.Log(userPersonaDict);
         if (userPersonaDict.TryAdd(key, value))
         {
             KeyValuePairs datas = new();

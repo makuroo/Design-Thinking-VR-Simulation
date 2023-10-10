@@ -134,7 +134,7 @@ public class People : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject;
+            button[i] = transform.Find("QuestionCanvasParent").GetChild(0).GetChild(i+1).gameObject;
             button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
             button[i].GetComponentInChildren<Text>().text = GameManager.Instance.RandomizedQuestion[i];
         }
@@ -171,7 +171,7 @@ public class People : MonoBehaviour
         {
             foreach (GameObject go in GameManager.Instance.peopleMet)
             {
-                go.transform.GetChild(0).GetComponent<People>().customerData.met = false;
+                go.transform.Find("Customer").GetComponent<People>().customerData.met = false;
             }
         }
 

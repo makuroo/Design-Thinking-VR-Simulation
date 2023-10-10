@@ -513,6 +513,17 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
+        BoardActivityUI board = GameObject.Find("BoardActivityUI").GetComponent<BoardActivityUI>();
+        if (board != null)
+        {
+            board.jobFinishGO.SetActive(false);
+            board.boardActivityUI.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("here");
+            return;
+        }
         currentDay += 1;
         ResetQuestionRemaining();
         player.SetChanceText();

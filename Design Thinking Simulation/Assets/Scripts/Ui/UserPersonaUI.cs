@@ -14,6 +14,7 @@ public class UserPersonaUI : MonoBehaviour
     public List<TMP_Text> choicesGameObjectText = new List<TMP_Text>();
     public UserPersonaCategory userPersonaChecker;
     [SerializeField] private GameObject prevNextButtons;
+    [SerializeField] private TMP_Text nameText;
     
     
     public enum UserPersonaCategory
@@ -26,11 +27,10 @@ public class UserPersonaUI : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.peopleMet.Count != 0 && transform.GetComponentInChildren<Text>() != null && customerIndex > -1 && customerIndex < GameManager.Instance.peopleMet.Count)
+        if (GameManager.Instance.peopleMet.Count != 0 && customerIndex > -1 && customerIndex < GameManager.Instance.peopleMet.Count)
         {
-            Text uiText = transform.GetComponentInChildren<Text>();
             People people = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
-            uiText.text = people.customerData.peopleName;
+            nameText.text = people.customerData.peopleName;
         }
     }
 
@@ -61,7 +61,7 @@ public class UserPersonaUI : MonoBehaviour
         checker.userPersonaUI = this;
         checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
         userPersonaQuestion.SetActive(true);
-        userPersonaQuestion.GetComponentInChildren<Text>().text = "Apa goal " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
+        userPersonaQuestion.GetComponentInChildren<TMP_Text>().text = "Apa goal " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
         userPersonaChecker = UserPersonaCategory.Goals;
         board.choices.SetActive(true);
         board.AddGoalsChoices(customerIndex, this);
@@ -74,7 +74,7 @@ public class UserPersonaUI : MonoBehaviour
         checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
         userPersonaQuestion.SetActive(true);
         userPersonaChecker = UserPersonaCategory.Frustration;
-        userPersonaQuestion.GetComponentInChildren<Text>().text = "Apa frustration " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
+        userPersonaQuestion.GetComponentInChildren<TMP_Text>().text = "Apa frustration " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
         board.choices.SetActive(true);
         board.AddFrustrationChoices(customerIndex, this);
         board.topics.SetActive(false);
@@ -89,9 +89,9 @@ public class UserPersonaUI : MonoBehaviour
         checker.index = randomIndex;
         userPersonaQuestion.SetActive(true);
         if(randomIndex == 0)
-            userPersonaQuestion.GetComponentInChildren<Text>().text = "Apa rasa yang paling disukai oleh " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
+            userPersonaQuestion.GetComponentInChildren<TMP_Text>().text = "Apa rasa yang paling disukai oleh " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
         else
-            userPersonaQuestion.GetComponentInChildren<Text>().text = "Apa rasa yang paling tidak dusukai oleh " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
+            userPersonaQuestion.GetComponentInChildren<TMP_Text>().text = "Apa rasa yang paling tidak dusukai oleh " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
         if (board.choices.activeInHierarchy)
             board.choices.SetActive(false);
         board.topics.SetActive(false);
@@ -101,8 +101,10 @@ public class UserPersonaUI : MonoBehaviour
     public void ChooseFavouriteCake()
     {
         checker.userPersonaUI = this;
+        transform.GetChild(0).gameObject.SetActive(false);
         userPersonaChecker = UserPersonaCategory.FavouriteCake;
-        userPersonaQuestion.GetComponentInChildren<Text>().text = "Apa kue favorit dari " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
+        userPersonaQuestion.SetActive(true);
+        userPersonaQuestion.GetComponentInChildren<TMP_Text>().text = "Apa kue favorit dari " + GameManager.Instance.peopleMet[customerIndex].GetComponentInChildren<People>().customerData.peopleName + " ?";
         checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
         board.AddFavouriteCakeChoices(customerIndex, this);
         board.choices.SetActive(true);

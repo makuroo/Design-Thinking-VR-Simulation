@@ -19,12 +19,20 @@ public class BoardActivityUI : MonoBehaviour
     public GameObject tasteAnswer;
     public GameObject vpcChoices;
     public GameObject boardActivityUI;
-    private CustomerDataSO personCustomerData;
+    public GameObject jobFinishGO;
+
+    [SerializeField] private CustomerDataSO personCustomerData;
     [SerializeField] private List<string> tempAnswer;
     [SerializeField] private List<string> tempListRandom;
     [SerializeField] private List<string> randomOptions;
     [SerializeField] private List<string> usiaTarget;
     [SerializeField] private List<string> jenisMakanan;
+    [SerializeField] private int userPersonaActiveDay;
+    [SerializeField] private int problemStatementActiveDay;
+    [SerializeField] private int vpcActiveDay;
+
+    public List<UnityEngine.UI.Button> topicButtons;
+    public List<UnityEngine.UI.Button> boardActivityButtons;
 
     public List<DragAndDropObjectData> answerList;
 
@@ -41,7 +49,27 @@ public class BoardActivityUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    private void OnEnable()
+    {
+        if (GameManager.Instance.currentDay >= userPersonaActiveDay)
+            boardActivityButtons[0].interactable = true;
+
+        if (GameManager.Instance.currentDay >= problemStatementActiveDay)
+        {
+            boardActivityButtons[0].interactable = true;
+            boardActivityButtons[1].interactable = true;
+        }
+
+        if (GameManager.Instance.currentDay >= vpcActiveDay)
+        {
+            boardActivityButtons[0].interactable = true;
+            boardActivityButtons[1].interactable = true;
+            boardActivityButtons[2].interactable = true;
+        }
+
     }
 
     public void UserPersona()
@@ -49,6 +77,10 @@ public class BoardActivityUI : MonoBehaviour
         GameManager.Instance.canDoActivity = false;
         userPersonaUI.SetActive(true);
         boardActivityUI.SetActive(false);
+        foreach(UnityEngine.UI.Button b in topicButtons)
+        {
+            b.interactable = true;
+        }
     }
 
     public void ProblemStatement()
@@ -98,7 +130,8 @@ public class BoardActivityUI : MonoBehaviour
         {
             int randomOrNot = UnityEngine.Random.Range(0, 2);
             int answerIndex = UnityEngine.Random.Range(0, tempAnswer.Count);
-            if (randomOrNot == 0)
+            Debug.Log(tempAnswer.Count);
+            if (randomOrNot == 0 && tempAnswer.Count>0)
             {
                 userPersonaUI.choicesGameObjectText[i].text = personCustomerData.frustration[answerIndex];
                 tempAnswer.RemoveAt(answerIndex);
@@ -194,6 +227,7 @@ public class BoardActivityUI : MonoBehaviour
             if (i == answerIndex)
             {
                 userPersonaUI.choicesGameObjectText[i].text = personCustomerData.kueFavorit.cakeName;
+                Debug.Log(personCustomerData.kueFavorit.cakeName);
             }
             else
             {
@@ -204,13 +238,4 @@ public class BoardActivityUI : MonoBehaviour
         }
     }
     #endregion
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            handGrabber[0] = other.transform.Find("CameraRig/TrackingSpace/LeftHandAnchor/LeftControllerAnchor/LeftController/Grabber").GetComponent<Grabber>();
-            handGrabber[1] = other.transform.Find("CameraRig/TrackingSpace/RightHandAnchor/RightControllerAnchor/RightController/Grabber").GetComponent<Grabber>();
-        }
-    }
 }
