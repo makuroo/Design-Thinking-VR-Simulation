@@ -53,12 +53,13 @@ public class DragAndDropAnswerChecker : MonoBehaviour
 
         if (gameObject.GetComponent<SnapZone>().HeldItem != null)
         {
-
             currentGrabbable = gameObject.GetComponent<SnapZone>().HeldItem;
+            
             currentGrabbable.transform.parent = gameObject.GetComponent<SnapZone>().transform;
             currentText = currentGrabbable.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
             if (board.answerList.Find(x => x.name == currentGrabbable.gameObject.name))
             {
+                
                 Debug.Log("found");
                 return;
             }
@@ -306,4 +307,9 @@ public class DragAndDropAnswerChecker : MonoBehaviour
 
     }
     #endregion
+
+    public void Test()
+    {
+        Debug.Log("work");
+    }
 }

@@ -29,6 +29,7 @@ public class DragAndDropObjectData : MonoBehaviour
         if (gameObject.GetComponentInParent<SnapZone>())
         {
             transform.localScale = scaleInSnapzone;
+            transform.rotation = originalRotation; 
         }
     }
 
