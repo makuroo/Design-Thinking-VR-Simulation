@@ -14,35 +14,29 @@ public class People : MonoBehaviour
     public  CustomerDataSO customerData;
     public int questionIndex = 0;
     [SerializeField] private Text textField;
-    [HideInInspector] public BNG.PlayerScript player;
+    [HideInInspector] public PlayerScript player;
     [SerializeField] GameObject QuestionCanvas;
     public GameObject UIPertanyaan;
     [SerializeField] private GameObject NameCanvas;
     [SerializeField] float AnsweringTimesInSecond = 3;
     bool isPlayerInRange = false;
-    public TextMeshProUGUI nameTextObj;
-    private TextMeshProUGUI nameText;
+    public Text nameTextObj;
+    private Text nameText;
     public List<string> reason = new List<string>();
     public GameObject nameQuestionCanvas;
     private GameObject[] button = new GameObject[3];
     private GameObject tandaSeru;
-    private Transform customerHead;
-    private GameObject playerObj;
-    private Transform initialHeadTransform;
+
     // Start is called before the first frame update
 
     private void Awake()
     {
-        nameText = nameTextObj.GetComponent<TextMeshProUGUI>();
-        customerHead = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head");
-        playerObj = GameObject.Find("PlayerController");
-        initialHeadTransform = customerHead.transform;
+        nameText = nameTextObj.GetComponent<Text>();
+        tandaSeru = GameObject.Find("TandaSeru");
     }
 
     private void Start()
     {
-        tandaSeru = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head/TandaSeruParent").gameObject;
-        Debug.Log("nih tandaserunya ->" + tandaSeru);
         QuestionCanvas.SetActive(false);
         NameCanvas.SetActive(false);
 
@@ -63,39 +57,17 @@ public class People : MonoBehaviour
             nameText.text = "?????";
         else
             nameText.text = customerData.peopleName;
+
+
         EnableTandaSeru(true);
-    }
-
-    private void Update()
-    {
-        RotateHeadToPlayer();
-    }
-
-    public void RotateHeadToPlayer()
-    {
-        if (isPlayerInRange)
-        {
-            if (playerObj != null)
-            {
-                Vector3 lookDirection = playerObj.transform.position - customerHead.position;
-                //lookDirection.y = 0; // Optionally, can set the Y component to zero to ensure the character looks horizontally.
-                customerHead.transform.forward = lookDirection.normalized;
-                Debug.Log("ngadep player jalan" + customerHead);
-            }
-        }
-        else
-        {
-            
-            customerHead.transform.rotation = initialHeadTransform.rotation;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<BNG.PlayerScript>())
+        if(other.GetComponent<PlayerScript>())
         {
             
-            player = other.GetComponent<BNG.PlayerScript>();
+            player = other.GetComponent<PlayerScript>();
             if(GameManager.Instance.peopleMet.Count >0)
             {
                 foreach (GameObject go in GameManager.Instance.peopleMet)
@@ -103,8 +75,9 @@ public class People : MonoBehaviour
                     go.transform.GetChild(0).GetComponent<People>().customerData.met = true;
                 }
             }
+
             AskUIQuestion();
-            Debug.Log("Ontrigger enter jalan");
+
             isPlayerInRange = true;
             EnableTandaSeru(false);
         }
@@ -112,7 +85,6 @@ public class People : MonoBehaviour
 
     public void EnableTandaSeru(bool tempBoolean)
     {
-        Debug.Log("EnableTandaSeru Jalan ->" + tempBoolean);
         if(tempBoolean == false)
         {
             tandaSeru.SetActive(false);
@@ -121,7 +93,7 @@ public class People : MonoBehaviour
         {
             if (GameManager.Instance.CanAskCheck())
             {
-                tandaSeru.SetActive(true);
+                tandaSeru.SetActive(tempBoolean);
             }
             else
             {
@@ -157,53 +129,53 @@ public class People : MonoBehaviour
         else if (!GameManager.Instance.CanAskCheck())
         {
             int randomIndex = Random.Range(0, reason.Count);
-            jawabanText.text = reason[randomIndex];
+            textField.text = reason[randomIndex];
         }
 
         for (int i = 0; i < 3; i++)
         {
-            //button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject; //codingan ricat
-            button[i] = transform.Find("QuestionCanvasParent/UI Pertanyaan").GetChild(i).gameObject;
+            button[i] = transform.Find("QuestionCanvasParent").GetChild(0).GetChild(i+1).gameObject;
             button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
-            button[i].GetComponentInChildren<TextMeshProUGUI>().text = GameManager.Instance.RandomizedQuestion[i];
+            button[i].GetComponentInChildren<Text>().text = GameManager.Instance.RandomizedQuestion[i];
         }
     }
     
     public void Reply()
     {
         if (customerData.CalculateLikeness(questionIndex) == 0)
-            jawabanText.text = "Neutral";
+            textField.text = "Neutral";
 
         if (customerData.CalculateLikeness(questionIndex) == 1)
-            jawabanText.text = "Like";
+            textField.text = "Like";
 
         if (customerData.CalculateLikeness(questionIndex) > 1)
-            jawabanText.text = "Really Like";
+            textField.text = "Really Like";
 
         if (customerData.CalculateLikeness(questionIndex) < 0)
-            jawabanText.text = "Dislike";
+            textField.text = "Dislike";
 
         GameManager.Instance.CanAskCheck();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<BNG.PlayerScript>())
+        if (other.GetComponent<PlayerScript>())
         {
             NameCanvas.SetActive(false);
-            player = other.GetComponent<BNG.PlayerScript>();
+            player = other.GetComponent<PlayerScript>();
             QuestionCanvas.SetActive(false);
             isPlayerInRange = false;
-            jawabanText.text = "";
-            EnableTandaSeru(true);
+            textField.text = "";
         }
         if (GameManager.Instance.peopleMet.Count > 0)
         {
             foreach (GameObject go in GameManager.Instance.peopleMet)
             {
-                go.transform.GetChild(0).GetComponent<People>().customerData.met = false;
+                go.transform.Find("Customer").GetComponent<People>().customerData.met = false;
             }
         }
+
+        EnableTandaSeru(true);
     }
 
     
@@ -241,7 +213,7 @@ public class People : MonoBehaviour
         {
             QuestionCanvas.SetActive(true);
             NameCanvas.SetActive(true);
-            jawabanText.text = "";
+            textField.text = "";
         }
     }
     
