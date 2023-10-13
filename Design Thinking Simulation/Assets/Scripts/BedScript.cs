@@ -15,11 +15,12 @@ public class BedScript : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         canvasBed = GameObject.Find("CanvasBed");
         canvasBedAnswer = GameObject.Find("CanvasBedAnswer");
-        GameManager.Instance.GetBedScript();
+       
     }
 
     void Start()
     {
+        GameManager.Instance.GetBedScript();
         canvasBed.SetActive(false);
         canvasBedAnswer.SetActive(false);
     }

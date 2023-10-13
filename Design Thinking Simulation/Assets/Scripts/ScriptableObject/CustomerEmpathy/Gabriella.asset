@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Gabriella
   m_EditorClassIdentifier: 
   peopleName: Gabriella
-  kueFavorit: 
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 787e10895372e714286b0dad29144d9d,
+    type: 2}
+  kueFavorit: {fileID: 11400000, guid: 4c869576234b1444c9f7e37a285e7e8b, type: 2}
   goals:
   - 
   - 

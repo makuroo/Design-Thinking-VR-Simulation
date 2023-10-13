@@ -91,6 +91,14 @@ public class BoardActivityUI : MonoBehaviour
         boardActivityUI.SetActive(false);
     }    
 
+    public void VPC()
+    {
+        GameManager.Instance.canDoActivity = false;
+        vpcCanvas.SetActive(true);
+        vpcChoices.SetActive(true);
+        boardActivityUI.SetActive(false);
+    }
+
     #region Choices
     public void AddGoalsChoices(int index, UserPersonaUI userPersonaUI)
     {

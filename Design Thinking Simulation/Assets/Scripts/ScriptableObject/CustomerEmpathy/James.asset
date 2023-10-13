@@ -15,7 +15,7 @@ MonoBehaviour:
   peopleName: James
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 0c111af7d541350449ce12b599a79282,
     type: 2}
-  kueFavorit: 
+  kueFavorit: {fileID: 11400000, guid: a541f6f5576cce5409313a77e447509f, type: 2}
   goals: []
   frustration: []
   met: 0

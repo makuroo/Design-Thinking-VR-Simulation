@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Zane
   m_EditorClassIdentifier: 
   peopleName: Zane
-  kueFavorit: 
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 8f95d45edce664e4890cde20778883e4,
+    type: 2}
+  kueFavorit: {fileID: 11400000, guid: 9db5d7bdb5ecaac4d9212b2a033d1299, type: 2}
   goals:
-  - 
-  - 
+  - zane gol
+  - zane gol
   frustration:
-  - 
+  - zane frus
   met: 0
