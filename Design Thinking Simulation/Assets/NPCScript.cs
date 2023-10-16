@@ -30,6 +30,7 @@ public class NPCScript : MonoBehaviour
     void Update()
     {
         distanceToGoal = Vector3.Distance(this.gameObject.transform.position, playerGoal.position);
+        Debug.Log(distanceToGoal);
         if(distanceToGoal > toleranceGoalAchieve)
         {
             if(playerGoal)

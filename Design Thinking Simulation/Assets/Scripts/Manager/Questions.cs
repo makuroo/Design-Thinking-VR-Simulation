@@ -36,6 +36,7 @@ public class Questions : MonoBehaviour
     public void NameQuestion()
     {
         person = transform.parent.parent.parent.GetComponent<People>();
+        person.player.PlayerAsk();
         if (indexList.Count == 0)
         {
             indexList.Add(person.index);
@@ -68,7 +69,6 @@ public class Questions : MonoBehaviour
             person.AnswerNameSelected();
             person.nameTextObj.text = person.customerData.peopleName;
         }
-        person.player.PlayerAsk();
         //person.UIPertanyaan.SetActive(true);
         //person.nameQuestionCanvas.SetActive(false);
     }

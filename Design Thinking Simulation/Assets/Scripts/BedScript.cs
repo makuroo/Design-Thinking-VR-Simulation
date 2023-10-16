@@ -5,14 +5,17 @@ using UnityEngine;
 public class BedScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    GameManager gameManager;
     GameObject canvasBed;
     GameObject canvasBedAnswer;
 
 
     private void Awake()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         canvasBed = GameObject.Find("CanvasBed");
         canvasBedAnswer = GameObject.Find("CanvasBedAnswer");
+       
     }
 
     void Start()

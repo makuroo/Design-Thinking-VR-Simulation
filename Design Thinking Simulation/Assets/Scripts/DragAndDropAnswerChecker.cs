@@ -25,19 +25,41 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     [SerializeField] BoardActivityUI board;
     public CheckType checkerType;
     public GameObject currSnapZone;
-    
+
+
+    private void Update()
+    {
+        if (board.handGrabber[0]!=null && board.handGrabber[1]!=null )
+        {
+            foreach (Grabber g in board.handGrabber)
+            {
+                if (g.HeldGrabbable == null)
+                    g.ForceRelease = false;
+            }
+        }
+
+    }
 
     public void ChooseChecker()
     {
+        
         if (gameObject.GetComponent<SnapZone>() != null){
             currSnapZone = gameObject;
+            foreach (Grabber g in board.handGrabber)
+            {
+                g.ForceRelease = true;
+            }
         }
+
         if (gameObject.GetComponent<SnapZone>().HeldItem != null)
         {
             currentGrabbable = gameObject.GetComponent<SnapZone>().HeldItem;
+            
+            currentGrabbable.transform.parent = gameObject.GetComponent<SnapZone>().transform;
             currentText = currentGrabbable.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
             if (board.answerList.Find(x => x.name == currentGrabbable.gameObject.name))
             {
+                
                 Debug.Log("found");
                 return;
             }
@@ -57,6 +79,18 @@ public class DragAndDropAnswerChecker : MonoBehaviour
                 TasteAnswerChecker(currentText.transform.parent.parent.gameObject, index, customer);
             else
                 FavouriteCakeAnswerChecker(currentText);
+
+            for(int i=0; i < board.topicButtons.Count; i++)
+            {
+                if (board.topicButtons[i].interactable == true)
+                    return;
+
+                if(board.topicButtons[^1].interactable == false)
+                {
+                    board.topics.SetActive(false);
+                    board.jobFinishGO.SetActive(true);
+                }
+            }
         }
         else if (checkerType == CheckType.ProblemStatement)
         {
@@ -77,12 +111,11 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             }
             else if(currentGrabbable.gameObject.layer== 14)
             {
-                Debug.Log("this");
                 problemStatementUI.Statement1(currentGrabbable.gameObject);
             }
         }else if(checkerType == CheckType.VPC)
         {
-            VPCCheck();
+            VpcCheck();
         }
 
     }
@@ -126,12 +159,11 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = false;
             Debug.Log("true");
         }
-        userPersonaUI.gameObject.SetActive(false);
+
         if (gameObject.GetComponent<SnapZone>() != null)
             currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
         board.userPersonaQuestion.gameObject.SetActive(false);
         board.choices.SetActive(false);
-        board.boardActivityUI.SetActive(true);
         board.tasteAnswer.SetActive(false);
         board.topics.SetActive(true);
     }
@@ -158,7 +190,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         history.FrustrationAnswer(currentText);
         board.userPersonaQuestion.gameObject.SetActive(false);
         board.choices.SetActive(false);
-        board.boardActivityUI.SetActive(true);
+        board.topics.SetActive(true);
     }
 
     private void GoalsAnswerChecker(TMP_Text currentText)
@@ -178,13 +210,14 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             }
         }
         history.GoalsAnswer(currentText);
-        userPersonaUI.gameObject.SetActive(false);
+
+
         if (gameObject.GetComponent<SnapZone>() != null)
             currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
+
         board.userPersonaQuestion.gameObject.SetActive(false);
         board.choices.SetActive(false);
         board.topics.SetActive(true);
-        board.userPersonaUI.SetActive(true);
     }
     #endregion
     #region ProblemStatementChecks
@@ -194,8 +227,9 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             Debug.Log("usia true");
         else
             Debug.Log("false");
-        board.choicesTargetUsia.SetActive(false);
         board.choicesJenisMakanan.SetActive(true);
+        board.choicesTargetUsia.SetActive(false);
+
     }
 
 
@@ -225,7 +259,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             Debug.Log("false");
         }
         board.choicesUkuran.SetActive(false);
-        board.tasteAnswer.SetActive(true);
+        board.tasteAnswer.SetActive(true); 
     }
 
     public void CakeAnswerChecker(TMP_Text ansewer)
@@ -245,11 +279,11 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         board.answerList.Clear();
         board.problemStatement.SetActive(false);
         board.choicesJenisKue.SetActive(false);
-        board.userPersonaUI.SetActive(true);
+        board.jobFinishGO.SetActive(true);
     }
     #endregion
     #region VPC Checks
-    private void VPCCheck()
+    private void VpcCheck()
     {
 
         if (currentGrabbable.gameObject.tag == currSnapZone.tag)
@@ -257,18 +291,25 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         else
             Debug.Log("VPC false");
 
-        for (int i = 0; i < board.answerList.Count; i++)
-        {
-            board.answerList[i].Return();
-        }
-
         if (board.answerList.Count == 6)
         {
+            for (int i = 0; i < board.answerList.Count; i++)
+            {
+                board.answerList[i].Return();
+            }
+
+            board.answerList.Clear();
+
             board.vpcCanvas.SetActive(false);
             board.vpcChoices.SetActive(false);
-            board.boardActivityUI.SetActive(true);
+            board.jobFinishGO.SetActive(true);
         }
-        board.answerList.Clear();
+
     }
     #endregion
+
+    public void Test()
+    {
+        Debug.Log("work");
+    }
 }

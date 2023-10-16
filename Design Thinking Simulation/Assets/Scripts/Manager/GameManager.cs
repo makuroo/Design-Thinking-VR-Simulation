@@ -102,7 +102,6 @@ public class GameManager : MonoBehaviour
     public int userPersonaCount = 0;
     private BNG.PlayerScript player;
 
-
     private void Awake()
     {
         LoadGame();
@@ -194,6 +193,7 @@ public class GameManager : MonoBehaviour
             canteenCustomerCount = PlayerPrefs.GetInt("CanteenCustomerCount");
             RandomizeQuestion();
             RandomizeCustomer();
+            Debug.Log("Nih Load Game");
         }
         else //jika tidak ada savean (new game)
         {
@@ -474,7 +474,7 @@ public class GameManager : MonoBehaviour
 
     public void GetBedScript()
     {
-        bedScript = GameObject.Find("BedScripted").GetComponent<BedScript>();
+        bedScript = GameObject.Find("Bed").GetComponent<BedScript>();
     }
 
     public void ClearCustomer()
@@ -513,6 +513,17 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
+        BoardActivityUI board = GameObject.Find("BoardActivityUI").GetComponent<BoardActivityUI>();
+        if (board != null)
+        {
+            board.jobFinishGO.SetActive(false);
+            board.boardActivityUI.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("here");
+            return;
+        }
         currentDay += 1;
         ResetQuestionRemaining();
         player.SetChanceText();

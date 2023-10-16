@@ -18,8 +18,8 @@ public class AssetsFaceToPlayer : MonoBehaviour
         if (!disableFaceToPlayer)
         {
             Vector3 directionToCamera = transform.position - cameraTransform.position;
-            directionToCamera.y = 180f;
-            transform.rotation = Quaternion.LookRotation(directionToCamera*90f);
+            directionToCamera.y = 0f;
+            transform.rotation = Quaternion.LookRotation(directionToCamera);
         }
 
     }
