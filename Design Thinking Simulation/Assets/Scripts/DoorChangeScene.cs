@@ -78,7 +78,7 @@ public class DoorChangeScene : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<BNG.PlayerScript>())
+        if (other.GetComponent<PlayerScript>())
         {
             canvasChangeScene.SetActive(false);
             //Debug.Log(other.gameObject);

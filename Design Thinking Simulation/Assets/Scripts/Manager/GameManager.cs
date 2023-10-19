@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
 
     public int interviewCount = 0;
     public int userPersonaCount = 0;
-    private BNG.PlayerScript player;
+    private PlayerScript player;
 
     private void Awake()
     {
@@ -334,7 +334,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            NextDay();
+            player.DoFadeInFadeOutFunction();
+;           NextDay();
             player.SetDayText();
             //SetDirectionalLight(true);
             SaveGame();
@@ -343,7 +344,7 @@ public class GameManager : MonoBehaviour
 
     public void GetPlayerRef()
     {
-        player = GameObject.Find("PlayerController").GetComponent<BNG.PlayerScript>();
+        player = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
         player.SetChanceText();
         player.SetDayText();
     }

@@ -14,7 +14,7 @@ public class People : MonoBehaviour
     public CustomerDataSO customerData;
     public int questionIndex = 0;
     [SerializeField] private TextMeshProUGUI jawabanText;
-    [HideInInspector] public BNG.PlayerScript player;
+    [HideInInspector] public PlayerScript player;
     [SerializeField] GameObject QuestionCanvas;
     public GameObject UIPertanyaan;
     [SerializeField] private GameObject NameCanvas;
@@ -92,10 +92,10 @@ public class People : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<BNG.PlayerScript>())
+        if (other.GetComponent<PlayerScript>())
         {
 
-            player = other.GetComponent<BNG.PlayerScript>();
+            player = other.GetComponent<PlayerScript>();
             if (GameManager.Instance.peopleMet.Count > 0)
             {
                 foreach (GameObject go in GameManager.Instance.peopleMet)
@@ -188,10 +188,10 @@ public class People : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<BNG.PlayerScript>())
+        if (other.GetComponent<PlayerScript>())
         {
             NameCanvas.SetActive(false);
-            player = other.GetComponent<BNG.PlayerScript>();
+            player = other.GetComponent<PlayerScript>();
             QuestionCanvas.SetActive(false);
             isPlayerInRange = false;
             jawabanText.text = "";

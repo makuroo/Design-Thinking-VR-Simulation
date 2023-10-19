@@ -1207,6 +1207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2888193656762181241, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
+      propertyPath: m_CameraType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2888193656762181241, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
       propertyPath: m_RendererIndex
       value: -1
       objectReference: {fileID: 0}
@@ -1239,6 +1244,16 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771719747634298766, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771719747634298766, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 6623285496203499296, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
@@ -1330,11 +1345,31 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7423108242105911493, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 32567
+      objectReference: {fileID: 0}
     - target: {fileID: 8189532433811266427, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8322286723661840018, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_RendererIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322286723661840018, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_Cameras.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322286723661840018, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_Cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 470759946}
     - target: {fileID: 8858176917485780961, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
       propertyPath: m_Enabled
@@ -1413,6 +1448,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.76, y: 2.1899996, z: 0.019999996}
   m_Center: {x: 0, y: 0.0000009536743, z: 0}
+--- !u!20 &470759946 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4771719747634298766, guid: 5215bb7680464554b9c93a803b392473,
+    type: 3}
+  m_PrefabInstance: {fileID: 434680498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &503691389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1737,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -415136158766342463, guid: d1668f5adb7bf9040b69efc4c46cb368, type: 3}
+    - {fileID: -1853094968961178454, guid: d1668f5adb7bf9040b69efc4c46cb368, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d1668f5adb7bf9040b69efc4c46cb368, type: 3}
 --- !u!1 &549036581 stripped
 GameObject:
@@ -4897,6 +4940,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeSceneCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 2874416283084592315, guid: a2997a4d81d117d4db00ea167b4923c6,
+        type: 3}
+      propertyPath: playerScript
+      value: 
+      objectReference: {fileID: 1366508537}
     - target: {fileID: 2874416283353632864, guid: a2997a4d81d117d4db00ea167b4923c6,
         type: 3}
       propertyPath: m_Maskable

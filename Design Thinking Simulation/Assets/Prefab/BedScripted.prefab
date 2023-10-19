@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8728573858422569480}
   - component: {fileID: 1936485087968556765}
   - component: {fileID: 2054293036526301379}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 8586988954860133595}
   - component: {fileID: 8752470691068071448}
   - component: {fileID: 4558245756704171434}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CanvasBedAnswer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 2083554696310545370}
   - component: {fileID: 2083554696310545188}
   - component: {fileID: 2083554696310545189}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: BedQuestion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 2083554696515028599}
   - component: {fileID: 2083554696515028592}
   - component: {fileID: 2083554696515028596}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CanvasBed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   - component: {fileID: 2083554696619970134}
   - component: {fileID: 2083554696619970135}
   - component: {fileID: 2083554696619970128}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: YesBed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 2083554697420884791}
   - component: {fileID: 2083554697420884788}
   - component: {fileID: 2083554697420884789}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: BedAnswer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 8350460270512489586}
   - component: {fileID: 7787612305241655804}
   - component: {fileID: 7763734463236133133}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: No Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1137,7 +1137,7 @@ GameObject:
   - component: {fileID: 5116973552640960513}
   - component: {fileID: 702974248005098335}
   - component: {fileID: 8964664460373145336}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

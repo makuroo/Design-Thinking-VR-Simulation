@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2874416281773637222}
   - component: {fileID: 2874416281773637217}
   - component: {fileID: 2874416281773637216}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Button2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 2874416282200324669}
   - component: {fileID: 2874416282200324643}
   - component: {fileID: 2874416282200324642}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: TextButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 2874416282255986264}
   - component: {fileID: 2874416282255986270}
   - component: {fileID: 2874416282255986265}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: TextButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 2874416282355049167}
   - component: {fileID: 2874416282355049166}
   - component: {fileID: 2874416282355049161}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: CanvasChangeScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 2874416282419755618}
   - component: {fileID: 2874416282419755645}
   - component: {fileID: 2874416282419755644}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Button3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 2874416282836557012}
   - component: {fileID: 2874416282836557018}
   - component: {fileID: 2874416282836557013}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: TextButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 2874416283353632865}
   - component: {fileID: 2874416283353632864}
   - component: {fileID: 2874416283353632867}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Button1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1029,7 +1029,7 @@ GameObject:
   - component: {fileID: 2874416283435030156}
   - component: {fileID: 2874416283435030194}
   - component: {fileID: 2874416283435030157}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: AnswerScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}

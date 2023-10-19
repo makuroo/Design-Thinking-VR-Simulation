@@ -13,11 +13,11 @@ public class ButtonMonitor : MonoBehaviour
     int currentScreen = 1;
     [SerializeField] int currentTutorialScreen = 1;
     bool isOnTutorial;
-    BNG.PlayerScript playerScript;
+    PlayerScript playerScript;
 
     private void Awake()
     {
-        playerScript = GameObject.Find("PlayerController").GetComponent<BNG.PlayerScript>();
+        playerScript = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
     }
 
     void Start()
