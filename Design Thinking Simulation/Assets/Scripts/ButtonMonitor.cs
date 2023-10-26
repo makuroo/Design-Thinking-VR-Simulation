@@ -47,9 +47,16 @@ public class ButtonMonitor : MonoBehaviour
 
     IEnumerator Tutorial1Done()
     {
-        yield return new WaitForSeconds(durationTutorial[currentTutorialScreen-1]);
-        playerScript.screenDetector.SetTargetAsWatch();
-        //playerScript.ControllerVibrateRepeat();
+        /*yield return new WaitForSeconds(durationTutorial[currentTutorialScreen-1]);
+        playerScript.ControllerVibrate(true);*/
+        yield return new WaitForSeconds(durationTutorial[currentTutorialScreen - 1] -3);
+        playerScript.ControllerVibrate(true);
+        yield return new WaitForSeconds(1);
+        playerScript.ControllerVibrate(true);
+        yield return new WaitForSeconds(1);
+        playerScript.ControllerVibrate(true);
+        yield return new WaitForSeconds(1);
+        playerScript.ControllerVibrate(true);
         StartTutorial2();
     }
 

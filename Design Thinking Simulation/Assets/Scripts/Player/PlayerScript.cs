@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using BNG;
+using UnityEngine.UI;
 
 
 
@@ -21,6 +22,7 @@ public class PlayerScript : MonoBehaviour
 
     ScreenFader screenFaderScriptMain;
     GameObject UICamera;
+    Image clockImage;
 
     private void Awake()
     {
@@ -31,6 +33,11 @@ public class PlayerScript : MonoBehaviour
     {
         screenFaderScriptMain = transform.Find("CameraRig/TrackingSpace/CenterEyeAnchor").GetComponent<ScreenFader>();
         UICamera = transform.Find("CameraRig/TrackingSpace/CenterEyeAnchor/CenterEyeAnchorUI").gameObject;
+        clockImage = transform.Find("CameraRig/TrackingSpace/LeftHandAnchor/LeftControllerAnchor/ClockCanvas/ClockImage").GetComponent<Image>();
+        Debug.Log(clockImage);
+        GameManager.Instance.CanAskCheck();
+        Debug.Log(clockImage.color);
+        Debug.Log("jalan woii ini di start player");
     }
 
     // Update is called once per frame
@@ -117,6 +124,17 @@ public class PlayerScript : MonoBehaviour
         screenFaderScriptMain.DoFadeOut();
         UICamera.SetActive(true);
     }
+
+    public void ChangeClockColorToRed()
+    {
+        clockImage.color = new Color32(255, 84, 64, 255);
+    }
+
+    public void ChangeClockColorToGreen()
+    {
+        clockImage.color = new Color32(161, 255, 156, 255);
+    }
+
 
 }
 

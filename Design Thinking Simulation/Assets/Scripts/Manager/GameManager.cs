@@ -339,6 +339,7 @@ public class GameManager : MonoBehaviour
             player.SetDayText();
             //SetDirectionalLight(true);
             SaveGame();
+            CanAskCheck();
         }
     }
 
@@ -495,12 +496,23 @@ public class GameManager : MonoBehaviour
         if (questionRemaining <= 0)
         {
             //SetDirectionalLight(false);
+            player.ControllerVibrate(false);
+            player.ChangeClockColorToRed();
         }
         else
         {
             //SetDirectionalLight(true);
+            player.ChangeClockColorToGreen();
         }
         return questionRemaining > 0;
+    }
+
+    IEnumerator VibrateControllerMultipleTimes()
+    {
+        player.ControllerVibrate(false);
+        yield return new WaitForSeconds(1);
+        player.ControllerVibrate(false);
+        yield return new WaitForSeconds(1);
     }
 
 

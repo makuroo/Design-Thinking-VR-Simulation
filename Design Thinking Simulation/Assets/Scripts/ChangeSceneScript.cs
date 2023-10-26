@@ -9,7 +9,7 @@ public class ChangeSceneScript : MonoBehaviour
 {
     [SerializeField] bool isHomeDoor;
     [SerializeField] bool isCafeDoor;
-    [SerializeField] bool isRestaurantDoor;
+    [SerializeField] bool isMall;
     [SerializeField] bool isCanteenDoor;
     public TextMeshProUGUI world1Text;
     public TextMeshProUGUI world2Text;
@@ -22,16 +22,16 @@ public class ChangeSceneScript : MonoBehaviour
         if(isHomeDoor)
         {
             world1Text.text = "Cafe";
-            world2Text.text = "Restaurant";
+            world2Text.text = "Mall";
             world3Text.text = "Canteen";
         }
         else if(isCafeDoor)
         {
             world1Text.text = "Home";
-            world2Text.text = "Restaurant";
+            world2Text.text = "Mall";
             world3Text.text = "Canteen";
         }
-        else if(isRestaurantDoor)
+        else if(isMall)
         {
             world1Text.text = "Home";
             world2Text.text = "Cafe";
@@ -41,7 +41,7 @@ public class ChangeSceneScript : MonoBehaviour
         {
             world1Text.text = "Home";
             world2Text.text = "Cafe";
-            world3Text.text = "Restaurant";
+            world3Text.text = "Mall";
         }
         playerScript = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
     }
@@ -95,7 +95,7 @@ public class ChangeSceneScript : MonoBehaviour
             playerScript.DoFadeIn();
             LoadSceneAsyncFunction("Home");
         }
-        else if (isRestaurantDoor)
+        else if (isMall)
         {
             playerScript.DoFadeIn();
             LoadSceneAsyncFunction("Home");
@@ -112,15 +112,15 @@ public class ChangeSceneScript : MonoBehaviour
         if (isHomeDoor)
         {
             playerScript.DoFadeIn();
-            LoadSceneAsyncFunction("Restaurant");
+            LoadSceneAsyncFunction("Mall");
             GameManager.Instance.canDoActivity = false;
         }
         else if (isCafeDoor)
         {
             playerScript.DoFadeIn();
-            LoadSceneAsyncFunction("Restaurant");
+            LoadSceneAsyncFunction("Mall");
         }
-        else if (isRestaurantDoor)
+        else if (isMall)
         {
             playerScript.DoFadeIn();
             LoadSceneAsyncFunction("Cafe");
@@ -145,7 +145,7 @@ public class ChangeSceneScript : MonoBehaviour
             playerScript.DoFadeIn();
             LoadSceneAsyncFunction("Canteen");
         }
-        else if (isRestaurantDoor)
+        else if (isMall)
         {
             playerScript.DoFadeIn();
             LoadSceneAsyncFunction("Canteen");
@@ -153,7 +153,7 @@ public class ChangeSceneScript : MonoBehaviour
         else if (isCanteenDoor)
         {
             playerScript.DoFadeIn();
-            LoadSceneAsyncFunction("Restaurant");
+            LoadSceneAsyncFunction("Mall");
         }
     }
 
