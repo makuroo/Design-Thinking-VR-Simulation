@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93ab046880170040ba6bde9ea7b005f, type: 3}
   m_Name: Ashly
   m_EditorClassIdentifier: 
-  peopleName: Bianca
-  kueFavorit: dsa
+  peopleName: ???
+  <cakePreferences>k__BackingField: {fileID: 0}
+  kueFavorit: {fileID: 0}
   goals:
   - ???
   frustration:

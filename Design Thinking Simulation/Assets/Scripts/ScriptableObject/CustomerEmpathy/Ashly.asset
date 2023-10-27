@@ -17,8 +17,7 @@ MonoBehaviour:
     type: 2}
   kueFavorit: {fileID: 11400000, guid: 3993c5116e0677d4ca5250b1db17863d, type: 2}
   goals:
-  - Memakan kue yang milky
-  - Memakan kue kombinasi rasa manis dan asin
+  - Memakan kue yang manis dan coklat
   frustration:
-  - tidak suka kue yang pahit
+  - Sedikit yang menjual kue coklat dengan sea salt
   met: 0

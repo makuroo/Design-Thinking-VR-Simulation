@@ -17,8 +17,8 @@ MonoBehaviour:
     type: 2}
   kueFavorit: {fileID: 0}
   goals:
-  - 
-  - 
+  - Menyukai kue yang menggunakan bahan sea salt
+  - Memakan kue yang memiliki rasa asam
   frustration:
-  - 
+  - Menderita diabetes
   met: 0

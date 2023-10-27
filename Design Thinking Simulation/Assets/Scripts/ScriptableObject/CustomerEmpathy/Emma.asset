@@ -17,8 +17,7 @@ MonoBehaviour:
     type: 2}
   kueFavorit: {fileID: 0}
   goals:
-  - 
-  - 
+  - ' Ingin mencoba berbagai rasa kue selain vanila'
   frustration:
-  - 
+  - Kebanyakan kue rasa vanila, padahal saya tidak suka rasa tersebut
   met: 0

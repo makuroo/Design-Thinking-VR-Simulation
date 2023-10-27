@@ -27,9 +27,9 @@ public class BoardActivityUI : MonoBehaviour
     [SerializeField] private List<string> randomOptions;
     [SerializeField] private List<string> usiaTarget;
     [SerializeField] private List<string> jenisMakanan;
-    [SerializeField] private int userPersonaActiveDay;
-    [SerializeField] private int problemStatementActiveDay;
-    [SerializeField] private int vpcActiveDay;
+    public int userPersonaActiveDay;
+    public int problemStatementActiveDay;
+    public int vpcActiveDay;
 
     public List<UnityEngine.UI.Button> topicButtons;
     public List<UnityEngine.UI.Button> boardActivityButtons;
