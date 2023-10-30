@@ -94,6 +94,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         }
         else if (checkerType == CheckType.ProblemStatement)
         {
+            Debug.Log(currentGrabbable.gameObject);
             if (currentGrabbable.gameObject.CompareTag("TargetUsia"))
             {
                 TargetUsiaChecker(currentText);
@@ -111,6 +112,8 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             }
             else if(currentGrabbable.gameObject.layer== 14)
             {
+                if (currentGrabbable == null)
+                    Debug.Log(null);
                 problemStatementUI.Statement1(currentGrabbable.gameObject);
             }
         }else if(checkerType == CheckType.VPC)

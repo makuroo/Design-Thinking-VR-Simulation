@@ -27,16 +27,16 @@ public class ActivityDaysUI : MonoBehaviour
         }
         else
         {
-            problemStatementTextDays.text = board.userPersonaActiveDay - GameManager.Instance.currentDay + "Day(s)";
+            problemStatementTextDays.text = board.problemStatementActiveDay - GameManager.Instance.currentDay + "Day(s)";
         }
 
         if (board.vpcActiveDay - GameManager.Instance.currentDay <= 0)
         {
-            userPersonaTextDays.text = "Unlocked";
+            vpcTextDays.text = "Unlocked";
         }
         else
         {
-            userPersonaTextDays.text = board.vpcActiveDay - GameManager.Instance.currentDay + "Day(s)";
+            vpcTextDays.text = board.vpcActiveDay - GameManager.Instance.currentDay + "Day(s)";
         }
     }
 }
