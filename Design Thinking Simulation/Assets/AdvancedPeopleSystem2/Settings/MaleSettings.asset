@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0b793a5334f714894f560b724e6945, type: 3}
   m_Name: MaleSettings
   m_EditorClassIdentifier: 
-  OriginalMesh: {fileID: 100056, guid: 1b8f3f34252d9ee44823ab05504b31a8, type: 3}
+  OriginalMesh: {fileID: 27058356119285619, guid: 1a98919a4248b3a459452e1e96d10ce6,
+    type: 3}
   bodyMaterial: {fileID: 2100000, guid: 72b4350f26c57fe44b39907d978d92c5, type: 2}
   characterAnimationPresets:
   - name: Smile
