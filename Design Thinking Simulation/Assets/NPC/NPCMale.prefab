@@ -325,7 +325,7 @@ PrefabInstance:
     - target: {fileID: 1705496087617365778, guid: e3250274e98616c44b6d67da6c558e5e,
         type: 3}
       propertyPath: m_Name
-      value: NPCChar (1)
+      value: NPCMale
       objectReference: {fileID: 0}
     - target: {fileID: 1705496087617365780, guid: e3250274e98616c44b6d67da6c558e5e,
         type: 3}
@@ -445,8 +445,14 @@ PrefabInstance:
     - target: {fileID: 1705496087617365781, guid: e3250274e98616c44b6d67da6c558e5e,
         type: 3}
       propertyPath: instanceStatus
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1705496087617365781, guid: e3250274e98616c44b6d67da6c558e5e,
+        type: 3}
+      propertyPath: selectedsettings
+      value: 
+      objectReference: {fileID: 11400000, guid: 436e29497d9c8f24593c09fd99e5f400,
+        type: 2}
     - target: {fileID: 1705496087617365781, guid: e3250274e98616c44b6d67da6c558e5e,
         type: 3}
       propertyPath: characterSelectedElements.Hat
@@ -2217,8 +2223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd146e35db094c647a04c37acc5d38b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 0}
-  charCust: {fileID: 0}
+  playerGoal: {fileID: 0}
 --- !u!195 &4502962010777216712
 NavMeshAgent:
   m_ObjectHideFlags: 0
