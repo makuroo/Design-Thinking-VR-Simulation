@@ -24,6 +24,10 @@ public class NPCScript : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         charCust.Randomize();
+        var generatorSettings = charCust.Settings.generator;
+        charCust.SetBlendshapeValue(CharacterBlendShapeType.Fat, 0f);
+        charCust.SetBlendshapeValue(CharacterBlendShapeType.Muscles, 0f);
+        charCust.SetBlendshapeValue(CharacterBlendShapeType.Thin, 100f);
     }
 
     // Update is called once per frame
@@ -42,5 +46,6 @@ public class NPCScript : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
     }
 }
