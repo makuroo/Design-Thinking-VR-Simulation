@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using BNG;
 
 public class GameManager : MonoBehaviour
@@ -101,6 +102,8 @@ public class GameManager : MonoBehaviour
     public int interviewCount = 0;
     public int userPersonaCount = 0;
     private PlayerScript player;
+    string previousWorld;
+
 
     private void Awake()
     {
@@ -176,6 +179,7 @@ public class GameManager : MonoBehaviour
         SaveGame();
         Debug.Log("Nih New Game");
     }
+    
     
     public void LoadGame()
     {
@@ -564,4 +568,9 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+
+
+
+
 }
