@@ -84,6 +84,7 @@ public class PourDetector : MonoBehaviour
         currentStream.Begin();
     }
 
+
     private void EndPour()
     {
         print("End");
@@ -102,6 +103,7 @@ public class PourDetector : MonoBehaviour
         GameObject streamObject = Instantiate(streamPrefab, origin.position, Quaternion.identity, transform);
         return streamObject.GetComponent<Stream>();
     }
+
 
     private void OnTriggerEnter(Collider other) {
         if (isLemonSqueezer)
@@ -125,11 +127,10 @@ public class PourDetector : MonoBehaviour
             {
                 if (graterTrigger[i].name == "Bowl") checkItem[0] = true;
                 if (graterTrigger[i].name == "Lemon Half") checkItem[1] = true;
-                continue;
             }
 
             bool isAllItem = true;
-            for (int i = 0; i < graterTrigger.Count; i++)
+            for (int i = 0; i < checkItem.Length; i++)
             {
                 if(!checkItem[i]) isAllItem = false;
             }

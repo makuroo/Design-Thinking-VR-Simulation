@@ -2233,7 +2233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364103008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0279, z: 0}
+  m_LocalPosition: {x: 0, y: 0.136, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9103,7 +9103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1572588310
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9120,9 +9120,9 @@ RectTransform:
   m_Father: {fileID: 2106473550}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2895, y: -150}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1572588311
@@ -9553,7 +9553,7 @@ MonoBehaviour:
   ThrowForceMultiplier: 0
   ThrowForceMultiplierAngular: 0
   BreakDistance: 0
-  HideHandGraphics: 1
+  HideHandGraphics: 0
   ParentToHands: 0
   ParentHandModel: 1
   SnapHandModel: 1
@@ -10540,7 +10540,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1816488283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10557,9 +10557,9 @@ RectTransform:
   m_Father: {fileID: 2106473550}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 3195, y: -150}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1816488284
@@ -12291,7 +12291,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 920833153}
   m_Direction: 0
   m_Value: 0
-  m_Size: 0.09235198
+  m_Size: 0.10736856
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

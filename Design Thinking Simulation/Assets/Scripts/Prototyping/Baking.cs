@@ -297,6 +297,13 @@ public class Baking : MonoBehaviour
         {
             AirPerasanLemonAdded();
         }
+        else if(other.gameObject.name == "Grater")
+        {
+            if (graterScript.isAddLemonZest)
+            {
+                LemonZestAdded();
+            }
+        }
         else if(other.gameObject.name == "Lemon Half")
         {
             if (graterScript.isAddLemonZest)
