@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> peopleMet = new List<GameObject>();
 
-
     public CustomerDataSO personCustomerData;
 
     public TMP_Text currentText;
@@ -102,6 +101,7 @@ public class GameManager : MonoBehaviour
     public int userPersonaCount = 0;
     private BNG.PlayerScript player;
 
+    public UserPersonaHistory history;
     private void Awake()
     {
         LoadGame();
@@ -428,9 +428,6 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }*/
-
-
-
 
     void ResetQuestionRemaining()
     {

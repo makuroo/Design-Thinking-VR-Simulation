@@ -20,7 +20,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     public TMP_Text currentText;
     public int index;
     public People customer;
-    [SerializeField] UserPersonaHistory history;
+    //[SerializeField] UserPersonaHistory history;
     [SerializeField] ProblemStatement statement;
     [SerializeField] BoardActivityUI board;
     public CheckType checkerType;
@@ -70,7 +70,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
 
         if (checkerType == CheckType.UserPersona)
         {
-            history.CakePreferenceAnswer(customer.customerData.cakePreferences);
+            GameManager.Instance.history.CakePreferenceAnswer(customer.customerData.cakePreferences);
             if (userPersonaUI.userPersonaChecker == UserPersonaUI.UserPersonaCategory.Goals)
                 GoalsAnswerChecker(currentText);
             else if (userPersonaUI.userPersonaChecker == UserPersonaUI.UserPersonaCategory.Frustration)
@@ -94,7 +94,6 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         }
         else if (checkerType == CheckType.ProblemStatement)
         {
-            Debug.Log(currentGrabbable.gameObject);
             if (currentGrabbable.gameObject.CompareTag("TargetUsia"))
             {
                 TargetUsiaChecker(currentText);
@@ -136,8 +135,8 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             Debug.Log("false");
         }
 
-        history.FindCustomer(customer.customerData);
-        history.FavoritCakeAnswer(customer.customerData);
+        GameManager.Instance.history.FindCustomer(customer.customerData);
+        GameManager.Instance.history.FavoritCakeAnswer(customer.customerData);
         if (gameObject.GetComponent<SnapZone>() != null)
             currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
 
@@ -149,18 +148,20 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     private void TasteAnswerChecker(GameObject currentText, int random, People customer)
     {
 
-        history.FindCustomer(customer.customerData);
-        history.AddToDict(customer.customerData.peopleName, customer.customerData);
+        GameManager.Instance.history.FindCustomer(customer.customerData);
+        GameManager.Instance.history.AddToDict(customer.customerData.peopleName, customer.customerData);
         //return;
         if (customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) == 1 || customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) > 1 && random == 0)
         {
-            history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = true;
-            Debug.Log(" taste true");
+            //GameManager.Instance.history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = true;
+            if(GameManager.Instance.history.likeTasteToggleList[Int32.Parse(currentText.tag)].isOn)
+                Debug.Log(" taste true");
         }
         else if (customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) == -1 || customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) < -1 && random == 1)
         {
-            history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = false;
-            Debug.Log("true");
+            //GameManager.Instance.history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = false;
+            if(GameManager.Instance.history.dislikeTasteToggleList[Int32.Parse(currentText.tag)].isOn)
+                Debug.Log("true");
         }
 
         if (gameObject.GetComponent<SnapZone>() != null)
@@ -175,7 +176,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     {
 
         customerData = GameManager.Instance.personCustomerData;
-        history.FindCustomer(customer.customerData);
+        GameManager.Instance.history.FindCustomer(customer.customerData);
         for (int i = 0; i < customer.customerData.frustration.Count; i++)
         {
             if (currentText.text == customer.customerData.frustration[i])
@@ -190,7 +191,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         }
         if (gameObject.GetComponent<SnapZone>() != null)
             currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
-        history.FrustrationAnswer(currentText);
+        GameManager.Instance.history.FrustrationAnswer(currentText);
         board.userPersonaQuestion.gameObject.SetActive(false);
         board.choices.SetActive(false);
         board.topics.SetActive(true);
@@ -199,7 +200,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     private void GoalsAnswerChecker(TMP_Text currentText)
     {
         customerData = GameManager.Instance.personCustomerData;
-        history.FindCustomer(customer.customerData);
+        GameManager.Instance.history.FindCustomer(customer.customerData);
         for (int i = 0; i < customer.customerData.goals.Count; i++)
         {
             if (currentText.text == customer.customerData.goals[i])
@@ -212,7 +213,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
                 Debug.Log("False");
             }
         }
-        history.GoalsAnswer(currentText);
+        GameManager.Instance.history.GoalsAnswer(currentText);
 
 
         if (gameObject.GetComponent<SnapZone>() != null)

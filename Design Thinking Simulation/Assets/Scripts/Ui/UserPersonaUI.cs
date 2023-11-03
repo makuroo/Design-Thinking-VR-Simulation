@@ -52,6 +52,7 @@ public class UserPersonaUI : MonoBehaviour
 
     public void Confirm()
     {
+        nameText.gameObject.SetActive(false);
         prevNextButtons.SetActive(false);
         board.topics.SetActive(true);
     }

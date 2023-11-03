@@ -175,13 +175,28 @@ public class People : MonoBehaviour
             jawabanText.text = "Neutral";
 
         if (customerData.CalculateLikeness(questionIndex) == 1)
+        {
             jawabanText.text = "Like";
+            GameManager.Instance.history.FindCustomer(customerData);
+            GameManager.Instance.history.likeTasteToggleList[questionIndex].isOn = true;
+        }
+            
 
         if (customerData.CalculateLikeness(questionIndex) > 1)
+        {
             jawabanText.text = "Really Like";
+            GameManager.Instance.history.FindCustomer(customerData);
+            GameManager.Instance.history.likeTasteToggleList[questionIndex].isOn = true;
+        }
+            
 
         if (customerData.CalculateLikeness(questionIndex) < 0)
+        {
             jawabanText.text = "Dislike";
+            GameManager.Instance.history.FindCustomer(customerData);
+            GameManager.Instance.history.dislikeTasteToggleList[questionIndex].isOn = true;
+        }
+            
 
         GameManager.Instance.CanAskCheck();
     }
