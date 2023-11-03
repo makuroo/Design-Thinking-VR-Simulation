@@ -172,16 +172,16 @@ public class People : MonoBehaviour
     public void Reply()
     {
         if (customerData.CalculateLikeness(questionIndex) == 0)
-            jawabanText.text = "Neutral";
+            jawabanText.text = "Biasa Saja";
 
         if (customerData.CalculateLikeness(questionIndex) == 1)
-            jawabanText.text = "Like";
+            jawabanText.text = "Saya suka kok";
 
         if (customerData.CalculateLikeness(questionIndex) > 1)
-            jawabanText.text = "Really Like";
+            jawabanText.text = "Saya Sangat Suka";
 
         if (customerData.CalculateLikeness(questionIndex) < 0)
-            jawabanText.text = "Dislike";
+            jawabanText.text = "Saya Tidak Suka";
 
         GameManager.Instance.CanAskCheck();
     }
