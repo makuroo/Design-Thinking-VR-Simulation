@@ -54,6 +54,12 @@ public class BoardActivityUI : MonoBehaviour
 
     private void OnEnable()
     {
+        if (GameManager.Instance.canDoActivity && jobFinishGO.activeInHierarchy)
+        {
+            jobFinishGO.SetActive(false);
+            boardActivityUI.SetActive(true);
+        }
+
         if (GameManager.Instance.currentDay >= userPersonaActiveDay)
             boardActivityButtons[0].interactable = true;
 

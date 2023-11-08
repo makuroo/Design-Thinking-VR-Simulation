@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 using BNG;
 using UnityEngine.UI;
 
-
-
 public class PlayerScript : MonoBehaviour
 {
     // Start is called before the first frame update
