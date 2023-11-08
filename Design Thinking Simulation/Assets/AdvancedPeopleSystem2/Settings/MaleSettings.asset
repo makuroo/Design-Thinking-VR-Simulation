@@ -1571,6 +1571,17 @@ MonoBehaviour:
     yOffset: 0
     mats:
     - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Batik Karyawan Binus 2
+    mesh:
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    hideParts:
+    - Stomach
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   pantsPresets:
   - name: Pants Type 1
     mesh:
