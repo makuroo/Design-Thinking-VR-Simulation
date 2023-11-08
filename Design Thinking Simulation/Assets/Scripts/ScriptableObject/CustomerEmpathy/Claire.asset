@@ -15,9 +15,9 @@ MonoBehaviour:
   peopleName: Claire
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 34026aa3163b33b47946c07d2bc67064,
     type: 2}
-  kueFavorit: {fileID: 11400000, guid: e268de2db0f299b4cb9312968a35bff4, type: 2}
+  kueFavorit: {fileID: 11400000, guid: 9db5d7bdb5ecaac4d9212b2a033d1299, type: 2}
   goals:
-  - ' Ingin makan makanan manis yang mengandung susu'
+  - ' Ingin makan makanan manis yang mengandung sea salt'
   frustration:
   - Tidak suka yang asam-asam
   met: 0

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LikeCake:
   - {fileID: 11400000, guid: 9db5d7bdb5ecaac4d9212b2a033d1299, type: 2}
-  - {fileID: 11400000, guid: 99c82b2debf1ea341b34e41d0e9ade76, type: 2}
+  - {fileID: 11400000, guid: 3f4b1ebb1a1b5a645a9b0bb64427e0d5, type: 2}
   DislikeCake:
-  - {fileID: 11400000, guid: b4860a63fe1fda14abae2778c02c5b99, type: 2}
+  - {fileID: 11400000, guid: 9db5d7bdb5ecaac4d9212b2a033d1299, type: 2}

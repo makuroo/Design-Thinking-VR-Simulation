@@ -30,9 +30,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<string> asinQuestion = new List<string>();
     [SerializeField] private List<string> asemQuestion = new List<string>();
     [SerializeField] private List<string> pahitQuestion = new List<string>();
-    [SerializeField] private List<string> susuQuestion = new List<string>();
-    [SerializeField] private List<string> coklatQuestion = new List<string>();
-    [SerializeField] private List<string> vanilaQuestion = new List<string>();
     #endregion
 
     [Header("Customer Spawn")]
@@ -255,24 +252,6 @@ public class GameManager : MonoBehaviour
                 randomQuestionIndex = UnityEngine.Random.Range(0, pahitQuestion.Count);
                 RandomizedQuestion[i] = pahitQuestion[randomQuestionIndex];
                 pahitQuestion.RemoveAt(randomQuestionIndex);
-            }
-            else if (randomQuestionTypeIndex == 4)
-            {
-                randomQuestionIndex = UnityEngine.Random.Range(0, susuQuestion.Count);
-                RandomizedQuestion[i] = susuQuestion[randomQuestionIndex];
-                susuQuestion.RemoveAt(randomQuestionIndex);
-            }
-            else if (randomQuestionTypeIndex == 5)
-            {
-                randomQuestionIndex = UnityEngine.Random.Range(0, coklatQuestion.Count);
-                RandomizedQuestion[i] = coklatQuestion[randomQuestionIndex];
-                coklatQuestion.RemoveAt(randomQuestionIndex);
-            }
-            else if (randomQuestionTypeIndex == 6)
-            {
-                randomQuestionIndex = UnityEngine.Random.Range(0, vanilaQuestion.Count);
-                RandomizedQuestion[i] = vanilaQuestion[randomQuestionIndex];
-                vanilaQuestion.RemoveAt(randomQuestionIndex);
             }
         }
     }

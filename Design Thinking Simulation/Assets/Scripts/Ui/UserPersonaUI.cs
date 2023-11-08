@@ -67,10 +67,17 @@ public class UserPersonaUI : MonoBehaviour
         board.choices.SetActive(true);
         board.AddGoalsChoices(customerIndex, this);
         board.topics.SetActive(false);
+        DragAndDropObjectData[] dragAndDropObjects = board.choices.GetComponentsInChildren<DragAndDropObjectData>();
+        foreach (DragAndDropObjectData d in dragAndDropObjects)
+        {
+            if (d.gameObject.activeInHierarchy)
+                d.Return();
+        }
     }
 
     public void ChooseFrustration()
     {
+
         checker.userPersonaUI = this;
         checker.customer = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
         userPersonaQuestion.SetActive(true);
@@ -79,6 +86,12 @@ public class UserPersonaUI : MonoBehaviour
         board.choices.SetActive(true);
         board.AddFrustrationChoices(customerIndex, this);
         board.topics.SetActive(false);
+        DragAndDropObjectData[] dragAndDropObjects = board.choices.GetComponentsInChildren<DragAndDropObjectData>();
+        foreach (DragAndDropObjectData d in dragAndDropObjects)
+        {
+            if (d.gameObject.activeInHierarchy)
+                d.Return();
+        }
     }
 
     public void ChooseTaste()
@@ -97,6 +110,12 @@ public class UserPersonaUI : MonoBehaviour
             board.choices.SetActive(false);
         board.topics.SetActive(false);
         tasteAnswers.gameObject.SetActive(true);
+        DragAndDropObjectData[] dragAndDropObjects = board.tasteAnswer.GetComponentsInChildren<DragAndDropObjectData>();
+        foreach (DragAndDropObjectData d in dragAndDropObjects)
+        {
+            if (d.gameObject.activeInHierarchy)
+                d.Return();
+        }
     }
 
     public void ChooseFavouriteCake()
@@ -110,5 +129,12 @@ public class UserPersonaUI : MonoBehaviour
         board.AddFavouriteCakeChoices(customerIndex, this);
         board.choices.SetActive(true);
         board.topics.SetActive(false);
+        DragAndDropObjectData[] dragAndDropObjects = board.choices.GetComponentsInChildren<DragAndDropObjectData>();
+        Debug.Log(dragAndDropObjects.Length);
+        foreach (DragAndDropObjectData d in dragAndDropObjects)
+        {
+           if(d.gameObject.activeInHierarchy)
+                d.Return();
+        }
     }
 }

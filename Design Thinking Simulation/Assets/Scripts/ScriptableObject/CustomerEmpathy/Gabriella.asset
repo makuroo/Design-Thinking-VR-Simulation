@@ -15,9 +15,8 @@ MonoBehaviour:
   peopleName: Gabriella
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 787e10895372e714286b0dad29144d9d,
     type: 2}
-  kueFavorit: {fileID: 0}
+  kueFavorit: {fileID: 11400000, guid: 3993c5116e0677d4ca5250b1db17863d, type: 2}
   goals:
-  - Menyukai kue yang menggunakan bahan sea salt
   - Memakan kue yang memiliki rasa asam
   frustration:
   - Menderita diabetes

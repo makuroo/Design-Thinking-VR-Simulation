@@ -40,6 +40,14 @@ public class DragAndDropAnswerChecker : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        if(gameObject.GetComponent<SnapZone>().HeldItem != null)
+        {
+            gameObject.GetComponent<SnapZone>().HeldItem.gameObject.GetComponent<DragAndDropObjectData>().Return();
+        }
+    }
+
     public void ChooseChecker()
     {
         
@@ -54,16 +62,16 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         if (gameObject.GetComponent<SnapZone>().HeldItem != null)
         {
             currentGrabbable = gameObject.GetComponent<SnapZone>().HeldItem;
-            
+
             currentGrabbable.transform.parent = gameObject.GetComponent<SnapZone>().transform;
             currentText = currentGrabbable.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
             if (board.answerList.Find(x => x.name == currentGrabbable.gameObject.name))
             {
-                
+
                 Debug.Log("found");
                 return;
             }
-                
+
             else
                 board.answerList.Add(currentGrabbable.gameObject.GetComponent<DragAndDropObjectData>());
         }
@@ -117,15 +125,33 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             }
         }else if(checkerType == CheckType.VPC)
         {
+
+            if (gameObject.GetComponent<SnapZone>().HeldItem != null)
+            {
+                currentGrabbable = gameObject.GetComponent<SnapZone>().HeldItem;
+
+                currentGrabbable.transform.parent = gameObject.GetComponent<SnapZone>().transform;
+                currentText = currentGrabbable.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
+                if (board.answerList.Find(x => x.name == currentGrabbable.gameObject.name))
+                {
+
+                    Debug.Log("found");
+                    return;
+                }
+
+                else
+                    board.answerList.Add(currentGrabbable.gameObject.GetComponent<DragAndDropObjectData>());
+            }
+
             VpcCheck();
         }
 
     }
 
     #region UserPersona
-    private void FavouriteCakeAnswerChecker(TMP_Text currentText)
+    private void FavouriteCakeAnswerChecker(TMP_Text currText)
     {
-        if (customer.customerData.kueFavorit.cakeName == currentText.text)
+        if (customer.customerData.kueFavorit.cakeName == currText.text)
         {
             Debug.Log("fav cake true");
 
@@ -138,48 +164,65 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         GameManager.Instance.history.FindCustomer(customer.customerData);
         GameManager.Instance.history.FavoritCakeAnswer(customer.customerData);
         if (gameObject.GetComponent<SnapZone>() != null)
+        {
             currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
-
+            Debug.Log("fav cake");
+        }
+        board.answerList.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
         board.userPersonaQuestion.gameObject.SetActive(false);
         board.choices.SetActive(false);
         board.topics.SetActive(true);
     }
 
-    private void TasteAnswerChecker(GameObject currentText, int random, People customer)
+    private void TasteAnswerChecker(GameObject currText, int random, People customer)
     {
 
         GameManager.Instance.history.FindCustomer(customer.customerData);
         GameManager.Instance.history.AddToDict(customer.customerData.peopleName, customer.customerData);
         //return;
-        if (customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) == 1 || customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) > 1 && random == 0)
+        if (customer.customerData.CalculateLikeness(Int32.Parse(currText.tag)) == 1 || customer.customerData.CalculateLikeness(Int32.Parse(currText.tag)) > 1 && random == 0)
         {
             //GameManager.Instance.history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = true;
-            if(GameManager.Instance.history.likeTasteToggleList[Int32.Parse(currentText.tag)].isOn)
+            if(GameManager.Instance.history.likeTasteToggleList[Int32.Parse(currText.tag)].isOn)
                 Debug.Log(" taste true");
         }
-        else if (customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) == -1 || customer.customerData.CalculateLikeness(Int32.Parse(currentText.tag)) < -1 && random == 1)
+        else if (customer.customerData.CalculateLikeness(Int32.Parse(currText.tag)) == -1 || customer.customerData.CalculateLikeness(Int32.Parse(currText.tag)) < -1 && random == 1)
         {
             //GameManager.Instance.history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = false;
-            if(GameManager.Instance.history.dislikeTasteToggleList[Int32.Parse(currentText.tag)].isOn)
+            if(GameManager.Instance.history.dislikeTasteToggleList[Int32.Parse(currText.tag)].isOn)
                 Debug.Log("true");
         }
 
         if (gameObject.GetComponent<SnapZone>() != null)
+        {
             currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
+            Debug.Log("taste");
+        }
+        board.answerList.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
         board.userPersonaQuestion.gameObject.SetActive(false);
         board.choices.SetActive(false);
         board.tasteAnswer.SetActive(false);
         board.topics.SetActive(true);
     }
 
-    private void FrustrationAnswerChecker(TMP_Text currentText)
+    private void FrustrationAnswerChecker(TMP_Text currText)
     {
 
         customerData = GameManager.Instance.personCustomerData;
         GameManager.Instance.history.FindCustomer(customer.customerData);
         for (int i = 0; i < customer.customerData.frustration.Count; i++)
         {
-            if (currentText.text == customer.customerData.frustration[i])
+            if (currText.text == customer.customerData.frustration[i])
             {
                 Debug.Log("Frustration True");
                 break;
@@ -189,21 +232,31 @@ public class DragAndDropAnswerChecker : MonoBehaviour
                 Debug.Log("False");
             }
         }
+
+        GameManager.Instance.history.FrustrationAnswer(currText);
         if (gameObject.GetComponent<SnapZone>() != null)
+        {
             currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
-        GameManager.Instance.history.FrustrationAnswer(currentText);
+            Debug.Log("frustration");
+        }
+        board.answerList.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
         board.userPersonaQuestion.gameObject.SetActive(false);
         board.choices.SetActive(false);
         board.topics.SetActive(true);
     }
 
-    private void GoalsAnswerChecker(TMP_Text currentText)
+    private void GoalsAnswerChecker(TMP_Text currText)
     {
         customerData = GameManager.Instance.personCustomerData;
         GameManager.Instance.history.FindCustomer(customer.customerData);
         for (int i = 0; i < customer.customerData.goals.Count; i++)
         {
-            if (currentText.text == customer.customerData.goals[i])
+            if (currText.text == customer.customerData.goals[i])
             {
                 Debug.Log("Goals True");
                 break;
@@ -213,12 +266,20 @@ public class DragAndDropAnswerChecker : MonoBehaviour
                 Debug.Log("False");
             }
         }
-        GameManager.Instance.history.GoalsAnswer(currentText);
+        GameManager.Instance.history.GoalsAnswer(currText);
 
 
         if (gameObject.GetComponent<SnapZone>() != null)
+        {
             currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
-
+            Debug.Log("goal");
+        }
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        board.answerList.Clear();
+        currSnapZone = null;
+        currentText = null;
         board.userPersonaQuestion.gameObject.SetActive(false);
         board.choices.SetActive(false);
         board.topics.SetActive(true);
@@ -231,9 +292,13 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             Debug.Log("usia true");
         else
             Debug.Log("false");
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
+        StartCoroutine(DelayDeactivate("TargetUsia"));
         board.choicesJenisMakanan.SetActive(true);
-        board.choicesTargetUsia.SetActive(false);
-
     }
 
 
@@ -243,7 +308,12 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             Debug.Log(" jenis makanan true");
         else
             Debug.Log("false");
-        board.choicesJenisMakanan.SetActive(false);
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
+        StartCoroutine(DelayDeactivate("JenisMakanan"));
         board.choicesUkuran.SetActive(true);
     }
 
@@ -262,7 +332,12 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         {
             Debug.Log("false");
         }
-        board.choicesUkuran.SetActive(false);
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
+        StartCoroutine(DelayDeactivate("Ukuran"));
         board.tasteAnswer.SetActive(true); 
     }
 
@@ -276,11 +351,18 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         {
             Debug.Log("false");
         }
-        for (int i = 0; i < board.answerList.Count; i++)
-        {
-            board.answerList[i].Return();
-        }
+
+        //for (int i = 0; i < board.answerList.Count; i++)
+        //{
+        //    board.answerList[i].Return();
+        //}
+
         board.answerList.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
         board.problemStatement.SetActive(false);
         board.choicesJenisKue.SetActive(false);
         board.jobFinishGO.SetActive(true);
@@ -295,6 +377,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         else
             Debug.Log("VPC false");
 
+
         if (board.answerList.Count == 6)
         {
             for (int i = 0; i < board.answerList.Count; i++)
@@ -303,7 +386,11 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             }
 
             board.answerList.Clear();
-
+            currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+            currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+            currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+            currSnapZone = null;
+            currentText = null;
             board.vpcCanvas.SetActive(false);
             board.vpcChoices.SetActive(false);
             board.jobFinishGO.SetActive(true);
@@ -312,8 +399,26 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     }
     #endregion
 
-    public void Test()
+    private IEnumerator DelayDeactivate(string problemStatementQuestion)
     {
-        Debug.Log("work");
+        yield return new WaitForSeconds(.05f);
+        switch (problemStatementQuestion)
+        {
+            case "TargetUsia":
+                board.choicesTargetUsia.SetActive(false);
+                break;
+            case "JenisMakanan":
+                board.choicesJenisMakanan.SetActive(false);
+                break;
+            case "Ukuran":
+                board.choicesUkuran.SetActive(false);
+                break;
+            case "JenisKue":
+                board.choicesJenisKue.SetActive(false);
+                break;
+            default:
+                break;
+        }
+        
     }
 }

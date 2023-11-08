@@ -15,9 +15,9 @@ MonoBehaviour:
   peopleName: Zane
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 8f95d45edce664e4890cde20778883e4,
     type: 2}
-  kueFavorit: {fileID: 0}
+  kueFavorit: {fileID: 11400000, guid: f1d58bab361c8594d9c6b4d02544707f, type: 2}
   goals:
-  - 'Ingin makan yang manis dan ada vanilanya '
+  - Ingin makan yang manis manis
   frustration:
   - Tidak suka coklat
   met: 0

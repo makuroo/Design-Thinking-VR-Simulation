@@ -15,9 +15,9 @@ MonoBehaviour:
   peopleName: Tom
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 41000f72a1f4ffd48aa2a03a98147e66,
     type: 2}
-  kueFavorit: {fileID: 0}
+  kueFavorit: {fileID: 11400000, guid: 3993c5116e0677d4ca5250b1db17863d, type: 2}
   goals:
-  - Ingin makan kue dari susu tapi tidak suka manis
+  - Ingin makan kue dari coklat tapi tidak suka manis
   frustration:
   - Kebanyakan kue rasanya manis, padahal saya tidak suka
   met: 0

@@ -15,9 +15,9 @@ MonoBehaviour:
   peopleName: Sam
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 4e394e4202c78214caa3b9f63e63e49b,
     type: 2}
-  kueFavorit: {fileID: 0}
+  kueFavorit: {fileID: 11400000, guid: 6a0ed7d40018f174882cd840fc63b725, type: 2}
   goals:
-  - Ingin makan yang rasanya masam
+  - Ingin makan kue yang ada sea salt
   frustration:
-  - tidak suka dengan susu
+  - tidak suka dengan manis
   met: 0

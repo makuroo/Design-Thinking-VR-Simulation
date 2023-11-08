@@ -10,10 +10,7 @@ using UnityEditor;
         Manis,
         Asin,
         Asem,
-        Pahit,
-        Susu,
-        Coklat,
-        Vanila
+        Pahit
     }
 
 

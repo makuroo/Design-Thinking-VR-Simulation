@@ -40,10 +40,14 @@ public class DragAndDropObjectData : MonoBehaviour
 
     public void Return()
     {
-        transform.SetParent(originalParent);
-        transform.localPosition = initialPos;
-        transform.localRotation = originalRotation;
-        transform.localScale = originalScale;
+        if (originalParent != null)
+        {
+            transform.SetParent(originalParent);
+            transform.localPosition = initialPos;
+            transform.localRotation = originalRotation;
+            transform.localScale = originalScale;
+        }
+
         if (GetComponent<SnapZoneOffset>() != null)
             Destroy(GetComponent<SnapZoneOffset>());
     }
