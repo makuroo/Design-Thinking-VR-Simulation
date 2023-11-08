@@ -316,12 +316,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 13eb8c9ea72f0ed42b88484dd92d9cdb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7072302
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13eb8c9ea72f0ed42b88484dd92d9cdb,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7069834
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13eb8c9ea72f0ed42b88484dd92d9cdb,
         type: 3}
@@ -336,7 +336,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 13eb8c9ea72f0ed42b88484dd92d9cdb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -89.98
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 13eb8c9ea72f0ed42b88484dd92d9cdb,
         type: 3}
@@ -721,8 +721,10 @@ MonoBehaviour:
   origin: {fileID: 1247146360}
   streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7,
     type: 3}
+  flakePrefab: {fileID: 0}
   isLemonSqueezer: 0
   isGrater: 1
+  isFlake: 0
   graterTrigger: []
   isAddLemonZest: 0
 --- !u!64 &141114650
@@ -1074,6 +1076,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -2159929423907200670, guid: 2e7759690300a2d4c847a1de7b1e2260,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2159929423907200670, guid: 2e7759690300a2d4c847a1de7b1e2260,
         type: 3}
@@ -1552,19 +1559,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 196959765}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &241400311
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241400307}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.24486676, y: 0.034209143, z: 0.02077537}
-  m_Center: {x: -0.0025292803, y: 0.012019082, z: 0.76490074}
 --- !u!54 &241400312
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1627,14 +1621,14 @@ MonoBehaviour:
   RemoteGrabbable: 0
   RemoteGrabMechanic: 0
   RemoteGrabDistance: 2
-  ThrowForceMultiplier: 2
-  ThrowForceMultiplierAngular: 1.5
+  ThrowForceMultiplier: 0
+  ThrowForceMultiplierAngular: 0
   BreakDistance: 0
   HideHandGraphics: 0
   ParentToHands: 0
   ParentHandModel: 1
   SnapHandModel: 1
-  CanBeDropped: 1
+  CanBeDropped: 0
   CanBeSnappedToSnapZone: 1
   ForceDisableKinematicOnDrop: 0
   InstantMovement: 0
@@ -1676,6 +1670,55 @@ MonoBehaviour:
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
+--- !u!59 &241400320
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241400307}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_Limits:
+    min: 0
+    max: 30
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!65 &241400321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241400307}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8398155, y: 0.049172174, z: 0.84268785}
+  m_Center: {x: -0.0066474685, y: 0.0045382986, z: 0.4114887}
 --- !u!1 &251282741
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,6 +2283,37 @@ Transform:
   m_Father: {fileID: 1614781477}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &374635545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 374635546}
+  m_Layer: 0
+  m_Name: Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &374635546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374635545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0096}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1877951530}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &384577674 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1257646952265790446, guid: 2e7759690300a2d4c847a1de7b1e2260,
@@ -2474,6 +2548,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &386292436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386292426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e740ab85f9069794e823133e3ae22fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pourThreshold: 45
+  origin: {fileID: 665352920}
+  streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7,
+    type: 3}
+  flakePrefab: {fileID: 36302198843366053, guid: 202d48adffde7cc488f22e5b3be061ed,
+    type: 3}
+  isLemonSqueezer: 0
+  isGrater: 0
+  isFlake: 1
+  graterTrigger: []
+  isAddLemonZest: 0
 --- !u!1 &390915521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3780,6 +3877,18 @@ MonoBehaviour:
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
+--- !u!114 &570364203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533308353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fee8279a47ff75f46b7c852ece1888d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &578420881
 GameObject:
   m_ObjectHideFlags: 0
@@ -4306,8 +4415,10 @@ MonoBehaviour:
   origin: {fileID: 181968880}
   streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7,
     type: 3}
+  flakePrefab: {fileID: 0}
   isLemonSqueezer: 1
   isGrater: 0
+  isFlake: 0
   graterTrigger: []
   isAddLemonZest: 0
 --- !u!65 &630478178
@@ -4519,6 +4630,37 @@ MonoBehaviour:
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
+--- !u!1 &665352919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 665352920}
+  m_Layer: 0
+  m_Name: Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &665352920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665352919}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0036, y: -0.0083, z: 0.01105}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 57281463}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &665725462
 GameObject:
   m_ObjectHideFlags: 0
@@ -5529,6 +5671,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920833152}
   m_CullTransparentMesh: 1
+--- !u!1 &947912668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947912669}
+  m_Layer: 0
+  m_Name: Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &947912669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947912668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0089, y: 0, z: 0.0109}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 528769414}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &958333182
 GameObject:
   m_ObjectHideFlags: 0
@@ -6749,6 +6922,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120408325}
   m_CullTransparentMesh: 1
+--- !u!1 &1134787141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1134787142}
+  m_Layer: 0
+  m_Name: Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1134787142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134787141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0006, y: -0.0072, z: 0.0064}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1313729160}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1163051628 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 471099530561994502, guid: 2e7759690300a2d4c847a1de7b1e2260,
@@ -7007,8 +7211,10 @@ MonoBehaviour:
   origin: {fileID: 1023909483}
   streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7,
     type: 3}
+  flakePrefab: {fileID: 0}
   isLemonSqueezer: 0
   isGrater: 0
+  isFlake: 0
   graterTrigger: []
   isAddLemonZest: 0
 --- !u!54 &1215345502
@@ -9525,8 +9731,10 @@ MonoBehaviour:
   origin: {fileID: 364103009}
   streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7,
     type: 3}
+  flakePrefab: {fileID: 0}
   isLemonSqueezer: 0
   isGrater: 1
+  isFlake: 0
   graterTrigger: []
   isAddLemonZest: 0
 --- !u!114 &1614781482
@@ -10259,6 +10467,29 @@ MonoBehaviour:
   UseCustomInspector: 1
   lastFlickTime: 0
   FlickForce: 1
+--- !u!114 &1760197858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760197848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e740ab85f9069794e823133e3ae22fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pourThreshold: 45
+  origin: {fileID: 1134787142}
+  streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7,
+    type: 3}
+  flakePrefab: {fileID: 36302198843366053, guid: 202d48adffde7cc488f22e5b3be061ed,
+    type: 3}
+  isLemonSqueezer: 0
+  isGrater: 0
+  isFlake: 1
+  graterTrigger: []
+  isAddLemonZest: 0
 --- !u!1 &1770502573
 GameObject:
   m_ObjectHideFlags: 0
@@ -10780,8 +11011,10 @@ MonoBehaviour:
   origin: {fileID: 690313321}
   streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7,
     type: 3}
+  flakePrefab: {fileID: 0}
   isLemonSqueezer: 0
   isGrater: 0
+  isFlake: 0
   graterTrigger: []
   isAddLemonZest: 0
 --- !u!114 &1861150398
@@ -11474,6 +11707,29 @@ MonoBehaviour:
   OutlineColorInRange: {r: 1, g: 1, b: 1, a: 1}
   OutlineColorHighlighted: {r: 1, g: 1, b: 1, a: 1}
   OutlineColorOutOfRange: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &1877951544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877951529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e740ab85f9069794e823133e3ae22fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pourThreshold: 5
+  origin: {fileID: 374635546}
+  streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7,
+    type: 3}
+  flakePrefab: {fileID: 36302198843366053, guid: 202d48adffde7cc488f22e5b3be061ed,
+    type: 3}
+  isLemonSqueezer: 0
+  isGrater: 0
+  isFlake: 1
+  graterTrigger: []
+  isAddLemonZest: 0
 --- !u!1001 &1908746882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13797,22 +14053,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 050a8680a3c8a23438511cc0b4013833,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6454713
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 050a8680a3c8a23438511cc0b4013833,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.6454713
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 050a8680a3c8a23438511cc0b4013833,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.28873327
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 050a8680a3c8a23438511cc0b4013833,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.28873327
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 050a8680a3c8a23438511cc0b4013833,
         type: 3}
@@ -13822,7 +14078,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 050a8680a3c8a23438511cc0b4013833,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -48.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 050a8680a3c8a23438511cc0b4013833,
         type: 3}
@@ -14057,6 +14313,29 @@ MonoBehaviour:
   onSnapZoneExit:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2072681580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072681569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e740ab85f9069794e823133e3ae22fe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pourThreshold: 45
+  origin: {fileID: 947912669}
+  streamPrefab: {fileID: 5238570228697279498, guid: 687fe5b6c1388c34882009636030b3c7,
+    type: 3}
+  flakePrefab: {fileID: 36302198843366053, guid: 202d48adffde7cc488f22e5b3be061ed,
+    type: 3}
+  isLemonSqueezer: 0
+  isGrater: 0
+  isFlake: 1
+  graterTrigger: []
+  isAddLemonZest: 0
 --- !u!1 &2098724718
 GameObject:
   m_ObjectHideFlags: 0

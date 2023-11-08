@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class PourDetector : MonoBehaviour
@@ -7,10 +8,13 @@ public class PourDetector : MonoBehaviour
     public int pourThreshold = 45;
     public Transform origin = null;
     public GameObject streamPrefab = null;
+    public GameObject flakePrefab = null;
+    private GameObject flake = null;
 
     [Header("Specific Object Mechanism")]
     public bool isLemonSqueezer = false;
     public bool isGrater = false;
+    public bool isFlake = false;
     
     private bool isPouring = false;
     private Stream currentStream = null;
@@ -18,12 +22,13 @@ public class PourDetector : MonoBehaviour
     
     [SerializeField]
     private List<GameObject> graterTrigger = new();
+    [HideInInspector]
     public bool isAddLemonZest = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (!isLemonSqueezer && !isGrater)
+        if (!isLemonSqueezer && !isGrater && !isFlake)
         {
             bool pourCheck = CalculatePourAngle() < pourThreshold;
 
@@ -75,11 +80,28 @@ public class PourDetector : MonoBehaviour
                 }
             }
         }
+        else if (isFlake)
+        {
+            bool pourCheck = CalculatePourAngle() < pourThreshold;
+
+            if (isPouring != pourCheck)
+            {
+                isPouring = pourCheck;
+
+                if (isPouring)
+                {
+                    StartFlake();
+                }
+                else 
+                {
+                    EndFlake();
+                }
+            }
+        }
     }
 
     private void StartPour()
     {
-        print("Start");
         currentStream = CreateStream();
         currentStream.Begin();
     }
@@ -87,9 +109,18 @@ public class PourDetector : MonoBehaviour
 
     private void EndPour()
     {
-        print("End");
         currentStream.End();
         currentStream = null;
+    }
+
+    private void StartFlake()
+    {
+        flake = Instantiate(flakePrefab, origin.position, Quaternion.identity, transform);
+    }
+
+    private void EndFlake()
+    {
+        Destroy(flake);
     }
 
     private float CalculatePourAngle()
