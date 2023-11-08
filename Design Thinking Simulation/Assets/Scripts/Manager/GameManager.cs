@@ -318,7 +318,7 @@ public class GameManager : MonoBehaviour
         else
         {
             player.DoFadeInFadeOutFunction();
-;           NextDay();
+            NextDay();
             player.SetDayText();
             //SetDirectionalLight(true);
             SaveGame();
@@ -506,21 +506,23 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
-        BoardActivityUI board = GameObject.Find("BoardActivityUI").GetComponent<BoardActivityUI>();
-        if (board != null)
+        Debug.Log("next day jalan");
+        if (GameObject.Find("BoardActivityUI") != null)
         {
+            BoardActivityUI board = GameObject.Find("BoardActivityUI").GetComponent<BoardActivityUI>();
             board.jobFinishGO.SetActive(false);
             board.boardActivityUI.SetActive(true);
         }
         else
         {
             Debug.LogError("here");
-            return;
         }
+        Debug.Log("next day bawah jalan");
         currentDay += 1;
         ResetQuestionRemaining();
         player.SetChanceText();
         SaveGame();
+        return;
     }
 
     private void NPCRandomizer(int maxNPC)
