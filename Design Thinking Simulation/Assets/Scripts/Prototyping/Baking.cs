@@ -55,6 +55,8 @@ public class Baking : MonoBehaviour
     private Vector3 initialLemonTransform;
     private Vector3 initialLemonRotation;
 
+    private int sameCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,15 +104,18 @@ public class Baking : MonoBehaviour
     {
         if (bakeRecipe != null)
         {
-            for (int i = 0; i < bakeRecipe.Count; i++)
+            if (!isBakeReady)
             {
-                int sameCount = 0;
-                if (bowlContent[i] == bakeRecipe[i]) {
-                    sameCount++;
-                    if (sameCount == bakeRecipe.Count)
-                    {
-                        isBakeReady = true;
-                        break;
+                sameCount = 0;
+                for (int i = 0; i < bakeRecipe.Count; i++)
+                {
+                    if (bowlContent[i] == bakeRecipe[i]) {
+                        sameCount++;
+                        if (sameCount == bakeRecipe.Count)
+                        {
+                            isBakeReady = true;
+                            break;
+                        }
                     }
                 }
             }
