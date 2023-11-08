@@ -9,28 +9,29 @@ public class ChangeSceneScript : MonoBehaviour
 {
     [SerializeField] bool isHomeDoor;
     [SerializeField] bool isCafeDoor;
-    [SerializeField] bool isRestaurantDoor;
+    [SerializeField] bool isMall;
     [SerializeField] bool isCanteenDoor;
     public TextMeshProUGUI world1Text;
     public TextMeshProUGUI world2Text;
     public TextMeshProUGUI world3Text;
     public GameObject canvasChangeScene;
+    PlayerScript playerScript;
 
     void Start()
     {
         if(isHomeDoor)
         {
             world1Text.text = "Cafe";
-            world2Text.text = "Restaurant";
+            world2Text.text = "Mall";
             world3Text.text = "Canteen";
         }
         else if(isCafeDoor)
         {
             world1Text.text = "Home";
-            world2Text.text = "Restaurant";
+            world2Text.text = "Mall";
             world3Text.text = "Canteen";
         }
-        else if(isRestaurantDoor)
+        else if(isMall)
         {
             world1Text.text = "Home";
             world2Text.text = "Cafe";
@@ -40,8 +41,9 @@ public class ChangeSceneScript : MonoBehaviour
         {
             world1Text.text = "Home";
             world2Text.text = "Cafe";
-            world3Text.text = "Restaurant";
+            world3Text.text = "Mall";
         }
+        playerScript = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
     }
 
     // Update is called once per frame
@@ -52,7 +54,7 @@ public class ChangeSceneScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<BNG.PlayerScript>())
+        if(other.GetComponent<PlayerScript>())
         {
             canvasChangeScene.SetActive(true);
         }
@@ -60,32 +62,48 @@ public class ChangeSceneScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<BNG.PlayerScript>())
+        if (other.GetComponent<PlayerScript>())
         {
             canvasChangeScene.SetActive(false);
             //Debug.Log(other.gameObject);
         }    
     }
 
+    public void LoadSceneAsyncFunction(string tempString)
+    {
+        StartCoroutine(LoadSceneAsync(tempString));
+    }
+
+    IEnumerator LoadSceneAsync(string tempString)
+    {
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(tempString);
+        asyncOperation.allowSceneActivation = false; //set to false if u dont want to load it immediately
+        yield return new WaitForSeconds(1f);
+        asyncOperation.allowSceneActivation = true; //set to false if u dont want to load it immediately
+    }
 
     public void Button1()
     {
         if (isHomeDoor)
         {
-            SceneManager.LoadScene("Cafe");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Cafe");
             GameManager.Instance.canDoActivity = false;
         }
         else if (isCafeDoor)
         {
-            SceneManager.LoadScene("Home");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Home");
         }
-        else if (isRestaurantDoor)
+        else if (isMall)
         {
-            SceneManager.LoadScene("Home");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Home");
         }
         else if (isCanteenDoor)
         {
-            SceneManager.LoadScene("Home");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Home");
         }
     }
 
@@ -93,20 +111,24 @@ public class ChangeSceneScript : MonoBehaviour
     {
         if (isHomeDoor)
         {
-            SceneManager.LoadScene("Restaurant");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Mall");
             GameManager.Instance.canDoActivity = false;
         }
         else if (isCafeDoor)
         {
-            SceneManager.LoadScene("Restaurant");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Mall");
         }
-        else if (isRestaurantDoor)
+        else if (isMall)
         {
-            SceneManager.LoadScene("Cafe");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Cafe");
         }
         else if (isCanteenDoor)
         {
-            SceneManager.LoadScene("Cafe");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Cafe");
         }
     }
 
@@ -114,20 +136,24 @@ public class ChangeSceneScript : MonoBehaviour
     {
         if (isHomeDoor)
         {
-            SceneManager.LoadScene("Canteen");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Canteen");
             GameManager.Instance.canDoActivity = false;
         }
         else if (isCafeDoor)
         {
-            SceneManager.LoadScene("Canteen");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Canteen");
         }
-        else if (isRestaurantDoor)
+        else if (isMall)
         {
-            SceneManager.LoadScene("Canteen");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Canteen");
         }
         else if (isCanteenDoor)
         {
-            SceneManager.LoadScene("Restaurant");
+            playerScript.DoFadeIn();
+            LoadSceneAsyncFunction("Mall");
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using BNG;
 
 public class GameManager : MonoBehaviour
@@ -96,7 +97,9 @@ public class GameManager : MonoBehaviour
 
     public int interviewCount = 0;
     public int userPersonaCount = 0;
-    private BNG.PlayerScript player;
+    private PlayerScript player;
+    string previousWorld;
+
 
     public UserPersonaHistory history;
     private void Awake()
@@ -173,6 +176,7 @@ public class GameManager : MonoBehaviour
         SaveGame();
         Debug.Log("Nih New Game");
     }
+    
     
     public void LoadGame()
     {
@@ -313,16 +317,18 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            NextDay();
+            player.DoFadeInFadeOutFunction();
+;           NextDay();
             player.SetDayText();
             //SetDirectionalLight(true);
             SaveGame();
+            CanAskCheck();
         }
     }
 
     public void GetPlayerRef()
     {
-        player = GameObject.Find("PlayerController").GetComponent<BNG.PlayerScript>();
+        player = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
         player.SetChanceText();
         player.SetDayText();
     }
@@ -470,12 +476,23 @@ public class GameManager : MonoBehaviour
         if (questionRemaining <= 0)
         {
             //SetDirectionalLight(false);
+            player.ControllerVibrate(false);
+            player.ChangeClockColorToRed();
         }
         else
         {
             //SetDirectionalLight(true);
+            player.ChangeClockColorToGreen();
         }
         return questionRemaining > 0;
+    }
+
+    IEnumerator VibrateControllerMultipleTimes()
+    {
+        player.ControllerVibrate(false);
+        yield return new WaitForSeconds(1);
+        player.ControllerVibrate(false);
+        yield return new WaitForSeconds(1);
     }
 
 
@@ -527,4 +544,9 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+
+
+
+
 }

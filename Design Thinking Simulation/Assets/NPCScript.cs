@@ -24,13 +24,16 @@ public class NPCScript : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         charCust.Randomize();
+        var generatorSettings = charCust.Settings.generator;
+        charCust.SetBlendshapeValue(CharacterBlendShapeType.Fat, 0f);
+        charCust.SetBlendshapeValue(CharacterBlendShapeType.Muscles, 0f);
+        charCust.SetBlendshapeValue(CharacterBlendShapeType.Thin, 100f);
     }
 
     // Update is called once per frame
     void Update()
     {
         distanceToGoal = Vector3.Distance(this.gameObject.transform.position, playerGoal.position);
-        Debug.Log(distanceToGoal);
         if(distanceToGoal > toleranceGoalAchieve)
         {
             if(playerGoal)
@@ -42,5 +45,6 @@ public class NPCScript : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
     }
 }
