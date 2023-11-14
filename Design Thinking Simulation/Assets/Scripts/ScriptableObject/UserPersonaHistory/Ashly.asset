@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Ashly
   m_EditorClassIdentifier: 
   peopleName: ???
-  kueFavorit: ???
+  <cakePreferences>k__BackingField: {fileID: 0}
+  kueFavorit: {fileID: 0}
   goals:
   - ???
   frustration:

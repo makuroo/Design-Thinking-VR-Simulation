@@ -44,23 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6209614997ddfc5498b9b7b158303ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canDoActivity: 1
   peopleMet: []
-  tempAnswer: []
-  randomOptions:
-  - dhfhsfkshd
-  - dsfsd
-  - sadf
-  - cx cx
-  - fsdf
-  - saf
-  - ads
-  - dsafs
-  - dsa
-  - httyjytjuy
-  tempListRandom: []
   personCustomerData: {fileID: 0}
   currentText: {fileID: 0}
-  canDoActivity: 1
   randomQuestionIndex: 0
   randomQuestionTypeIndex: 0
   RandomizedQuestion:
@@ -138,10 +125,13 @@ MonoBehaviour:
   - Vanila 4
   - Vanila 5
   WorldCustomerCount: 0
-  CafeCustomerCount: 0
-  RestaurantCustomerCount: 0
-  CanteenCustomerCount: 0
+  cafeCustomerCount: 0
+  restaurantCustomerCount: 0
+  canteenCustomerCount: 0
+  maleNpcList: []
+  femaleNpcList: []
   maxCustomerSpawn: 5
+  maxCustomer: 0
   customerList:
   - {fileID: 4856454088341201431, guid: 0147e9c1f667b6447a05fe542c3b29a9, type: 3}
   - {fileID: 7997903722112226506, guid: 859ebc9556c734a488821312f0f44321, type: 3}
@@ -161,12 +151,10 @@ MonoBehaviour:
   cafeCustomerList: []
   currentDay: 1
   maxDay: 60
-  playerAwakeOnHour: 5
-  playerNeedRestTime: 18
-  secondOnRealLifeToChangeMinuteGameTime: 0
-  realLifeMinuteGamePlayPerCycle: 1
   directionalLight: {fileID: 0}
   AnswerTimeBed: 3
   clockImage: {fileID: 0}
   maxQuestionPerDay: 3
-  questionRemaining: 0
+  questionRemaining: 3
+  interviewCount: 0
+  userPersonaCount: 0

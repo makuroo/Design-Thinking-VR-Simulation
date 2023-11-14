@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Creamy Choco-Vanilla Swirl Delight
   m_EditorClassIdentifier: 
   cakeName: Creamy Choco-Vanilla Swirl Delight
-  taste: 00000000000000000000000000000000010000000100000001000000
+  taste: 01000000000000000100000000000000
+  ukuranKue: 2

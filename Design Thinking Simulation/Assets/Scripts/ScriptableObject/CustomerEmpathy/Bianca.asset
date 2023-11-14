@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Bianca
   m_EditorClassIdentifier: 
   peopleName: Bianca
-  kueFavorit: Salt Choco Delight
-  goals: []
-  frustration: []
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 7517d002b6d52c5439bb341085f8a494,
+    type: 2}
+  kueFavorit: {fileID: 11400000, guid: 99c82b2debf1ea341b34e41d0e9ade76, type: 2}
+  goals:
+  - Memakan kue yang bittersweet
+  frustration:
+  - Tidak suka yang asin
   met: 0

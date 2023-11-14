@@ -7,118 +7,418 @@ using System;
 
 public class DragAndDropAnswerChecker : MonoBehaviour
 {
+    public enum CheckType
+    {
+        UserPersona,
+        ProblemStatement,
+        VPC
+    }
     public UserPersonaUI userPersonaUI;
+    public ProblemStatement problemStatementUI;
     private CustomerDataSO customerData;
     private Grabbable currentGrabbable;
     public TMP_Text currentText;
     public int index;
     public People customer;
-    [SerializeField] UserPersonaHistory history;
+    //[SerializeField] UserPersonaHistory history;
+    [SerializeField] ProblemStatement statement;
+    [SerializeField] BoardActivityUI board;
+    public CheckType checkerType;
+    public GameObject currSnapZone;
+
+
+    private void Update()
+    {
+        if (board.handGrabber[0]!=null && board.handGrabber[1]!=null )
+        {
+            foreach (Grabber g in board.handGrabber)
+            {
+                if (g.HeldGrabbable == null)
+                    g.ForceRelease = false;
+            }
+        }
+
+    }
+
+    private void OnEnable()
+    {
+        if(gameObject.GetComponent<SnapZone>().HeldItem != null)
+        {
+            gameObject.GetComponent<SnapZone>().HeldItem.gameObject.GetComponent<DragAndDropObjectData>().Return();
+        }
+    }
 
     public void ChooseChecker()
     {
+        
+        if (gameObject.GetComponent<SnapZone>() != null){
+            currSnapZone = gameObject;
+            foreach (Grabber g in board.handGrabber)
+            {
+                g.ForceRelease = true;
+            }
+        }
+
         if (gameObject.GetComponent<SnapZone>().HeldItem != null)
         {
             currentGrabbable = gameObject.GetComponent<SnapZone>().HeldItem;
+
+            currentGrabbable.transform.parent = gameObject.GetComponent<SnapZone>().transform;
             currentText = currentGrabbable.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
+            if (board.answerList.Find(x => x.name == currentGrabbable.gameObject.name))
+            {
+
+                Debug.Log("found");
+                return;
+            }
+
+            else
+                board.answerList.Add(currentGrabbable.gameObject.GetComponent<DragAndDropObjectData>());
         }
-        if (userPersonaUI.userPersonaChecker == UserPersonaUI.UserPersonaCategory.Goals)
-            GoalsAnswerChecker(currentText);
-        else if (userPersonaUI.userPersonaChecker == UserPersonaUI.UserPersonaCategory.Frustration)
-            FrustrationAnswerChecker(currentText);
-        else if (userPersonaUI.userPersonaChecker == UserPersonaUI.UserPersonaCategory.Taste)
-            TasteAnswerChecker(currentText, index, customer);
-        else
-            FavouriteCakeAnswerChecker(currentText);
+
+        if (checkerType == CheckType.UserPersona)
+        {
+            GameManager.Instance.history.CakePreferenceAnswer(customer.customerData.cakePreferences);
+            if (userPersonaUI.userPersonaChecker == UserPersonaUI.UserPersonaCategory.Goals)
+                GoalsAnswerChecker(currentText);
+            else if (userPersonaUI.userPersonaChecker == UserPersonaUI.UserPersonaCategory.Frustration)
+                FrustrationAnswerChecker(currentText);
+            else if (userPersonaUI.userPersonaChecker == UserPersonaUI.UserPersonaCategory.Taste)
+                TasteAnswerChecker(currentText.transform.parent.parent.gameObject, index, customer);
+            else
+                FavouriteCakeAnswerChecker(currentText);
+
+            for(int i=0; i < board.topicButtons.Count; i++)
+            {
+                if (board.topicButtons[i].interactable == true)
+                    return;
+
+                if(board.topicButtons[^1].interactable == false)
+                {
+                    board.topics.SetActive(false);
+                    board.jobFinishGO.SetActive(true);
+                }
+            }
+        }
+        else if (checkerType == CheckType.ProblemStatement)
+        {
+            if (currentGrabbable.gameObject.CompareTag("TargetUsia"))
+            {
+                TargetUsiaChecker(currentText);
+            }
+            else if (currentGrabbable.gameObject.CompareTag("Ukuran"))
+            {
+                UkuranChecker(currentText);
+            }
+            else if (currentGrabbable.gameObject.CompareTag("JenisMakanan"))
+            {
+                JenisMakananChecker(currentText);
+            }else if (currentGrabbable.gameObject.CompareTag("JenisKue"))
+            {
+                CakeAnswerChecker(currentText);
+            }
+            else if(currentGrabbable.gameObject.layer== 14)
+            {
+                if (currentGrabbable == null)
+                    Debug.Log(null);
+                problemStatementUI.Statement1(currentGrabbable.gameObject);
+            }
+        }else if(checkerType == CheckType.VPC)
+        {
+
+            if (gameObject.GetComponent<SnapZone>().HeldItem != null)
+            {
+                currentGrabbable = gameObject.GetComponent<SnapZone>().HeldItem;
+
+                currentGrabbable.transform.parent = gameObject.GetComponent<SnapZone>().transform;
+                currentText = currentGrabbable.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>();
+                if (board.answerList.Find(x => x.name == currentGrabbable.gameObject.name))
+                {
+
+                    Debug.Log("found");
+                    return;
+                }
+
+                else
+                    board.answerList.Add(currentGrabbable.gameObject.GetComponent<DragAndDropObjectData>());
+            }
+
+            VpcCheck();
+        }
+
     }
 
-    private void FavouriteCakeAnswerChecker(TMP_Text currentText)
+    #region UserPersona
+    private void FavouriteCakeAnswerChecker(TMP_Text currText)
     {
-        if (customer.customerData.kueFavorit == currentText.text)
+        if (customer.customerData.kueFavorit.cakeName == currText.text)
         {
-            Debug.Log("true");
-        }else
+            Debug.Log("fav cake true");
+
+        }
+        else
         {
             Debug.Log("false");
         }
 
-        history.FindCustomer(customer.customerData);
-        history.FavoritCakeAnswer(currentText);
-        if(gameObject.GetComponent<SnapZone>() != null)
+        GameManager.Instance.history.FindCustomer(customer.customerData);
+        GameManager.Instance.history.FavoritCakeAnswer(customer.customerData);
+        if (gameObject.GetComponent<SnapZone>() != null)
+        {
             currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
+            Debug.Log("fav cake");
+        }
+        board.answerList.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
+        board.userPersonaQuestion.gameObject.SetActive(false);
+        board.choices.SetActive(false);
+        board.topics.SetActive(true);
     }
 
-    private void TasteAnswerChecker(TMP_Text currentText, int index, People customer)
+    private void TasteAnswerChecker(GameObject currText, int random, People customer)
     {
-        history.FindCustomer(customer.customerData);
-        if (customer.CalculateLikeness(index) == 0 && currentText.text == "Neutral")
+
+        GameManager.Instance.history.FindCustomer(customer.customerData);
+        GameManager.Instance.history.AddToDict(customer.customerData.peopleName, customer.customerData);
+        //return;
+        if (customer.customerData.CalculateLikeness(Int32.Parse(currText.tag)) == 1 || customer.customerData.CalculateLikeness(Int32.Parse(currText.tag)) > 1 && random == 0)
         {
-            Debug.Log("n");
-            history.tasteToggleList[index].isOn = false;
+            //GameManager.Instance.history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = true;
+            if(GameManager.Instance.history.likeTasteToggleList[Int32.Parse(currText.tag)].isOn)
+                Debug.Log(" taste true");
         }
-        else if (customer.CalculateLikeness(index) == 1 && currentText.text == "Like")
+        else if (customer.customerData.CalculateLikeness(Int32.Parse(currText.tag)) == -1 || customer.customerData.CalculateLikeness(Int32.Parse(currText.tag)) < -1 && random == 1)
         {
-            Debug.Log("l");
-            history.tasteToggleList[index].isOn = true;
+            //GameManager.Instance.history.tasteToggleList[Int32.Parse(currentText.tag)].isOn = false;
+            if(GameManager.Instance.history.dislikeTasteToggleList[Int32.Parse(currText.tag)].isOn)
+                Debug.Log("true");
         }
-        else if (customer.CalculateLikeness(index) < 0 && currentText.text == "Dislike")
+
+        if (gameObject.GetComponent<SnapZone>() != null)
         {
-            Debug.Log("d");
-            history.tasteToggleList[index].isOn = false;
+            currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
+            Debug.Log("taste");
         }
-        else if (customer.CalculateLikeness(index) > 1 && currentText.text == "Really Like")
+        board.answerList.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
+        board.userPersonaQuestion.gameObject.SetActive(false);
+        board.choices.SetActive(false);
+        board.tasteAnswer.SetActive(false);
+        board.topics.SetActive(true);
+    }
+
+    private void FrustrationAnswerChecker(TMP_Text currText)
+    {
+
+        customerData = GameManager.Instance.personCustomerData;
+        GameManager.Instance.history.FindCustomer(customer.customerData);
+        for (int i = 0; i < customer.customerData.frustration.Count; i++)
         {
-            Debug.Log("rl");
-            history.tasteToggleList[index].isOn = true;
+            if (currText.text == customer.customerData.frustration[i])
+            {
+                Debug.Log("Frustration True");
+                break;
+            }
+            else
+            {
+                Debug.Log("False");
+            }
         }
-        else if (customer.CalculateLikeness(index) < -1 && currentText.text == "Really Dislike")
+
+        GameManager.Instance.history.FrustrationAnswer(currText);
+        if (gameObject.GetComponent<SnapZone>() != null)
         {
-            Debug.Log("rd");
-            history.tasteToggleList[index].isOn = false;
+            currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
+            Debug.Log("frustration");
+        }
+        board.answerList.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
+        board.userPersonaQuestion.gameObject.SetActive(false);
+        board.choices.SetActive(false);
+        board.topics.SetActive(true);
+    }
+
+    private void GoalsAnswerChecker(TMP_Text currText)
+    {
+        customerData = GameManager.Instance.personCustomerData;
+        GameManager.Instance.history.FindCustomer(customer.customerData);
+        for (int i = 0; i < customer.customerData.goals.Count; i++)
+        {
+            if (currText.text == customer.customerData.goals[i])
+            {
+                Debug.Log("Goals True");
+                break;
+            }
+            else
+            {
+                Debug.Log("False");
+            }
+        }
+        GameManager.Instance.history.GoalsAnswer(currText);
+
+
+        if (gameObject.GetComponent<SnapZone>() != null)
+        {
+            currentGrabbable.GetComponent<DragAndDropObjectData>().Return(gameObject.GetComponent<SnapZone>());
+            Debug.Log("goal");
+        }
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        board.answerList.Clear();
+        currSnapZone = null;
+        currentText = null;
+        board.userPersonaQuestion.gameObject.SetActive(false);
+        board.choices.SetActive(false);
+        board.topics.SetActive(true);
+    }
+    #endregion
+    #region ProblemStatementChecks
+    public void TargetUsiaChecker(TMP_Text answer)
+    {
+        if (answer.text == "Dewasa")
+            Debug.Log("usia true");
+        else
+            Debug.Log("false");
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
+        StartCoroutine(DelayDeactivate("TargetUsia"));
+        board.choicesJenisMakanan.SetActive(true);
+    }
+
+
+    public void JenisMakananChecker(TMP_Text answer)
+    {
+        if (answer.text == "Kue")
+            Debug.Log(" jenis makanan true");
+        else
+            Debug.Log("false");
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
+        StartCoroutine(DelayDeactivate("JenisMakanan"));
+        board.choicesUkuran.SetActive(true);
+    }
+
+    public void UkuranChecker(TMP_Text answer)
+    {
+        if (problemStatementUI == null)
+            Debug.Log("problemnull");
+        Debug.Log(problemStatementUI.UkuranAvg());
+        if (answer.text == "Kecil" && problemStatementUI.UkuranAvg()==0 
+            || answer.text == "Sedang" && problemStatementUI.UkuranAvg() == 1 
+            || answer.text == "Kecil" && problemStatementUI.UkuranAvg() == 2)
+        {
+            Debug.Log("ukuran true");
         }
         else
-            Debug.Log("wrong");
+        {
+            Debug.Log("false");
+        }
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
+        StartCoroutine(DelayDeactivate("Ukuran"));
+        board.tasteAnswer.SetActive(true); 
     }
 
-    private void FrustrationAnswerChecker(TMP_Text currentText)
+    public void CakeAnswerChecker(TMP_Text ansewer)
     {
+        if (ansewer.text == "Pastry")
+        {
+            Debug.Log("jenis kue true");
+        }
+        else
+        {
+            Debug.Log("false");
+        }
+
+        //for (int i = 0; i < board.answerList.Count; i++)
+        //{
+        //    board.answerList[i].Return();
+        //}
+
+        board.answerList.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+        currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+        currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+        currSnapZone = null;
+        currentText = null;
+        board.problemStatement.SetActive(false);
+        board.choicesJenisKue.SetActive(false);
+        board.jobFinishGO.SetActive(true);
+    }
+    #endregion
+    #region VPC Checks
+    private void VpcCheck()
+    {
+
+        if (currentGrabbable.gameObject.tag == currSnapZone.tag)
+            Debug.Log("VPC true");
+        else
+            Debug.Log("VPC false");
+
+
+        if (board.answerList.Count == 6)
+        {
+            for (int i = 0; i < board.answerList.Count; i++)
+            {
+                board.answerList[i].Return();
+            }
+
+            board.answerList.Clear();
+            currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+            currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+            currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+            currSnapZone = null;
+            currentText = null;
+            board.vpcCanvas.SetActive(false);
+            board.vpcChoices.SetActive(false);
+            board.jobFinishGO.SetActive(true);
+        }
+
+    }
+    #endregion
+
+    private IEnumerator DelayDeactivate(string problemStatementQuestion)
+    {
+        yield return new WaitForSeconds(.05f);
+        switch (problemStatementQuestion)
+        {
+            case "TargetUsia":
+                board.choicesTargetUsia.SetActive(false);
+                break;
+            case "JenisMakanan":
+                board.choicesJenisMakanan.SetActive(false);
+                break;
+            case "Ukuran":
+                board.choicesUkuran.SetActive(false);
+                break;
+            case "JenisKue":
+                board.choicesJenisKue.SetActive(false);
+                break;
+            default:
+                break;
+        }
         
-        customerData = GameManager.Instance.personCustomerData;
-        history.FindCustomer(customerData);
-        for (int i =0; i < customerData.frustration.Count; i++)
-        {
-            if (currentText.text == customerData.frustration[i])
-            {
-                Debug.Log("True");
-                break;
-            }
-            else
-            {
-                Debug.Log("False");
-            }
-        }
-
-        history.FrustrationAnswer(currentText);
-
-    }
-
-    private void GoalsAnswerChecker(TMP_Text currentText)
-    {
-        customerData = GameManager.Instance.personCustomerData;
-        history.FindCustomer(customerData);
-        for (int i = 0; i < customerData.goals.Count; i++)
-        {
-            if (currentText.text == customerData.goals[i])
-            {
-                Debug.Log("True");
-                break;
-            }
-            else
-            {
-                Debug.Log("False");
-            }
-        }
-
-        history.FrustrationAnswer(currentText);
     }
 }

@@ -92,8 +92,17 @@ public class CustomerSpawner : MonoBehaviour
             for (int i = 0; i < GameManager.Instance.restaurantCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(GameManager.Instance.restaurantCustomerList[i], transform.position, transform.rotation);
-                instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
-                instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
+                if (spawnerRefScript != null && instantiatedPrefab != null)
+                {
+                    spawnerRefScript.SetPosition(instantiatedPrefab);
+                    //Debug.Log(instantiatedPrefab.transform.position);
+                }
+                else if (spawnerRefScript == null && instantiatedPrefab != null)
+                {
+                    instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
+                    instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
+                    //Debug.Log("spawned NOT on ref");
+                }
                 instantiatedCustomer.Add(instantiatedPrefab);
 
 
@@ -118,8 +127,17 @@ public class CustomerSpawner : MonoBehaviour
             for (int i = 0; i < GameManager.Instance.canteenCustomerCount; i++)
             {
                 GameObject instantiatedPrefab = Instantiate(GameManager.Instance.canteenCustomerList[i], transform.position, transform.rotation);
-                instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
-                instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
+                if (spawnerRefScript != null && instantiatedPrefab != null)
+                {
+                    spawnerRefScript.SetPosition(instantiatedPrefab);
+                    //Debug.Log(instantiatedPrefab.transform.position);
+                }
+                else if (spawnerRefScript == null && instantiatedPrefab != null)
+                {
+                    instantiatedPrefab.transform.position = new Vector3(Random.Range(-7.705f, 0.91f), -8.732f, Random.Range(9.591f, 15.884f));
+                    instantiatedPrefab.transform.rotation = new Quaternion(0, Random.Range(0, 360), 0, 0);
+                    //Debug.Log("spawned NOT on ref");
+                }
                 instantiatedCustomer.Add(instantiatedPrefab);
 
                 //dapetin canvasUIPertanyaan yang mau di assign

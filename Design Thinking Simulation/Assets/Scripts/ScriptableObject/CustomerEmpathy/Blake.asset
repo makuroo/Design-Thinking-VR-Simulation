@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Blake
   m_EditorClassIdentifier: 
   peopleName: Blake
-  kueFavorit: 
-  goals: []
-  frustration: []
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 124d1ef3f29256b48bb8e77607ad0c1f,
+    type: 2}
+  kueFavorit: {fileID: 11400000, guid: 6a0ed7d40018f174882cd840fc63b725, type: 2}
+  goals:
+  - Ingin makan coklat tapi yang rasanya manis
+  frustration:
+  - Tidak suka kue yang asin
   met: 0

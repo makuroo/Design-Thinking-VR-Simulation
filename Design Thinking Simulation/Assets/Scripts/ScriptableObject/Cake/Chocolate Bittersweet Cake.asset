@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Chocolate Bittersweet Cake
   m_EditorClassIdentifier: 
   cakeName: Chocolate Bittersweet Cake
-  taste: 01000000000000000000000001000000000000000100000000000000
+  taste: 01000000000000000000000001000000
+  ukuranKue: 1
