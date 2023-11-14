@@ -1011,7 +1011,7 @@ PrefabInstance:
     - target: {fileID: 2836038766070082608, guid: dc038a162b5a42d44bb9702c8741a6c8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2836038766070082608, guid: dc038a162b5a42d44bb9702c8741a6c8,
         type: 3}
@@ -4699,7 +4699,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &880337463
 MonoBehaviour:
@@ -7474,6 +7474,46 @@ Transform:
   m_Father: {fileID: 6273875665812884809}
   m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1273369340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6351184607460348614, guid: dc038a162b5a42d44bb9702c8741a6c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 281275344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1273369341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273369340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177a0508676b4704daf6bc7177b26227, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!195 &1273369343
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273369340}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.25
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1277943936
 GameObject:
   m_ObjectHideFlags: 0
@@ -14010,5 +14050,5 @@ Transform:
   - {fileID: 646016304}
   - {fileID: 1092350109}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
