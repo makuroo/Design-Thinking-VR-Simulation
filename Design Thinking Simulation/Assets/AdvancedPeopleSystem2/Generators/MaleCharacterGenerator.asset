@@ -26,13 +26,13 @@ MonoBehaviour:
     Max: 12
   shirt:
     Min: 0
-    Max: 15
+    Max: 14
   pants:
     Min: 0
-    Max: 15
+    Max: 14
   shoes:
     Min: 0
-    Max: 15
+    Max: 14
   skinColors:
     minColors:
     - {r: 0.8679245, g: 0.5573327, b: 0.45443213, a: 1}
