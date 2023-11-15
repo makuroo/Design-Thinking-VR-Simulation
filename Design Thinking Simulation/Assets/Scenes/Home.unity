@@ -4470,7 +4470,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &888233848 stripped
 MonoBehaviour:
@@ -5828,7 +5828,7 @@ RectTransform:
   m_Children:
   - {fileID: 1022930151}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6071,275 +6071,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418824548}
   m_CullTransparentMesh: 1
---- !u!1001 &1440439483
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4528664007278843340, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.373
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -8.732
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 13.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843346, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: maxDay
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: history
-      value: 
-      objectReference: {fileID: 888233848}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: maxCustomerSpawn
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: maxQuestionPerDay
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: questionRemaining
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: asemQuestion.Array.data[0]
-      value: Kamu Suka Rasa Asam?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: asemQuestion.Array.data[1]
-      value: Apakah Kamu Suka Asam?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: asemQuestion.Array.data[2]
-      value: Apakah Menurutmu Asam Enak?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: asemQuestion.Array.data[3]
-      value: Suka Rasa Asam?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: asemQuestion.Array.data[4]
-      value: Bagaimana Dengan Asam?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: asinQuestion.Array.data[0]
-      value: Kamu Suka Rasa Asin?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: asinQuestion.Array.data[1]
-      value: Apakah Kamu Suka Asin?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: asinQuestion.Array.data[2]
-      value: Apakah Menurutmu Asin Enak?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: asinQuestion.Array.data[3]
-      value: Suka Rasa Asin?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: asinQuestion.Array.data[4]
-      value: Bagaimana Dengan Asin?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: susuQuestion.Array.data[0]
-      value: Kamu Suka Rasa Susu?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: susuQuestion.Array.data[1]
-      value: Apakah Kamu Suka Susu?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: susuQuestion.Array.data[2]
-      value: Apakah Menurutmu Susu Enak?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: susuQuestion.Array.data[3]
-      value: Suka Rasa Susu?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: susuQuestion.Array.data[4]
-      value: Bagaimana Dengan Susu?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: manisQuestion.Array.data[0]
-      value: Kamu Suka Rasa Manis?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: manisQuestion.Array.data[1]
-      value: Apakah Kamu Suka Manis?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: manisQuestion.Array.data[2]
-      value: Apakah Menurutmu Manis Enak?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: manisQuestion.Array.data[3]
-      value: Suka Rasa Manis?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: manisQuestion.Array.data[4]
-      value: Bagaimana Dengan Manis?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: pahitQuestion.Array.data[0]
-      value: Kamu Suka Rasa Pahit?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: pahitQuestion.Array.data[1]
-      value: Apakah Kamu Suka Pahit?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: pahitQuestion.Array.data[2]
-      value: Apakah Menurutmu Pahit Enak?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: pahitQuestion.Array.data[3]
-      value: Suka Rasa Pahit?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: pahitQuestion.Array.data[4]
-      value: Bagaimana Dengan Pahit?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: coklatQuestion.Array.data[0]
-      value: Kamu Suka Rasa Coklat?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: coklatQuestion.Array.data[1]
-      value: Apakah Kamu Suka Coklat?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: coklatQuestion.Array.data[2]
-      value: Apakah Menurutmu Coklat Enak?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: coklatQuestion.Array.data[3]
-      value: Suka Rasa Coklat?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: coklatQuestion.Array.data[4]
-      value: Bagaimana Dengan Coklat?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: vanilaQuestion.Array.data[0]
-      value: Kamu Suka Rasa Vanilla?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: vanilaQuestion.Array.data[1]
-      value: Apakah Kamu Suka Vanilla?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: vanilaQuestion.Array.data[2]
-      value: Apakah Menurutmu Vanilla Enak?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: vanilaQuestion.Array.data[3]
-      value: Suka Rasa Vanilla?
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
-        type: 3}
-      propertyPath: vanilaQuestion.Array.data[4]
-      value: Bagaimana Dengan Vanilla?
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3, type: 3}
 --- !u!1 &1449910014
 GameObject:
   m_ObjectHideFlags: 0
@@ -10087,7 +9818,7 @@ PrefabInstance:
     - target: {fileID: 2874416283084592313, guid: a2997a4d81d117d4db00ea167b4923c6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2874416283084592313, guid: a2997a4d81d117d4db00ea167b4923c6,
         type: 3}
@@ -10296,7 +10027,7 @@ PrefabInstance:
     - target: {fileID: 7025036330079147372, guid: 8106d9b18b03ab540917ca700c45390d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7025036330079147372, guid: 8106d9b18b03ab540917ca700c45390d,
         type: 3}
