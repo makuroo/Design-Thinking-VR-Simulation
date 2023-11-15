@@ -15,7 +15,9 @@ MonoBehaviour:
   peopleName: James
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 0c111af7d541350449ce12b599a79282,
     type: 2}
-  kueFavorit: 
-  goals: []
-  frustration: []
+  kueFavorit: {fileID: 11400000, guid: 99c82b2debf1ea341b34e41d0e9ade76, type: 2}
+  goals:
+  - Memakan kue yang menggunakan lemon
+  frustration:
+  - Tidak suka kue yang rasanya manis ataupun pahit
   met: 0

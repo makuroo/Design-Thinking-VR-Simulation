@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using BNG;
 
 public class GameManager : MonoBehaviour
@@ -13,7 +14,6 @@ public class GameManager : MonoBehaviour
     public bool canDoActivity = true;
 
     public List<GameObject> peopleMet = new List<GameObject>();
-
 
     public CustomerDataSO personCustomerData;
 
@@ -31,9 +31,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<string> asinQuestion = new List<string>();
     [SerializeField] private List<string> asemQuestion = new List<string>();
     [SerializeField] private List<string> pahitQuestion = new List<string>();
-    [SerializeField] private List<string> susuQuestion = new List<string>();
-    [SerializeField] private List<string> coklatQuestion = new List<string>();
-    [SerializeField] private List<string> vanilaQuestion = new List<string>();
     #endregion
 
     [Header("Customer Spawn")]
@@ -100,9 +97,11 @@ public class GameManager : MonoBehaviour
 
     public int interviewCount = 0;
     public int userPersonaCount = 0;
-    private BNG.PlayerScript player;
+    private PlayerScript player;
+    string previousWorld;
 
 
+    public UserPersonaHistory history;
     private void Awake()
     {
         LoadGame();
@@ -177,6 +176,7 @@ public class GameManager : MonoBehaviour
         SaveGame();
         Debug.Log("Nih New Game");
     }
+    
     
     public void LoadGame()
     {
@@ -257,24 +257,6 @@ public class GameManager : MonoBehaviour
                 RandomizedQuestion[i] = pahitQuestion[randomQuestionIndex];
                 pahitQuestion.RemoveAt(randomQuestionIndex);
             }
-            else if (randomQuestionTypeIndex == 4)
-            {
-                randomQuestionIndex = UnityEngine.Random.Range(0, susuQuestion.Count);
-                RandomizedQuestion[i] = susuQuestion[randomQuestionIndex];
-                susuQuestion.RemoveAt(randomQuestionIndex);
-            }
-            else if (randomQuestionTypeIndex == 5)
-            {
-                randomQuestionIndex = UnityEngine.Random.Range(0, coklatQuestion.Count);
-                RandomizedQuestion[i] = coklatQuestion[randomQuestionIndex];
-                coklatQuestion.RemoveAt(randomQuestionIndex);
-            }
-            else if (randomQuestionTypeIndex == 6)
-            {
-                randomQuestionIndex = UnityEngine.Random.Range(0, vanilaQuestion.Count);
-                RandomizedQuestion[i] = vanilaQuestion[randomQuestionIndex];
-                vanilaQuestion.RemoveAt(randomQuestionIndex);
-            }
         }
     }
     #endregion
@@ -335,16 +317,18 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            player.DoFadeInFadeOutFunction();
             NextDay();
             player.SetDayText();
-            SetDirectionalLight(true);
+            //SetDirectionalLight(true);
             SaveGame();
+            CanAskCheck();
         }
     }
 
     public void GetPlayerRef()
     {
-        player = GameObject.Find("PlayerController").GetComponent<BNG.PlayerScript>();
+        player = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
         player.SetChanceText();
         player.SetDayText();
     }
@@ -407,6 +391,7 @@ public class GameManager : MonoBehaviour
         }
     }*/
 
+    /*
     public void SetDirectionalLight(bool isMorning)
     {
         if(isMorning)
@@ -417,7 +402,7 @@ public class GameManager : MonoBehaviour
         {
             directionalLight.transform.rotation = Quaternion.Euler(210f, 0f, 0f);
         }
-    }
+    }*/
 
 
     /*public bool isOnActivityTime()
@@ -428,9 +413,6 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }*/
-
-
-
 
     void ResetQuestionRemaining()
     {
@@ -474,7 +456,7 @@ public class GameManager : MonoBehaviour
 
     public void GetBedScript()
     {
-        bedScript = GameObject.Find("Bed").GetComponent<BedScript>();
+        bedScript = GameObject.Find("BedScripted").GetComponent<BedScript>();
     }
 
     public void ClearCustomer()
@@ -493,13 +475,24 @@ public class GameManager : MonoBehaviour
     {
         if (questionRemaining <= 0)
         {
-            SetDirectionalLight(false);
+            //SetDirectionalLight(false);
+            player.ControllerVibrate(false);
+            player.ChangeClockColorToRed();
         }
         else
         {
-            SetDirectionalLight(true);
+            //SetDirectionalLight(true);
+            player.ChangeClockColorToGreen();
         }
         return questionRemaining > 0;
+    }
+
+    IEnumerator VibrateControllerMultipleTimes()
+    {
+        player.ControllerVibrate(false);
+        yield return new WaitForSeconds(1);
+        player.ControllerVibrate(false);
+        yield return new WaitForSeconds(1);
     }
 
 
@@ -513,10 +506,13 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
+        Debug.Log("next day bawah jalan");
+        canDoActivity = true;
         currentDay += 1;
         ResetQuestionRemaining();
         player.SetChanceText();
         SaveGame();
+        return;
     }
 
     private void NPCRandomizer(int maxNPC)
@@ -540,4 +536,9 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+
+
+
+
 }

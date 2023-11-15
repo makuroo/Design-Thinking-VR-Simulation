@@ -6,23 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/BNG Framework/Scenes/XR Demo.unity
-    guid: a1360534006d3f845bc79b46b93cfec5
-  - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: f55029cea23edb6469c3e34cede052c4
+  - enabled: 1
+    path: Assets/Scenes/Cafe.unity
+    guid: aac642f05caae454fa5e7514dca79c72
   - enabled: 1
     path: Assets/Scenes/Canteen.unity
     guid: 55f2598f8377d214681fc210c7354cef
   - enabled: 1
-    path: Assets/Scenes/Cafe (Jobe).unity
-    guid: d4fc8c2d7143ae940bacedd1c0664e78
-  - enabled: 1
-    path: Assets/Scenes/Restaurant.unity
-    guid: 1b4be146cb8216f4bbb4beb5a9881eb8
-  - enabled: 1
-    path: Assets/Scenes/World.unity
-    guid: 144e9fb0b590aaf4bbd2e6b0cd81c52e
+    path: Assets/Scenes/Mall.unity
+    guid: 40c9027e8feb29b4493a592122d39dd2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fecf9dbc2f7798941971d2ca0b8b69f5,
       type: 2}

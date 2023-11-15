@@ -31,12 +31,16 @@ public class ProblemStatement : MonoBehaviour
 
     public void Statement1(GameObject answer)
     {
-
+        if (answer == null)
+        {
+            Debug.Log(null);
+            return;
+        }
             
+
         if(history.dictValues[0].value.CalculateLikeness(int.Parse(answer.tag)) == answersStatement1[currentIndex])
         {
             Debug.Log("true");
-
         }
         else
         {

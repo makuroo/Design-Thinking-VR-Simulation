@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tom
   m_EditorClassIdentifier: 
   LikeCake:
-  - {fileID: 11400000, guid: 56aa8db945b669c42b7be6dd4676722c, type: 2}
-  - {fileID: 11400000, guid: 56aa8db945b669c42b7be6dd4676722c, type: 2}
+  - {fileID: 11400000, guid: f1d58bab361c8594d9c6b4d02544707f, type: 2}
+  - {fileID: 11400000, guid: 9db5d7bdb5ecaac4d9212b2a033d1299, type: 2}
   DislikeCake:
-  - {fileID: 11400000, guid: 564794070f13da6468a6fe54c8346eca, type: 2}
+  - {fileID: 11400000, guid: 9db5d7bdb5ecaac4d9212b2a033d1299, type: 2}

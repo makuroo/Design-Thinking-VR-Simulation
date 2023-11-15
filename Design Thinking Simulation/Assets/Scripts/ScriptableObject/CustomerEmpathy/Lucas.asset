@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Lucas
   m_EditorClassIdentifier: 
   peopleName: Lucas
-  kueFavorit: 
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 9f98d9916f03275459c4f114380a1d7e,
+    type: 2}
+  kueFavorit: {fileID: 11400000, guid: 3993c5116e0677d4ca5250b1db17863d, type: 2}
   goals:
-  - 
-  - 
+  - 'Ingin memakan kue yang asam '
   frustration:
-  - 
+  - Tidak suka kue yang mengandung garam
   met: 0

@@ -12,11 +12,6 @@ namespace BNG
         public GameObject target;
         public Camera cam;
 
-        private void Start()
-        {
-
-        }
-
         private bool isVisible(Camera c, GameObject target)
         {
             var planes = GeometryUtility.CalculateFrustumPlanes(c);
@@ -34,22 +29,19 @@ namespace BNG
 
         private void Update()
         {
-
-                if (isVisible(cam, target))
+            if (isVisible(cam, target))
+            {
+                if (target == watchTarget) //jika targetnya itu watch
                 {
-                    if (target == watchTarget) //jika targetnya itu watch
-                    {
-                        //playerScript.StopRepeatingVibrate();
-                        SetTargetNone();
-                        Debug.Log("Watch masuk screen");
-                    }
+                    //playerScript.StopRepeatingVibrate();
+                    SetTargetNone();
+                    Debug.Log("Watch masuk screen");
                 }
-                else
-                {
-                    Debug.Log("Malah masuk else dah");
-                }
-            
-
+            }
+            else
+            {
+                Debug.Log("Malah masuk else dah");
+            }
         }
 
         public void SetTargetAsWatch()

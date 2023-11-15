@@ -19,7 +19,8 @@ public class UserPersonaHistory : MonoBehaviour
     public TMP_Text kueFavoritText;
     public TMP_Text goalsText;
     public TMP_Text frustrationText;
-    public List<Toggle> tasteToggleList;
+    public List<Toggle> likeTasteToggleList;
+    public List<Toggle> dislikeTasteToggleList;
 
     int index = 0;
 
@@ -115,7 +116,6 @@ public class UserPersonaHistory : MonoBehaviour
 
     public void AddToDict(string key, CustomerDataSO value)
     {
-        Debug.Log(userPersonaDict);
         if (userPersonaDict.TryAdd(key, value))
         {
             KeyValuePairs datas = new();

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Gabriella
   m_EditorClassIdentifier: 
   peopleName: Gabriella
-  kueFavorit: 
+  <cakePreferences>k__BackingField: {fileID: 11400000, guid: 787e10895372e714286b0dad29144d9d,
+    type: 2}
+  kueFavorit: {fileID: 11400000, guid: 3993c5116e0677d4ca5250b1db17863d, type: 2}
   goals:
-  - 
-  - 
+  - Memakan kue yang memiliki rasa asam
   frustration:
-  - 
+  - Menderita diabetes
   met: 0
