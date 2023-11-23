@@ -5,7 +5,7 @@ using UnityEngine.AI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class DadEndingScript : MonoBehaviour
+public class DadOpeningScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
