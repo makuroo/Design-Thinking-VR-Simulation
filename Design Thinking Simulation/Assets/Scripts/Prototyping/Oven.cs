@@ -15,15 +15,6 @@ public class Oven : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (ovenDoor.transform.localRotation.x < -135f)
-        {
-            ovenDoor.transform.localRotation = Quaternion.Euler(-135f, 0f, 0f);
-        }
-    }
-
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Bowl"))
@@ -32,6 +23,8 @@ public class Oven : MonoBehaviour
             if (bowlScript.isBakeReady)
             {
                 Debug.Log("Ready to bake");
+                ovenDoor.transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
+                //Add cake here
                 Destroy(bowl);
             }
         }

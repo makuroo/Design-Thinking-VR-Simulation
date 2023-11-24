@@ -11,11 +11,19 @@ public class Baking : MonoBehaviour
     private PourDetector graterScript;
     public bool isBakeReady = false;
 
+    [Header("Oven")]
+    public GameObject ovenDoor;
+
     [Header("UI Related")]
     public GameObject selectCake;
     public GameObject recipePanel;
     public GameObject ingredientsItem;
-    public GameObject creamPastryRecipe;
+    public GameObject saltedCaramelBrowniesRecipe;
+    public GameObject strawberryShortcakeRecipe;
+    public GameObject bittersweetChocolateTartRecipe;
+    public GameObject sourCherryAlmondCakeRecipe;
+    public GameObject tamarindDarkChocolateBrowniesRecipe;
+    public GameObject bitterAlmondTartRecipe;
 
     [Header("Cake Scriptable Object")]
     public CakeSO creamPastrySO;
@@ -96,7 +104,6 @@ public class Baking : MonoBehaviour
 
         initialGraterTransform = grater.gameObject.transform.localPosition;
         initialGraterRotation = grater.gameObject.transform.localRotation.eulerAngles;
-
     }
 
     // Update is called once per frame
@@ -126,6 +133,7 @@ public class Baking : MonoBehaviour
             gameObject.GetComponent<MeshCollider>().convex = true;
             gameObject.GetComponent<Grabbable>().enabled = true;
             ingredientsItem.SetActive(false);
+            OpenOvenDoor();
         }
     }
 
@@ -197,10 +205,40 @@ public class Baking : MonoBehaviour
         ingredientsItem.SetActive(true);
     }
 
-    public void CreamPastrySelect()
+    public void SaltedCaramelBrowniesSelect()
     {
         bakeRecipe = creamPastrySO.recipe;
-        creamPastryRecipe.SetActive(true);
+        saltedCaramelBrowniesRecipe.SetActive(true);
+    }
+
+    public void StrawberryShortcakeSelect()
+    {
+        strawberryShortcakeRecipe.SetActive(true);
+    }
+
+    public void BittersweetChocolateTartSelect()
+    {
+        bittersweetChocolateTartRecipe.SetActive(true);
+    }
+
+    public void SourCherryAlmondCakeSelect()
+    {
+        sourCherryAlmondCakeRecipe.SetActive(true);
+    }
+
+    public void TamarindDarkChocolateBrowniesSelect()
+    {
+        tamarindDarkChocolateBrowniesRecipe.SetActive(true);
+    }
+
+    public void BitterAlmondTartSelect()
+    {
+        bitterAlmondTartRecipe.SetActive(true);
+    }
+
+    public void OpenOvenDoor()
+    {
+        ovenDoor.transform.rotation = Quaternion.Euler(-140f, 0f, 0f);
     }
 
     // On Releasing Grab on Ingredients to reset position

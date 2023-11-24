@@ -11,6 +11,9 @@ public class PourDetector : MonoBehaviour
     public GameObject flakePrefab = null;
     private GameObject flake = null;
 
+    [Header("Item")]
+    public GameObject topSqueezer;
+
     [Header("Specific Object Mechanism")]
     public bool isLemonSqueezer = false;
     public bool isGrater = false;
@@ -142,6 +145,7 @@ public class PourDetector : MonoBehaviour
             if (other.gameObject.CompareTag("Bowl"))
             {
                 isLemonSqueezerPouring = true;
+                topSqueezer.transform.localRotation = Quaternion.Euler(-88.08f, 0f, 0f);
             }
         }
         else if (isGrater)
@@ -181,6 +185,7 @@ public class PourDetector : MonoBehaviour
             if (other.gameObject.CompareTag("Bowl"))
             {
                 isLemonSqueezerPouring = false;
+                topSqueezer.transform.localRotation = Quaternion.Euler(-21.23f, 0f, 0f);
             }
         }
         else if (isGrater)
