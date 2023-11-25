@@ -13,6 +13,7 @@ public class CustomerDataSO : ScriptableObject
     public List<string> goals;
     public List<string> frustration;
     public bool met = false;
+    public bool hasShowUserPersona;
 
     public int CalculateLikeness(int index)
     {

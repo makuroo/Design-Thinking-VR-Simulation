@@ -106,24 +106,6 @@ MonoBehaviour:
   - Pahit 3
   - Pahit 4
   - Pahit 5
-  susuQuestion:
-  - Susu 1
-  - Susu 2
-  - Susu 3
-  - Susu 4
-  - Susu 5
-  coklatQuestion:
-  - Coklat 1
-  - Coklat 2
-  - Coklat 3
-  - Coklat 4
-  - Coklat 5
-  vanilaQuestion:
-  - Vanila 1
-  - Vanila 2
-  - Vanila 3
-  - Vanila 4
-  - Vanila 5
   WorldCustomerCount: 0
   cafeCustomerCount: 0
   restaurantCustomerCount: 0
@@ -157,4 +139,6 @@ MonoBehaviour:
   maxQuestionPerDay: 3
   questionRemaining: 3
   interviewCount: 0
-  userPersonaCount: 0
+  hasDoneUserPersona: 0
+  hasDoneProblemStatement: 0
+  history: {fileID: 7025036330079147363, guid: 8106d9b18b03ab540917ca700c45390d, type: 3}

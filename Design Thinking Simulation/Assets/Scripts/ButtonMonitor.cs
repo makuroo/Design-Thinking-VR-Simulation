@@ -22,9 +22,17 @@ public class ButtonMonitor : MonoBehaviour
 
     void Start()
     {
+        if (GameManager.Instance.hasFinishTutorial)
+        {
+            foreach(GameObject go in tutorialScreen)
+            {
+                go.SetActive(false);
+            }
+            screen[0].SetActive(true);
+        }
+            
 
-
-        if (GameManager.Instance.currentDay == 1 && GameManager.Instance.questionRemaining == 3)
+        if (GameManager.Instance.currentDay == 1 && GameManager.Instance.questionRemaining == 3 && !GameManager.Instance.hasFinishTutorial)
         {
             currentTutorialScreen = 1;
             isOnTutorial = true;
@@ -70,11 +78,13 @@ public class ButtonMonitor : MonoBehaviour
     IEnumerator Tutorial2Done()
     {
         yield return new WaitForSeconds(durationTutorial[currentTutorialScreen-1]);
+        GameManager.Instance.hasFinishTutorial = true;
         currentTutorialScreen = 0;
         isOnTutorial = false;
         UpdateTutorialScreen(currentTutorialScreen);
-        currentScreen = 1;
-        UpdateScreen(currentScreen);
+        currentScreen = 0;
+        screen[currentScreen].SetActive(true);
+        //UpdateScreen(currentScreen);
     }
 
     // Update is called once per frame

@@ -339,16 +339,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: snap here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9f75f90c2aad8d143b669c350a7339c5, type: 2}
-  m_sharedMaterial: {fileID: -5978824045724420427, guid: 9f75f90c2aad8d143b669c350a7339c5,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 2147483647
-  m_fontColor: {r: 0, g: 0, b: 0, a: 0.49803922}
+    rgba: 2130706432
+  m_fontColor: {r: 0, g: 0, b: 0, a: 0.23529412}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

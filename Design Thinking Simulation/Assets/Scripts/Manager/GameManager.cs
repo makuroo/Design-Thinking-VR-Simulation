@@ -4,9 +4,6 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using BNG;
-
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
@@ -96,11 +93,13 @@ public class GameManager : MonoBehaviour
     public int questionRemaining;
 
     public int interviewCount = 0;
-    public int userPersonaCount = 0;
+    public bool hasDoneUserPersona = false;
+    public bool hasDoneProblemStatement = false;
+
     private PlayerScript player;
     string previousWorld;
 
-
+    public bool hasFinishTutorial;
     public UserPersonaHistory history;
     private void Awake()
     {

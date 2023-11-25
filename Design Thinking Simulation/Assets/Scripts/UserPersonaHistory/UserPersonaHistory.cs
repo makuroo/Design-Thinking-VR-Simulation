@@ -19,7 +19,6 @@ public class UserPersonaHistory : MonoBehaviour
     public TMP_Text kueFavoritText;
     public TMP_Text goalsText;
     public TMP_Text frustrationText;
-    public List<Toggle> likeTasteToggleList;
     public List<Toggle> dislikeTasteToggleList;
 
     int index = 0;
@@ -111,7 +110,8 @@ public class UserPersonaHistory : MonoBehaviour
     }    
     public void CakePreferenceAnswer(CakePreferencesSO preference)
     {
-        userPersonaList[index].cakePreferences = preference;
+       Debug.Log(userPersonaList[index]);
+       userPersonaList[index].cakePreferences = preference;
     }
 
     public void AddToDict(string key, CustomerDataSO value)

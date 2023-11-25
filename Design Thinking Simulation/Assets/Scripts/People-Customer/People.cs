@@ -29,6 +29,7 @@ public class People : MonoBehaviour
     private Transform customerHead;
     private GameObject playerObj;
     private Transform initialHeadTransform;
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -80,7 +81,6 @@ public class People : MonoBehaviour
                 Vector3 lookDirection = playerObj.transform.position - customerHead.position;
                 //lookDirection.y = 0; // Optionally, can set the Y component to zero to ensure the character looks horizontally.
                 customerHead.transform.forward = lookDirection.normalized;
-                Debug.Log("ngadep player jalan" + customerHead);
             }
         }
         else
@@ -171,30 +171,34 @@ public class People : MonoBehaviour
 
     public void Reply()
     {
+        
+        if (GameManager.Instance.peopleMet.Count > 0 && GameManager.Instance.interviewCount<3)
+        {
+            foreach(GameObject go in GameManager.Instance.peopleMet)
+            {
+                if (go.transform.GetChild(0).GetComponent<People>().customerData.name == customerData.name)
+                    break;
+            }
+        }
+
         if (customerData.CalculateLikeness(questionIndex) == 0)
             jawabanText.text = "Biasa Saja";
 
         if (customerData.CalculateLikeness(questionIndex) == 1)
         {
             jawabanText.text = "Saya suka kok";
-            GameManager.Instance.history.FindCustomer(customerData);
-            GameManager.Instance.history.likeTasteToggleList[questionIndex].isOn = true;
         }
             
 
         if (customerData.CalculateLikeness(questionIndex) > 1)
         {
             jawabanText.text = "Saya Sangat Suka";
-            GameManager.Instance.history.FindCustomer(customerData);
-            GameManager.Instance.history.likeTasteToggleList[questionIndex].isOn = true;
         }
             
 
         if (customerData.CalculateLikeness(questionIndex) < 0)
         {
             jawabanText.text = "Saya Tidak Suka";
-            GameManager.Instance.history.FindCustomer(customerData);
-            GameManager.Instance.history.dislikeTasteToggleList[questionIndex].isOn = true;
         }
             
 

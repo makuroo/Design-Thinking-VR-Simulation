@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
-  m_Name: Creamy Choco-Vanilla Swirl Delight
+  m_Name: Saltybitter
   m_EditorClassIdentifier: 
-  cakeName: Creamy Choco-Vanilla Swirl Delight
+  cakeName: Saltybitter Cake
   taste: 01000000000000000100000000000000
   ukuranKue: 2
