@@ -16,7 +16,7 @@ public class DadEndingScript : MonoBehaviour
     float distanceToGoal;
 
     float toleranceGoalAchieve = 1f;
-    //TextMeshProUGUI chatDad;
+    TextMeshProUGUI chatDad;
     PlayerScript playerScript;
 
     Animator playerAnim;
@@ -30,12 +30,11 @@ public class DadEndingScript : MonoBehaviour
     bool isUpdatingTestingScore;
     bool isStamping;
     RawImage scoreStampImage;
+    GameObject chatBox;
 
 
     float speedAnim = .5f;
     float tempScore = 0f;
-
-    bool isDoneShakeHead;
 
     [SerializeField] Texture2D AImage;
     [SerializeField] Texture2D AMinImage;
@@ -49,7 +48,7 @@ public class DadEndingScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        //chatDad = GameObject.Find("ChatDad").GetComponent<TextMeshProUGUI>();
+        chatDad = GameObject.Find("ChatDad").GetComponent<TextMeshProUGUI>();
         playerScript = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
         dadGoal = GameObject.Find("DadGoal").transform;
         //StartCoroutine(SetDadChat());
@@ -60,10 +59,14 @@ public class DadEndingScript : MonoBehaviour
         prototypingText = GameObject.Find("PrototypingText").GetComponent<TextMeshProUGUI>();
         testingText = GameObject.Find("TestingText").GetComponent<TextMeshProUGUI>();
         scoreStampImage = GameObject.Find("ScoreStampImage").GetComponent<RawImage>();
+        chatBox = GameObject.Find("ChatBox");
+        chatBox.SetActive(false);
+        
 
         GameManager.Instance.CalculateTotalScore();
         ChangeScoreStampImage();
         scoreStampImage.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -89,10 +92,6 @@ public class DadEndingScript : MonoBehaviour
         {
             StartCoroutine(PlayAnimWithDelay2());
         }
-        if(isDoneShakeHead)
-        {
-            MoveTo();
-        }
     }
 
     public void ChangeWeightAnimationHand(float value)
@@ -103,6 +102,16 @@ public class DadEndingScript : MonoBehaviour
     public void ChangeWeightAnimationDisappointed(float value)
     {
         anim.SetLayerWeight(2, value);
+    }
+
+    public void ChangeWeightAnimationHandClap(float value)
+    {
+        anim.SetLayerWeight(3, value);
+    }
+
+    public void ChangeWeightAnimationThumbsUp(float value)
+    {
+        anim.SetLayerWeight(4, value);
     }
 
     public void MoveTo()
@@ -123,33 +132,6 @@ public class DadEndingScript : MonoBehaviour
         }
     }
 
-    /*IEnumerator SetDadChat()
-    {
-        chatDad.text = "";
-        yield return new WaitForSeconds(1f);
-        ChangeWeightAnimationHand(.5f);
-        chatDad.text = "Terkadang, anakku, hidup memberi kita kesempatan untuk berkreasi.";
-        yield return new WaitForSeconds(5f);
-        ChangeWeightAnimationHand(0);
-        chatDad.text = "";
-        yield return new WaitForSeconds(.5f);
-        ChangeWeightAnimationHand(.5f);
-        chatDad.text = "Aku yakin, membuka toko kue adalah langkah besar, dan aku mendukungmu sepenuhnya.";
-        yield return new WaitForSeconds(7f);
-        ChangeWeightAnimationHand(0);
-        chatDad.text = "";
-        yield return new WaitForSeconds(.5f);
-        ChangeWeightAnimationHand(.5f);
-        chatDad.text = "Semoga sukses, Nak.";
-        yield return new WaitForSeconds(3f);
-        ChangeWeightAnimationHand(0);
-        chatDad.text = "";
-        yield return new WaitForSeconds(1f);
-        isDoneShakeHead = true;
-        yield return new WaitForSeconds(1f);
-        playerScript.DoFadeIn();
-    }*/
-
 
     IEnumerator PlayAnimWithDelay()
     {
@@ -163,12 +145,35 @@ public class DadEndingScript : MonoBehaviour
     {
         isStamping = false;
         playerAnim.Play("StampAnim");
-        ChangeWeightAnimationDisappointed(1f);
         yield return new WaitForSeconds(2f);
         playerAnim.Play("PaperOutFrameAnim");
         yield return new WaitForSeconds(.5f);
-        Application.Quit();
+        StartCoroutine(EndingAnim());
+    }
 
+    IEnumerator EndingAnim()
+    {
+        if(GameManager.Instance.totalScore < 65)
+        {
+            ChangeWeightAnimationDisappointed(1f);
+            yield return new WaitForSeconds(1f);
+            chatBox.SetActive(true);
+            chatDad.text = "Tidak apa apa, Kita coba lagi ya..";
+        }
+        else
+        {
+            ChangeWeightAnimationHandClap(1f);
+            yield return new WaitForSeconds(1f);
+            chatBox.SetActive(true);
+            chatDad.text = "Selamat atas kelulusanmu, Nak! Ayah sangat bangga padamu.";
+            ChangeWeightAnimationThumbsUp(1f);
+
+        }
+        yield return new WaitForSeconds(4f);
+        chatBox.SetActive(false);
+        playerScript.DoFadeIn();
+        yield return new WaitForSeconds(2f);
+        Application.Quit();
     }
 
     public void AnimateProblemStatementScoreInt()
