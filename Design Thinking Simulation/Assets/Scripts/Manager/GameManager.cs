@@ -244,7 +244,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Randomize Question");
         for(int i=0; i<3;i++){
             randomQuestionTypeIndex = UnityEngine.Random.Range(0, Enum.GetNames(typeof(QuestionType)).Length);
-            RandomizedType[i] = randomQuestionTypeIndex;
+            //RandomizedType[i] = randomQuestionTypeIndex;
+            RandomizedType[i] = i;
             if (randomQuestionTypeIndex == 0)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, manisQuestion.Count);

@@ -151,26 +151,32 @@ public class DadEndingScript : MonoBehaviour
         StartCoroutine(EndingAnim());
     }
 
+    public void SetActiveChatBox(bool isActive)
+    {
+        chatBox.SetActive(isActive);
+        //play sound pop
+    }
+
     IEnumerator EndingAnim()
     {
         if(GameManager.Instance.totalScore < 65)
         {
             ChangeWeightAnimationDisappointed(1f);
             yield return new WaitForSeconds(1f);
-            chatBox.SetActive(true);
             chatDad.text = "Tidak apa apa, Kita coba lagi ya..";
+            SetActiveChatBox(true);
         }
         else
         {
             ChangeWeightAnimationHandClap(1f);
             yield return new WaitForSeconds(1f);
-            chatBox.SetActive(true);
             chatDad.text = "Selamat atas kelulusanmu, Nak! Ayah sangat bangga padamu.";
+            SetActiveChatBox(true);
             ChangeWeightAnimationThumbsUp(1f);
 
         }
         yield return new WaitForSeconds(4f);
-        chatBox.SetActive(false);
+        SetActiveChatBox(false);
         playerScript.DoFadeIn();
         yield return new WaitForSeconds(2f);
         Application.Quit();

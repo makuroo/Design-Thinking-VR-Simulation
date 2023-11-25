@@ -324,6 +324,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2808840559011226421, guid: d365ce66e9cdea4409345d728d6b0f7a,
+        type: 3}
+      propertyPath: index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808840559011226421, guid: d365ce66e9cdea4409345d728d6b0f7a,
+        type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 6729348158714333748}
     - target: {fileID: 3433116298417760214, guid: d365ce66e9cdea4409345d728d6b0f7a,
         type: 3}
       propertyPath: m_Layer
@@ -339,10 +349,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6211306521703593267, guid: d365ce66e9cdea4409345d728d6b0f7a,
+        type: 3}
+      propertyPath: index
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6789440928663644549, guid: d365ce66e9cdea4409345d728d6b0f7a,
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464140786375987357, guid: d365ce66e9cdea4409345d728d6b0f7a,
+        type: 3}
+      propertyPath: index
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8109206268345876321, guid: d365ce66e9cdea4409345d728d6b0f7a,
         type: 3}
@@ -351,6 +371,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d365ce66e9cdea4409345d728d6b0f7a, type: 3}
+--- !u!1 &6729348158714333748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1070103949322788626, guid: d365ce66e9cdea4409345d728d6b0f7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6033336550353818918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6729348158714333749 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1070103949322788627, guid: d365ce66e9cdea4409345d728d6b0f7a,
