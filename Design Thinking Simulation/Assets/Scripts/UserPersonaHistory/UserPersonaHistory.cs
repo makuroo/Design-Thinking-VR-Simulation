@@ -6,77 +6,50 @@ using TMPro;
 
 public class UserPersonaHistory : MonoBehaviour
 {
-    [System.Serializable]
-    public struct KeyValuePairs
-    {
-        public string key;
-        public CustomerDataSO value;
-    }
 
     [SerializeField] List<CustomerDataSO> userPersonaList;
-    public Dictionary<string,CustomerDataSO> userPersonaDict = new();
     public TMP_Text nameText;
     public TMP_Text kueFavoritText;
     public TMP_Text goalsText;
     public TMP_Text frustrationText;
-    public List<Toggle> likeTasteToggleList;
-    public List<Toggle> dislikeTasteToggleList;
-
+    public List<Toggle> tasteToggleList;
     int index = 0;
-
-    public List<KeyValuePairs> dictValues = new();
 
     // Start is called before the first frame update
     void Start()
     {
-        kueFavoritText.text = "???";
-        for(int i=0; i < userPersonaList.Count; i++)
-        {
-            userPersonaList[i].peopleName = "???";
-            userPersonaList[i].kueFavorit = null;
-            userPersonaList[i].goals[0] = "???";
-            userPersonaList[i].frustration[0] = "???";
-        }
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         nameText.text = userPersonaList[index].peopleName;
-        if(userPersonaList[index].kueFavorit!=null)
-            kueFavoritText.text = userPersonaList[index].kueFavorit.cakeName;
+        kueFavoritText.text = userPersonaList[index].kueFavorit;
         goalsText.text = userPersonaList[index].goals[0];
         frustrationText.text = userPersonaList[index].frustration[0];
     }
 
     public void  FindCustomer(CustomerDataSO customer)
     {
-        if (customer == null)
-            Debug.Log("null");
-        else
+        for (int i = 0; i < userPersonaList.Count; i++)
         {
-            for (int i = 0; i < userPersonaList.Count; i++)
+            if (userPersonaList[i].peopleName == customer.peopleName)
             {
-                if (userPersonaList[i].peopleName == customer.peopleName)
-                {
-                    index = i;
-
-                    break;
-                }
-                else if (userPersonaList[i].peopleName == "???")
-                {
-                    userPersonaList[i].peopleName = customer.peopleName;
-                    index = i;
-                    break;
-                }
-                else
-                {
-                    index++;
-                }
+                index = i;
+                break;
+            }
+            else if (userPersonaList[i].peopleName == "???")
+            {
+                userPersonaList[i].peopleName = customer.peopleName;
+                index = i;
+                break;
+            }
+            else
+            {
+                index++;
             }
         }
-        
     }
 
     public void Prev()
@@ -95,9 +68,9 @@ public class UserPersonaHistory : MonoBehaviour
         }
     }
 
-    public void FavoritCakeAnswer(CustomerDataSO customer)
+    public void FavoritCakeAnswer(TMP_Text answer)
     {
-        userPersonaList[index].kueFavorit =customer.kueFavorit;
+        userPersonaList[index].kueFavorit = answer.text;
     }
 
     public void GoalsAnswer(TMP_Text answer)
@@ -108,21 +81,5 @@ public class UserPersonaHistory : MonoBehaviour
     public void FrustrationAnswer(TMP_Text answer)
     {
         userPersonaList[index].frustration[0] = answer.text;
-    }    
-    public void CakePreferenceAnswer(CakePreferencesSO preference)
-    {
-        userPersonaList[index].cakePreferences = preference;
-    }
-
-    public void AddToDict(string key, CustomerDataSO value)
-    {
-        if (userPersonaDict.TryAdd(key, value))
-        {
-            KeyValuePairs datas = new();
-            datas.key = key;
-            datas.value = value;
-            dictValues.Add(datas);
-            Debug.Log("here");
-        }
     }
 }

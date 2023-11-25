@@ -97,7 +97,6 @@ public class DoorChangeScene : MonoBehaviour
         if (isHomeDoor)
         {
             SceneManager.LoadScene("Cafe");
-            GameManager.Instance.canDoActivity = false;
         }
         else if (isCafeDoor)
         {
@@ -118,7 +117,6 @@ public class DoorChangeScene : MonoBehaviour
         if (isHomeDoor)
         {
             SceneManager.LoadScene("Restaurant");
-            GameManager.Instance.canDoActivity = false;
         }
         else if (isCafeDoor)
         {
@@ -139,7 +137,6 @@ public class DoorChangeScene : MonoBehaviour
         if (isHomeDoor)
         {
             SceneManager.LoadScene("Canteen");
-            GameManager.Instance.canDoActivity = false;
         }
         else if (isCafeDoor)
         {
