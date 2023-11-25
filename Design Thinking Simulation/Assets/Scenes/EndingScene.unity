@@ -4815,7 +4815,7 @@ GameObject:
   - component: {fileID: 1355812588}
   - component: {fileID: 1355812587}
   m_Layer: 5
-  m_Name: UserPersonaText
+  m_Name: ProblemStatementText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5782,7 +5782,7 @@ MonoBehaviour:
   interviewCount: 0
   userPersonaCount: 0
   totalScore: 0
-  userPersonaScore: 90
+  problemStatementScore: 0
   vpcScore: 0
   prototypingScore: 0
   testingScore: 0
