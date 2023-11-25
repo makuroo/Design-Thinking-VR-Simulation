@@ -43,8 +43,6 @@ namespace BNG {
 
             bool validReturn = grab != null && ReturnTo != null && ReturnTo.HeldItem == null && !grab.BeingHeld;
 
-            //Debug.Log(validReturn);
-
             // Increment how long we've been waiting
             if (validReturn) {
                 currentDelay += Time.deltaTime;
