@@ -1115,6 +1115,50 @@ MonoBehaviour:
     yOffset: 0
     mats:
     - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Police Hat Type 1
+    mesh:
+    - {fileID: 7264295230887788449, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: 3428793073324983304, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: 7816820008315911094, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: 2248397665369953266, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    hideParts:
+    - Hair
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Firefighter Hat Type 1
+    mesh:
+    - {fileID: -6429679367086495099, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: 7553662514855483765, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: 9166506192688291277, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: -7127390311674827115, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    hideParts:
+    - Hair
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Worker Hat Type 1
+    mesh:
+    - {fileID: 6294138286099350540, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: 4152473769625563187, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: 5257583980927568824, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: -1445555529729805400, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    hideParts:
+    - Hair
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Police Hat Type 2
+    mesh:
+    - {fileID: -8849421997750595001, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: -418315954228486467, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: 4243995079177620605, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: -214464968845227635, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    hideParts:
+    - Hair
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   accessoryPresets:
   - name: Accessory Type 1
     mesh:
@@ -1382,6 +1426,70 @@ MonoBehaviour:
     yOffset: 0
     mats:
     - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Police Shirt Type 1
+    mesh:
+    - {fileID: 2872349788814094997, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: 3729459720434718332, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: -2410089022891717497, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: 4629765563145653830, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    hideParts:
+    - Chest
+    - Shoulders
+    - Arms
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Firefighter Shirt Type 1
+    mesh:
+    - {fileID: -1559876367951824439, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: -4800947264276154974, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: 5860244002844186478, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: 6650232845839996705, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    hideParts:
+    - Chest
+    - Shoulders
+    - Arms
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Doctor Shirt Type 1
+    mesh:
+    - {fileID: -4260794020947518516, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    - {fileID: 8166342321108847838, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    - {fileID: 7970743003382845054, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    - {fileID: 3745653487426357154, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    hideParts:
+    - Chest
+    - Shoulders
+    - Arms
+    - Stomach
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Worker Shirt Type 1
+    mesh:
+    - {fileID: 8795177619769804503, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: 7475892050460233882, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: -2408057439239163011, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: -8179579151393769775, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    hideParts:
+    - Chest
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Police Shirt Type 2
+    mesh:
+    - {fileID: -8987822358111851588, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: 7923974228281422425, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: 8264835420411394115, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: -6154369466285034937, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    hideParts:
+    - Chest
+    - Shoulders
+    - Arms
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   pantsPresets:
   - name: Pants Type 1
     mesh:
@@ -1495,6 +1603,76 @@ MonoBehaviour:
     yOffset: 0
     mats:
     - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Police Pants 1
+    mesh:
+    - {fileID: -3480770476686871510, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: -5356297769059333275, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: -5625785395130348677, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: -9199796694004463438, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    hideParts:
+    - Hip
+    - Legs
+    - ShinUpper
+    - ShinLower
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Firefighter Pants 1
+    mesh:
+    - {fileID: 3996094131856104293, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: -1119983879481933127, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: 8812170709719774419, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: 8255633307660326822, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    hideParts:
+    - Hip
+    - Legs
+    - ShinUpper
+    - ShinLower
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Doctor Pants 1
+    mesh:
+    - {fileID: -5930393278248577717, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    - {fileID: 1552374732132116499, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    - {fileID: 7749734958946260547, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    - {fileID: 5621229998489222270, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    hideParts:
+    - Hip
+    - Legs
+    - ShinUpper
+    - ShinLower
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Worker Pants 1
+    mesh:
+    - {fileID: 3407463524890458143, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: 2871753392208809067, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: 1073288374514391670, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: -6458482555315872599, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    hideParts:
+    - Hip
+    - Legs
+    - ShinUpper
+    - ShinLower
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Police Pants 2
+    mesh:
+    - {fileID: -3009016019295502530, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: -2576289458742465336, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: -6836215724995218468, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: 2111008570933313757, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    hideParts:
+    - Hip
+    - Legs
+    - ShinUpper
+    - ShinLower
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   shoesPresets:
   - name: Shoes Type 1
     mesh:
@@ -1605,6 +1783,61 @@ MonoBehaviour:
     - {fileID: 7137462398437979595, guid: e1b9f31c52a54934aa96f15fb743d0ca, type: 3}
     - {fileID: 6480860341159259921, guid: e1b9f31c52a54934aa96f15fb743d0ca, type: 3}
     - {fileID: -6231874616824354508, guid: e1b9f31c52a54934aa96f15fb743d0ca, type: 3}
+    hideParts:
+    - Foot
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Police Shoes Type 1
+    mesh:
+    - {fileID: -8594849948249432501, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: -2597870274558147827, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: -4212193942368324342, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    - {fileID: -4071320369414206860, guid: 333895fbbc0517740a9446f1f0c3634a, type: 3}
+    hideParts:
+    - Foot
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Firefighter Shoes Type 1
+    mesh:
+    - {fileID: 6240130564023342570, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: 8736119554547089030, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: 8538264862720106704, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    - {fileID: 5821539503561073436, guid: f5ce8dcddf515af41b0fea6e1c511a92, type: 3}
+    hideParts:
+    - Foot
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Doctor Shoes Type 1
+    mesh:
+    - {fileID: -9145542580513286794, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    - {fileID: -2318312358696698063, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    - {fileID: 7614551859952342167, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    - {fileID: 7256892562155492359, guid: a874bd312e0b5544a973b03542ae8854, type: 3}
+    hideParts:
+    - Foot
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Worker Shoes Type 1
+    mesh:
+    - {fileID: 2187116208760751125, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: 2696893814889588650, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: 5189468994066744867, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    - {fileID: 4427354378673763929, guid: 819282818c7dd564c88c7848d89ac68d, type: 3}
+    hideParts:
+    - Foot
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Police Shoes Type 2
+    mesh:
+    - {fileID: -4830119612334917467, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: -5826778923036154453, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: -6445709117355119072, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
+    - {fileID: -7735432526677381997, guid: 2f8310774137fa0438f7c2da571dded0, type: 3}
     hideParts:
     - Foot
     yOffset: 0

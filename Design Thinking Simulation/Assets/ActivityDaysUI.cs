@@ -12,22 +12,31 @@ public class ActivityDaysUI : MonoBehaviour
     
     private void OnEnable()
     {
-        if(GameManager.Instance.interviewCount>=3)
+        if(board.userPersonaActiveDay - GameManager.Instance.currentDay <= 0)
         {
-            problemStatementTextDays.text = "Terbuka";
+            userPersonaTextDays.text = "Unlocked";
         }
         else
         {
-            problemStatementTextDays.text = "Menyelesaikan: <color=red>" + GameManager.Instance.interviewCount.ToString() + "</color>/ 3 User Persona";
+            userPersonaTextDays.text = board.userPersonaActiveDay - GameManager.Instance.currentDay + "Day(s)";
         }
 
-        if (GameManager.Instance.hasDoneProblemStatement)
+        if (board.problemStatementActiveDay - GameManager.Instance.currentDay <= 0)
         {
-            vpcTextDays.text = "Terbuka";
+            problemStatementTextDays.text = "Unlocked";
         }
         else
         {
-            vpcTextDays.text = "Menyelesaikan 1 Problem Statement";
+            problemStatementTextDays.text = board.problemStatementActiveDay - GameManager.Instance.currentDay + "Day(s)";
+        }
+
+        if (board.vpcActiveDay - GameManager.Instance.currentDay <= 0)
+        {
+            vpcTextDays.text = "Unlocked";
+        }
+        else
+        {
+            vpcTextDays.text = board.vpcActiveDay - GameManager.Instance.currentDay + "Day(s)";
         }
     }
 }
