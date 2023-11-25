@@ -83,36 +83,36 @@ MonoBehaviour:
   - vmmhgkhj
   RandomizedType: 000000000000000000000000
   manisQuestion:
-  - Manis 1
-  - Manis 2
-  - Manis 3
-  - Manis 4
-  - Manis 5
+  - Kamu Suka Rasa Manis?
+  - Apakah Kamu Suka Manis?
+  - Apakah Menurutmu Manis Enak?
+  - Suka Rasa Manis?
+  - Bagaimana Dengan Manis?
   asinQuestion:
-  - Asin 1
-  - Asin 2
-  - Asin 3
-  - Asin 4
-  - Asin 5
+  - Kamu Suka Rasa Asin?
+  - Apakah Kamu Suka Asin?
+  - Apakah Menurutmu Asin Enak?
+  - Suka Rasa Asin?
+  - Bagaimana Dengan Asin?
   asemQuestion:
-  - Asem 1
-  - Asem 2
-  - Asem 3
-  - Asem 4
-  - Asem 5
+  - Kamu Suka Rasa Asam?
+  - Apakah Kamu Suka Asam?
+  - Apakah Menurutmu Asam Enak?
+  - Suka Rasa Asam?
+  - Bagaimana Dengan Asam?
   pahitQuestion:
-  - Pahit 1
-  - Pahit 2
-  - Pahit 3
-  - Pahit 4
-  - Pahit 5
+  - Kamu Suka Rasa Pahit?
+  - Apakah Kamu Suka Pahit?
+  - Apakah Menurutmu Pahit Enak?
+  - Suka Rasa Pahit?
+  - Bagaimana Dengan Pahit?
   WorldCustomerCount: 0
   cafeCustomerCount: 0
   restaurantCustomerCount: 0
   canteenCustomerCount: 0
   maleNpcList: []
   femaleNpcList: []
-  maxCustomerSpawn: 5
+  maxCustomerSpawn: 9
   maxCustomer: 0
   customerList:
   - {fileID: 4856454088341201431, guid: 0147e9c1f667b6447a05fe542c3b29a9, type: 3}
@@ -132,13 +132,12 @@ MonoBehaviour:
   canteenCustomerList: []
   cafeCustomerList: []
   currentDay: 1
-  maxDay: 60
+  maxDay: 30
   directionalLight: {fileID: 0}
   AnswerTimeBed: 3
   clockImage: {fileID: 0}
   maxQuestionPerDay: 3
-  questionRemaining: 3
+  questionRemaining: 0
   interviewCount: 0
-  hasDoneUserPersona: 0
-  hasDoneProblemStatement: 0
-  history: {fileID: 7025036330079147363, guid: 8106d9b18b03ab540917ca700c45390d, type: 3}
+  userPersonaCount: 0
+  history: {fileID: 0}

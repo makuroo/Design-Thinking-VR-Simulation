@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c0b793a5334f714894f560b724e6945, type: 3}
   m_Name: MaleSettings
   m_EditorClassIdentifier: 
-  OriginalMesh: {fileID: 27058356119285619, guid: 1a98919a4248b3a459452e1e96d10ce6,
-    type: 3}
+  OriginalMesh: {fileID: 100056, guid: 1b8f3f34252d9ee44823ab05504b31a8, type: 3}
   bodyMaterial: {fileID: 2100000, guid: 72b4350f26c57fe44b39907d978d92c5, type: 2}
   characterAnimationPresets:
   - name: Smile
@@ -1447,7 +1446,7 @@ MonoBehaviour:
     - Arms
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: c895d0ec1d1373945a18ceaa2fe47974, type: 2}
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   - name: Almet Binus
     mesh:
     - {fileID: -2850074755327657584, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
@@ -1461,7 +1460,7 @@ MonoBehaviour:
     - Arms
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: c895d0ec1d1373945a18ceaa2fe47974, type: 2}
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   - name: Almet Binus
     mesh:
     - {fileID: -2850074755327657584, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
@@ -1475,7 +1474,7 @@ MonoBehaviour:
     - Arms
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: c895d0ec1d1373945a18ceaa2fe47974, type: 2}
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   - name: Batik Karyawan Binus
     mesh:
     - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
@@ -1487,7 +1486,7 @@ MonoBehaviour:
     - Chest
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: f2ff54d202206e04e97a5f2a1adb13c8, type: 2}
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   - name: Batik Karyawan Binus
     mesh:
     - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
@@ -1499,7 +1498,7 @@ MonoBehaviour:
     - Chest
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: f2ff54d202206e04e97a5f2a1adb13c8, type: 2}
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   - name: Batik Karyawan Binus
     mesh:
     - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
@@ -1511,7 +1510,40 @@ MonoBehaviour:
     - Chest
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: f2ff54d202206e04e97a5f2a1adb13c8, type: 2}
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Batik Karyawan Binus 2
+    mesh:
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    hideParts:
+    - Stomach
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Batik Karyawan Binus 2
+    mesh:
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    hideParts:
+    - Stomach
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
+  - name: Batik Karyawan Binus 2
+    mesh:
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    - {fileID: 2772167471688922628, guid: 6ab7725cece755f46b752ed34873db01, type: 3}
+    hideParts:
+    - Stomach
+    yOffset: 0
+    mats:
+    - {fileID: 2100000, guid: 3f3d17836a87ae942ac524d7020ac829, type: 2}
   pantsPresets:
   - name: Pants Type 1
     mesh:

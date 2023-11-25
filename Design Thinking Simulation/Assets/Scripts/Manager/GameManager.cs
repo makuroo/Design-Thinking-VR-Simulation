@@ -99,10 +99,24 @@ public class GameManager : MonoBehaviour
     private PlayerScript player;
     string previousWorld;
 
+
     public bool hasFinishTutorial;
+
+    #region This is the place for Scoring System
+    [HideInInspector] public float totalScore;
+    [HideInInspector] public float problemStatementScore;
+    [HideInInspector] public float vpcScore;
+    [HideInInspector] public float prototypingScore;
+    [HideInInspector] public float testingScore;
+    #endregion
+
     public UserPersonaHistory history;
     private void Awake()
     {
+        problemStatementScore = 90f;
+        vpcScore = 75f;
+        prototypingScore = 82f;
+        testingScore = 56f;
         LoadGame();
         if (instance == null)
         {
@@ -536,7 +550,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public float CalculateTotalScore()
+    {
+        totalScore = (problemStatementScore + vpcScore + prototypingScore + testingScore) / 4;
+        return totalScore;
+    }
 
 
 
