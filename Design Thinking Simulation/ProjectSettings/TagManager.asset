@@ -13,16 +13,9 @@ TagManager:
   - 5
   - 6
   - 7
-  - TargetUsia
-  - JenisMakanan
-  - Ukuran
-  - JenisKue
-  - Product
-  - Gain Creator
-  - Pain Reliever
-  - Pain
-  - Gain
-  - Job
+  - Bowl
+  - LeftHand
+  - RightHand
   layers:
   - Default
   - TransparentFX
@@ -30,7 +23,7 @@ TagManager:
   - 
   - Water
   - UI
-  - AlwaysOnFront
+  - 
   - 
   - Restricted
   - Player
@@ -38,7 +31,7 @@ TagManager:
   - UI Collider
   - Pointer
   - NonContact
-  - Rasa
+  - 
   - 
   - 
   - 

@@ -19,4 +19,5 @@ public class CakeSO : ScriptableObject
     public List<int> taste = new List<int>();
     public Ukuran ukuranKue;
     public Dictionary<int, string> cakeComponent = new Dictionary<int, string>();
+    public List<int> recipe = new();
 }
