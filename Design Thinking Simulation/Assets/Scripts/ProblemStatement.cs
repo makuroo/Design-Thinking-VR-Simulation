@@ -50,8 +50,7 @@ public class ProblemStatement : MonoBehaviour
         if (currentIndex > 1)
         {
             currentIndex = 0;
-            board.tasteAnswer.SetActive(false);
-            board.choicesJenisKue.SetActive(true);
+            StartCoroutine(DelayDeactivate());
         }
     }
 
@@ -101,5 +100,13 @@ public class ProblemStatement : MonoBehaviour
             return 1;
         else 
             return 2;
+    }
+
+
+    private IEnumerator DelayDeactivate()
+    {
+        yield return new WaitForSeconds(.1f);
+        board.tasteAnswer.SetActive(false);
+        board.choicesJenisKue.SetActive(true);
     }
 }

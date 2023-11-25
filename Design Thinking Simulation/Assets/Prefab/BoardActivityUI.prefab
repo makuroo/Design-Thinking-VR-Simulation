@@ -3353,7 +3353,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 417891932113647568}
   - {fileID: 163852533718979473}
   - {fileID: 163852533275395118}
   - {fileID: 163852533802972374}
@@ -3361,6 +3360,7 @@ Transform:
   - {fileID: 163852533477619761}
   - {fileID: 163852533803187745}
   - {fileID: 163852532887174605}
+  - {fileID: 417891932113647568}
   - {fileID: 417891932753230814}
   - {fileID: 417891932558942299}
   - {fileID: 417891934027690953}
@@ -4186,7 +4186,7 @@ Transform:
   - {fileID: 163852532514840737}
   - {fileID: 163852532619255295}
   m_Father: {fileID: 163852532422071097}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &163852532506504098
 BoxCollider:
@@ -6033,7 +6033,7 @@ Transform:
   - {fileID: 163852533390880900}
   - {fileID: 163852532382864256}
   m_Father: {fileID: 163852532422071097}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &163852532887174644
 MeshFilter:
@@ -9072,7 +9072,7 @@ Transform:
   - {fileID: 163852534017175444}
   - {fileID: 163852533061701642}
   m_Father: {fileID: 163852532422071097}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &163852533275395113
 MeshFilter:
@@ -10220,7 +10220,7 @@ Transform:
   - {fileID: 163852534013119508}
   - {fileID: 163852533517452976}
   m_Father: {fileID: 163852532422071097}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &163852533477619775
 MeshFilter:
@@ -11442,7 +11442,7 @@ Transform:
   - {fileID: 4249247976559942858}
   - {fileID: 163852533344091314}
   m_Father: {fileID: 163852532422071097}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &163852533718979480
 MeshFilter:
@@ -11649,7 +11649,7 @@ Transform:
   - {fileID: 163852532112460099}
   - {fileID: 163852534151760258}
   m_Father: {fileID: 163852532422071097}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &163852533802972369
 MeshFilter:
@@ -11856,7 +11856,7 @@ Transform:
   - {fileID: 163852533925053676}
   - {fileID: 163852532235832069}
   m_Father: {fileID: 163852532422071097}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &163852533803187752
 MeshFilter:
@@ -32932,26 +32932,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1497393198240343603, guid: 62f4987b7e086ff43ab61a31ee443048,
         type: 3}
-      propertyPath: m_fontSize
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1497393198240343603, guid: 62f4987b7e086ff43ab61a31ee443048,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 9f75f90c2aad8d143b669c350a7339c5,
-        type: 2}
-    - target: {fileID: 1497393198240343603, guid: 62f4987b7e086ff43ab61a31ee443048,
-        type: 3}
       propertyPath: m_fontSizeBase
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 1497393198240343603, guid: 62f4987b7e086ff43ab61a31ee443048,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -5978824045724420427, guid: 9f75f90c2aad8d143b669c350a7339c5,
-        type: 2}
     - target: {fileID: 1497393198240343603, guid: 62f4987b7e086ff43ab61a31ee443048,
         type: 3}
       propertyPath: m_fontColor32.rgba
@@ -52010,7 +51993,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 80d46885482bd074bbf6baa92e645bdd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 80d46885482bd074bbf6baa92e645bdd,
         type: 3}

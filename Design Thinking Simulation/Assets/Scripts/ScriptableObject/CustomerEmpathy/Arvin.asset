@@ -18,7 +18,6 @@ MonoBehaviour:
   kueFavorit: {fileID: 11400000, guid: 3f4b1ebb1a1b5a645a9b0bb64427e0d5, type: 2}
   goals:
   - Memakan kue yang coklat
-  - 'Memakan kue rasa manis '
   frustration:
   - tidak suka kue yang pahit
   met: 0

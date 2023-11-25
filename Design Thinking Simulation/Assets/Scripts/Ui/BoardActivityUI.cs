@@ -24,12 +24,11 @@ public class BoardActivityUI : MonoBehaviour
     [SerializeField] private CustomerDataSO personCustomerData;
     [SerializeField] private List<string> tempAnswer;
     [SerializeField] private List<string> tempListRandom;
-    [SerializeField] private List<string> randomOptions;
+    [SerializeField] private List<string> randomGoalsOptions;
+    [SerializeField] private List<string> randomFrustrationsOptions;
+    [SerializeField] private List<string> randomgFavouriteCakeOptions;
     [SerializeField] private List<string> usiaTarget;
     [SerializeField] private List<string> jenisMakanan;
-    public int userPersonaActiveDay;
-    public int problemStatementActiveDay;
-    public int vpcActiveDay;
 
     public List<UnityEngine.UI.Button> topicButtons;
     public List<UnityEngine.UI.Button> boardActivityButtons;
@@ -60,22 +59,14 @@ public class BoardActivityUI : MonoBehaviour
             boardActivityUI.SetActive(true);
         }
 
-        if (GameManager.Instance.currentDay >= userPersonaActiveDay)
+        if (GameManager.Instance.interviewCount>=3)
             boardActivityButtons[0].interactable = true;
 
-        if (GameManager.Instance.currentDay >= problemStatementActiveDay)
-        {
-            boardActivityButtons[0].interactable = true;
-            boardActivityButtons[1].interactable = true;
-        }
+        if (GameManager.Instance.hasDoneUserPersona)
+             boardActivityButtons[1].interactable = true;
 
-        if (GameManager.Instance.currentDay >= vpcActiveDay)
-        {
-            boardActivityButtons[0].interactable = true;
-            boardActivityButtons[1].interactable = true;
+        if (GameManager.Instance.hasDoneProblemStatement)
             boardActivityButtons[2].interactable = true;
-        }
-
     }
 
     public void UserPersona()
@@ -111,7 +102,7 @@ public class BoardActivityUI : MonoBehaviour
         Debug.Log(index);
         personCustomerData = GameManager.Instance.peopleMet[index].GetComponentInChildren<People>().customerData;
         tempAnswer = new List<string>(personCustomerData.goals);
-        tempListRandom = new List<string>(randomOptions);
+        tempListRandom = new List<string>(randomGoalsOptions);
         for (int i = 0; i < 5; i++)
         {
             int randomOrNot = UnityEngine.Random.Range(0, 2);
@@ -126,6 +117,13 @@ public class BoardActivityUI : MonoBehaviour
             else
             {
                 int randomIndex =UnityEngine.Random.Range(0, tempListRandom.Count);
+                if (tempListRandom[randomIndex] == personCustomerData.goals[answerIndex])
+                {
+                    if (randomIndex != tempListRandom.Count - 1)
+                        randomIndex++;
+                    else
+                        randomIndex--;
+                }
                 userPersonaUI.choicesGameObjectText[i].text = tempListRandom[randomIndex];
                 tempListRandom.RemoveAt(randomIndex);
             }
@@ -138,8 +136,8 @@ public class BoardActivityUI : MonoBehaviour
         Debug.Log(index);
         personCustomerData = GameManager.Instance.peopleMet[index].GetComponentInChildren<People>().customerData;
         tempAnswer = new List<string>(personCustomerData.frustration);
-        tempListRandom = new List<string>(randomOptions);
-        tempListRandom = randomOptions;
+        tempListRandom = new List<string>(randomFrustrationsOptions);
+        tempListRandom = randomFrustrationsOptions;
         for (int i = 0; i < 5; i++)
         {
             int randomOrNot = UnityEngine.Random.Range(0, 2);
@@ -153,6 +151,13 @@ public class BoardActivityUI : MonoBehaviour
             else
             {
                 int randomIndex = UnityEngine.Random.Range(0, tempListRandom.Count);
+                if(tempListRandom[randomIndex] == personCustomerData.frustration[answerIndex])
+                {
+                    if (randomIndex != tempListRandom.Count - 1)
+                        randomIndex++;
+                    else
+                        randomIndex--;
+                }
                 userPersonaUI.choicesGameObjectText[i].text = tempListRandom[randomIndex];
                 tempListRandom.RemoveAt(randomIndex);
             }
@@ -234,7 +239,7 @@ public class BoardActivityUI : MonoBehaviour
     public void AddFavouriteCakeChoices(int index, UserPersonaUI userPersonaUI)
     {
         personCustomerData = GameManager.Instance.peopleMet[index].GetComponentInChildren<People>().customerData;
-        tempListRandom = new List<string>(randomOptions);
+        tempListRandom = new List<string>(randomgFavouriteCakeOptions);
         int answerIndex = UnityEngine.Random.Range(0, 5);
         for (int i = 0; i < 5; i++)
         {
@@ -246,6 +251,13 @@ public class BoardActivityUI : MonoBehaviour
             else
             {
                 int randomIndex =UnityEngine.Random.Range(0, tempListRandom.Count);
+                if (tempListRandom[randomIndex] == personCustomerData.kueFavorit.cakeName)
+                {
+                    if (randomIndex != tempListRandom.Count - 1)
+                        randomIndex++;
+                    else
+                        randomIndex--;
+                }
                 userPersonaUI.choicesGameObjectText[i].text = tempListRandom[randomIndex];
                 tempListRandom.RemoveAt(randomIndex);
             }

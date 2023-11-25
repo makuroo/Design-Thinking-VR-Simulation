@@ -15,8 +15,11 @@ public class UserPersonaUI : MonoBehaviour
     public UserPersonaCategory userPersonaChecker;
     [SerializeField] private GameObject prevNextButtons;
     [SerializeField] private TMP_Text nameText;
-    
-    
+    [SerializeField] private GameObject viewButton;
+    [SerializeField] private GameObject tasteUI;
+    [SerializeField] private List<Toggle> tasteToggleList;
+    [SerializeField] private List<Sprite> iconList = new();
+
     public enum UserPersonaCategory
     {
         FavouriteCake,
@@ -25,12 +28,20 @@ public class UserPersonaUI : MonoBehaviour
         Taste
     }
 
+    private void Start()
+    {
+        ShowNPC_Data();
+    }
+
     private void Update()
     {
-        if (GameManager.Instance.peopleMet.Count != 0 && customerIndex > -1 && customerIndex < GameManager.Instance.peopleMet.Count)
+
+        if (!GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>().customerData.hasShowUserPersona)
         {
-            People people = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
-            nameText.text = people.customerData.peopleName;
+            viewButton.SetActive(true);
+        }else
+        {
+            tasteUI.SetActive(true);
         }
     }
 
@@ -40,6 +51,7 @@ public class UserPersonaUI : MonoBehaviour
             customerIndex--;
         else
             return;
+        ShowNPC_Data();
     }
 
     public void Next()
@@ -48,6 +60,7 @@ public class UserPersonaUI : MonoBehaviour
             return;
         else
             customerIndex++;
+        ShowNPC_Data();
     }
 
     public void Confirm()
@@ -135,6 +148,35 @@ public class UserPersonaUI : MonoBehaviour
         {
            if(d.gameObject.activeInHierarchy)
                 d.Return();
+        }
+    }
+
+    public void ShowTaste()
+    {
+        tasteUI.SetActive(true);
+        GameManager.Instance.interviewCount++;
+        GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>().customerData.hasShowUserPersona = true;
+        GameManager.Instance.canDoActivity = false;
+    }
+
+    public void ShowNPC_Data()
+    {
+        if (GameManager.Instance.peopleMet.Count != 0 && customerIndex > -1 && customerIndex < GameManager.Instance.peopleMet.Count)
+        {
+            People people = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();
+            nameText.text = people.customerData.peopleName;
+
+            for (int i = 0; i < tasteToggleList.Count; i++)
+            {
+                if (people.customerData.CalculateLikeness(i) >= 1)
+                    tasteToggleList[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = iconList[0];
+                else if (people.customerData.CalculateLikeness(i) == 0)
+                    tasteToggleList[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = iconList[1];
+                else
+                    tasteToggleList[i].transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = iconList[2];
+
+                tasteToggleList[i].isOn = true;
+            }
         }
     }
 }
