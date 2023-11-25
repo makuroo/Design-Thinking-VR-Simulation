@@ -20,8 +20,8 @@ public class DadEndingScript : MonoBehaviour
     PlayerScript playerScript;
 
     Animator playerAnim;
-    TextMeshProUGUI userPersonaText;
-    bool isUpdatingUserPersonaScore;
+    TextMeshProUGUI problemStatementText;
+    bool isUpdatingProblemStatementScore;
     TextMeshProUGUI VPCText;
     bool isUpdatingVPCScore;
     TextMeshProUGUI prototypingText;
@@ -55,7 +55,7 @@ public class DadEndingScript : MonoBehaviour
         //StartCoroutine(SetDadChat());
         playerAnim = GameObject.Find("Player").GetComponent<Animator>();
         StartCoroutine(PlayAnimWithDelay());
-        userPersonaText = GameObject.Find("UserPersonaText").GetComponent<TextMeshProUGUI>();
+        problemStatementText = GameObject.Find("ProblemStatementText").GetComponent<TextMeshProUGUI>();
         VPCText = GameObject.Find("ValuePropotitionText").GetComponent<TextMeshProUGUI>();
         prototypingText = GameObject.Find("PrototypingText").GetComponent<TextMeshProUGUI>();
         testingText = GameObject.Find("TestingText").GetComponent<TextMeshProUGUI>();
@@ -69,9 +69,9 @@ public class DadEndingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isUpdatingUserPersonaScore)
+        if(isUpdatingProblemStatementScore)
         {
-            AnimateUserPersonaScoreInt();
+            AnimateProblemStatementScoreInt();
         }
         else if(isUpdatingVPCScore)
         {
@@ -156,7 +156,7 @@ public class DadEndingScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         playerAnim.Play("PaperComeAnim");
         yield return new WaitForSeconds(1f);
-        isUpdatingUserPersonaScore = true;
+        isUpdatingProblemStatementScore = true;
     }
 
     IEnumerator PlayAnimWithDelay2()
@@ -171,20 +171,20 @@ public class DadEndingScript : MonoBehaviour
 
     }
 
-    public void AnimateUserPersonaScoreInt()
+    public void AnimateProblemStatementScoreInt()
     {
-        if (tempScore + speedAnim >= GameManager.Instance.userPersonaScore)
+        if (tempScore + speedAnim >= GameManager.Instance.problemStatementScore)
         {
-            tempScore = GameManager.Instance.userPersonaScore;
-            isUpdatingUserPersonaScore = false;
+            tempScore = GameManager.Instance.problemStatementScore;
+            isUpdatingProblemStatementScore = false;
             isUpdatingVPCScore = true;
-            userPersonaText.text = "User Persona: " + Mathf.FloorToInt(tempScore).ToString();
+            problemStatementText.text = "Problem Statement: " + Mathf.FloorToInt(tempScore).ToString();
             tempScore = 0f;
         }
         else
         {
             tempScore += speedAnim;
-            userPersonaText.text = "User Persona: " + Mathf.FloorToInt(tempScore).ToString();
+            problemStatementText.text = "Problem Statement: " + Mathf.FloorToInt(tempScore).ToString();
         }
     }
     public void AnimateVPCScoreInt()

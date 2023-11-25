@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     #region This is the place for Scoring System
     [HideInInspector] public float totalScore;
-    [HideInInspector] public float userPersonaScore;
+    [HideInInspector] public float problemStatementScore;
     [HideInInspector] public float vpcScore;
     [HideInInspector] public float prototypingScore;
     [HideInInspector] public float testingScore;
@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
     public UserPersonaHistory history;
     private void Awake()
     {
-        userPersonaScore = 90f;
+        problemStatementScore = 90f;
         vpcScore = 75f;
         prototypingScore = 82f;
         testingScore = 56f;
@@ -553,7 +553,7 @@ public class GameManager : MonoBehaviour
 
     public float CalculateTotalScore()
     {
-        totalScore = (userPersonaScore + vpcScore + prototypingScore + testingScore) / 4;
+        totalScore = (problemStatementScore + vpcScore + prototypingScore + testingScore) / 4;
         return totalScore;
     }
 
