@@ -242,30 +242,30 @@ public class GameManager : MonoBehaviour
     #region Random Question
     public void RandomizeQuestion(){
         Debug.Log("Randomize Question");
-        for(int i=0; i<3;i++){
-            randomQuestionTypeIndex = UnityEngine.Random.Range(0, Enum.GetNames(typeof(QuestionType)).Length);
+        for(int i=0; i<4; i++){
+            //randomQuestionTypeIndex = UnityEngine.Random.Range(0, Enum.GetNames(typeof(QuestionType)).Length);
             //RandomizedType[i] = randomQuestionTypeIndex;
             RandomizedType[i] = i;
-            if (randomQuestionTypeIndex == 0)
+            if (i == 0)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, manisQuestion.Count);
                 //Debug.Log(randomQuestionIndex);
                 RandomizedQuestion[i] = manisQuestion[randomQuestionIndex];
                 manisQuestion.RemoveAt(randomQuestionIndex);
             }
-            else if (randomQuestionTypeIndex == 1)
+            else if (i == 1)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, asinQuestion.Count);
                 RandomizedQuestion[i] = asinQuestion[randomQuestionIndex];
                 asinQuestion.RemoveAt(randomQuestionIndex);
             }
-            else if (randomQuestionTypeIndex == 2)
+            else if (i == 2)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, asemQuestion.Count);
                 RandomizedQuestion[i] = asemQuestion[randomQuestionIndex];
                 asemQuestion.RemoveAt(randomQuestionIndex);
             }
-            else if (randomQuestionTypeIndex == 3)
+            else if (i == 3)
             {
                 randomQuestionIndex = UnityEngine.Random.Range(0, pahitQuestion.Count);
                 RandomizedQuestion[i] = pahitQuestion[randomQuestionIndex];
@@ -487,6 +487,7 @@ public class GameManager : MonoBehaviour
 
     public bool CanAskCheck()
     {
+        Debug.Log("canaskcheckk");
         if (questionRemaining <= 0)
         {
             //SetDirectionalLight(false);

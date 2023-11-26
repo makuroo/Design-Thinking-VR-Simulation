@@ -31,11 +31,8 @@ public class PlayerScript : MonoBehaviour
     {
         screenFaderScriptMain = transform.Find("CameraRig/TrackingSpace/CenterEyeAnchor").GetComponent<ScreenFader>();
         UICamera = transform.Find("CameraRig/TrackingSpace/CenterEyeAnchor/CenterEyeAnchorUI").gameObject;
-        clockImage = transform.Find("CameraRig/TrackingSpace/LeftHandAnchor/LeftControllerAnchor/ClockCanvas/ClockImage").GetComponent<Image>();
-        Debug.Log(clockImage);
-        GameManager.Instance.CanAskCheck();
-        Debug.Log(clockImage.color);
-        Debug.Log("jalan woii ini di start player");
+        clockImage = transform.Find("CameraRig/TrackingSpace/LeftHandAnchor/LeftControllerAnchor/ClockCanvas/ClockImage").gameObject.GetComponent<Image>();
+        //GameManager.Instance.CanAskCheck(); gausahh karena ini udah ada di map manager - Arvin
     }
 
     // Update is called once per frame
@@ -125,6 +122,7 @@ public class PlayerScript : MonoBehaviour
 
     public void ChangeClockColorToRed()
     {
+        Debug.Log("toredd");
         clockImage.color = new Color32(255, 84, 64, 255);
     }
 

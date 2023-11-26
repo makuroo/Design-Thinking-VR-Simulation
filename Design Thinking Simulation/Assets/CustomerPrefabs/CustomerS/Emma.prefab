@@ -313,12 +313,12 @@ PrefabInstance:
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.268
       objectReference: {fileID: 0}
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.35
+      value: -0.067
       objectReference: {fileID: 0}
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
@@ -520,7 +520,7 @@ MonoBehaviour:
   questionIndex: 0
   jawabanText: {fileID: 7661270076807729252}
   player: {fileID: 0}
-  QuestionCanvas: {fileID: 757724942225429560}
+  QuestionCanvasParent: {fileID: 757724942225429560}
   UIPertanyaan: {fileID: 1056817451015767995}
   NameCanvas: {fileID: 1110674434008911493}
   AnsweringTimesInSecond: 3
