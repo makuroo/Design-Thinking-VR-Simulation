@@ -121,7 +121,7 @@ public class People : MonoBehaviour
         }
         else
         {
-            if (GameManager.Instance.questionRemaining>0)
+            if (GameManager.Instance.questionRemaining>0) // diganti karena kalo pakai CanAskCheck() itu ngetrigger banyak function lain, sedangkan yang kita butuhkan cuma boolean
             {
                 tandaSeru.SetActive(true);
             }
