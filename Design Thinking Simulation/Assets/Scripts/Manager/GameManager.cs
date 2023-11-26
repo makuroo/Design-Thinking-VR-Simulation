@@ -242,7 +242,7 @@ public class GameManager : MonoBehaviour
     #region Random Question
     public void RandomizeQuestion(){
         Debug.Log("Randomize Question");
-        for(int i=0; i<4;i++){
+        for(int i=0; i<4; i++){
             //randomQuestionTypeIndex = UnityEngine.Random.Range(0, Enum.GetNames(typeof(QuestionType)).Length);
             //RandomizedType[i] = randomQuestionTypeIndex;
             RandomizedType[i] = i;
@@ -487,6 +487,7 @@ public class GameManager : MonoBehaviour
 
     public bool CanAskCheck()
     {
+        Debug.Log("canaskcheckk");
         if (questionRemaining <= 0)
         {
             //SetDirectionalLight(false);

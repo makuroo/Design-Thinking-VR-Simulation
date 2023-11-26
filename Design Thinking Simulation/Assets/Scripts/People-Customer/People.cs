@@ -13,7 +13,7 @@ public class People : MonoBehaviour
 
     public CustomerDataSO customerData;
     public int questionIndex = 0;
-    [SerializeField] private TextMeshProUGUI jawabanText;
+    public TextMeshProUGUI jawabanText;
     [HideInInspector] public PlayerScript player;
     [SerializeField] GameObject QuestionCanvasParent;
     public GameObject UIPertanyaan;
@@ -24,12 +24,12 @@ public class People : MonoBehaviour
     private TextMeshProUGUI nameText;
     public List<string> reason = new List<string>();
     public GameObject nameQuestionCanvas;
-    private GameObject[] button = new GameObject[3];
+    private GameObject[] button = new GameObject[4];
     private GameObject tandaSeru;
     private Transform customerHead;
     private GameObject playerObj;
     private Transform initialHeadTransform;
-    GameObject UIJawaban;
+    [HideInInspector] public GameObject UIJawaban;
 
     // Start is called before the first frame update
 
@@ -38,6 +38,7 @@ public class People : MonoBehaviour
         nameText = nameTextObj.GetComponent<TextMeshProUGUI>();
         customerHead = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head");
         playerObj = GameObject.Find("PlayerController");
+        player = playerObj.GetComponent<PlayerScript>();
         UIJawaban = GameObject.Find("UI Jawaban");
         UIJawaban.SetActive(false);
         initialHeadTransform = customerHead.transform;
@@ -97,8 +98,6 @@ public class People : MonoBehaviour
     {
         if (other.GetComponent<PlayerScript>())
         {
-
-            player = other.GetComponent<PlayerScript>();
             if (GameManager.Instance.peopleMet.Count > 0)
             {
                 foreach (GameObject go in GameManager.Instance.peopleMet)
@@ -122,7 +121,7 @@ public class People : MonoBehaviour
         }
         else
         {
-            if (GameManager.Instance.CanAskCheck())
+            if (GameManager.Instance.questionRemaining>0)
             {
                 tandaSeru.SetActive(true);
             }
@@ -167,7 +166,8 @@ public class People : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             //button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject; //codingan ricat
-            button[i] = transform.Find("QuestionCanvasParent/UI Pertanyaan").GetChild(i).gameObject;
+            Debug.Log("i nya ke -> " + i);
+            button[i] = transform.Find("QuestionCanvasParent/UI Pertanyaan").GetChild(i + 4).gameObject;
             button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
             button[i].GetComponentInChildren<TextMeshProUGUI>().text = GameManager.Instance.RandomizedQuestion[i];
         }
@@ -220,7 +220,6 @@ public class People : MonoBehaviour
         if (other.GetComponent<PlayerScript>())
         {
             NameCanvas.SetActive(false);
-            player = other.GetComponent<PlayerScript>();
             QuestionCanvasParent.SetActive(false);
             isPlayerInRange = false;
             UIJawaban.SetActive(false);
@@ -241,6 +240,7 @@ public class People : MonoBehaviour
     {
         QuestionCanvasParent.SetActive(false);
         NameCanvas.SetActive(false);
+        Debug.Log(player);
         player.PlayerAsk();
         StartCoroutine(DelaySetActiveUI(AnsweringTimesInSecond));
     }
@@ -264,15 +264,24 @@ public class People : MonoBehaviour
         }
     }
 
+    public void DelaySetActiveUIFunction()
+    {
+        StartCoroutine(DelaySetActiveUI(AnsweringTimesInSecond));
+    }
+
     IEnumerator DelaySetActiveUI(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+        jawabanText.text = "";
+        UIJawaban.SetActive(false);
         if (player != null && GameManager.Instance.CanAskCheck() && isPlayerInRange)
         {
             QuestionCanvasParent.SetActive(true);
             NameCanvas.SetActive(true);
-            jawabanText.text = "";
-            UIJawaban.SetActive(false);
+        }
+        else
+        {
+            NameCanvas.SetActive(false);
         }
     }
 

@@ -28,6 +28,7 @@ public class Questions : MonoBehaviour
         person.questionIndex = index;
         person.Reply();
         person.AnswerSelected();
+        person.DelaySetActiveUIFunction();
     }
 
     public void NameQuestion()
@@ -64,6 +65,9 @@ public class Questions : MonoBehaviour
         {
             person.AnswerNameSelected();
             person.nameTextObj.text = person.customerData.peopleName;
+            person.jawabanText.text = person.customerData.peopleName;
+            person.UIJawaban.SetActive(true);
+            person.DelaySetActiveUIFunction();
         }
         person.player.PlayerAsk();
         //person.UIPertanyaan.SetActive(true);
