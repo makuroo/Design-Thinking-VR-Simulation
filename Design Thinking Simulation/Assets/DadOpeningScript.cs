@@ -17,6 +17,7 @@ public class DadOpeningScript : MonoBehaviour
     float toleranceGoalAchieve = 1f;
     TextMeshProUGUI chatDad;
     PlayerScript playerScript;
+    GameObject chatBox;
 
     bool isDoneTalking;
 
@@ -27,6 +28,8 @@ public class DadOpeningScript : MonoBehaviour
         chatDad = GameObject.Find("ChatDad").GetComponent<TextMeshProUGUI>();
         playerScript = GameObject.Find("PlayerController").GetComponent<PlayerScript>();
         dadGoal = GameObject.Find("DadGoal").transform;
+        chatBox = GameObject.Find("ChatBox");
+        SetActiveChatBox(false);
         StartCoroutine(SetDadChat());
     }
 
@@ -67,27 +70,37 @@ public class DadOpeningScript : MonoBehaviour
         }
     }
 
+    public void SetActiveChatBox(bool isActive)
+    {
+        chatBox.SetActive(isActive);
+        //sound pop
+    }
+
+
     IEnumerator SetDadChat()
     {
         chatDad.text = "";
         yield return new WaitForSeconds(1f);
-        ChangeWeightAnimationHand(.5f);
+        ChangeWeightAnimationHand(1f);
         chatDad.text = "Terkadang, anakku, hidup memberi kita kesempatan untuk berkreasi.";
+        SetActiveChatBox(true);
         yield return new WaitForSeconds(5f);
         ChangeWeightAnimationHand(0);
-        chatDad.text = "";
+        SetActiveChatBox(false);
         yield return new WaitForSeconds(.5f);
-        ChangeWeightAnimationHand(.5f);
+        ChangeWeightAnimationHand(1f);
         chatDad.text = "Aku yakin, membuka toko kue adalah langkah besar, dan aku mendukungmu sepenuhnya.";
+        SetActiveChatBox(true);
         yield return new WaitForSeconds(7f);
         ChangeWeightAnimationHand(0);
-        chatDad.text = "";
+        SetActiveChatBox(false);
         yield return new WaitForSeconds(.5f);
-        ChangeWeightAnimationHand(.5f);
+        ChangeWeightAnimationHand(1f);
         chatDad.text = "Semoga sukses, Nak.";
+        SetActiveChatBox(true);
         yield return new WaitForSeconds(3f);
         ChangeWeightAnimationHand(0);
-        chatDad.text = "";
+        SetActiveChatBox(false);
         yield return new WaitForSeconds(1f);
         isDoneTalking = true;
         yield return new WaitForSeconds(1f);

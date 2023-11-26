@@ -160,7 +160,7 @@ public class People : MonoBehaviour
             jawabanText.text = reason[randomIndex];
         }
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             //button[i] = transform.GetChild(0).GetChild(0).GetChild(i + 1).gameObject; //codingan ricat
             button[i] = transform.Find("QuestionCanvasParent/UI Pertanyaan").GetChild(i).gameObject;
@@ -182,7 +182,7 @@ public class People : MonoBehaviour
         }
 
         if (customerData.CalculateLikeness(questionIndex) == 0)
-            jawabanText.text = "Biasa Saja";
+            jawabanText.text = "Saya Kurang Suka";
 
         if (customerData.CalculateLikeness(questionIndex) == 1)
         {

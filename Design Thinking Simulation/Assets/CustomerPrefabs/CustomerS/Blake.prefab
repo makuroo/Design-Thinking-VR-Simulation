@@ -242,11 +242,11 @@ MonoBehaviour:
   AnsweringTimesInSecond: 3
   nameTextObj: {fileID: 4569100820502132667}
   reason:
-  - Saya mau makan
-  - Saya sedang sibuk
-  - Saya mau pulang
-  - Saya punya urusan
-  - Saya lelah
+  - Maaf, saya ada urusan
+  - Maaf, saya sedang sibuk
+  - Maaf, saya tidak punya waktu
+  - Maaf, saya harus pergi
+  - Maaf, lain waktu saja
   nameQuestionCanvas: {fileID: 1197167377702811017}
 --- !u!1001 &646128957267055642
 PrefabInstance:
