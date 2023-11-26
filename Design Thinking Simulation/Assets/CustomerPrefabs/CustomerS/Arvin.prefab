@@ -502,7 +502,7 @@ MonoBehaviour:
   questionIndex: 0
   jawabanText: {fileID: 4089558279112642131}
   player: {fileID: 0}
-  QuestionCanvas: {fileID: 1043664520632576087}
+  QuestionCanvasParent: {fileID: 1043664520632576087}
   UIPertanyaan: {fileID: 743863971425942484}
   NameCanvas: {fileID: 3970353931837956465}
   AnsweringTimesInSecond: 3
@@ -624,32 +624,32 @@ PrefabInstance:
     - target: {fileID: 973418728572517539, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2021765692963822633, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2059815225973064861, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2536379272702470727, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3453571275262206463, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4719046349701194592, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4741254743709518393, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
@@ -714,27 +714,27 @@ PrefabInstance:
     - target: {fileID: 6433982996963826103, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6729348158714333748, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7258561705139641243, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7340077911936023114, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8943681245828821744, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99a708e4f3161c4684ee06adf45ce74, type: 3}
@@ -763,6 +763,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4856454088341201428}
     m_Modifications:
+    - target: {fileID: 2918839905927371327, guid: 82f16ce6e590d1f4d95a096a82e27744,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
       propertyPath: m_Pivot.x
@@ -846,12 +851,12 @@ PrefabInstance:
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.268
       objectReference: {fileID: 0}
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.304
+      value: -0.067
       objectReference: {fileID: 0}
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
@@ -872,6 +877,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI Jawaban
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731139627111114285, guid: 82f16ce6e590d1f4d95a096a82e27744,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791802580121751567, guid: 82f16ce6e590d1f4d95a096a82e27744,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82f16ce6e590d1f4d95a096a82e27744, type: 3}

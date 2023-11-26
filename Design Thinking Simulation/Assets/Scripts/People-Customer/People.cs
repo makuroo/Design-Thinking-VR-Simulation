@@ -15,7 +15,7 @@ public class People : MonoBehaviour
     public int questionIndex = 0;
     [SerializeField] private TextMeshProUGUI jawabanText;
     [HideInInspector] public PlayerScript player;
-    [SerializeField] GameObject QuestionCanvas;
+    [SerializeField] GameObject QuestionCanvasParent;
     public GameObject UIPertanyaan;
     [SerializeField] private GameObject NameCanvas;
     [SerializeField] float AnsweringTimesInSecond = 3;
@@ -29,6 +29,7 @@ public class People : MonoBehaviour
     private Transform customerHead;
     private GameObject playerObj;
     private Transform initialHeadTransform;
+    GameObject UIJawaban;
 
     // Start is called before the first frame update
 
@@ -37,6 +38,8 @@ public class People : MonoBehaviour
         nameText = nameTextObj.GetComponent<TextMeshProUGUI>();
         customerHead = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head");
         playerObj = GameObject.Find("PlayerController");
+        UIJawaban = GameObject.Find("UI Jawaban");
+        UIJawaban.SetActive(false);
         initialHeadTransform = customerHead.transform;
     }
 
@@ -44,7 +47,7 @@ public class People : MonoBehaviour
     {
         tandaSeru = transform.Find("hips/Root/Spine1/Spine2/Chest/Neck/Head/TandaSeruParent").gameObject;
         Debug.Log("nih tandaserunya ->" + tandaSeru);
-        QuestionCanvas.SetActive(false);
+        QuestionCanvasParent.SetActive(false);
         NameCanvas.SetActive(false);
 
         if (GameManager.Instance.peopleMet.Count != 0)
@@ -140,7 +143,7 @@ public class People : MonoBehaviour
                 Debug.Log("Udah Nanya Nama");
                 //Debug.Log(customerData.met);
                 //Debug.Log(QuestionCanvas.transform.GetChild(0).gameObject.name);
-                QuestionCanvas.SetActive(true);
+                QuestionCanvasParent.SetActive(true);
                 NameCanvas.SetActive(true);
                 nameQuestionCanvas.SetActive(false);
                 UIPertanyaan.SetActive(true);
@@ -148,7 +151,7 @@ public class People : MonoBehaviour
             else if (customerData.met == false)
             {
                 Debug.Log("belum nanya nama");
-                QuestionCanvas.SetActive(true);
+                QuestionCanvasParent.SetActive(true);
                 NameCanvas.SetActive(true);
                 nameQuestionCanvas.SetActive(true);
                 UIPertanyaan.SetActive(false);
@@ -158,6 +161,7 @@ public class People : MonoBehaviour
         {
             int randomIndex = Random.Range(0, reason.Count);
             jawabanText.text = reason[randomIndex];
+            UIJawaban.SetActive(true);
         }
 
         for (int i = 0; i < 4; i++)
@@ -182,23 +186,29 @@ public class People : MonoBehaviour
         }
 
         if (customerData.CalculateLikeness(questionIndex) == 0)
+        {
             jawabanText.text = "Saya Kurang Suka";
+            UIJawaban.SetActive(true);
+        }
 
         if (customerData.CalculateLikeness(questionIndex) == 1)
         {
             jawabanText.text = "Saya suka kok";
+            UIJawaban.SetActive(true);
         }
             
 
         if (customerData.CalculateLikeness(questionIndex) > 1)
         {
             jawabanText.text = "Saya Sangat Suka";
+            UIJawaban.SetActive(true);
         }
             
 
         if (customerData.CalculateLikeness(questionIndex) < 0)
         {
             jawabanText.text = "Saya Tidak Suka";
+            UIJawaban.SetActive(true);
         }
             
 
@@ -211,8 +221,9 @@ public class People : MonoBehaviour
         {
             NameCanvas.SetActive(false);
             player = other.GetComponent<PlayerScript>();
-            QuestionCanvas.SetActive(false);
+            QuestionCanvasParent.SetActive(false);
             isPlayerInRange = false;
+            UIJawaban.SetActive(false);
             jawabanText.text = "";
             EnableTandaSeru(true);
         }
@@ -228,7 +239,7 @@ public class People : MonoBehaviour
 
     public void AnswerSelected()
     {
-        QuestionCanvas.SetActive(false);
+        QuestionCanvasParent.SetActive(false);
         NameCanvas.SetActive(false);
         player.PlayerAsk();
         StartCoroutine(DelaySetActiveUI(AnsweringTimesInSecond));
@@ -238,7 +249,7 @@ public class People : MonoBehaviour
     {
         NameCanvas.SetActive(true);
         nameQuestionCanvas.SetActive(false);
-        QuestionCanvas.SetActive(false);
+        QuestionCanvasParent.SetActive(false);
         StartCoroutine(DelayAnswerNameTimeInSecond(AnsweringTimesInSecond));
     }
 
@@ -248,7 +259,7 @@ public class People : MonoBehaviour
         if (player != null && GameManager.Instance.CanAskCheck() && isPlayerInRange)
         {
             Debug.Log("masuk DelayAnswerNameTimeInSecond()");
-            QuestionCanvas.SetActive(true);
+            QuestionCanvasParent.SetActive(true);
             UIPertanyaan.SetActive(true);
         }
     }
@@ -258,9 +269,10 @@ public class People : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         if (player != null && GameManager.Instance.CanAskCheck() && isPlayerInRange)
         {
-            QuestionCanvas.SetActive(true);
+            QuestionCanvasParent.SetActive(true);
             NameCanvas.SetActive(true);
             jawabanText.text = "";
+            UIJawaban.SetActive(false);
         }
     }
 
