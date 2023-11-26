@@ -153,6 +153,7 @@ public class ButtonMonitor : MonoBehaviour
                 else i.SetActive(false);
                 temp += 1;
             }
+            Debug.Log(screenToOn);
         }
     }
 

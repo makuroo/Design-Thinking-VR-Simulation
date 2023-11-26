@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
-  m_Name: Chocolate Bittersweet Cake
+  m_Name: Bitter Almond Tart
   m_EditorClassIdentifier: 
-  cakeName: Chocolate Bittersweet Cake
-  taste: 01000000000000000000000001000000
-  ukuranKue: 1
+  cakeName: Bitter Almond Tart
+  taste: 00000000010000000000000001000000
+  ukuranKue: 2
+  recipe: 

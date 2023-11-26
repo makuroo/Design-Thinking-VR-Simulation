@@ -60,9 +60,6 @@ public class BoardActivityUI : MonoBehaviour
         }
 
         if (GameManager.Instance.interviewCount >= 3)
-            boardActivityButtons[0].interactable = true;
-
-        if (GameManager.Instance.hasDoneUserPersona)
             boardActivityButtons[1].interactable = true;
 
         if (GameManager.Instance.hasDoneProblemStatement)

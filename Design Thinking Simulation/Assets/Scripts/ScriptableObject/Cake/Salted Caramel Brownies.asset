@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
-  m_Name: Salted Choco Delight
+  m_Name: Salted Caramel Brownies
   m_EditorClassIdentifier: 
-  cakeName: Salted Choco Delight
-  taste: 01000000000000000000000001000000
+  cakeName: Salted Caramel Brownies
+  taste: 01000000010000000000000000000000
   ukuranKue: 3
+  recipe: 

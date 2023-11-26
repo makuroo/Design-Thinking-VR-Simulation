@@ -15,9 +15,10 @@ MonoBehaviour:
   peopleName: Ashly
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 7e117c00ab3a6274599101a21fb15b0c,
     type: 2}
-  kueFavorit: {fileID: 11400000, guid: 3993c5116e0677d4ca5250b1db17863d, type: 2}
+  kueFavorit: {fileID: 11400000, guid: 6a0ed7d40018f174882cd840fc63b725, type: 2}
   goals:
-  - Memakan kue yang manis
+  - Sepotong kue manis akan sangat enak
   frustration:
-  - 'Sedikit yang menjual kue coklat '
+  - tidak suka kue yang pahit
   met: 0
+  hasShowUserPersona: 0

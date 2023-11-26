@@ -17,7 +17,8 @@ MonoBehaviour:
     type: 2}
   kueFavorit: {fileID: 11400000, guid: 9db5d7bdb5ecaac4d9212b2a033d1299, type: 2}
   goals:
-  - ' Ingin makan makanan manis yang mengandung sea salt'
+  - Ingin makan kue yang bittersweet
   frustration:
-  - Tidak suka yang asam-asam
+  - Paling tidak suka obat pahit
   met: 0
+  hasShowUserPersona: 1

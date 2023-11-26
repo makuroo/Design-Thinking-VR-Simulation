@@ -30,4 +30,25 @@ public class ActivityDaysUI : MonoBehaviour
             vpcTextDays.text = "Menyelesaikan 1 Problem Statement";
         }
     }
+
+    private void Update()
+    {
+        if (GameManager.Instance.interviewCount >= 3)
+        {
+            problemStatementTextDays.text = "Terbuka";
+        }
+        else
+        {
+            problemStatementTextDays.text = "Menyelesaikan: <color=red>" + GameManager.Instance.interviewCount.ToString() + "</color>/ 3 User Persona";
+        }
+
+        if (GameManager.Instance.hasDoneProblemStatement)
+        {
+            vpcTextDays.text = "Terbuka";
+        }
+        else
+        {
+            vpcTextDays.text = "Menyelesaikan 1 Problem Statement";
+        }
+    }
 }

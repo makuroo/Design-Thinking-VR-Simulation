@@ -171,7 +171,7 @@ public class People : MonoBehaviour
 
     public void Reply()
     {
-        
+        GameManager.Instance.canDoActivity = false;
         if (GameManager.Instance.peopleMet.Count > 0 && GameManager.Instance.interviewCount<3)
         {
             foreach(GameObject go in GameManager.Instance.peopleMet)

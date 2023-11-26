@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class ProblemStatement : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class ProblemStatement : MonoBehaviour
     public List<float> likenessRank = new();
     public List<float> likenessRankSorted = new();
     public static int currentIndex = 0;
-
     public BoardActivityUI board;
 
     public List<int> ukuranList = new(3);
@@ -21,10 +21,9 @@ public class ProblemStatement : MonoBehaviour
     {
         if (history!= null)
         {
-            CalculateAnswer(history);
+            CalculateAnswer();
             answersStatement1[0] = likenessRankSorted[0];
             answersStatement1[1] = likenessRankSorted[likenessRankSorted.Count-1];
- 
         }
 
     }
@@ -36,41 +35,49 @@ public class ProblemStatement : MonoBehaviour
             Debug.Log(null);
             return;
         }
-            
 
-        if(history.dictValues[0].value.CalculateLikeness(int.Parse(answer.tag)) == answersStatement1[currentIndex])
+        try
         {
-            Debug.Log("true");
+            int result = int.Parse(answer.tag);
+            // If the parsing is successful, 'result' will contain the parsed integer.
+            // You can continue with the logic here.
+            if (int.Parse(answer.tag) == answersStatement1[currentIndex])
+            {
+                Debug.Log("true");
+            }
+            else
+            {
+                Debug.Log("wrong");
+            }
         }
-        else
+        catch (FormatException)
         {
-            Debug.Log("wrong");
+            Debug.LogError("wrong");
         }
+
         currentIndex++;
         if (currentIndex > 1)
         {
-            currentIndex = 0;
-            StartCoroutine(DelayDeactivate());
+            currentIndex = 0;          
         }
     }
 
-    
-
-    private void CalculateAnswer(UserPersonaHistory history)
+    private void CalculateAnswer()
     {
         Debug.Log(history);
-        for (int i = 0; i < history.dictValues[0].value.cakePreferences.LikeCake[0].taste.Count; i++)
+        
+        for (int i = 0; i < GameManager.Instance.peopleMet[0].transform.GetChild(0).GetComponent<People>().customerData.cakePreferences.LikeCake[0].taste.Count; i++)
         {
             int total = 0;
-            for (int j = 0; j < history.dictValues.Count; j++)
+            for (int j = 0; j < GameManager.Instance.peopleMet.Count; j++)
             {
-                Debug.Log("values" + j + " " + history.dictValues[j].value.cakePreferences.LikeCake[0].taste[i]);
-                total += history.dictValues[j].value.CalculateLikeness(i);
+                Debug.Log("values" + j + " " + GameManager.Instance.peopleMet[j].transform.GetChild(0).GetComponent<People>().customerData.cakePreferences.LikeCake[0].taste[i]);
+                total += GameManager.Instance.peopleMet[j].transform.GetChild(0).GetComponent<People>().customerData.CalculateLikeness(i);
                 Debug.Log(total);
 
             }
-            likenessRank[i] = total / history.dictValues.Count;
-            Debug.Log(total / history.dictValues.Count);
+            likenessRank[i] = total / GameManager.Instance.peopleMet.Count;
+            Debug.Log(total / GameManager.Instance.peopleMet.Count);
         }
         likenessRankSorted = new List<float>(likenessRank);
         likenessRankSorted.Sort((x, y) => y.CompareTo(x));

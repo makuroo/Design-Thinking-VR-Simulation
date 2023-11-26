@@ -35,11 +35,13 @@ public class UserPersonaUI : MonoBehaviour
 
     private void Update()
     {
-
-        if (!GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>().customerData.hasShowUserPersona)
+        if (GameManager.Instance.peopleMet.Count<=0)
+            return;
+        CustomerDataSO people = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>().customerData;
+        if (!people.hasShowUserPersona)
         {
             viewButton.SetActive(true);
-        }else
+        }else if(people.hasShowUserPersona)
         {
             tasteUI.SetActive(true);
         }
@@ -67,7 +69,8 @@ public class UserPersonaUI : MonoBehaviour
     {
         nameText.gameObject.SetActive(false);
         prevNextButtons.SetActive(false);
-        board.topics.SetActive(true);
+        board.userPersonaUI.SetActive(false);
+        board.boardActivityUI.SetActive(true);
     }
 
     public void ChooseGoals()
@@ -153,14 +156,32 @@ public class UserPersonaUI : MonoBehaviour
 
     public void ShowTaste()
     {
-        tasteUI.SetActive(true);
-        GameManager.Instance.interviewCount++;
-        GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>().customerData.hasShowUserPersona = true;
-        GameManager.Instance.canDoActivity = false;
+        if (GameManager.Instance.canDoActivity)
+        {
+            tasteUI.SetActive(true);
+            viewButton.SetActive(false);
+            GameManager.Instance.interviewCount++;
+            GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>().customerData.hasShowUserPersona = true;
+            GameManager.Instance.canDoActivity = false;
+        }
     }
 
     public void ShowNPC_Data()
     {
+        if (GameManager.Instance.peopleMet.Count <= 0)
+            return;
+
+        if (!GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>().customerData.hasShowUserPersona)
+        {
+            tasteUI.SetActive(false);
+            viewButton.SetActive(true);
+        }
+        else
+        {
+            tasteUI.SetActive(true);
+            viewButton.SetActive(false);
+        }
+
         if (GameManager.Instance.peopleMet.Count != 0 && customerIndex > -1 && customerIndex < GameManager.Instance.peopleMet.Count)
         {
             People people = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>();

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
-    public bool canDoActivity = true;
+    public bool canDoActivity { get; set; } = true;
 
     public List<GameObject> peopleMet = new List<GameObject>();
 
@@ -324,7 +324,7 @@ public class GameManager : MonoBehaviour
             bedScript.ActivateBedAnswer(AnswerTimeBed);
         } 
         */
-        if (CanAskCheck())
+        if (canDoActivity)
         {
             bedScript.ActivateBedAnswer(AnswerTimeBed);
         }

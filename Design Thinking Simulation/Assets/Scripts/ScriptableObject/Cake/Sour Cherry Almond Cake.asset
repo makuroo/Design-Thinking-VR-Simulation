@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d2daa90945f1504fb8663ef40b3a796, type: 3}
-  m_Name: Cream Pastry
+  m_Name: Sour Cherry Almond Cake
   m_EditorClassIdentifier: 
-  cakeName: Cream Pastry
-  taste: 01000000010000000000000000000000
+  cakeName: Sour Cherry Almond Cake
+  taste: 00000000010000000100000000000000
   ukuranKue: 3
+  recipe: 
