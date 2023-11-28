@@ -24,6 +24,7 @@ public class Oven : MonoBehaviour
             {
                 Debug.Log("Ready to bake");
                 ovenDoor.transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
+                bowlScript.InstantiateCake(bowlScript.selectedCake);
                 //Add cake here
                 Destroy(bowl);
             }
