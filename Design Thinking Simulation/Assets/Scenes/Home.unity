@@ -1303,8 +1303,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8113840771893736577, guid: 2e7759690300a2d4c847a1de7b1e2260,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.1526265
+      objectReference: {fileID: 0}
+    - target: {fileID: -8113840771893736577, guid: 2e7759690300a2d4c847a1de7b1e2260,
+        type: 3}
       propertyPath: m_LocalPosition.y
-      value: 102
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: -8007859089756264436, guid: 2e7759690300a2d4c847a1de7b1e2260,
         type: 3}
@@ -1604,12 +1609,12 @@ PrefabInstance:
     - target: {fileID: 527329158632486134, guid: 2e7759690300a2d4c847a1de7b1e2260,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 703433857193642596, guid: 2e7759690300a2d4c847a1de7b1e2260,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1430203195193313753, guid: 2e7759690300a2d4c847a1de7b1e2260,
         type: 3}
@@ -1823,8 +1828,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556433193984502192, guid: 2e7759690300a2d4c847a1de7b1e2260,
         type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.1526265
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556433193984502192, guid: 2e7759690300a2d4c847a1de7b1e2260,
+        type: 3}
       propertyPath: m_LocalPosition.y
-      value: 102
+      value: 104
       objectReference: {fileID: 0}
     - target: {fileID: 7588635701883355827, guid: 2e7759690300a2d4c847a1de7b1e2260,
         type: 3}
@@ -1929,7 +1939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinLocalY: 100
-  MaxLocalY: 102
+  MaxLocalY: 104
   ClickTolerance: 0.5
   AllowPhysicsForces: 0
   ButtonClick: {fileID: 8300000, guid: 523f822c1c7b699489c49fea2353c2de, type: 3}
@@ -1994,7 +2004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinLocalY: 100
-  MaxLocalY: 102
+  MaxLocalY: 104
   ClickTolerance: 0.5
   AllowPhysicsForces: 0
   ButtonClick: {fileID: 8300000, guid: 523f822c1c7b699489c49fea2353c2de, type: 3}
