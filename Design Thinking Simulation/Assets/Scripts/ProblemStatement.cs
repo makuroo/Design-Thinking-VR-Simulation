@@ -28,31 +28,30 @@ public class ProblemStatement : MonoBehaviour
 
     }
 
-    public void Statement1(GameObject answer)
+    public int Statement1(GameObject answer)
     {
+        bool result;
         if (answer == null)
         {
             Debug.Log(null);
-            return;
         }
 
         try
         {
-            int result = int.Parse(answer.tag);
             // If the parsing is successful, 'result' will contain the parsed integer.
             // You can continue with the logic here.
             if (int.Parse(answer.tag) == answersStatement1[currentIndex])
             {
-                Debug.Log("true");
+                result = true;
             }
             else
             {
-                Debug.Log("wrong");
+                result = false;
             }
         }
         catch (FormatException)
         {
-            Debug.LogError("wrong");
+            result = false;
         }
 
         currentIndex++;
@@ -60,6 +59,14 @@ public class ProblemStatement : MonoBehaviour
         {
             currentIndex = 0;          
         }
+
+        if (result == true)
+        {
+            Debug.Log(true);
+            return 1;
+        } 
+        else
+            return 0;
     }
 
     private void CalculateAnswer()

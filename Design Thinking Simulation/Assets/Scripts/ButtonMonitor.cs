@@ -82,9 +82,8 @@ public class ButtonMonitor : MonoBehaviour
         currentTutorialScreen = 0;
         isOnTutorial = false;
         UpdateTutorialScreen(currentTutorialScreen);
-        currentScreen = 0;
-        screen[currentScreen].SetActive(true);
-        //UpdateScreen(currentScreen);
+        currentScreen = 1;
+        UpdateScreen(currentScreen);
     }
 
     // Update is called once per frame

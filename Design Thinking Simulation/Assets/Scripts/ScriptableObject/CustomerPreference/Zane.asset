@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Zane
   m_EditorClassIdentifier: 
   LikeCake:
-  - {fileID: 11400000, guid: f1d58bab361c8594d9c6b4d02544707f, type: 2}
   - {fileID: 11400000, guid: 9db5d7bdb5ecaac4d9212b2a033d1299, type: 2}
   DislikeCake:
   - {fileID: 11400000, guid: 6a0ed7d40018f174882cd840fc63b725, type: 2}
