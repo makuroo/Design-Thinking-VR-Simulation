@@ -1689,7 +1689,7 @@ PrefabInstance:
     - target: {fileID: 3553147165716045975, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3640357078690760184, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
@@ -1714,6 +1714,16 @@ PrefabInstance:
     - target: {fileID: 4771719747119901411, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
       propertyPath: screenDetector
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771719747496351320, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: PlayerUpAction
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771719747496351320, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: PlayerDownAction
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4771719747634298766, guid: 5215bb7680464554b9c93a803b392473,
