@@ -406,6 +406,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1769684359431133109, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5606866698367906888, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
         type: 3}
       propertyPath: m_Pivot.x
@@ -724,6 +729,7 @@ MonoBehaviour:
   - Maaf, saya harus pergi
   - Maaf, lain waktu saja
   nameQuestionCanvas: {fileID: 7514258659284552699}
+  UIJawaban: {fileID: 0}
 --- !u!4 &7758028225576082567 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1431570178316042549, guid: d71d4f804d192f4489bf569cf62cd5f0,

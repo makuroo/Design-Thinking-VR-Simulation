@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
         vpcScore = 75f;
         prototypingScore = 82f;
         testingScore = 56f;
-        LoadGame();
+        //LoadGame();
         if (instance == null)
         {
             instance = this;
@@ -148,12 +148,14 @@ public class GameManager : MonoBehaviour
             NewGame();
             SaveGame();
         }*/
+        NewGame();
 
         //NPCRandomizer(maxCustomer);
     }
 
     public void DistributeCustomerCount()
     {
+        Debug.Log("distribute customer count jalan");
         cafeCustomerCount = UnityEngine.Random.Range(1, Mathf.FloorToInt(maxCustomerSpawn/2)+1);
         restaurantCustomerCount = UnityEngine.Random.Range((maxCustomerSpawn / 2 + 1) - cafeCustomerCount, maxCustomerSpawn / 2);
         canteenCustomerCount = maxCustomerSpawn - cafeCustomerCount - restaurantCustomerCount;
@@ -180,22 +182,23 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        Debug.Log("newgame jalan");
         currentDay = 1;
         questionRemaining = maxQuestionPerDay;
         DistributeCustomerCount();
         RandomizeQuestion();
         RandomizeCustomer();
-        PlayerPrefs.SetInt("isSaveExist", 0);
-        SaveGame();
-        Debug.Log("Nih New Game");
+        //PlayerPrefs.SetInt("isSaveExist", 0);
+        //SaveGame();
+        //Debug.Log("Nih New Game");
     }
     
     
-    public void LoadGame()
+    /*public void LoadGame()
     {
-        /*
-        currentMinute = PlayerPrefs.GetInt("SaveCurrentMinute");
-        currentHour = PlayerPrefs.GetInt("CurrentHour");*/
+
+        //currentMinute = PlayerPrefs.GetInt("SaveCurrentMinute");
+        //currentHour = PlayerPrefs.GetInt("CurrentHour");
 
         //jika ada saveannya
         if(PlayerPrefs.GetInt("isSaveExist") == 1)
@@ -217,10 +220,9 @@ public class GameManager : MonoBehaviour
 
     public void SaveGame()
     {
-        /*
-        PlayerPrefs.SetInt("SaveCurrentMinute", currentMinute);
-        PlayerPrefs.SetInt("CurrentHour", currentHour);
-        */
+        //PlayerPrefs.SetInt("SaveCurrentMinute", currentMinute);
+        //PlayerPrefs.SetInt("CurrentHour", currentHour);
+        
         PlayerPrefs.SetInt("CurrentDay", currentDay);
         PlayerPrefs.SetInt("QuestionRemaining", questionRemaining);
         PlayerPrefs.SetInt("CafeCustomerCount", cafeCustomerCount);
@@ -228,7 +230,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("CanteenCustomerCount", canteenCustomerCount);
         PlayerPrefs.SetInt("isSaveExist", 1);
         Debug.Log("Nih Save Game");
-    }
+    }*/
 
     public static GameManager Instance
     {
@@ -335,7 +337,7 @@ public class GameManager : MonoBehaviour
             NextDay();
             player.SetDayText();
             //SetDirectionalLight(true);
-            SaveGame();
+            //SaveGame();
             CanAskCheck();
         }
     }
@@ -516,7 +518,7 @@ public class GameManager : MonoBehaviour
         questionRemaining = Mathf.Clamp(questionRemaining - 1, 0, maxQuestionPerDay);
         CanAskCheck();
         player.SetChanceText();
-        SaveGame();
+        //SaveGame();
     }
 
     public void NextDay()
@@ -526,7 +528,7 @@ public class GameManager : MonoBehaviour
         currentDay += 1;
         ResetQuestionRemaining();
         player.SetChanceText();
-        SaveGame();
+        //SaveGame();
         return;
     }
 

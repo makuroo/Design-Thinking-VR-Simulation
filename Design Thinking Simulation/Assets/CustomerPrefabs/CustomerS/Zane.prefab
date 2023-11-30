@@ -334,6 +334,7 @@ MonoBehaviour:
   - Maaf, saya harus pergi
   - Maaf, lain waktu saja
   nameQuestionCanvas: {fileID: 3373205633256932660}
+  UIJawaban: {fileID: 0}
 --- !u!4 &7358684046991217757 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7825618001398415761, guid: 8b467de74f42be04c9d5f6e61677543c,
@@ -488,6 +489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769684359431133109, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5606866698367906888, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
         type: 3}

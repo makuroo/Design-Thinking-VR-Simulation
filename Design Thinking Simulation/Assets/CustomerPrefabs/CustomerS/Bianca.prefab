@@ -87,6 +87,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5132935723759193713}
     m_Modifications:
+    - target: {fileID: 2021765692963822633, guid: a99a708e4f3161c4684ee06adf45ce74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059815225973064861, guid: a99a708e4f3161c4684ee06adf45ce74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453571275262206463, guid: a99a708e4f3161c4684ee06adf45ce74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4741254743709518393, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_RootOrder
@@ -146,6 +161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: QuestionCanvasParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433982996963826103, guid: a99a708e4f3161c4684ee06adf45ce74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99a708e4f3161c4684ee06adf45ce74, type: 3}
@@ -405,6 +425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769684359431133109, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2683966267752504350, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
         type: 3}
@@ -729,6 +754,7 @@ MonoBehaviour:
   - Maaf, saya harus pergi
   - Maaf, lain waktu saja
   nameQuestionCanvas: {fileID: 3339993988474345354}
+  UIJawaban: {fileID: 0}
 --- !u!4 &6880906849970169234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1909666513091673979, guid: 59645bf3df339ee43bd2a005b859564a,

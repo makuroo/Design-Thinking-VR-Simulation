@@ -253,6 +253,7 @@ MonoBehaviour:
   - Maaf, saya harus pergi
   - Maaf, lain waktu saja
   nameQuestionCanvas: {fileID: 4995351156489153310}
+  UIJawaban: {fileID: 0}
 --- !u!1001 &6314062508636567276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -578,6 +579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769684359431133109, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5606866698367906888, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
         type: 3}

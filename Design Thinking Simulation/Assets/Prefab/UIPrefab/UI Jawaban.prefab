@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2252038031367480231}
   - component: {fileID: 5612734890957471721}
   - component: {fileID: 4870045121776260831}
-  m_Layer: 5
+  m_Layer: 30
   m_Name: UIJawabanText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 7199898653346697358}
   - component: {fileID: 5856362617004088754}
   - component: {fileID: 1035220730678784544}
-  m_Layer: 5
+  m_Layer: 30
   m_Name: UI Jawaban
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1240810308304822462}
   - component: {fileID: 5784542555285792161}
-  m_Layer: 5
+  m_Layer: 30
   m_Name: background ui long
   m_TagString: Untagged
   m_Icon: {fileID: 0}

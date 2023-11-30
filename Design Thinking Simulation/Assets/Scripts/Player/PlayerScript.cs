@@ -38,20 +38,20 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
-        if (InputBridge.Instance.GetControllerBindingValue(ControllerBinding.AButtonDown))
+        /*if (InputBridge.Instance.GetControllerBindingValue(ControllerBinding.AButtonDown))
         {
             GameManager.Instance.NewGame();
         }
         if (InputBridge.Instance.GetControllerBindingValue(ControllerBinding.BButtonDown))
         {
             StartCoroutine(DoFadeInFadeOut());
-        }
+        }*/
     }
 
     public void PlayerAsk()
     {
         GameManager.Instance.UseAskChance();
-        GameManager.Instance.SaveGame();
+        //GameManager.Instance.SaveGame();
     }
 
     public void SetDayText()
@@ -122,7 +122,6 @@ public class PlayerScript : MonoBehaviour
 
     public void ChangeClockColorToRed()
     {
-        Debug.Log("toredd");
         clockImage.color = new Color32(255, 84, 64, 255);
     }
 

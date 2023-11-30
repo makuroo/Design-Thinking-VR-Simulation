@@ -58,7 +58,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - AlwaysOnFront
   - 
   m_SortingLayers:
   - name: Default

@@ -2421,7 +2421,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: edc9642e8970ad5479314bdbbc460a30, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3123,7 +3123,7 @@ PrefabInstance:
     - target: {fileID: 2888193656762181241, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
       propertyPath: m_VolumeLayerMask.m_Bits
-      value: 32
+      value: 1073741824
       objectReference: {fileID: 0}
     - target: {fileID: 3640357078690760184, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
@@ -3149,6 +3149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771719747634298766, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1073741888
       objectReference: {fileID: 0}
     - target: {fileID: 6623285496203499296, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
@@ -3239,6 +3244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423108242105911493, guid: 5215bb7680464554b9c93a803b392473,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 32567
       objectReference: {fileID: 0}
     - target: {fileID: 8189532433811266427, guid: 5215bb7680464554b9c93a803b392473,
         type: 3}
@@ -9629,7 +9639,7 @@ PrefabInstance:
     - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
         type: 3}
       propertyPath: questionRemaining
-      value: 60
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4528664007278843347, guid: 0ce6edb4f02c462419f9aa3c51e5b9f3,
         type: 3}
@@ -16736,6 +16746,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: bedObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 3790987316328963908, guid: bac704bafc6489b4eaf413f828c8bcb4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5889042952659470301, guid: bac704bafc6489b4eaf413f828c8bcb4,
         type: 3}

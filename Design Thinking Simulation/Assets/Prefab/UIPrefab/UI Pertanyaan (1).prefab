@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 784389685477732241}
   - component: {fileID: 3394619521093152404}
   - component: {fileID: 1266305010948127222}
-  m_Layer: 5
+  m_Layer: 30
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 5544845648526110393}
   - component: {fileID: 1635235056171251033}
   - component: {fileID: 8251079230630732055}
-  m_Layer: 5
+  m_Layer: 30
   m_Name: Ques 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 1969095882818263633}
   - component: {fileID: 6256344210924508238}
   - component: {fileID: 755986907743559322}
-  m_Layer: 5
+  m_Layer: 30
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +439,7 @@ GameObject:
   - component: {fileID: 2181041654304146585}
   - component: {fileID: 3236481453815351717}
   - component: {fileID: 8354854318201939511}
-  m_Layer: 5
+  m_Layer: 30
   m_Name: UI Pertanyaan (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 8608755366557787246}
   - component: {fileID: 2160146918745435974}
   - component: {fileID: 5638025377468894920}
-  m_Layer: 5
+  m_Layer: 30
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}

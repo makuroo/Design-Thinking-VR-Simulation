@@ -93,23 +93,6 @@ public class ButtonMonitor : MonoBehaviour
         
     }
 
-    public void NewGame()
-    {
-        GameManager.Instance.NewGame();
-        SceneManager.LoadSceneAsync("Home");
-    }
-
-    public void LoadGame()
-    {
-        GameManager.Instance.LoadGame();
-        SceneManager.LoadSceneAsync("Home");
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
     public void NextScreen()
     {
         if(!isOnTutorial)
