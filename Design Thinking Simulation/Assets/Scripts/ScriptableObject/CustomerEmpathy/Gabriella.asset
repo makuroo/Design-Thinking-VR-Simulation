@@ -17,7 +17,8 @@ MonoBehaviour:
     type: 2}
   kueFavorit: {fileID: 11400000, guid: 3993c5116e0677d4ca5250b1db17863d, type: 2}
   goals:
-  - Memakan kue yang memiliki rasa asam
+  - kue rasa manis dan pahit itu sangat enak
   frustration:
-  - Menderita diabetes
+  - Saya tidak suka kue yang asin ataupun asam
   met: 0
+  hasShowUserPersona: 0

@@ -15,9 +15,10 @@ MonoBehaviour:
   peopleName: Bianca
   <cakePreferences>k__BackingField: {fileID: 11400000, guid: 7517d002b6d52c5439bb341085f8a494,
     type: 2}
-  kueFavorit: {fileID: 11400000, guid: 99c82b2debf1ea341b34e41d0e9ade76, type: 2}
+  kueFavorit: {fileID: 11400000, guid: f1d58bab361c8594d9c6b4d02544707f, type: 2}
   goals:
-  - Memakan kue yang bittersweet
+  - kue yang manis selalu menjadi favorit saya
   frustration:
-  - Tidak suka yang asin
+  - Sulit mencari kue tanpa rasa asam yang mengganggu
   met: 0
+  hasShowUserPersona: 0

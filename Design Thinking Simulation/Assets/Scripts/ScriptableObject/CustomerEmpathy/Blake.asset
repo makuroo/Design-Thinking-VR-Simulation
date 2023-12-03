@@ -17,7 +17,8 @@ MonoBehaviour:
     type: 2}
   kueFavorit: {fileID: 11400000, guid: 6a0ed7d40018f174882cd840fc63b725, type: 2}
   goals:
-  - Ingin makan coklat tapi yang rasanya manis
+  - Saya suka kue perpaduan manisnya coklat dan pahitnya kopi
   frustration:
-  - Tidak suka kue yang asin
+  - Saya bosan dengan kue rasa asin
   met: 0
+  hasShowUserPersona: 0

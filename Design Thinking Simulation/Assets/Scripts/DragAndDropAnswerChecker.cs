@@ -25,6 +25,10 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     [SerializeField] BoardActivityUI board;
     public CheckType checkerType;
     public GameObject currSnapZone;
+    private int problemStatementScore;
+    private int vpcScore;
+    private int problemStatementTrue =0;
+    private int vpcTrue =0 ;
     private void Update()
     {
         if (board.handGrabber[0]!=null && board.handGrabber[1]!=null )
@@ -105,28 +109,36 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         if (checkerType == CheckType.ProblemStatement)
         {
             GameManager.Instance.hasDoneProblemStatement = true;
-            if (currentGrabbable.gameObject.CompareTag("TargetUsia"))
+            if (gameObject.tag == "Taste")
             {
-                TargetUsiaChecker(currentText);
-            }
-            else if (currentGrabbable.gameObject.CompareTag("Ukuran"))
-            {
-                UkuranChecker(currentText);
+              problemStatementTrue+= problemStatementUI.Statement1(currentGrabbable.gameObject);
             }
             else if (currentGrabbable.gameObject.CompareTag("JenisMakanan"))
             {
                 JenisMakananChecker(currentText);
-            }else if (currentGrabbable.gameObject.CompareTag("JenisKue"))
-            {
-                CakeAnswerChecker(currentText);
             }
-            else if(currentGrabbable.gameObject.layer== 14)
+
+            if (board.answerList.Count == 3)
             {
-                if (currentGrabbable == null)
-                    Debug.Log(null);
-                problemStatementUI.Statement1(currentGrabbable.gameObject);
+                for (int i = 0; i < board.answerList.Count; i++)
+                {
+                    board.answerList[i].Return();
+                }
+                problemStatementScore = Mathf.RoundToInt(problemStatementTrue / 3);
+                Debug.Log(problemStatementTrue);
+                GameManager.Instance.problemStatementScore = problemStatementScore;
+                board.answerList.Clear();
+                currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
+                currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
+                currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
+                currSnapZone = null;
+                currentText = null;
+                board.problemStatement.SetActive(false);
+                board.choicesTargetUsia.SetActive(false);
+                board.jobFinishGO.SetActive(true);
             }
-        }else if(checkerType == CheckType.VPC)
+        }
+        else if(checkerType == CheckType.VPC)
         {
 
             if (gameObject.GetComponent<SnapZone>().HeldItem != null)
@@ -307,7 +319,10 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     public void JenisMakananChecker(TMP_Text answer)
     {
         if (answer.text == "Kue")
+        {
             Debug.Log(" jenis makanan true");
+            problemStatementTrue++;
+        }     
         else
             Debug.Log("false");
         //currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
@@ -315,8 +330,6 @@ public class DragAndDropAnswerChecker : MonoBehaviour
         //currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
         //currSnapZone = null;
         //currentText = null;
-        StartCoroutine(DelayDeactivate("JenisMakanan"));
-        board.tasteAnswer.SetActive(true);
     }
 
     public void UkuranChecker(TMP_Text answer)
@@ -374,12 +387,14 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     private void VpcCheck()
     {
         if (currentGrabbable.gameObject.tag == currSnapZone.tag)
-            Debug.Log("VPC true");
+            vpcTrue++;
         else
             Debug.Log("VPC false");
 
         if (board.answerList.Count == 6)
         {
+            vpcScore = Mathf.RoundToInt(vpcTrue / 6);
+            GameManager.Instance.vpcScore = vpcScore;
             for (int i = 0; i < board.answerList.Count; i++)
             {
                 board.answerList[i].Return();
@@ -409,9 +424,6 @@ public class DragAndDropAnswerChecker : MonoBehaviour
                 break;
             case "JenisMakanan":
                 board.choicesJenisMakanan.SetActive(false);
-                break;
-            case "Ukuran":
-                board.choicesUkuran.SetActive(false);
                 break;
             case "JenisKue":
                 board.choicesJenisKue.SetActive(false);

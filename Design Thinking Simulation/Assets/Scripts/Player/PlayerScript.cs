@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.InputSystem;
 using BNG;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerScript : MonoBehaviour
     ScreenFader screenFaderScriptMain;
     GameObject UICamera;
     Image clockImage;
+    int comboCheatIndex = 0;
 
     private void Awake()
     {
@@ -31,30 +33,51 @@ public class PlayerScript : MonoBehaviour
     {
         screenFaderScriptMain = transform.Find("CameraRig/TrackingSpace/CenterEyeAnchor").GetComponent<ScreenFader>();
         UICamera = transform.Find("CameraRig/TrackingSpace/CenterEyeAnchor/CenterEyeAnchorUI").gameObject;
-        clockImage = transform.Find("CameraRig/TrackingSpace/LeftHandAnchor/LeftControllerAnchor/ClockCanvas/ClockImage").GetComponent<Image>();
-        Debug.Log(clockImage);
-        GameManager.Instance.CanAskCheck();
-        Debug.Log(clockImage.color);
-        Debug.Log("jalan woii ini di start player");
+        clockImage = transform.Find("CameraRig/TrackingSpace/LeftHandAnchor/LeftControllerAnchor/ClockCanvas/ClockImage").gameObject.GetComponent<Image>();
+        //GameManager.Instance.CanAskCheck(); gausahh karena ini udah ada di map manager - Arvin
     }
 
     // Update is called once per frame
     void Update()
-    { 
-        if (InputBridge.Instance.GetControllerBindingValue(ControllerBinding.AButtonDown))
+    {
+        /*if (InputBridge.Instance.GetControllerBindingValue(ControllerBinding.AButtonDown))
         {
             GameManager.Instance.NewGame();
         }
         if (InputBridge.Instance.GetControllerBindingValue(ControllerBinding.BButtonDown))
         {
             StartCoroutine(DoFadeInFadeOut());
+        }*/
+
+        if (InputBridge.Instance.GetControllerBindingValue(ControllerBinding.AButtonDown))
+        {
+            if (comboCheatIndex <= 4)
+            {
+                comboCheatIndex += 1;
+            }
+            else
+            {
+                comboCheatIndex = 0;
+            }
+        }
+        if (InputBridge.Instance.GetControllerBindingValue(ControllerBinding.BButtonDown))
+        {
+            if(comboCheatIndex>=5)
+            {
+                SceneManager.LoadSceneAsync("EndingScene");
+            }
+            else
+            {
+                comboCheatIndex = 0;
+            }
+            
         }
     }
 
     public void PlayerAsk()
     {
         GameManager.Instance.UseAskChance();
-        GameManager.Instance.SaveGame();
+        //GameManager.Instance.SaveGame();
     }
 
     public void SetDayText()

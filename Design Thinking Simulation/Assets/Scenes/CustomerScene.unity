@@ -200,6 +200,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Customer
       objectReference: {fileID: 0}
+    - target: {fileID: 5501095970011013881, guid: 859ebc9556c734a488821312f0f44321,
+        type: 3}
+      propertyPath: QuestionCanvasParent
+      value: 
+      objectReference: {fileID: 112472346}
+    - target: {fileID: 5501095970011013881, guid: 859ebc9556c734a488821312f0f44321,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501095970011013881, guid: 859ebc9556c734a488821312f0f44321,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501095970011013881, guid: 859ebc9556c734a488821312f0f44321,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501095970011013881, guid: 859ebc9556c734a488821312f0f44321,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 5501095970011013881, guid: 859ebc9556c734a488821312f0f44321,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
+      objectReference: {fileID: 0}
     - target: {fileID: 7354822032170674573, guid: 859ebc9556c734a488821312f0f44321,
         type: 3}
       propertyPath: m_fontAsset
@@ -218,6 +248,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 859ebc9556c734a488821312f0f44321, type: 3}
+--- !u!1 &112472346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 857637353537360582, guid: 859ebc9556c734a488821312f0f44321,
+    type: 3}
+  m_PrefabInstance: {fileID: 112472345}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &226764311
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +359,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1856430136993585843, guid: c88cefd2ea2968741adbdf2cf8e1f3de,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856430136993585843, guid: c88cefd2ea2968741adbdf2cf8e1f3de,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856430136993585843, guid: c88cefd2ea2968741adbdf2cf8e1f3de,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856430136993585843, guid: c88cefd2ea2968741adbdf2cf8e1f3de,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856430136993585843, guid: c88cefd2ea2968741adbdf2cf8e1f3de,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
+      objectReference: {fileID: 0}
     - target: {fileID: 3536320380299967647, guid: c88cefd2ea2968741adbdf2cf8e1f3de,
         type: 3}
       propertyPath: m_Controller
@@ -489,6 +550,31 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 7904196276855785449, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904196276855785449, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904196276855785449, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904196276855785449, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904196276855785449, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f7b0cdf08749dc4384fa1a4eee4af1d, type: 3}
 --- !u!1001 &553458543
@@ -533,10 +619,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 743863971425942484, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043664520632576087, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2189941039877240453, guid: 0147e9c1f667b6447a05fe542c3b29a9,
         type: 3}
       propertyPath: uiPertanyaan
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189941039877240453, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189941039877240453, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189941039877240453, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189941039877240453, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 2189941039877240453, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
       objectReference: {fileID: 0}
     - target: {fileID: 2370737089513096342, guid: 0147e9c1f667b6447a05fe542c3b29a9,
         type: 3}
@@ -598,6 +719,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4432275211348690507, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432275211348690507, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4856454088341201428, guid: 0147e9c1f667b6447a05fe542c3b29a9,
         type: 3}
       propertyPath: m_RootOrder
@@ -658,6 +789,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arvin
       objectReference: {fileID: 0}
+    - target: {fileID: 5247418346912438990, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: m_Name
+      value: Text (TMP) (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 8630917619879097007, guid: 0147e9c1f667b6447a05fe542c3b29a9,
         type: 3}
       propertyPath: m_fontAsset
@@ -669,6 +805,11 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 8708909371618889759, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5949537888727189501, guid: 0147e9c1f667b6447a05fe542c3b29a9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0147e9c1f667b6447a05fe542c3b29a9, type: 3}
@@ -875,6 +1016,31 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 8656887481062302494, guid: 7f9aba126c77f4f4588b31e4c7c028e4,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656887481062302494, guid: 7f9aba126c77f4f4588b31e4c7c028e4,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656887481062302494, guid: 7f9aba126c77f4f4588b31e4c7c028e4,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656887481062302494, guid: 7f9aba126c77f4f4588b31e4c7c028e4,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 8656887481062302494, guid: 7f9aba126c77f4f4588b31e4c7c028e4,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f9aba126c77f4f4588b31e4c7c028e4, type: 3}
 --- !u!1001 &745033196
@@ -884,6 +1050,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2065541001157916031, guid: 091bfe59bc7f94c4994933be147041a0,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065541001157916031, guid: 091bfe59bc7f94c4994933be147041a0,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065541001157916031, guid: 091bfe59bc7f94c4994933be147041a0,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065541001157916031, guid: 091bfe59bc7f94c4994933be147041a0,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 2065541001157916031, guid: 091bfe59bc7f94c4994933be147041a0,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
+      objectReference: {fileID: 0}
     - target: {fileID: 4294924075110894611, guid: 091bfe59bc7f94c4994933be147041a0,
         type: 3}
       propertyPath: m_fontAsset
@@ -1162,6 +1353,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zane
       objectReference: {fileID: 0}
+    - target: {fileID: 6795312497793921631, guid: 4f58599f3f4251248be828e66880c02d,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795312497793921631, guid: 4f58599f3f4251248be828e66880c02d,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795312497793921631, guid: 4f58599f3f4251248be828e66880c02d,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795312497793921631, guid: 4f58599f3f4251248be828e66880c02d,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 6795312497793921631, guid: 4f58599f3f4251248be828e66880c02d,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
+      objectReference: {fileID: 0}
     - target: {fileID: 8663186113945692636, guid: 4f58599f3f4251248be828e66880c02d,
         type: 3}
       propertyPath: m_fontAsset
@@ -1182,6 +1398,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3132468255214400399, guid: f1d12a4a1bf5d5c47a53ef974fb1ceb5,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132468255214400399, guid: f1d12a4a1bf5d5c47a53ef974fb1ceb5,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132468255214400399, guid: f1d12a4a1bf5d5c47a53ef974fb1ceb5,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132468255214400399, guid: f1d12a4a1bf5d5c47a53ef974fb1ceb5,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 3132468255214400399, guid: f1d12a4a1bf5d5c47a53ef974fb1ceb5,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: maaf, lain waktu saja
+      objectReference: {fileID: 0}
     - target: {fileID: 3634101898175661990, guid: f1d12a4a1bf5d5c47a53ef974fb1ceb5,
         type: 3}
       propertyPath: m_fontAsset
@@ -1405,6 +1646,31 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 392d565dc2c3e3b4f8d8501a8e4b6bfd, type: 2}
+    - target: {fileID: 1477196655571064287, guid: 99cf3829d0b34f04baf60e66631a13a7,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477196655571064287, guid: 99cf3829d0b34f04baf60e66631a13a7,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya dengan sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477196655571064287, guid: 99cf3829d0b34f04baf60e66631a13a7,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477196655571064287, guid: 99cf3829d0b34f04baf60e66631a13a7,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477196655571064287, guid: 99cf3829d0b34f04baf60e66631a13a7,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
+      objectReference: {fileID: 0}
     - target: {fileID: 3148932411114464906, guid: 99cf3829d0b34f04baf60e66631a13a7,
         type: 3}
       propertyPath: m_fontAsset
@@ -1496,6 +1762,31 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 6657753025901402322, guid: dd46eb06ce0022b4fbf3c8a9fc826c0b,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657753025901402322, guid: dd46eb06ce0022b4fbf3c8a9fc826c0b,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657753025901402322, guid: dd46eb06ce0022b4fbf3c8a9fc826c0b,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657753025901402322, guid: dd46eb06ce0022b4fbf3c8a9fc826c0b,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 6657753025901402322, guid: dd46eb06ce0022b4fbf3c8a9fc826c0b,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
+      objectReference: {fileID: 0}
     - target: {fileID: 8112105492548398590, guid: dd46eb06ce0022b4fbf3c8a9fc826c0b,
         type: 3}
       propertyPath: m_Controller
@@ -1529,6 +1820,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013744144233911200, guid: e5a5470ad6cb78f43bac24cd6809c727,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013744144233911200, guid: e5a5470ad6cb78f43bac24cd6809c727,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013744144233911200, guid: e5a5470ad6cb78f43bac24cd6809c727,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013744144233911200, guid: e5a5470ad6cb78f43bac24cd6809c727,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013744144233911200, guid: e5a5470ad6cb78f43bac24cd6809c727,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
       objectReference: {fileID: 0}
     - target: {fileID: 3102773747611247204, guid: e5a5470ad6cb78f43bac24cd6809c727,
         type: 3}
@@ -1615,6 +1931,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1955626847774207494, guid: c032c8fd74d674c4280c03cbb37c619f,
+        type: 3}
+      propertyPath: reason.Array.data[0]
+      value: Maaf, saya ada urusan
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955626847774207494, guid: c032c8fd74d674c4280c03cbb37c619f,
+        type: 3}
+      propertyPath: reason.Array.data[1]
+      value: Maaf, saya sedang sibuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955626847774207494, guid: c032c8fd74d674c4280c03cbb37c619f,
+        type: 3}
+      propertyPath: reason.Array.data[2]
+      value: Maaf, saya tidak punya waktu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955626847774207494, guid: c032c8fd74d674c4280c03cbb37c619f,
+        type: 3}
+      propertyPath: reason.Array.data[3]
+      value: Maaf, saya harus pergi
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955626847774207494, guid: c032c8fd74d674c4280c03cbb37c619f,
+        type: 3}
+      propertyPath: reason.Array.data[4]
+      value: Maaf, lain waktu saja
+      objectReference: {fileID: 0}
     - target: {fileID: 6461201479786531689, guid: c032c8fd74d674c4280c03cbb37c619f,
         type: 3}
       propertyPath: m_Name

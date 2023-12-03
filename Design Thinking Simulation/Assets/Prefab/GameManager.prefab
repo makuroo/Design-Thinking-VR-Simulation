@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6209614997ddfc5498b9b7b158303ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canDoActivity: 1
   peopleMet: []
   personCustomerData: {fileID: 0}
   currentText: {fileID: 0}
@@ -81,7 +80,7 @@ MonoBehaviour:
   - n,jlhmvhnv
   - vbnhjgmn
   - vmmhgkhj
-  RandomizedType: 000000000000000000000000
+  RandomizedType: 00000000000000000000000000000000
   manisQuestion:
   - Kamu Suka Rasa Manis?
   - Apakah Kamu Suka Manis?
@@ -139,5 +138,12 @@ MonoBehaviour:
   maxQuestionPerDay: 3
   questionRemaining: 0
   interviewCount: 0
-  userPersonaCount: 0
+  hasDoneUserPersona: 0
+  hasDoneProblemStatement: 0
+  hasFinishTutorial: 0
+  totalScore: 0
+  problemStatementScore: 0
+  vpcScore: 0
+  prototypingScore: 0
+  testingScore: 0
   history: {fileID: 0}

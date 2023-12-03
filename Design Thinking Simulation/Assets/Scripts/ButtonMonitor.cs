@@ -82,32 +82,14 @@ public class ButtonMonitor : MonoBehaviour
         currentTutorialScreen = 0;
         isOnTutorial = false;
         UpdateTutorialScreen(currentTutorialScreen);
-        currentScreen = 0;
-        screen[currentScreen].SetActive(true);
-        //UpdateScreen(currentScreen);
+        currentScreen = 1;
+        UpdateScreen(currentScreen);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void NewGame()
-    {
-        GameManager.Instance.NewGame();
-        SceneManager.LoadSceneAsync("Home");
-    }
-
-    public void LoadGame()
-    {
-        GameManager.Instance.LoadGame();
-        SceneManager.LoadSceneAsync("Home");
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 
     public void NextScreen()
@@ -153,6 +135,7 @@ public class ButtonMonitor : MonoBehaviour
                 else i.SetActive(false);
                 temp += 1;
             }
+            Debug.Log(screenToOn);
         }
     }
 

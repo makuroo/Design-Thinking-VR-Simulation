@@ -1447,7 +1447,7 @@ MonoBehaviour:
     - Arms
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: c895d0ec1d1373945a18ceaa2fe47974, type: 2}
+    - {fileID: -8621699677379755531, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
   - name: Almet Binus
     mesh:
     - {fileID: -2850074755327657584, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
@@ -1461,7 +1461,7 @@ MonoBehaviour:
     - Arms
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: c895d0ec1d1373945a18ceaa2fe47974, type: 2}
+    - {fileID: -8621699677379755531, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
   - name: Almet Binus
     mesh:
     - {fileID: -2850074755327657584, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
@@ -1475,7 +1475,7 @@ MonoBehaviour:
     - Arms
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: c895d0ec1d1373945a18ceaa2fe47974, type: 2}
+    - {fileID: -8621699677379755531, guid: b27367c9e2ab2f24aa81234006773151, type: 3}
   - name: Batik Karyawan Binus
     mesh:
     - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
@@ -1487,7 +1487,7 @@ MonoBehaviour:
     - Chest
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: f2ff54d202206e04e97a5f2a1adb13c8, type: 2}
+    - {fileID: 5452724907348645945, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
   - name: Batik Karyawan Binus
     mesh:
     - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
@@ -1499,7 +1499,7 @@ MonoBehaviour:
     - Chest
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: f2ff54d202206e04e97a5f2a1adb13c8, type: 2}
+    - {fileID: 5452724907348645945, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
   - name: Batik Karyawan Binus
     mesh:
     - {fileID: 4493585093827132993, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
@@ -1511,7 +1511,7 @@ MonoBehaviour:
     - Chest
     yOffset: 0
     mats:
-    - {fileID: 2100000, guid: f2ff54d202206e04e97a5f2a1adb13c8, type: 2}
+    - {fileID: 5452724907348645945, guid: 353721ea8eb80c94babc3af6720a1002, type: 3}
   pantsPresets:
   - name: Pants Type 1
     mesh:

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Ashly
   m_EditorClassIdentifier: 
   LikeCake:
-  - {fileID: 11400000, guid: 99c82b2debf1ea341b34e41d0e9ade76, type: 2}
-  - {fileID: 11400000, guid: 3993c5116e0677d4ca5250b1db17863d, type: 2}
+  - {fileID: 11400000, guid: 6a0ed7d40018f174882cd840fc63b725, type: 2}
   DislikeCake:
-  - {fileID: 11400000, guid: 3993c5116e0677d4ca5250b1db17863d, type: 2}
+  - {fileID: 11400000, guid: 9db5d7bdb5ecaac4d9212b2a033d1299, type: 2}

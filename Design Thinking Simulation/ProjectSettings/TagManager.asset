@@ -16,6 +16,17 @@ TagManager:
   - Bowl
   - LeftHand
   - RightHand
+  - Job
+  - Gain Creator
+  - Ukuran
+  - TargetUsia
+  - JenisKue
+  - JenisMakanan
+  - Pain
+  - Product
+  - Gain
+  - Pain Reliever
+  - Taste
   layers:
   - Default
   - TransparentFX
@@ -31,6 +42,7 @@ TagManager:
   - UI Collider
   - Pointer
   - NonContact
+  - Rasa
   - 
   - 
   - 
@@ -46,8 +58,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - AlwaysOnFront
   - 
   m_SortingLayers:
   - name: Default

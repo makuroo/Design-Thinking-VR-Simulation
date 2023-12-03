@@ -17,7 +17,8 @@ MonoBehaviour:
     type: 2}
   kueFavorit: {fileID: 11400000, guid: 99c82b2debf1ea341b34e41d0e9ade76, type: 2}
   goals:
-  - Memakan kue yang menggunakan lemon
+  - Mencicipi kue manis dan asam adalah salah satu daftar keinginan kuliner saya
   frustration:
-  - Tidak suka kue yang rasanya manis ataupun pahit
+  - Kue yang pahit dan asin itu tidak enak
   met: 0
+  hasShowUserPersona: 0

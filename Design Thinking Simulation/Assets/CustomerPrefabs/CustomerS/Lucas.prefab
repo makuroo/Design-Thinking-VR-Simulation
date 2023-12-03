@@ -311,18 +311,19 @@ MonoBehaviour:
   questionIndex: 0
   jawabanText: {fileID: 1458772791944974623}
   player: {fileID: 0}
-  QuestionCanvas: {fileID: 5723621048598057072}
+  QuestionCanvasParent: {fileID: 5723621048598057072}
   UIPertanyaan: {fileID: 5424313113561564147}
   NameCanvas: {fileID: 8921742068617050036}
   AnsweringTimesInSecond: 3
   nameTextObj: {fileID: 5071078132222671903}
   reason:
-  - Saya mau makan
-  - Saya sedang sibuk
-  - Saya mau pulang
-  - Saya punya urusan
-  - Saya lelah
+  - Maaf, saya ada urusan
+  - Maaf, saya sedang sibuk
+  - Maaf, saya tidak punya waktu
+  - Maaf, saya harus pergi
+  - Maaf, lain waktu saja
   nameQuestionCanvas: {fileID: 4164130567768729656}
+  UIJawaban: {fileID: 0}
 --- !u!4 &8203860104254077015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6477446280107622979, guid: 4c639fd294c954947b58ad8cbc2be5c7,
@@ -425,12 +426,12 @@ PrefabInstance:
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.268
       objectReference: {fileID: 0}
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.396
+      value: -0.067
       objectReference: {fileID: 0}
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
@@ -573,6 +574,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769684359431133109, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5606866698367906888, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
         type: 3}

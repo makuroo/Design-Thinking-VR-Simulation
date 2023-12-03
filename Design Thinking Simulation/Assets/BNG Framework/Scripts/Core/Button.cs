@@ -127,7 +127,7 @@ namespace BNG {
 
         // Callback for ButtonDown
         public virtual void OnButtonDown() {
-
+            Debug.Log("down nih");
             // Play sound
             if (audioSource && ButtonClick) {
                 audioSource.clip = ButtonClick;

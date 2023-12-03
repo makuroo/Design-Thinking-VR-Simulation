@@ -17,7 +17,8 @@ MonoBehaviour:
     type: 2}
   kueFavorit: {fileID: 11400000, guid: f1d58bab361c8594d9c6b4d02544707f, type: 2}
   goals:
-  - ' Ingin mencoba berbagai rasa kue selain asin'
+  - Saya berharap bisa menikmati kue yang manis dan asin di akhir pekan ini
   frustration:
-  - Kebanyakan kue rasa asin, padahal saya tidak suka rasa tersebut
+  - Retrieving data. Wait a few seconds and try to cut or copy again.
   met: 0
+  hasShowUserPersona: 0

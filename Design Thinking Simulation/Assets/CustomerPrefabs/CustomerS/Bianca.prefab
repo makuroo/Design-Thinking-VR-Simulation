@@ -87,6 +87,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5132935723759193713}
     m_Modifications:
+    - target: {fileID: 2021765692963822633, guid: a99a708e4f3161c4684ee06adf45ce74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2059815225973064861, guid: a99a708e4f3161c4684ee06adf45ce74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453571275262206463, guid: a99a708e4f3161c4684ee06adf45ce74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4741254743709518393, guid: a99a708e4f3161c4684ee06adf45ce74,
         type: 3}
       propertyPath: m_RootOrder
@@ -146,6 +161,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: QuestionCanvasParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 6433982996963826103, guid: a99a708e4f3161c4684ee06adf45ce74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99a708e4f3161c4684ee06adf45ce74, type: 3}
@@ -257,12 +277,12 @@ PrefabInstance:
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.268
       objectReference: {fileID: 0}
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.405
+      value: -0.067
       objectReference: {fileID: 0}
     - target: {fileID: 5731139627111114284, guid: 82f16ce6e590d1f4d95a096a82e27744,
         type: 3}
@@ -405,6 +425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769684359431133109, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2683966267752504350, guid: d1e0e7bc39b6f2f4f8cd843186b8c1eb,
         type: 3}
@@ -717,18 +742,19 @@ MonoBehaviour:
   questionIndex: 0
   jawabanText: {fileID: 5755911761573691537}
   player: {fileID: 0}
-  QuestionCanvas: {fileID: 6412456690895400898}
+  QuestionCanvasParent: {fileID: 6412456690895400898}
   UIPertanyaan: {fileID: 6689240107965480001}
   NameCanvas: {fileID: 4530362844854109599}
   AnsweringTimesInSecond: 3
   nameTextObj: {fileID: 247529294494535220}
   reason:
-  - Saya mau makan
-  - Saya sedang sibuk
-  - Saya mau pulang
-  - Saya punya urusan
-  - Saya lelah
+  - Maaf, saya ada urusan
+  - Maaf, saya sedang sibuk
+  - Maaf, saya tidak punya waktu
+  - Maaf, saya harus pergi
+  - Maaf, lain waktu saja
   nameQuestionCanvas: {fileID: 3339993988474345354}
+  UIJawaban: {fileID: 0}
 --- !u!4 &6880906849970169234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1909666513091673979, guid: 59645bf3df339ee43bd2a005b859564a,
