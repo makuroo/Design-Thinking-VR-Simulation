@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &364075789539539983
 Transform:
@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fca8e14476721f4cb73ed9f3021e0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minDuration: 1
+  maxDuration: 20
   NPC:
   - {fileID: 27058356119285619, guid: 1a98919a4248b3a459452e1e96d10ce6, type: 3}
   - {fileID: 27058356119285619, guid: 7b98dcebcc102934a8fa9f5b078f018e, type: 3}
@@ -64,7 +66,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &364075789574224866
 Transform:
