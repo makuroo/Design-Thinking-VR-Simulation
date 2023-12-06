@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1294
     height: 988
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 75
+  controlID: 116
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 76
+  controlID: 105
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 77
+  controlID: 106
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -455,7 +455,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: fountain
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -465,25 +465,25 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 1
+    m_SearchArea: 3
     m_Folders:
-    - Assets/Layouts/Layouts/Mall
+    - Assets/PolygonShops/Prefabs
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: fountain
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Layouts/Layouts/Mall
+  - Assets/PolygonShops/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: E:\JOBS\BINUS VR Project\GitHub\Design-Thinking-VR-Simulation\Design
     Thinking Simulation\Design Thinking Simulation
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 447}
-    m_SelectedIDs: f8f10000
-    m_LastClickedID: 61944
-    m_ExpandedIDs: 00000000c6f10000c8f10000caf1000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 420}
+    m_SelectedIDs: 36f50000
+    m_LastClickedID: 62774
+    m_ExpandedIDs: 00000000b2f10000b4f10000b6f10000faf1000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -511,7 +511,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000c6f10000c8f10000caf10000
+    m_ExpandedIDs: 00000000b2f10000b4f10000b6f10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -643,9 +643,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 44f1ffff
-      m_LastClickedID: -3772
-      m_ExpandedIDs: 44f1ffff1afbffff38e50000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 2efbffff5cd40000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -962,9 +962,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.6866727, y: -11.633077, z: -48.000374}
+    m_Target: {x: 2.4983678, y: 1.6618204, z: 1.6725826}
     speed: 2
-    m_Value: {x: -4.6866727, y: -11.633077, z: -48.000374}
+    m_Value: {x: 2.4983678, y: 1.6618204, z: 1.6725826}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -987,10 +987,10 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     yGrid:
       m_Fade:
         m_Target: 1
@@ -1011,13 +1011,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.011795572, y: 0.97870153, z: -0.19635569, w: -0.058793023}
+    m_Target: {x: 0.23171532, y: -0.25331545, z: 0.06263471, w: 0.93713206}
     speed: 2
-    m_Value: {x: -0.011795525, y: 0.97869766, z: -0.19635491, w: -0.058792792}
+    m_Value: {x: 0.23030934, y: -0.2534091, z: 0.062254652, w: 0.9374785}
   m_Size:
-    m_Target: 25.531717
+    m_Target: 3.6382341
     speed: 2
-    m_Value: 25.531717
+    m_Value: 3.6382341
   m_Ortho:
     m_Target: 0
     speed: 2
