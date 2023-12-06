@@ -31,6 +31,7 @@ public class DadEndingScript : MonoBehaviour
     bool isStamping;
     RawImage scoreStampImage;
     GameObject chatBox;
+    private bool isPlayingOnceSound = false;
 
 
     float speedAnim = .5f;
@@ -44,6 +45,9 @@ public class DadEndingScript : MonoBehaviour
     [SerializeField] Texture2D CImage;
     [SerializeField] Texture2D DImage;
     [SerializeField] Texture2D EImage;
+
+    ScoreScriptEvent scoreScriptEvent;
+    SfxForUI sfxForUI;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -61,13 +65,16 @@ public class DadEndingScript : MonoBehaviour
         scoreStampImage = GameObject.Find("ScoreStampImage").GetComponent<RawImage>();
         chatBox = GameObject.Find("ChatBox");
         chatBox.SetActive(false);
+        scoreScriptEvent = GameObject.Find("Player").GetComponent<ScoreScriptEvent>();
+        sfxForUI = GetComponent<SfxForUI>();
         
 
         GameManager.Instance.CalculateTotalScore();
         ChangeScoreStampImage();
         scoreStampImage.gameObject.SetActive(false);
-        
+        StartCoroutine(PlayDrumSoundDelay());
     }
+
 
     // Update is called once per frame
     void Update()
@@ -159,8 +166,10 @@ public class DadEndingScript : MonoBehaviour
 
     IEnumerator EndingAnim()
     {
+        sfxForUI.StopSound();
         if(GameManager.Instance.totalScore < 65)
         {
+            scoreScriptEvent.PlayFailedSound();
             ChangeWeightAnimationDisappointed(1f);
             yield return new WaitForSeconds(1f);
             chatDad.text = "Tidak apa apa, Kita coba lagi ya..";
@@ -168,6 +177,7 @@ public class DadEndingScript : MonoBehaviour
         }
         else
         {
+            scoreScriptEvent.PlaySuccessSound();
             ChangeWeightAnimationHandClap(1f);
             yield return new WaitForSeconds(1f);
             chatDad.text = "Selamat atas kelulusanmu, Nak! Ayah sangat bangga padamu.";
@@ -191,13 +201,21 @@ public class DadEndingScript : MonoBehaviour
             isUpdatingVPCScore = true;
             problemStatementText.text = "Problem Statement: " + Mathf.FloorToInt(tempScore).ToString();
             tempScore = 0f;
+            if(!isPlayingOnceSound)
+            {
+                isPlayingOnceSound = true;
+                scoreScriptEvent.PlayCalculatingScoreSound();
+            }
         }
         else
         {
             tempScore += speedAnim;
             problemStatementText.text = "Problem Statement: " + Mathf.FloorToInt(tempScore).ToString();
+            isPlayingOnceSound = false;
+            scoreScriptEvent.StopSound();
         }
     }
+
     public void AnimateVPCScoreInt()
     {
         if (tempScore + speedAnim >= GameManager.Instance.vpcScore)
@@ -207,11 +225,17 @@ public class DadEndingScript : MonoBehaviour
             isUpdatingPrototypingScore = true;
             VPCText.text = "VPC: " + Mathf.FloorToInt(tempScore).ToString();
             tempScore = 0f;
+            if (!isPlayingOnceSound)
+            {
+                isPlayingOnceSound = true;
+                scoreScriptEvent.PlayCalculatingScoreSound();
+            }
         }
         else
         {
             tempScore += speedAnim;
             VPCText.text = "VPC: " + Mathf.FloorToInt(tempScore).ToString();
+            scoreScriptEvent.StopSound();
         }
     }
 
@@ -224,11 +248,17 @@ public class DadEndingScript : MonoBehaviour
             isUpdatingTestingScore = true;
             prototypingText.text = "Prototyping: " + Mathf.FloorToInt(tempScore).ToString();
             tempScore = 0f;
+            if (!isPlayingOnceSound)
+            {
+                isPlayingOnceSound = true;
+                scoreScriptEvent.PlayCalculatingScoreSound();
+            }
         }
         else
         {
             tempScore += speedAnim;
             prototypingText.text = "Prototyping: " + Mathf.FloorToInt(tempScore).ToString();
+            scoreScriptEvent.StopSound();
         }
     }
 
@@ -241,11 +271,17 @@ public class DadEndingScript : MonoBehaviour
             isStamping = true;
             testingText.text = "Testing: " + Mathf.FloorToInt(tempScore).ToString();
             tempScore = 0f;
+            if (!isPlayingOnceSound)
+            {
+                isPlayingOnceSound = true;
+                scoreScriptEvent.PlayCalculatingScoreSound();
+            }
         }
         else
         {
             tempScore += speedAnim;
             testingText.text = "Testing: " + Mathf.FloorToInt(tempScore).ToString();
+            scoreScriptEvent.StopSound();
         }
     }
 
@@ -266,5 +302,11 @@ public class DadEndingScript : MonoBehaviour
         else if(GameManager.Instance.totalScore >= 50)
             scoreStampImage.texture = DImage;
         else scoreStampImage.texture = EImage;
+    }
+
+    IEnumerator PlayDrumSoundDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
+        sfxForUI.PlayDrumSound();
     }
 }

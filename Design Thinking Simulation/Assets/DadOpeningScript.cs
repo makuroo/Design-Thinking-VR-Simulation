@@ -21,6 +21,7 @@ public class DadOpeningScript : MonoBehaviour
     int indexChat = 0;
 
     AudioSource audioSource;
+    SfxForUI sfxSound;
     GameObject buttonUI;
 
 
@@ -36,7 +37,7 @@ public class DadOpeningScript : MonoBehaviour
         buttonUI = GameObject.Find("ButtonLanjutkan");
         buttonUI.SetActive(false);
         chatBox = GameObject.Find("ChatBox");
-        audioSource = GetComponent<AudioSource>();
+        sfxSound = GetComponent<SfxForUI>();
         SetActiveChatBox(false);
         StartCoroutine(SetDadChat(indexChat));
     }
@@ -93,6 +94,7 @@ public class DadOpeningScript : MonoBehaviour
             yield return new WaitForSeconds(1f);
             ChangeWeightAnimationHand(1f);
             chatDad.text = "Terkadang, anakku, hidup memberi kita kesempatan untuk berkreasi.";
+            sfxSound.PlayAnswerSound();
             SetActiveChatBox(true);
             yield return new WaitForSeconds(5f);
             ChangeWeightAnimationHand(0);
@@ -104,6 +106,7 @@ public class DadOpeningScript : MonoBehaviour
             yield return new WaitForSeconds(.5f);
             ChangeWeightAnimationHand(1f);
             chatDad.text = "Aku yakin, membuka toko kue adalah langkah besar, dan aku mendukungmu sepenuhnya.";
+            sfxSound.PlayAnswerSound();
             SetActiveChatBox(true);
             yield return new WaitForSeconds(7f);
             ChangeWeightAnimationHand(0);
@@ -115,6 +118,7 @@ public class DadOpeningScript : MonoBehaviour
             yield return new WaitForSeconds(.5f);
             ChangeWeightAnimationHand(1f);
             chatDad.text = "Semoga sukses, Nak.";
+            sfxSound.PlayAnswerSound();
             SetActiveChatBox(true);
             yield return new WaitForSeconds(3f);
             ChangeWeightAnimationHand(0);

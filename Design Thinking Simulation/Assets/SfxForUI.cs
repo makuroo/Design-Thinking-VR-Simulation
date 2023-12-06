@@ -10,6 +10,7 @@ public class SfxForUI : MonoBehaviour
     public AudioClip onClickedSound;
     public AudioClip AnswerSound;
     public AudioClip AnswerSound2;
+    public AudioClip drumSound;
 
 
     private void Awake()
@@ -41,7 +42,7 @@ public class SfxForUI : MonoBehaviour
 
     public void PlayAnswerSound()
     {
-        int temp = UnityEngine.Random.Range(0, 1);
+        int temp = UnityEngine.Random.Range(0, 2);
         if(temp == 0)
         {
             audioSource.clip = AnswerSound;
@@ -51,5 +52,16 @@ public class SfxForUI : MonoBehaviour
             audioSource.clip = AnswerSound2;
         }
         audioSource.Play();
+    }
+
+    public void PlayDrumSound()
+    {
+        audioSource.clip = drumSound;
+        audioSource.Play();
+    }
+
+    public void StopSound()
+    {
+        audioSource.Stop();
     }
 }
