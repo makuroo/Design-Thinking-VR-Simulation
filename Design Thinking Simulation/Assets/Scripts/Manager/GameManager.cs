@@ -104,20 +104,16 @@ public class GameManager : MonoBehaviour
 
     #region This is the place for Scoring System
     [HideInInspector] public float totalScore;
-    public float problemStatementScore;
-    public float vpcScore;
-    [HideInInspector] public float prototypingScore;
-    [HideInInspector] public float testingScore;
+    public float problemStatementScore =0;
+    public float vpcScore=0;
+    [HideInInspector] public float prototypingScore=0;
+    [HideInInspector] public float testingScore=0;
     #endregion
 
     public UserPersonaHistory history;
     private void Awake()
     {
-        problemStatementScore = 90f;
-        vpcScore = 75f;
-        prototypingScore = 82f;
-        testingScore = 56f;
-        LoadGame();
+        //LoadGame();
         if (instance == null)
         {
             instance = this;

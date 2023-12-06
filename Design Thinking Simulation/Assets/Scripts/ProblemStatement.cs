@@ -71,8 +71,9 @@ public class ProblemStatement : MonoBehaviour
 
     private void CalculateAnswer()
     {
-        Debug.Log(history);
-        
+        if (GameManager.Instance.peopleMet.Count <= 0)
+            return;
+
         for (int i = 0; i < GameManager.Instance.peopleMet[0].transform.GetChild(0).GetComponent<People>().customerData.cakePreferences.LikeCake[0].taste.Count; i++)
         {
             int total = 0;
