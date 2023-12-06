@@ -12,7 +12,7 @@ public class NPCScript : MonoBehaviour
     CharacterCustomization charCust;
     float distanceToGoal;
 
-    float toleranceGoalAchieve = 10f;
+    float toleranceGoalAchieve = 5f;
     // Start is called before the first frame update
 
     private void Awake()
