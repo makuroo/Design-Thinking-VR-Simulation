@@ -104,8 +104,8 @@ public class GameManager : MonoBehaviour
 
     #region This is the place for Scoring System
     [HideInInspector] public float totalScore;
-    [HideInInspector] public float problemStatementScore;
-    [HideInInspector] public float vpcScore;
+    public float problemStatementScore;
+    public float vpcScore;
     [HideInInspector] public float prototypingScore;
     [HideInInspector] public float testingScore;
     #endregion
