@@ -118,22 +118,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
                 JenisMakananChecker(currentText);
             }else if (currentGrabbable.gameObject.CompareTag("JenisKue"))
             {
-                for (int i = 0; i < board.answerList.Count; i++)
-                {
-                    board.answerList[i].Return();
-                }
-                problemStatementScore = Mathf.RoundToInt(problemStatementTrue / 3);
-                Debug.Log(problemStatementTrue);
-                GameManager.Instance.problemStatementScore = problemStatementScore*100;
-                board.answerList.Clear();
-                currSnapZone.GetComponent<GrabbablesInTrigger>().ValidGrabbables.Clear();
-                currSnapZone.GetComponent<GrabbablesInTrigger>().ClosestGrabbable = null;
-                currSnapZone.GetComponent<GrabbablesInTrigger>().NearbyGrabbables.Clear();
-                currSnapZone = null;
-                currentText = null;
-                board.problemStatement.SetActive(false);
-                board.choicesTargetUsia.SetActive(false);
-                board.jobFinishGO.SetActive(true);
+                CakeAnswerChecker(currentText);
             }
             else if(currentGrabbable.gameObject.layer== 14)
             {
@@ -395,8 +380,6 @@ public class DragAndDropAnswerChecker : MonoBehaviour
 
         if (board.answerList.Count == 6)
         {
-            vpcScore = Mathf.RoundToInt(vpcTrue / 6);
-            GameManager.Instance.vpcScore = vpcScore*100;
             for (int i = 0; i < board.answerList.Count; i++)
             {
                 board.answerList[i].Return();

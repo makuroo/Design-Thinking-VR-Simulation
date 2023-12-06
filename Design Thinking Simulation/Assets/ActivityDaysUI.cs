@@ -18,7 +18,7 @@ public class ActivityDaysUI : MonoBehaviour
         }
         else
         {
-            problemStatementTextDays.text = "Menyelesaikan: <color=red>" + GameManager.Instance.interviewCount.ToString() + "</color>/ 3 <b>User Persona</b>";
+            problemStatementTextDays.text = "Menyelesaikan: <color=red>" + GameManager.Instance.interviewCount.ToString() + "</color>/ 3 User Persona";
         }
 
         if (GameManager.Instance.hasDoneProblemStatement)
@@ -27,7 +27,7 @@ public class ActivityDaysUI : MonoBehaviour
         }
         else
         {
-            vpcTextDays.text = "Menyelesaikan 1 <b>Problem Statement</b>";
+            vpcTextDays.text = "Menyelesaikan 1 Problem Statement";
         }
     }
 }
