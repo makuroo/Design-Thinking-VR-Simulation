@@ -1882,6 +1882,8 @@ MonoBehaviour:
   stampSound: {fileID: 8300000, guid: 479ebe7fa06d8c84dbfb68ce58722925, type: 3}
   successSound: {fileID: 8300000, guid: 169cc3e7e64f2154d88f426a64d88f67, type: 3}
   failedSound: {fileID: 8300000, guid: 3c079f24e01ffa14d8cb985ebfe21ff1, type: 3}
+  scoreCalculatingSound: {fileID: 0}
+  scoreDoneSound: {fileID: 0}
 --- !u!1 &470461672 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2550463727306718371, guid: d9ff5384cc6bfb74b8c7c850984cf40f,
@@ -2802,10 +2804,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3229974435761709110, guid: dc038a162b5a42d44bb9702c8741a6c8,
+        type: 3}
+      propertyPath: drumSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a7394c3a3ec4a6d4daaf7931ace28473, type: 3}
+    - target: {fileID: 3229974435761709110, guid: dc038a162b5a42d44bb9702c8741a6c8,
+        type: 3}
+      propertyPath: scoreDoneSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2a998048fbd0485409e77eff182ced94, type: 3}
     - target: {fileID: 6351184607460348614, guid: dc038a162b5a42d44bb9702c8741a6c8,
         type: 3}
       propertyPath: m_Name
-      value: MaleTest1-PreBuilt#46678
+      value: DadPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6676035015901753882, guid: dc038a162b5a42d44bb9702c8741a6c8,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc038a162b5a42d44bb9702c8741a6c8, type: 3}
