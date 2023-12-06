@@ -514,6 +514,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 3920249716698026131, guid: d365ce66e9cdea4409345d728d6b0f7a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920249716698026131, guid: d365ce66e9cdea4409345d728d6b0f7a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920249716698026131, guid: d365ce66e9cdea4409345d728d6b0f7a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3920249716698026131, guid: d365ce66e9cdea4409345d728d6b0f7a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Questions, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3963485197560860349, guid: d365ce66e9cdea4409345d728d6b0f7a,
         type: 3}
       propertyPath: m_Layer
@@ -601,22 +621,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 143817579728480392}
-          m_TargetAssemblyTypeName: SfxForUI, Assembly-CSharp
-          m_MethodName: PlayClickedSound
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &4719046349701194592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1353292137528260166, guid: d365ce66e9cdea4409345d728d6b0f7a,
@@ -643,22 +647,6 @@ MonoBehaviour:
         - m_Target: {fileID: 143817579728480392}
           m_TargetAssemblyTypeName: SfxForUI, Assembly-CSharp
           m_MethodName: PlayHoverSound
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 143817579728480392}
-          m_TargetAssemblyTypeName: SfxForUI, Assembly-CSharp
-          m_MethodName: PlayClickedSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -715,22 +703,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 143817579728480392}
-          m_TargetAssemblyTypeName: SfxForUI, Assembly-CSharp
-          m_MethodName: PlayClickedSound
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &8943681245828821744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3433116298417760214, guid: d365ce66e9cdea4409345d728d6b0f7a,
@@ -757,22 +729,6 @@ MonoBehaviour:
         - m_Target: {fileID: 143817579728480392}
           m_TargetAssemblyTypeName: SfxForUI, Assembly-CSharp
           m_MethodName: PlayHoverSound
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 143817579728480392}
-          m_TargetAssemblyTypeName: SfxForUI, Assembly-CSharp
-          m_MethodName: PlayClickedSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
