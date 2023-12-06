@@ -58,8 +58,10 @@ public class ProblemStatement : MonoBehaviour
 
     private void CalculateAnswer(UserPersonaHistory history)
     {
-        Debug.Log(history);
-        for (int i = 0; i < history.dictValues[0].value.cakePreferences.LikeCake[0].taste.Count; i++)
+        if (GameManager.Instance.peopleMet.Count <= 0)
+            return;
+
+        for (int i = 0; i < GameManager.Instance.peopleMet[0].transform.GetChild(0).GetComponent<People>().customerData.cakePreferences.LikeCake[0].taste.Count; i++)
         {
             int total = 0;
             for (int j = 0; j < history.dictValues.Count; j++)

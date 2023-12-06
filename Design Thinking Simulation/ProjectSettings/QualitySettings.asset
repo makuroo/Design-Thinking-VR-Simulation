@@ -25,7 +25,7 @@ QualitySettings:
     softParticles: 0
     softVegetation: 0
     realtimeReflectionProbes: 0
-    billboardsFaceCameraPosition: 0
+    billboardsFaceCameraPosition: 1
     vSyncCount: 0
     lodBias: 0.7
     maximumLODLevel: 0
@@ -82,4 +82,4 @@ QualitySettings:
     Android: 1
     Server: 0
     Standalone: 0
-    WebGL: 0
+    WebGL: 1

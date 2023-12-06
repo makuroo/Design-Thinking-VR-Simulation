@@ -100,10 +100,19 @@ public class GameManager : MonoBehaviour
     string previousWorld;
 
     public bool hasFinishTutorial;
+
+    #region This is the place for Scoring System
+    [HideInInspector] public float totalScore;
+    public float problemStatementScore =0;
+    public float vpcScore=0;
+    [HideInInspector] public float prototypingScore=0;
+    [HideInInspector] public float testingScore=0;
+    #endregion
+
     public UserPersonaHistory history;
     private void Awake()
     {
-        LoadGame();
+        //LoadGame();
         if (instance == null)
         {
             instance = this;
