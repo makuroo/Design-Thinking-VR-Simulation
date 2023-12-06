@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEditor;
 using BNG;
+using UnityEngine.Audio;
 
 public class People : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class People : MonoBehaviour
     private GameObject playerObj;
     private Transform initialHeadTransform;
     [HideInInspector] public GameObject UIJawaban;
+    AudioSource audioSource; //the value of audiosource.clip is sound pop for answer
 
     // Start is called before the first frame update
 
@@ -42,6 +44,7 @@ public class People : MonoBehaviour
         UIJawaban = GameObject.Find("UI Jawaban");
         UIJawaban.SetActive(false);
         initialHeadTransform = customerHead.transform;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -171,6 +174,7 @@ public class People : MonoBehaviour
             button[i].GetComponent<Questions>().index = GameManager.Instance.RandomizedType[i];
             button[i].GetComponentInChildren<TextMeshProUGUI>().text = GameManager.Instance.RandomizedQuestion[i];
         }
+        audioSource.Play();
     }
 
     public void Reply()

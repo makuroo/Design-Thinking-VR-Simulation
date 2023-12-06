@@ -659,6 +659,11 @@ PrefabInstance:
       propertyPath: reason.Array.data[4]
       value: Maaf, lain waktu saja
       objectReference: {fileID: 0}
+    - target: {fileID: 2189941039877240453, guid: 0147e9c1f667b6447a05fe542c3b29a9,
+        type: 3}
+      propertyPath: answerAudio.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2370737089513096342, guid: 0147e9c1f667b6447a05fe542c3b29a9,
         type: 3}
       propertyPath: m_LocalRotation.w
