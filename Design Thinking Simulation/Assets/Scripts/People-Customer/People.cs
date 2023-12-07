@@ -32,6 +32,7 @@ public class People : MonoBehaviour
     private Transform initialHeadTransform;
     [HideInInspector] public GameObject UIJawaban;
     AudioSource audioSource; //the value of audiosource.clip is sound pop for answer
+    bool hasTasteCake = false;
 
     #region customer respond to given cake
     private readonly string[] respondLike = new string[]{
@@ -124,7 +125,6 @@ public class People : MonoBehaviour
         }
         else
         {
-
             customerHead.transform.rotation = initialHeadTransform.rotation;
         }
     }
@@ -147,32 +147,46 @@ public class People : MonoBehaviour
                     Debug.Log("Ontrigger enter jalan");
                     isPlayerInRange = true;
                     EnableTandaSeru(false);
-                }
-                else
+            }
+            else
+            {
+                Debug.Log(GameManager.Instance.testTarget);
+                //Compare rasa dari kue di gamemanager sama yg dia suka
+                if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) == 4 && !hasTasteCake)
                 {
-                    if (customerData.met)
-                    {
-                        //Compare rasa dari kue di gamemanager sama yg dia suka
-                        if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) == 4)
-                        {
-                            //suka
-                            jawabanText.text = respondLike[Random.Range(0, respondLike.Length)];
-                            UIJawaban.SetActive(true);
-                        }
-                        else if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) > 0 && customerData.CalculateLikeness(GameManager.Instance.bakedCake) < 4)
-                        {
-                            //netral
-                            jawabanText.text = respondNeutral[Random.Range(0, respondNeutral.Length)];
-                            UIJawaban.SetActive(true);
-                        }
-                        else 
-                        {
-                            //gasuka
-                            jawabanText.text = respondDislike[Random.Range(0, respondDislike.Length)];
-                            UIJawaban.SetActive(true);
-                        }
-                    }
+                    //suka
+                    hasTasteCake = true;
+                    GameManager.Instance.testTarget++;
+                    GameManager.Instance.testingScore += 100;
+                    jawabanText.text = respondLike[Random.Range(0, respondLike.Length)];
+                    UIJawaban.SetActive(true);
                 }
+                else if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) > 0 && customerData.CalculateLikeness(GameManager.Instance.bakedCake) < 4 && !hasTasteCake)
+                {
+                    //netral
+                    hasTasteCake = true;
+                    GameManager.Instance.testTarget++;
+                    GameManager.Instance.testingScore += 50;
+                    jawabanText.text = respondNeutral[Random.Range(0, respondNeutral.Length)];
+                    UIJawaban.SetActive(true);
+                }
+                else if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) == 0 && !hasTasteCake)
+                {
+                    //gasuka
+                    hasTasteCake = true;
+                    GameManager.Instance.testTarget++;
+                    GameManager.Instance.testingScore += 0;
+                    jawabanText.text = respondDislike[Random.Range(0, respondDislike.Length)];
+                    UIJawaban.SetActive(true);
+                }
+
+                if (GameManager.Instance.testTarget == 3)
+                {
+                    GameManager.Instance.testingScore = Mathf.RoundToInt((float)GameManager.Instance.testingScore / GameManager.Instance.testTarget);
+                    GameManager.Instance.CalculateTotalScore();
+                    StartCoroutine(EndingDelay());
+                }
+            }
         }
     }
 
@@ -350,4 +364,21 @@ public class People : MonoBehaviour
         }
     }
 
+    private bool HasMet()
+    {
+        for(int i=0; i<GameManager.Instance.peopleMet.Count; i++)
+        {
+            if(GameManager.Instance.peopleMet[i].transform.GetChild(0).GetComponent<People>().name == name)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private IEnumerator EndingDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndingScene");
+    }
 }

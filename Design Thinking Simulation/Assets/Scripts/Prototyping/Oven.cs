@@ -32,6 +32,8 @@ public class Oven : MonoBehaviour
                 //Add cake here
                 GameManager.Instance.hasDonePrototyping = true;
                 GameManager.Instance.isTesting = true;
+                GameObject cake = Instantiate(GameManager.Instance.bakedCake.cakeAsset, bowlScript.initialBowlPosition, Quaternion.identity);
+                cake.transform.localScale = new Vector3(0.085f, 0.085f, 0.085f);
                 Destroy(bowl);
             }
         }

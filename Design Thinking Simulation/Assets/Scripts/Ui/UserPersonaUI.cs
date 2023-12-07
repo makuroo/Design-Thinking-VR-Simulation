@@ -39,13 +39,6 @@ public class UserPersonaUI : MonoBehaviour
             return;
         else
         {
-
-            if (GameManager.Instance.peopleMet[customerIndex] == null)
-            {
-                Debug.Log("here");
-                return;
-            }
-                
             CustomerDataSO people = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>().customerData;
             
             if (!people.hasShowUserPersona)

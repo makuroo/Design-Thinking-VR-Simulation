@@ -12,7 +12,7 @@ public class CustomerDataSO : ScriptableObject
     public CakeSO kueFavorit;
     public List<string> goals;
     public List<string> frustration;
-    public bool met = false;
+    public bool met { get; set; } = false;
     public bool hasShowUserPersona;
 
     public int CalculateLikeness(int index)

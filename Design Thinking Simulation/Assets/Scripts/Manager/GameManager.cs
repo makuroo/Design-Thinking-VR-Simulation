@@ -108,10 +108,11 @@ public class GameManager : MonoBehaviour
 
     #region This is the place for Scoring System
     [HideInInspector] public float totalScore;
-    public float problemStatementScore =0;
+    public float problemStatementScore = 0;
     public float vpcScore=0;
-    [HideInInspector] public float prototypingScore=0;
-    [HideInInspector] public float testingScore=0;
+    [HideInInspector] public float prototypingScore =100;
+    [HideInInspector] public float testingScore =0;
+    [HideInInspector] public int testTarget = 0;
     #endregion
 
     public UserPersonaHistory history;
@@ -130,7 +131,7 @@ public class GameManager : MonoBehaviour
         prototypingScore = 82f;
         testingScore = 56f;
         */
-
+        prototypingScore = 100;
         //LoadGame();
         if (instance == null)
         {

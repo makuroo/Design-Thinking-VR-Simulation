@@ -6784,7 +6784,7 @@ PrefabInstance:
     - target: {fileID: 1948249447992598342, guid: 079707f7a9dbe3a4b9b6c604e53a12f1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4106714204007009511, guid: 079707f7a9dbe3a4b9b6c604e53a12f1,
         type: 3}
@@ -27390,6 +27390,7 @@ MonoBehaviour:
   darkChocolate: {fileID: 951424513}
   grater: {fileID: 1578978090}
   lemon: {fileID: 944116173}
+  initialBowlPosition: {x: 0, y: 0, z: 0}
   selectedCake: 0
 --- !u!114 &1746989155
 MonoBehaviour:

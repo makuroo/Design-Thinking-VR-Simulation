@@ -48,7 +48,7 @@ public class Baking : MonoBehaviour
     public GameObject darkChocolate;
     public GameObject grater;
     public GameObject lemon;
-    private Vector3 initialBowlPosition;
+    public Vector3 initialBowlPosition;
     private Vector3 initialFlourTransform;
     private Vector3 initialFlourRotation;
     private Vector3 initialBakingPowderTransform;

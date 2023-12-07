@@ -25,10 +25,10 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     [SerializeField] BoardActivityUI board;
     public CheckType checkerType;
     public GameObject currSnapZone;
-    private int problemStatementScore;
-    private int vpcScore;
-    private int problemStatementTrue =0;
-    private int vpcTrue =0 ;
+    private float problemStatementScore;
+    private float vpcScore;
+    private static int problemStatementTrue =0;
+    private static int vpcTrue = 0 ;
     private void Update()
     {
         if (board.handGrabber[0]!=null && board.handGrabber[1]!=null )
@@ -142,7 +142,8 @@ public class DragAndDropAnswerChecker : MonoBehaviour
                 {
                     board.answerList[i].Return();
                 }
-                problemStatementScore = Mathf.RoundToInt(problemStatementTrue / 3);
+                Debug.Log(problemStatementTrue);
+                problemStatementScore = Mathf.RoundToInt((float)problemStatementTrue / 3 * 100);
                 Debug.Log(problemStatementTrue);
                 GameManager.Instance.problemStatementScore = problemStatementScore;
                 board.answerList.Clear();
@@ -336,10 +337,11 @@ public class DragAndDropAnswerChecker : MonoBehaviour
 
     public void JenisMakananChecker(TMP_Text answer)
     {
-        if (answer.text == "Kue")
+        if (answer.text == "KUE")
         {
             Debug.Log(" jenis makanan true");
             problemStatementTrue++;
+            Debug.Log(problemStatementTrue);
         }     
         else
             Debug.Log("false");
@@ -405,14 +407,19 @@ public class DragAndDropAnswerChecker : MonoBehaviour
     private void VpcCheck()
     {
         if (currentGrabbable.gameObject.tag == currSnapZone.tag)
+        {
             vpcTrue++;
+            Debug.Log("Vpc true");
+        }
+            
         else
             Debug.Log("VPC false");
 
+        Debug.Log(vpcTrue);
+
         if (board.answerList.Count == 6)
         {
-            vpcScore = Mathf.RoundToInt(vpcTrue / 6);
-            GameManager.Instance.vpcScore = vpcScore*100;
+            GameManager.Instance.vpcScore = Mathf.RoundToInt(((float)vpcTrue /6)*100);
             for (int i = 0; i < board.answerList.Count; i++)
             {
                 board.answerList[i].Return();
