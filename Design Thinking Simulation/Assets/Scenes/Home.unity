@@ -16417,6 +16417,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HomePrototypingGateway
       objectReference: {fileID: 0}
+    - target: {fileID: 1643427327237687239, guid: 6e96dbacc5e430647905d25ee9e81609,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e96dbacc5e430647905d25ee9e81609, type: 3}
 --- !u!1001 &2083554698096439973
