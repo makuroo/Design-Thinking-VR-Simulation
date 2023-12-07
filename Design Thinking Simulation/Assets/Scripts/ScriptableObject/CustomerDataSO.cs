@@ -33,4 +33,17 @@ public class CustomerDataSO : ScriptableObject
 
         return likeCake - dislikeCake;
     }
+
+    public int CalculateLikeness(CakeSO givenCake)
+    {
+        int tempTaste = 0;
+        for (int i=0; i < givenCake.taste.Count; i++)
+        {
+            if (givenCake.taste[i] == cakePreferences.LikeCake[0].taste[i])
+            {
+                tempTaste += 1;
+            }
+        }
+        return tempTaste;
+    }
 }

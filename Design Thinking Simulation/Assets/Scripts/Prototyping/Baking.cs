@@ -24,9 +24,17 @@ public class Baking : MonoBehaviour
     public GameObject sourCherryAlmondCakeRecipe;
     public GameObject tamarindDarkChocolateBrowniesRecipe;
     public GameObject bitterAlmondTartRecipe;
+    public GameObject[] insideBowl;
+    private int bowlContentLevel = 0;
+    private bool bowlContentChanged;
 
     [Header("Cake Scriptable Object")]
-    public CakeSO creamPastrySO;
+    public CakeSO saltedCaramelSO;
+    public CakeSO strawberryShortcakeSO;
+    public CakeSO bittersweetChocolateSO;
+    public CakeSO sourCherrySO;
+    public CakeSO tamarindDarkSO;
+    public CakeSO bitterAlmondSO;
 
     [Header("OnRelease Related")]
     public GameObject flour;
@@ -40,6 +48,7 @@ public class Baking : MonoBehaviour
     public GameObject darkChocolate;
     public GameObject grater;
     public GameObject lemon;
+    private Vector3 initialBowlPosition;
     private Vector3 initialFlourTransform;
     private Vector3 initialFlourRotation;
     private Vector3 initialBakingPowderTransform;
@@ -64,6 +73,8 @@ public class Baking : MonoBehaviour
     private Vector3 initialLemonRotation;
 
     private int sameCount = 0;
+    [HideInInspector]
+    public int selectedCake;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +83,8 @@ public class Baking : MonoBehaviour
         graterScript = grater.GetComponent<PourDetector>();
 
         // Set initial position and rotation of ingredients object to reset on release
+        initialBowlPosition = gameObject.transform.localPosition;
+
         initialFlourTransform = flour.gameObject.transform.localPosition;
         initialFlourRotation = flour.gameObject.transform.localRotation.eulerAngles;
 
@@ -126,6 +139,18 @@ public class Baking : MonoBehaviour
                     }
                 }
             }
+            if (bowlContentChanged)
+            {
+                for (int i=0; i<6; i++)
+                {
+                    if (i + 1 == bowlContentLevel)
+                    {
+                        insideBowl[i].gameObject.SetActive(true);
+                        break;
+                    }
+                }
+                bowlContentChanged = false;
+            }
         }
         if (isBakeReady)
         {
@@ -142,60 +167,80 @@ public class Baking : MonoBehaviour
     {
         bowlContent.RemoveAt(0);
         bowlContent.Insert(0, 1);
+        bowlContentChanged = true;
+        bowlContentLevel += 1;
     }
 
     public void BakingPowderAdded()
     {
         bowlContent.RemoveAt(1);
         bowlContent.Insert(1, 1);
+        bowlContentChanged = true;
+        bowlContentLevel += 1;
     }
 
     public void GulaPasirAdded()
     {
         bowlContent.RemoveAt(2);
         bowlContent.Insert(2, 1);
+        bowlContentChanged = true;
+        bowlContentLevel += 1;
     }
 
     public void SeaSaltAdded()
     {
         bowlContent.RemoveAt(3);
         bowlContent.Insert(3, 1);
+        bowlContentChanged = true;
+        bowlContentLevel += 1;
     }
 
     public void MentegaAdded()
     {
         bowlContent.RemoveAt(4);
         bowlContent.Insert(4, 1);
+        bowlContentChanged = true;
+        bowlContentLevel += 1;
     }
 
     public void SusuAdded()
     {
         bowlContent.RemoveAt(5);
         bowlContent.Insert(5, 1);
+        bowlContentChanged = true;
+        bowlContentLevel += 1;
     }
 
     public void EkstrakVanillaAdded()
     {
         bowlContent.RemoveAt(6);
         bowlContent.Insert(6, 1);
+        bowlContentChanged = true;
+        bowlContentLevel += 1;
     }
 
     public void AirPerasanLemonAdded()
     {
         bowlContent.RemoveAt(7);
         bowlContent.Insert(7, 1);
+        bowlContentChanged = true;
+        bowlContentLevel += 1;
     }
 
     public void DarkChocolateAdded()
     {
         bowlContent.RemoveAt(8);
         bowlContent.Insert(8, 1);
+        bowlContentChanged = true;
+        bowlContentLevel += 1;
     }
 
     public void LemonZestAdded()
     {
         bowlContent.RemoveAt(9);
         bowlContent.Insert(9, 1);
+        bowlContentChanged = true;
+        bowlContentLevel += 1;
     }
 
     public void CakeButtonClicked()
@@ -207,33 +252,98 @@ public class Baking : MonoBehaviour
 
     public void SaltedCaramelBrowniesSelect()
     {
-        bakeRecipe = creamPastrySO.recipe;
+        selectedCake = 1;
+        bakeRecipe = saltedCaramelSO.recipe;
+        GameManager.Instance.bakedCake = saltedCaramelSO;
+
         saltedCaramelBrowniesRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        seaSalt.SetActive(true);
+        butter.SetActive(true);
+        milk.SetActive(true);
     }
 
     public void StrawberryShortcakeSelect()
     {
+        selectedCake = 2;
+        bakeRecipe = strawberryShortcakeSO.recipe;
+        GameManager.Instance.bakedCake = strawberryShortcakeSO;
+
         strawberryShortcakeRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        lemonSqueezer.SetActive(true);
+        grater.SetActive(true);
+        lemon.SetActive(true);
+        butter.SetActive(true);
+        milk.SetActive(true);
     }
 
     public void BittersweetChocolateTartSelect()
     {
+        selectedCake = 3;
+        bakeRecipe = bittersweetChocolateSO.recipe;
+        GameManager.Instance.bakedCake = bittersweetChocolateSO;
+
         bittersweetChocolateTartRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        butter.SetActive(true);
+        milk.SetActive(true);
+        darkChocolate.SetActive(true);
     }
 
     public void SourCherryAlmondCakeSelect()
     {
+        selectedCake = 4;
+        bakeRecipe = sourCherrySO.recipe;
+        GameManager.Instance.bakedCake = sourCherrySO;
+
         sourCherryAlmondCakeRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        butter.SetActive(true);
+        lemonSqueezer.SetActive(true);
+        grater.SetActive(true);
+        lemon.SetActive(true);
+        seaSalt.SetActive(true);
     }
 
     public void TamarindDarkChocolateBrowniesSelect()
     {
+        selectedCake = 5;
+        bakeRecipe = tamarindDarkSO.recipe;
+        GameManager.Instance.bakedCake = tamarindDarkSO;
+
         tamarindDarkChocolateBrowniesRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        butter.SetActive(true);
+        lemonSqueezer.SetActive(true);
+        grater.SetActive(true);
+        lemon.SetActive(true);
+        darkChocolate.SetActive(true);
     }
 
     public void BitterAlmondTartSelect()
     {
+        selectedCake = 6;
+        bakeRecipe = bitterAlmondSO.recipe;
+        GameManager.Instance.bakedCake = bitterAlmondSO;
+        
         bitterAlmondTartRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        seaSalt.SetActive(true);
+        butter.SetActive(true);
+        darkChocolate.SetActive(true);
     }
 
     public void OpenOvenDoor()
@@ -353,6 +463,34 @@ public class Baking : MonoBehaviour
             {
                 LemonZestAdded();
             }
+        }
+    }
+
+    public void InstantiateCake(int i)
+    {
+        if (i == 1)
+        {
+            GameObject cake = Instantiate(saltedCaramelSO.cakeAsset, this.transform);
+        }
+        else if (i == 2)
+        {
+            GameObject cake = Instantiate(strawberryShortcakeSO.cakeAsset, this.transform);
+        }
+        else if (i == 3)
+        {
+            GameObject cake = Instantiate(bittersweetChocolateSO.cakeAsset, this.transform);
+        }
+        else if (i == 4)
+        {
+            GameObject cake = Instantiate(sourCherrySO.cakeAsset, this.transform);
+        }
+        else if (i == 5)
+        {
+            GameObject cake = Instantiate(tamarindDarkSO.cakeAsset, this.transform);
+        }
+        else if (i == 6)
+        {
+            GameObject cake = Instantiate(bitterAlmondSO.cakeAsset, this.transform);
         }
     }
 }

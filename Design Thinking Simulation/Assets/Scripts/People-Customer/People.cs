@@ -33,6 +33,38 @@ public class People : MonoBehaviour
     [HideInInspector] public GameObject UIJawaban;
     AudioSource audioSource; //the value of audiosource.clip is sound pop for answer
 
+    #region customer respond to given cake
+    private readonly string[] respondLike = new string[]{
+        "Lezat Banget!",
+        "Kue ini menggugah selera!",
+        "Wow, sangat enak!",
+        "Wah, kuenya lembut dan lezat!",
+        "Sempurna! Nikmat banget!",
+        "Rasanya enak sekali!",
+        "Kue yang lezat, bikin ketagihan!",
+        "Wow, cita rasanya istimewa!"
+    };
+
+    private readonly string[] respondNeutral = new string[]{
+        "Rasanya standar.",
+        "Cukup oke.",
+        "Enak, tapi tidak istimewa.",
+        "Rasanya lumayan.",
+        "Lumayan, tapi tidak wow.",
+        "Rasanya tidak terlalu istimewa."
+    };
+
+    private readonly string[] respondDislike = new string[]{
+        "Rasanya kurang cocok dengan saya.",
+        "Sayangnya, kue ini kurang lezat.",
+        "Tidak begitu suka dengan rasa kuenya.",
+        "Cita rasanya kurang menggugah selera.",
+        "Saya kurang suka.",
+        "Rasanya kurang menyenangkan bagi saya.",
+        "Rasanya kurang mengesankan."
+    };
+    #endregion
+
     // Start is called before the first frame update
 
     private void Awake()
@@ -99,20 +131,45 @@ public class People : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<PlayerScript>())
-        {
-            if (GameManager.Instance.peopleMet.Count > 0)
+        if (!GameManager.Instance.isTesting)
             {
-                foreach (GameObject go in GameManager.Instance.peopleMet)
+                if (GameManager.Instance.peopleMet.Count > 0)
                 {
-                    go.transform.GetChild(0).GetComponent<People>().customerData.met = true;
+                    foreach (GameObject go in GameManager.Instance.peopleMet)
+                    {
+                        go.transform.GetChild(0).GetComponent<People>().customerData.met = true;
+                    }
+                }
+                AskUIQuestion();
+                Debug.Log("Ontrigger enter jalan");
+                isPlayerInRange = true;
+                EnableTandaSeru(false);
+            }
+            else
+            {
+                if (customerData.met)
+                {
+                    //Compare rasa dari kue di gamemanager sama yg dia suka
+                    if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) == 4)
+                    {
+                        //suka
+                        jawabanText.text = respondLike[Random.Range(0, respondLike.Length)];
+                        UIJawaban.SetActive(true);
+                    }
+                    else if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) > 0 && customerData.CalculateLikeness(GameManager.Instance.bakedCake) < 4)
+                    {
+                        //netral
+                        jawabanText.text = respondNeutral[Random.Range(0, respondNeutral.Length)];
+                        UIJawaban.SetActive(true);
+                    }
+                    else 
+                    {
+                        //gasuka
+                        jawabanText.text = respondDislike[Random.Range(0, respondDislike.Length)];
+                        UIJawaban.SetActive(true);
+                    }
                 }
             }
-            AskUIQuestion();
-            Debug.Log("Ontrigger enter jalan");
-            isPlayerInRange = true;
-            EnableTandaSeru(false);
-        }
     }
 
     public void EnableTandaSeru(bool tempBoolean)
