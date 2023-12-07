@@ -82,7 +82,7 @@ public class PlayerScript : MonoBehaviour
 
     public void SetDayText()
     {
-        dayText.text = GameManager.Instance.currentDay.ToString();
+        dayText.text = (GameManager.Instance.maxDay - GameManager.Instance.currentDay).ToString();
     }
 
     public void SetChanceText()
