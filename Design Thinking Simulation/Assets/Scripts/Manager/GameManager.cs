@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     public string[] RandomizedQuestion;
     public int[] RandomizedType;
+    public int CanteenOpenShop;
 
     #region Question List
     [SerializeField] private List<string> manisQuestion = new List<string>();
@@ -200,6 +201,7 @@ public class GameManager : MonoBehaviour
         DistributeCustomerCount();
         RandomizeQuestion();
         RandomizeCustomer();
+        CanteenOpenShop = UnityEngine.Random.Range(1, 8);
         //PlayerPrefs.SetInt("isSaveExist", 0);
         //SaveGame();
         //Debug.Log("Nih New Game");
@@ -541,6 +543,7 @@ public class GameManager : MonoBehaviour
         ResetQuestionRemaining();
         player.SetChanceText();
         //SaveGame();
+        CanteenOpenShop = UnityEngine.Random.Range(1, 8);
         return;
     }
 
