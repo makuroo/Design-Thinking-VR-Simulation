@@ -4551,9 +4551,6 @@ MonoBehaviour:
   - {fileID: 635874002}
   - {fileID: 1283212935}
   - {fileID: 1413989248}
-  tutorialScreen:
-  - {fileID: 977731991}
-  - {fileID: 1978333766}
   durationTutorial:
   - 30
   - 19
@@ -19830,9 +19827,6 @@ MonoBehaviour:
   - {fileID: 965282716}
   - {fileID: 1846515004}
   - {fileID: 1418824548}
-  tutorialScreen:
-  - {fileID: 503691389}
-  - {fileID: 1049663216}
   durationTutorial:
   - 30
   - 19
