@@ -131,45 +131,49 @@ public class People : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!GameManager.Instance.isTesting)
-            {
-                if (GameManager.Instance.peopleMet.Count > 0)
+        if(other.GetComponent<PlayerScript>())
+        {
+
+            if (!GameManager.Instance.isTesting)
                 {
-                    foreach (GameObject go in GameManager.Instance.peopleMet)
+                    if (GameManager.Instance.peopleMet.Count > 0)
                     {
-                        go.transform.GetChild(0).GetComponent<People>().customerData.met = true;
+                        foreach (GameObject go in GameManager.Instance.peopleMet)
+                        {
+                            go.transform.GetChild(0).GetComponent<People>().customerData.met = true;
+                        }
+                    }
+                    AskUIQuestion();
+                    Debug.Log("Ontrigger enter jalan");
+                    isPlayerInRange = true;
+                    EnableTandaSeru(false);
+                }
+                else
+                {
+                    if (customerData.met)
+                    {
+                        //Compare rasa dari kue di gamemanager sama yg dia suka
+                        if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) == 4)
+                        {
+                            //suka
+                            jawabanText.text = respondLike[Random.Range(0, respondLike.Length)];
+                            UIJawaban.SetActive(true);
+                        }
+                        else if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) > 0 && customerData.CalculateLikeness(GameManager.Instance.bakedCake) < 4)
+                        {
+                            //netral
+                            jawabanText.text = respondNeutral[Random.Range(0, respondNeutral.Length)];
+                            UIJawaban.SetActive(true);
+                        }
+                        else 
+                        {
+                            //gasuka
+                            jawabanText.text = respondDislike[Random.Range(0, respondDislike.Length)];
+                            UIJawaban.SetActive(true);
+                        }
                     }
                 }
-                AskUIQuestion();
-                Debug.Log("Ontrigger enter jalan");
-                isPlayerInRange = true;
-                EnableTandaSeru(false);
-            }
-            else
-            {
-                if (customerData.met)
-                {
-                    //Compare rasa dari kue di gamemanager sama yg dia suka
-                    if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) == 4)
-                    {
-                        //suka
-                        jawabanText.text = respondLike[Random.Range(0, respondLike.Length)];
-                        UIJawaban.SetActive(true);
-                    }
-                    else if (customerData.CalculateLikeness(GameManager.Instance.bakedCake) > 0 && customerData.CalculateLikeness(GameManager.Instance.bakedCake) < 4)
-                    {
-                        //netral
-                        jawabanText.text = respondNeutral[Random.Range(0, respondNeutral.Length)];
-                        UIJawaban.SetActive(true);
-                    }
-                    else 
-                    {
-                        //gasuka
-                        jawabanText.text = respondDislike[Random.Range(0, respondDislike.Length)];
-                        UIJawaban.SetActive(true);
-                    }
-                }
-            }
+        }
     }
 
     public void EnableTandaSeru(bool tempBoolean)

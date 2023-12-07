@@ -128,6 +128,7 @@ public class GameManager : MonoBehaviour
         prototypingScore = 82f;
         testingScore = 56f;
         */
+
         //LoadGame();
         if (instance == null)
         {
