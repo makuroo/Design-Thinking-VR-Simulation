@@ -228,6 +228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flour
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 13eb8c9ea72f0ed42b88484dd92d9cdb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13eb8c9ea72f0ed42b88484dd92d9cdb, type: 3}
 --- !u!1 &78435390 stripped
@@ -988,6 +993,39 @@ Transform:
   m_Father: {fileID: 152040574}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &184036895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184036896}
+  m_Layer: 0
+  m_Name: Not Used
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &184036896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184036895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 141114642}
+  - {fileID: 1215345496}
+  m_Father: {fileID: 1015797210}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &189558572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,6 +1749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Milk
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 055ceddd183681948a05a909d98ed760,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 055ceddd183681948a05a909d98ed760, type: 3}
@@ -2516,6 +2559,7 @@ Transform:
   - {fileID: 2017691552}
   - {fileID: 2049203929}
   - {fileID: 2061087415}
+  - {fileID: 1852182340}
   - {fileID: 1015797210}
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -2828,11 +2872,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u25CB Put flour into the bowl\n\u25CB Add baking powder\n\u25CB Add sugar\n\u25CB
-    Add sea salt\n\u25CB Add butter\n\u25CB Pour milk"
+  m_text: "\u25CB Masukkan tepung\n\u25CB Masukkan baking powder\n\u25CB Masukkan
+    gula\n\u25CB Masukkan seasalt\n\u25CB Masukkan mentega\n\u25CB Tuangkan susu\n\u25CB
+    Masukkan ke oven"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc41d5815b9a5bb48be4c84a746c4ff6, type: 2}
-  m_sharedMaterial: {fileID: 7032093815205813286, guid: fc41d5815b9a5bb48be4c84a746c4ff6,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2857,8 +2902,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2893,7 +2938,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 476.6159, y: 0, z: 0, w: 0}
+  m_margin: {x: 476.6159, y: 0, z: -13.41275, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2967,8 +3012,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Strawberry Shortcake
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a6446991ef31ced4190c53c206cf4b3e, type: 2}
-  m_sharedMaterial: {fileID: -9221056233183343877, guid: a6446991ef31ced4190c53c206cf4b3e,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4025,7 +4070,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f39e2374844af8347bac860d550fc28b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f39e2374844af8347bac860d550fc28b, type: 3}
@@ -4591,8 +4636,8 @@ MonoBehaviour:
   m_text: "\u25CB Put flour into the bowl\n\u25CB Add baking powder\n\u25CB Add sugar\n\u25CB
     Add lemon juice\n\u25CB Add lemon zest\n\u25CB Add butter\n\u25CB Add dark chocolate"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc41d5815b9a5bb48be4c84a746c4ff6, type: 2}
-  m_sharedMaterial: {fileID: 7032093815205813286, guid: fc41d5815b9a5bb48be4c84a746c4ff6,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4617,8 +4662,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5648,8 +5693,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tamarind Dark Chocolate Brownies
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a6446991ef31ced4190c53c206cf4b3e, type: 2}
-  m_sharedMaterial: {fileID: -9221056233183343877, guid: a6446991ef31ced4190c53c206cf4b3e,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6311,8 +6356,8 @@ MonoBehaviour:
   m_text: "\u25CB Put flour into the bowl\n\u25CB Add baking powder\n\u25CB Add sugar\n\u25CB
     Add dark chocolate\n\u25CB Add butter\n\u25CB Pour milk"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc41d5815b9a5bb48be4c84a746c4ff6, type: 2}
-  m_sharedMaterial: {fileID: 7032093815205813286, guid: fc41d5815b9a5bb48be4c84a746c4ff6,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6337,8 +6382,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6420,6 +6465,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ovenDoor: {fileID: 241400307}
   bowl: {fileID: 2017691553}
+  recipePanel: {fileID: 1604140618}
+  doneBakingUI: {fileID: 1852182339}
 --- !u!1 &892753550
 GameObject:
   m_ObjectHideFlags: 0
@@ -6520,8 +6567,8 @@ MonoBehaviour:
   m_text: "\u25CB Put flour into the bowl\n\u25CB Add baking powder\n\u25CB Add sugar\n\u25CB
     Add sea salt\n\u25CB Add butter\n\u25CB Add lemon juice\n\u25CB Add lemon zest"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc41d5815b9a5bb48be4c84a746c4ff6, type: 2}
-  m_sharedMaterial: {fileID: 7032093815205813286, guid: fc41d5815b9a5bb48be4c84a746c4ff6,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6546,8 +6593,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6754,6 +6801,142 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920833152}
+  m_CullTransparentMesh: 1
+--- !u!1 &937423303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937423304}
+  - component: {fileID: 937423306}
+  - component: {fileID: 937423305}
+  m_Layer: 5
+  m_Name: Cake Ready (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &937423304
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937423303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1007542777}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -3}
+  m_SizeDelta: {x: 450, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &937423305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937423303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Berikan kue ke 3 orang yang telah di interview
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 35
+  m_fontSizeBase: 35
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 4096
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &937423306
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937423303}
   m_CullTransparentMesh: 1
 --- !u!1 &947912668
 GameObject:
@@ -6971,6 +7154,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965282716}
   m_CullTransparentMesh: 1
+--- !u!1 &1007542776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1007542777}
+  - component: {fileID: 1007542779}
+  - component: {fileID: 1007542778}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1007542777
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007542776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0013, y: 0.0013, z: 0.0013}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1709474141}
+  - {fileID: 937423304}
+  m_Father: {fileID: 1852182340}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.049}
+  m_SizeDelta: {x: 766.9, y: 543}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1007542778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007542776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: eb129c733ee39fc479098b34f21e7568, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1007542779
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007542776}
+  m_CullTransparentMesh: 1
 --- !u!1 &1015797209
 GameObject:
   m_ObjectHideFlags: 0
@@ -7005,14 +7266,13 @@ Transform:
   - {fileID: 57281463}
   - {fileID: 1966122354}
   - {fileID: 562954946}
-  - {fileID: 1215345496}
   - {fileID: 152040574}
   - {fileID: 570364193}
   - {fileID: 2064834213}
-  - {fileID: 141114642}
   - {fileID: 1614781477}
+  - {fileID: 184036896}
   m_Father: {fileID: 408649995}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1021378204
 GameObject:
@@ -8074,8 +8334,8 @@ MonoBehaviour:
   m_text: "\u25CB Put flour into the bowl\n\u25CB Add baking powder\n\u25CB Add sugar\n\u25CB
     Add sea salt\n\u25CB Add butter\n\u25CB Add dark chocolate"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc41d5815b9a5bb48be4c84a746c4ff6, type: 2}
-  m_sharedMaterial: {fileID: 7032093815205813286, guid: fc41d5815b9a5bb48be4c84a746c4ff6,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8100,8 +8360,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8458,7 +8718,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fec88ad60f70aad47b21e33b91567ddb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fec88ad60f70aad47b21e33b91567ddb,
         type: 3}
@@ -8519,6 +8779,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lemon Half
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fec88ad60f70aad47b21e33b91567ddb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fec88ad60f70aad47b21e33b91567ddb, type: 3}
@@ -9007,7 +9272,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c63c21ed415b68a409317dfa93546246,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c63c21ed415b68a409317dfa93546246,
         type: 3}
@@ -9083,6 +9348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lemon Squeezer
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c63c21ed415b68a409317dfa93546246,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3803379477944095605, guid: c63c21ed415b68a409317dfa93546246,
         type: 3}
@@ -10868,8 +11138,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a6446991ef31ced4190c53c206cf4b3e, type: 2}
-  m_sharedMaterial: {fileID: -9221056233183343877, guid: a6446991ef31ced4190c53c206cf4b3e,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10954,7 +11224,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6487c78f44f27f245b448bb9b16ac6bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6487c78f44f27f245b448bb9b16ac6bd,
         type: 3}
@@ -11030,6 +11300,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grater (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6487c78f44f27f245b448bb9b16ac6bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5754084199372789682, guid: 6487c78f44f27f245b448bb9b16ac6bd, type: 3}
@@ -11440,6 +11715,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Butter
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 41883345f03147240a086738996e4081,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41883345f03147240a086738996e4081, type: 3}
 --- !u!1001 &1686367471
@@ -11452,7 +11732,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a1a619a4e3b403946b5b60331cf4f6ac,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1a619a4e3b403946b5b60331cf4f6ac,
         type: 3}
@@ -11534,6 +11814,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dark Chocolate
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a1a619a4e3b403946b5b60331cf4f6ac,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5754084199372789682, guid: a1a619a4e3b403946b5b60331cf4f6ac, type: 3}
     - {fileID: -7511558181221131132, guid: a1a619a4e3b403946b5b60331cf4f6ac, type: 3}
@@ -11600,8 +11885,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a6446991ef31ced4190c53c206cf4b3e, type: 2}
-  m_sharedMaterial: {fileID: -9221056233183343877, guid: a6446991ef31ced4190c53c206cf4b3e,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -11676,6 +11961,142 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707973869}
   m_CullTransparentMesh: 1
+--- !u!1 &1709474140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1709474141}
+  - component: {fileID: 1709474143}
+  - component: {fileID: 1709474142}
+  m_Layer: 5
+  m_Name: Cake Ready
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1709474141
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709474140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1007542777}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 160}
+  m_SizeDelta: {x: 500, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1709474142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709474140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Kue telah Siap
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 35
+  m_fontSizeBase: 35
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 4096
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1709474143
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709474140}
+  m_CullTransparentMesh: 1
 --- !u!1 &1726125558
 GameObject:
   m_ObjectHideFlags: 0
@@ -11738,8 +12159,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a6446991ef31ced4190c53c206cf4b3e, type: 2}
-  m_sharedMaterial: {fileID: -9221056233183343877, guid: a6446991ef31ced4190c53c206cf4b3e,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -11951,8 +12372,8 @@ MonoBehaviour:
   m_text: "\u25CB Put flour into the bowl\n\u25CB Add baking powder\n\u25CB Add sugar\n\u25CB
     Add lemon juice\n\u25CB Add lemon zest\n\u25CB Add butter\n\u25CB Pour milk"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc41d5815b9a5bb48be4c84a746c4ff6, type: 2}
-  m_sharedMaterial: {fileID: 7032093815205813286, guid: fc41d5815b9a5bb48be4c84a746c4ff6,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -11977,8 +12398,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12658,6 +13079,135 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.0000002, y: 1.9999999, z: 4.8742085}
   m_Center: {x: -0.0000009536743, y: 2.5528103e-15, z: 1.4371349}
+--- !u!1 &1852182339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852182340}
+  - component: {fileID: 1852182345}
+  - component: {fileID: 1852182344}
+  - component: {fileID: 1852182343}
+  - component: {fileID: 1852182342}
+  - component: {fileID: 1852182341}
+  m_Layer: 5
+  m_Name: Bake Complete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1852182340
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852182339}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 13.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1007542777}
+  m_Father: {fileID: 408649995}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 4.272, y: -8.404}
+  m_SizeDelta: {x: 3.2752, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1852182341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852182339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b2e3ae19fa9884a9021d1b4232baae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableFaceToPlayer: 1
+--- !u!114 &1852182342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852182339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
+--- !u!114 &1852182343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852182339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 1
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1852182344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852182339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &1852182345
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852182339}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 100
+  m_TargetDisplay: 0
 --- !u!1 &1861150394 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 055ceddd183681948a05a909d98ed760,
@@ -13081,8 +13631,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a6446991ef31ced4190c53c206cf4b3e, type: 2}
-  m_sharedMaterial: {fileID: -9221056233183343877, guid: a6446991ef31ced4190c53c206cf4b3e,
+  m_fontAsset: {fileID: 11400000, guid: 4a95c2a891d5309489bed590a8f832ce, type: 2}
+  m_sharedMaterial: {fileID: -1900059048831249287, guid: 4a95c2a891d5309489bed590a8f832ce,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14129,27 +14679,37 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1015797210}
+    m_TransformParent: {fileID: 184036896}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 99a22edc50d6d1b4e918b50dc835b50e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 99a22edc50d6d1b4e918b50dc835b50e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.995313
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 99a22edc50d6d1b4e918b50dc835b50e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.995313
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99a22edc50d6d1b4e918b50dc835b50e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.624
+      value: -0.6240001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99a22edc50d6d1b4e918b50dc835b50e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.202
+      value: -0.20199966
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99a22edc50d6d1b4e918b50dc835b50e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.193
+      value: 0.19299984
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99a22edc50d6d1b4e918b50dc835b50e,
         type: 3}
@@ -14693,6 +15253,7 @@ MonoBehaviour:
   darkChocolate: {fileID: 533308353}
   grater: {fileID: 1614781478}
   lemon: {fileID: 46382054}
+  selectedCake: 0
 --- !u!65 &2017691558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14731,7 +15292,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -14835,12 +15396,12 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1015797210}
+    m_TransformParent: {fileID: 184036896}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6487c78f44f27f245b448bb9b16ac6bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6487c78f44f27f245b448bb9b16ac6bd,
         type: 3}
@@ -14860,17 +15421,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6487c78f44f27f245b448bb9b16ac6bd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.158
+      value: -0.15799999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6487c78f44f27f245b448bb9b16ac6bd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.2567
+      value: -0.25669956
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6487c78f44f27f245b448bb9b16ac6bd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.323
+      value: 0.32299995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6487c78f44f27f245b448bb9b16ac6bd,
         type: 3}
@@ -15474,7 +16035,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 669394f78e8601342a57d18f0357c25c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 669394f78e8601342a57d18f0357c25c, type: 3}
@@ -15564,6 +16125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Baking Powder
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 050a8680a3c8a23438511cc0b4013833,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 050a8680a3c8a23438511cc0b4013833, type: 3}

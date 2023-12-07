@@ -254,42 +254,96 @@ public class Baking : MonoBehaviour
     {
         selectedCake = 1;
         bakeRecipe = saltedCaramelSO.recipe;
+        GameManager.Instance.bakedCake = saltedCaramelSO;
+
         saltedCaramelBrowniesRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        seaSalt.SetActive(true);
+        butter.SetActive(true);
+        milk.SetActive(true);
     }
 
     public void StrawberryShortcakeSelect()
     {
         selectedCake = 2;
         bakeRecipe = strawberryShortcakeSO.recipe;
+        GameManager.Instance.bakedCake = strawberryShortcakeSO;
+
         strawberryShortcakeRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        lemonSqueezer.SetActive(true);
+        grater.SetActive(true);
+        lemon.SetActive(true);
+        butter.SetActive(true);
+        milk.SetActive(true);
     }
 
     public void BittersweetChocolateTartSelect()
     {
         selectedCake = 3;
         bakeRecipe = bittersweetChocolateSO.recipe;
+        GameManager.Instance.bakedCake = bittersweetChocolateSO;
+
         bittersweetChocolateTartRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        butter.SetActive(true);
+        milk.SetActive(true);
+        darkChocolate.SetActive(true);
     }
 
     public void SourCherryAlmondCakeSelect()
     {
         selectedCake = 4;
         bakeRecipe = sourCherrySO.recipe;
+        GameManager.Instance.bakedCake = sourCherrySO;
+
         sourCherryAlmondCakeRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        butter.SetActive(true);
+        lemonSqueezer.SetActive(true);
+        grater.SetActive(true);
+        lemon.SetActive(true);
+        seaSalt.SetActive(true);
     }
 
     public void TamarindDarkChocolateBrowniesSelect()
     {
         selectedCake = 5;
         bakeRecipe = tamarindDarkSO.recipe;
+        GameManager.Instance.bakedCake = tamarindDarkSO;
+
         tamarindDarkChocolateBrowniesRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        butter.SetActive(true);
+        lemonSqueezer.SetActive(true);
+        grater.SetActive(true);
+        lemon.SetActive(true);
+        darkChocolate.SetActive(true);
     }
 
     public void BitterAlmondTartSelect()
     {
         selectedCake = 6;
         bakeRecipe = bitterAlmondSO.recipe;
+        GameManager.Instance.bakedCake = bitterAlmondSO;
+        
         bitterAlmondTartRecipe.SetActive(true);
+        flour.SetActive(true);
+        bakingPowder.SetActive(true);
+        sugar.SetActive(true);
+        seaSalt.SetActive(true);
+        butter.SetActive(true);
+        darkChocolate.SetActive(true);
     }
 
     public void OpenOvenDoor()
@@ -416,27 +470,27 @@ public class Baking : MonoBehaviour
     {
         if (i == 1)
         {
-            Instantiate(saltedCaramelSO.cakeAsset, this.transform);
+            GameObject cake = Instantiate(saltedCaramelSO.cakeAsset, this.transform);
         }
         else if (i == 2)
         {
-            Instantiate(strawberryShortcakeSO.cakeAsset, this.transform);
+            GameObject cake = Instantiate(strawberryShortcakeSO.cakeAsset, this.transform);
         }
         else if (i == 3)
         {
-            Instantiate(bittersweetChocolateSO.cakeAsset, this.transform);
+            GameObject cake = Instantiate(bittersweetChocolateSO.cakeAsset, this.transform);
         }
         else if (i == 4)
         {
-            Instantiate(sourCherrySO.cakeAsset, this.transform);
+            GameObject cake = Instantiate(sourCherrySO.cakeAsset, this.transform);
         }
         else if (i == 5)
         {
-            Instantiate(tamarindDarkSO.cakeAsset, this.transform);
+            GameObject cake = Instantiate(tamarindDarkSO.cakeAsset, this.transform);
         }
         else if (i == 6)
         {
-            Instantiate(bitterAlmondSO.cakeAsset, this.transform);
+            GameObject cake = Instantiate(bitterAlmondSO.cakeAsset, this.transform);
         }
     }
 }

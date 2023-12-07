@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
     public int interviewCount = 0;
     public bool hasDoneUserPersona = false;
     public bool hasDoneProblemStatement = false;
+    
 
     private PlayerScript player;
     string previousWorld;
@@ -111,6 +112,13 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public UserPersonaHistory history;
+
+    //Michael's
+    [Header("Michael's")]
+    public bool hasDonePrototyping = false;
+    public bool isTesting = false;
+    public CakeSO bakedCake;
+    
     private void Awake()
     {
         problemStatementScore = 90f;

@@ -6,6 +6,8 @@ public class Oven : MonoBehaviour
 {
     public GameObject ovenDoor;
     public GameObject bowl;
+    public GameObject recipePanel;
+    public GameObject doneBakingUI;
     private Baking bowlScript;
 
     // Start is called before the first frame update
@@ -25,7 +27,11 @@ public class Oven : MonoBehaviour
                 Debug.Log("Ready to bake");
                 ovenDoor.transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
                 bowlScript.InstantiateCake(bowlScript.selectedCake);
+                recipePanel.SetActive(false);
+                doneBakingUI.SetActive(true);
                 //Add cake here
+                GameManager.Instance.hasDonePrototyping = true;
+                GameManager.Instance.isTesting = true;
                 Destroy(bowl);
             }
         }
