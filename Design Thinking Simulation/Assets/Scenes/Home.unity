@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0f0dc6325d3dc4a4b916a6efc7ad416a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fd20ef779b5c684a81e129ee5da7c2f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6748,7 +6748,7 @@ GameObject:
   - component: {fileID: 965282719}
   - component: {fileID: 965282718}
   m_Layer: 5
-  m_Name: Monitor4
+  m_Name: Monitor5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10594,6 +10594,7 @@ MonoBehaviour:
   - {fileID: 762473523}
   - {fileID: 1069983874}
   - {fileID: 1741997495}
+  - {fileID: 146412346}
   - {fileID: 965282716}
   - {fileID: 1846515004}
   - {fileID: 1418824548}
