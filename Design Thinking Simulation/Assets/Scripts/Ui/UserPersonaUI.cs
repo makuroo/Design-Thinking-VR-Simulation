@@ -37,14 +37,27 @@ public class UserPersonaUI : MonoBehaviour
     {
         if (GameManager.Instance.peopleMet.Count<=0)
             return;
-        CustomerDataSO people = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>().customerData;
-        if (!people.hasShowUserPersona)
+        else
         {
-            viewButton.SetActive(true);
-        }else if(people.hasShowUserPersona)
-        {
-            tasteUI.SetActive(true);
+
+            if (GameManager.Instance.peopleMet[customerIndex] == null)
+            {
+                Debug.Log("here");
+                return;
+            }
+                
+            CustomerDataSO people = GameManager.Instance.peopleMet[customerIndex].transform.GetComponentInChildren<People>().customerData;
+            
+            if (!people.hasShowUserPersona)
+            {
+                viewButton.SetActive(true);
+            }
+            else if (people.hasShowUserPersona)
+            {
+                tasteUI.SetActive(true);
+            }
         }
+
     }
 
     public void Prev()
@@ -156,6 +169,7 @@ public class UserPersonaUI : MonoBehaviour
 
     public void ShowTaste()
     {
+        Debug.Log(GameManager.Instance.canDoActivity);
         if (GameManager.Instance.canDoActivity)
         {
             tasteUI.SetActive(true);

@@ -35,7 +35,7 @@ public class ActivityDaysUI : MonoBehaviour
     {
         if (GameManager.Instance.interviewCount >= 3)
         {
-            problemStatementTextDays.text = "Terbuka";
+            problemStatementTextDays.text = " ";
         }
         else
         {
@@ -44,7 +44,7 @@ public class ActivityDaysUI : MonoBehaviour
 
         if (GameManager.Instance.hasDoneProblemStatement)
         {
-            vpcTextDays.text = "Terbuka";
+            vpcTextDays.text = " ";
         }
         else
         {

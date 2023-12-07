@@ -36,6 +36,7 @@ public class EnterPrototyping : MonoBehaviour
 
     public void PrototypeYesClicked()
     {
+        GameManager.Instance.canDoActivity = false;
         SceneManager.LoadScene("Home Prototyping");
     }
 }

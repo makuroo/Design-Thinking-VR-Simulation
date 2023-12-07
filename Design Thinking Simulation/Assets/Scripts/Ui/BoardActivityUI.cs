@@ -20,6 +20,8 @@ public class BoardActivityUI : MonoBehaviour
     public GameObject vpcChoices;
     public GameObject boardActivityUI;
     public GameObject jobFinishGO;
+    public GameObject nameGO;
+    public GameObject buttonGO;
 
     [SerializeField] private CustomerDataSO personCustomerData;
     [SerializeField] private List<string> tempAnswer;
@@ -68,8 +70,9 @@ public class BoardActivityUI : MonoBehaviour
 
     public void UserPersona()
     {
-        GameManager.Instance.canDoActivity = false;
         userPersonaUI.SetActive(true);
+        nameGO.SetActive(true);
+        buttonGO.SetActive(true);
         boardActivityUI.SetActive(false);
         foreach (UnityEngine.UI.Button b in topicButtons)
         {

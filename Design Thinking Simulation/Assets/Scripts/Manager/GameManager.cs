@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
+    [field: SerializeField]
     public bool canDoActivity { get; set; } = true;
 
     public List<GameObject> peopleMet = new List<GameObject>();
