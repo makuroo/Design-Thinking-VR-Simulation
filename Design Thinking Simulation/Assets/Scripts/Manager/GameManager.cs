@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
     public int interviewCount = 0;
     public bool hasDoneUserPersona = false;
     public bool hasDoneProblemStatement = false;
+    public bool hasDoneVPC = false;
     
 
     private PlayerScript player;

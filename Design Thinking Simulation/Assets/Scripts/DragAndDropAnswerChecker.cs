@@ -427,6 +427,7 @@ public class DragAndDropAnswerChecker : MonoBehaviour
             board.vpcCanvas.SetActive(false);
             board.vpcChoices.SetActive(false);
             board.jobFinishGO.SetActive(true);
+            GameManager.Instance.hasDoneVPC = true;
         }
 
     }

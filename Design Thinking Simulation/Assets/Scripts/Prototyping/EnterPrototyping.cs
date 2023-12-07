@@ -20,7 +20,7 @@ public class EnterPrototyping : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && GameManager.Instance.hasDoneVPC)
         {
             prototypeUI.SetActive(true);
         }
