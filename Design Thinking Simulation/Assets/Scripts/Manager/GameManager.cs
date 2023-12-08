@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     public float problemStatementScore = 0;
     public float vpcScore=0;
     [HideInInspector] public float prototypingScore =100;
-    [HideInInspector] public float testingScore =0;
+    [HideInInspector] public float testingScore { get; set; } = 0;
     [HideInInspector] public int testTarget = 0;
     #endregion
 
@@ -573,7 +573,10 @@ public class GameManager : MonoBehaviour
 
     public float CalculateTotalScore()
     {
-        totalScore = (problemStatementScore + vpcScore + prototypingScore + testingScore) / 4;
+        Debug.Log(testingScore);
+        testingScore /= 3;
+        Debug.Log(testingScore);
+        totalScore = (problemStatementScore + vpcScore + prototypingScore + Mathf.RoundToInt(testingScore)) / 4;
         return totalScore;
     }
 

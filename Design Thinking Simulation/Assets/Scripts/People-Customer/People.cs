@@ -179,13 +179,11 @@ public class People : MonoBehaviour
                     jawabanText.text = respondDislike[Random.Range(0, respondDislike.Length)];
                     UIJawaban.SetActive(true);
                 }
-
-                if (GameManager.Instance.testTarget == 3)
-                {
-                    GameManager.Instance.testingScore = Mathf.RoundToInt((float)GameManager.Instance.testingScore / GameManager.Instance.testTarget);
-                    GameManager.Instance.CalculateTotalScore();
-                    StartCoroutine(EndingDelay());
-                }
+            }
+            Debug.Log("Here :"+GameManager.Instance.testingScore);
+            if (GameManager.Instance.testTarget == 3)
+            {
+                StartCoroutine(EndingDelay());
             }
         }
     }
