@@ -146,7 +146,7 @@ public class PlayerScript : MonoBehaviour
         UICamera.SetActive(true);
     }
 
-    public void ChangeClockColorToRed()
+    /*public void ChangeClockColorToRed()
     {
         clockImage.color = new Color32(255, 84, 64, 255);
     }
@@ -154,7 +154,7 @@ public class PlayerScript : MonoBehaviour
     public void ChangeClockColorToGreen()
     {
         clockImage.color = new Color32(161, 255, 156, 255);
-    }
+    }*/
 
 
 }

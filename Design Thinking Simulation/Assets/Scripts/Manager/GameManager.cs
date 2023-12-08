@@ -510,12 +510,12 @@ public class GameManager : MonoBehaviour
         {
             //SetDirectionalLight(false);
             player.ControllerVibrate(false);
-            player.ChangeClockColorToRed();
+            //player.ChangeClockColorToRed();
         }
         else
         {
             //SetDirectionalLight(true);
-            player.ChangeClockColorToGreen();
+            //player.ChangeClockColorToGreen();
         }
         return questionRemaining > 0;
     }

@@ -11,12 +11,12 @@ public class UiFaceToPlayer : MonoBehaviour
     public bool disableFaceToPlayer;
     private void Awake()
     {
-        thisCanvas = GetComponent<Canvas>();
-        cameraTransform = Camera.main.transform;
-        //reference si cameracaster
     }
     void Start()
     {
+        thisCanvas = GetComponent<Canvas>();
+        cameraTransform = Camera.main.transform;
+        //reference si cameracaster
         cameraCaster = GameObject.Find("CameraCaster").GetComponent<Camera>();
         if(thisCanvas != null)
         {
